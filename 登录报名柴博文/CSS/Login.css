@@ -1,0 +1,192 @@
+html,
+body {
+    font-size: 62.5% !important;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    background-color: snow !important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+a,
+ul,
+ol,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: unset;
+    border: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.top {
+    width: 90%;
+    height: 6rem;
+    background-image: linear-gradient(90deg, #e2d0e7 20%, #ababdf 60%);
+    color: hsla(0, 0%, 100%, .7);
+    font-size: 4rem;
+    position: absolute;
+    padding: 2rem 5%;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0 1px 2px 0 #697886;
+}
+
+.left {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.right {
+    display: block;
+    margin-right: 2rem;
+    position: absolute;
+    right: 5%;
+}
+
+.button {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    width: max-content;
+    padding: 0.2rem 2rem;
+    height: 6rem;
+    display: flex;
+    text-justify: distribute;
+    color: #24292e;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+}
+
+.LogoArticle {
+    font-size: 20rem;
+}
+
+.LogoArticle p {
+    cursor: pointer;
+    z-index: 11;
+    color: snow;
+    background-color: transparent;
+    text-shadow: 0 5px 1px #dbe2ee;
+    transition: all 1s linear;
+    box-shadow: 0 1px 1px #000000;
+}
+
+.absolute {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.fill {
+    width: max-content;
+    height: max-content;
+}
+
+.center {
+    align-items: center;
+    cursor: unset;
+    justify-content: center;
+}
+
+.under {
+    z-index: 0;
+}
+
+.over {
+    z-index: 12;
+}
+
+.center p {
+    border-radius: 2rem;
+    opacity: 1;
+    display: block;
+    margin: 0;
+    font-style: italic;
+    z-index: 12;
+    justify-content: center;
+    background-image: linear-gradient(-90deg, #655ddb 1%, #3099c2 99%);
+}
+
+.square {
+    width: 100%;
+    height: 120rem;
+    display: block;
+    background-image: linear-gradient(-90deg, #bfbbf7 1%, #a4d3e6 99%);
+    opacity: 1;
+    border-radius: 2rem;
+    margin-top: 6rem;
+}
+
+.trapezoid {
+    position: relative;
+    top: 10rem;
+    width: 50%;
+    height: calc(100% - 10rem);
+    float: left;
+    opacity: 1;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    z-index: 10 !important;
+    transition: opacity 0.5s linear;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.leftAngle {
+    background-image: url(../Recourse/banner-pc.png);
+}
+
+.rightAngle {
+    background-image: url(../Recourse/server_product_function_bg.jpg);
+}
+
+.trapezoid::after {
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0.1;
+    background-image: linear-gradient(0deg, #ffffff 60%, #e7e7e7);
+}
+
+.trapezoid:hover {
+    opacity: 1;
+}
+
+.trapezoid:hover::after {
+    background: transparent;
+}
+
+.trapezoid p {
+    font-size: 20rem;
+    color: snow;
+    margin: 0;
+    background: none;
+}
+
+@media screen and(max-width:1280px) {}
