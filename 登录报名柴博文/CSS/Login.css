@@ -20,6 +20,17 @@ li {
     border: none;
 }
 
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 70%;
+    height: 4rem;
+    display: inline-block;
+    margin: 0 auto;
+    border-bottom: 0.1rem solid snow;
+}
+
 a {
     cursor: pointer;
 }
@@ -80,7 +91,7 @@ h6 {
     font-size: 20rem;
 }
 
-.LogoArticle p {
+.LogoArticle>p {
     cursor: pointer;
     z-index: 11;
     color: snow;
@@ -92,7 +103,7 @@ h6 {
 
 .absolute {
     position: absolute;
-    top: 10%;
+    top: 10rem;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -117,34 +128,69 @@ h6 {
     z-index: 12;
 }
 
-.center p {
+.center>p {
     border-radius: 2rem;
     opacity: 1;
     display: block;
     margin: 0;
-    font-style: italic;
+    /* font-style: italic; */
     z-index: 12;
     justify-content: center;
     background-image: linear-gradient(-90deg, #655ddb 1%, #3099c2 99%);
 }
 
 .square {
-    width: 100%;
-    height: 120rem;
-    display: block;
-    background-image: linear-gradient(-90deg, #bfbbf7 1%, #a4d3e6 99%);
-    opacity: 1;
+    width: 60%;
+    height: 80rem;
+    /* display: none; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    color: snow;
+    font-size: 5rem;
+    background-image: linear-gradient(180deg, #d1e0f8 10%, transparent, #d1e0f8);
     border-radius: 2rem;
     margin-top: 6rem;
 }
+
+.banner {
+    width: 80%;
+    margin: 5rem auto;
+    font-size: 4rem;
+    height: max-content;
+}
+
+.banner:nth-of-type(1) {
+    vertical-align: middle;
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 0.1rem solid snow;
+}
+
+.banner:nth-of-type(4) {
+    text-align: center;
+}
+
+
+/* .square::after,
+.square::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+} */
 
 .trapezoid {
     position: relative;
     top: 10rem;
     width: 50%;
     height: calc(100% - 10rem);
+    min-height: 150rem;
     float: left;
-    opacity: 1;
     margin: 0;
     display: flex;
     cursor: pointer;
@@ -155,11 +201,11 @@ h6 {
     background-position: center;
 }
 
-.leftAngle {
+#leftAngle {
     background-image: url(../Recourse/banner-pc.png);
 }
 
-.rightAngle {
+#rightAngle {
     background-image: url(../Recourse/server_product_function_bg.jpg);
 }
 
@@ -169,7 +215,7 @@ h6 {
     content: "";
     width: 100%;
     height: 100%;
-    z-index: 9;
+    z-index: 8;
     opacity: 0.1;
     background-image: linear-gradient(0deg, #ffffff 60%, #e7e7e7);
 }
@@ -178,13 +224,19 @@ h6 {
     opacity: 1;
 }
 
+.trapezoid:hover>p {
+    color: snow;
+    text-shadow: 0 1px 1px transparent;
+}
+
 .trapezoid:hover::after {
     background: transparent;
 }
 
 .trapezoid p {
     font-size: 20rem;
-    color: snow;
+    color: transparent;
+    text-shadow: 0 1px 4px #ffffff;
     margin: 0;
     background: none;
 }
