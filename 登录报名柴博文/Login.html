@@ -25,25 +25,29 @@
         </p>
         <div class="square">
             <div class="banner">
-                登录
+                欢迎来到ThoughtWorks
             </div>
-            <div class="banner">
-                学号:
-                <input type="text" name="" id="">
-            </div>
-            <div class="banner">
-                密码:
-                <input type="password" name="" id="">
-            </div>
-            <div class="banner">
-                <div class="submitButton">
-                    报名
+            <form action="Login.jar" method="post">
+                <div class="banner">
+                    学号:
+                    <input type="text" autocomplete="username" id="information1">
                 </div>
-            </div>
+                <div class="banner">
+                    密码:
+                    <input type="password" autocomplete="current-password" id="information2">
+                </div>
+                <div class="banner">
+                    <input type="button" value="登录" class="submitButton" id="clickThenSubmit">
+                </div>
+            </form>
+
             <div>
 
             </div>
         </div>
+    </div>
+    <div id="CoverBack">
+
     </div>
     <div class="trapezoid center" id="leftAngle">
         <p>
@@ -57,7 +61,7 @@
     </div>
 
     <script src="./JS/Login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </body>
 
 </html>
