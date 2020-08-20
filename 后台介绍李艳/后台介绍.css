@@ -1,0 +1,205 @@
+html,
+body {
+    font-size: 62.5% !important;
+    margin: 0;
+    border: 0;
+    background-color: #f6f8fa!important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+a,
+ul,
+ol,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: unset;
+    border: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.top {
+    width: 90%;
+    height: 6rem;
+    background-image: linear-gradient(90deg, #d49fe4 1%, #CCCCFF 99%);
+    color: hsla(0, 0%, 100%, .7);
+    font-size: 4rem;
+    padding: 2rem 5%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0 1px 2px 0 #697886;
+}
+
+.left {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.right {
+    display: block;
+    margin-right: 2rem;
+    position: absolute;
+    right: 5%;
+}
+
+.button {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    width: max-content;
+    padding: 0.2rem 2rem;
+    height: 6rem;
+    display: flex;
+    text-justify: distribute;
+    color: #24292e;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+}
+
+
+.Backend-background{
+	position: absolute;
+	z-index: -1;
+	width: 90%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.Backend-border{
+  border:2.7rem solid  #0089e6 ;
+  width: 148.2rem;
+  height: 66.7rem;
+  position: absolute;
+  top:0;
+}
+.Backend-column{
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 16%;
+  background-color: #e5f5ff;
+  box-shadow: 0 1px 2px 0 #697886;
+}
+.Backend-title{
+	text-align: center;
+	font-size: 6rem; 
+	font-weight: 900; 
+	color: #CCCCFF;
+	z-index: 0;
+	position: absolute;
+	width: 5%;
+	top: 12%;
+  left: 20%;
+}
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -1rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+.Backend-title span {
+  position: relative;
+  color: #5362F6;
+  text-shadow: 0.25rem 0.25rem #E485F8;
+  animation: scatter 1.75s infinite;
+}
+
+.Backend-title span:nth-child(2) {
+  color:#ED625C;
+  text-shadow: 0.25rem 0.25rem #F2A063;
+  animation-delay: 0.3s;
+}
+
+.Backend-title span:nth-child(3) {
+  color: #FFD913;
+  text-shadow: 0.25rem 0.25rem #6EC0A9;
+  animation-delay: 0.15s;
+}
+.Backend-title span:nth-child(4) {
+  color:  #555BFF;
+  text-shadow: 0.25rem 0.25rem #E485F8;
+  animation-delay: 0.45s;
+}
+.Backend-container{
+	width: 100%;
+	position: absolute;
+	height: 80%;
+}
+.Backend-box-title{
+  background-color: #0089e6;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+}
+.Backend-box1{
+	position: absolute;
+	background-image: linear-gradient(to bottom,#ccf2ff,white);
+	width: 40rem; 
+	height: 27rem;
+	top: 11%;
+	left: 42%;
+	/*border-radius: 1rem;*/
+	float: left;
+	box-shadow:2px 2px 3px #aaaaaa;
+	opacity: 0.9;
+}
+.Backend-text1{
+	position: absolute;
+	top: 5%;
+	left: 8%;
+	width: 35rem;
+	font-size: 2rem;
+	opacity: 1;
+}
+.Backend-box2{
+	position: absolute;
+	background-image: linear-gradient(to bottom, #ccf2ff,white);
+	width: 40rem; 
+	height: 27rem;
+	top: 51%;
+	left: 60%;
+	/*border-radius: 1rem;*/
+	float: left;
+	box-shadow:2px 2px 3px #aaaaaa;
+	opacity: 0.9;
+}
+.Backend-box2 ul{
+	position: absolute;
+	top: 15%;
+	left: 8%;
+	width: 35rem;
+	font-size: 2rem;
+	opacity: 1;
+}
+.Backend-box2 h1{
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	font-size: 2rem;
+	opacity: 1;
+}
