@@ -78,6 +78,12 @@ Submit.prototype = {
     postCanBeChose: function() {
         document.getElementById("CoverBack").style.display = "none";
     },
+    frontEndDevelopment: function() {
+        return "前端";
+    },
+    backStageManagement: function() {
+        return "后台";
+    },
     nameChange: function() {
         document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话号码:";
         document.getElementById("information1").placeholder = "";
@@ -98,6 +104,10 @@ Submit.prototype = {
         var This = this;
         var StatusString = "";
         document.getElementById("clickThenSubmit").onclick = function() {
+            if (This.post != "") {
+                alert("你已经报过名了哦,不能再次了哦!你选择的方向是" + This[This.post]());
+                return;
+            }
             This.clearWarn();
             if (This.accountLogInStatus) {
                 StatusString = "statusInformationCheck";
@@ -107,8 +117,9 @@ Submit.prototype = {
                 This.getInformation(This["statusAccount"]()[0], This["statusAccount"]()[1]);
             }
             if (This.check(This[This[StatusString]()[0]], This[StatusString]()[1])) {
-
+                This.backInformation();
                 if (This.accountLogInStatus) {
+                    // TODO: Bug happened! 点击报名后,会再次
                     if (StatusString == "statusAccountCheck") {
                         This.clickAnimation();
                         This.switchToSignIn();
