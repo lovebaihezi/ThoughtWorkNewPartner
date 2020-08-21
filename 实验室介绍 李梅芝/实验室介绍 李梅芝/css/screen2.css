@@ -1,0 +1,245 @@
+.container{
+    width: 1200px;
+    margin: 11rem auto 0;
+}
+.card{
+    width: 120rem;
+    height: 45rem;
+    /* border: 1px solid black; */
+    /* margin: 10rem auto 0; */
+}
+.card div{
+    width: 42rem;
+    height: 35rem;
+    padding: 4.8rem;
+    /* border: 1px solid red; */
+    background-image: url(../img/星球1.jpg);
+    background-size: 111.215rem 40.5rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.7) 81%); */
+}
+.card_1{
+    background-position: -19.315rem 0;
+}
+.card_2{
+    background-position: -46.315rem 0;
+}
+.card div p{
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: top;
+    user-select:none; 
+    color: #000000;
+    line-height: 1.5;
+    
+}
+.card p{
+    position: relative;
+}
+.arrow_right{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    bottom: -50px;
+    right: -28px;
+    font-size: 1.5rem;
+}
+.arrow_left{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    bottom: -50px;
+    right: -28px;
+    font-size: 1.5rem;
+}
+.card p span{
+    /* display: none; */
+}
+@media screen and (max-width: 767px){
+    .container{
+        width: 100%;
+        margin: 11rem auto 0;
+        /* overflow: hidden; */
+    }
+    .card{
+        width: 100%;
+        height: 45rem;
+        position: relative;
+       
+    }
+    .card div{
+        width: 70%;
+        height: 50rem;
+        padding: 8%;
+        background-image: url(../img/星球1.jpg);
+        background-size: 137.307rem 50rem;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin: 0px 7%;
+        /* position: absolute; */
+    }
+    .card_1{
+        background-position: -37.315rem 0;
+        position: absolute;
+        z-index: 2;
+        /* display: block; */
+    }
+    .card_2{
+        background-position: -66.315rem 0;
+        position: absolute;
+        top: 0;
+        left: 0; 
+        z-index: 1;
+
+    }
+    .card div p{
+        font-size: 2rem;
+        display: inline-block;
+        vertical-align: top;
+        user-select:none; 
+        color: #000000;
+        line-height: 1.5;
+        
+    }
+    .card p span{
+        display: block;
+    }
+    /* .arrow_right{
+        bottom: -40px;
+        right: -28px;
+        font-size: 1.5rem;
+    }
+    .arrow_left{
+        bottom: -40px;
+        right: -28px;
+        font-size: 1.5rem;
+    } */
+}
+@media screen and (min-width: 768px ){
+    .container{
+        width: 100%;
+        margin: 11rem auto 0;
+        /* overflow: hidden; */
+    }
+    .card{
+        width: 100%;
+        height: 45rem;
+        position: relative;
+       
+    }
+    .card div{
+        width: 70%;
+        height: 40rem;
+        padding: 8%;
+        background-image: url(../img/星球1.jpg);
+        background-size: 137.307rem 50rem;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin: 0px 7%;
+    }
+    .card_1{
+        background-position: -36.315rem 0;
+    }
+    .card_2{
+        background-position: -50.315rem 0;
+    }
+    .card div p{
+        font-size: 2rem;
+        display: inline-block;
+        vertical-align: top;
+        user-select:none; 
+        color: #000000;
+        line-height: 1.7;
+        
+    }
+    .card p span{
+        display: block;
+    }
+}  
+@media screen and (min-width: 1024px){
+    .container{
+        width: 100%;
+        margin: 11rem auto 0;
+        /* overflow: hidden; */
+    }
+    .card{
+        width: 100%;
+        height: 45rem;
+        position: relative;
+       
+    }
+    .card div{
+        width: 70%;
+        height: 40rem;
+        padding: 8%;
+        background-image: url(../img/星球1.jpg);
+        background-size: 137.307rem 50rem;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin: 0px 7%;
+    }
+    .card_1{
+        background-position: -36.315rem 0;
+    }
+    .card_2{
+        background-position: -36.315rem 0;
+    }
+    .card div p{
+        font-size: 2rem;
+        display: inline-block;
+        vertical-align: top;
+        user-select:none; 
+        color: #000000;
+        line-height: 1.7;
+        
+    }
+    .card p span{
+        display: block;
+    }
+}
+@media screen and (min-width: 1200px){
+    .container{
+        width: 1200px;
+        margin: 11rem auto 0;
+    }
+    .card{
+        width: 120rem;
+        height: 45rem;
+        /* border: 1px solid black; */
+        /* margin: 10rem auto 0; */
+    }
+    .card div{
+        display: inline-block;
+        width: 42rem;
+        height: 35rem;
+        padding: 4.8rem;
+        /* border: 1px solid red; */
+        background-image: url(../img/星球1.jpg);
+        background-size: 111.215rem 40.5rem;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin: 0px 3%;
+        /* background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.7) 81%); */
+    }
+    .card_1{
+        background-position: -19.315rem 0;
+    }
+    .card_2{
+        background-position: -46.315rem 0;
+    }
+    .card div p{
+        font-size: 2rem;
+        display: inline-block;
+        vertical-align: top;
+        user-select:none; 
+        color: #000000;
+        line-height: 1.5;
+        
+    }
+    .card p span{
+        /* display: none; */
+    }
+}

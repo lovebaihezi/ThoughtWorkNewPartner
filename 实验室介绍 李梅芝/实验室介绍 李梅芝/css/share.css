@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+    font-family: "PingFang SC", "Lantinghei SC", "Open Sans", Roboto, Arial, "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+    
+}
+html,body {
+    margin: 0;
+    border: 0;
+    background-color: #f6f8fa!important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+a,ul,ol,li {
+    text-decoration: none;
+    list-style: none;
+    color: unset;
+    border: none;
+}
+a {
+    cursor: pointer;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+.top {
+    width: 90%;
+    height: 6rem;
+    background-image: linear-gradient(90deg, #d49fe4 1%, #CCCCFF 99%);
+    color: hsla(0, 0%, 100%, .7);
+    font-size: 4rem;
+    padding: 2rem 5%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0 1px 2px 0 #697886;
+    position: fixed;
+    z-index: 99;
+}
+
+.left {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.right {
+    display: block;
+    margin-right: 2rem;
+    position: absolute;
+    right: 5%;
+}
+
+.button {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    width: max-content;
+    padding: 0.2rem 2rem;
+    height: 6rem;
+    display: flex;
+    text-justify: distribute;
+    color: #24292e;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+}
+
+/* body{
+    background-image: url(../img/星空.jpg);
+    background-size: 100% 100%;
+    background-position: 0 6rem;
+    background-repeat: no-repeat;
+} */
+/* @media screen and (max-width: 767px){
+    *{
+        font-size: 62.5%;
+    }
+}
+@media screen and (min-width: 768px){
+    *{
+        font-size: 80%;
+    }
+}
+@media screen and (min-width: 1024px){
+    *{
+        font-size: 85%;
+    }
+} */
+
