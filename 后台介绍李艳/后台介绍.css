@@ -75,37 +75,33 @@ h6 {
 .Backend-background{
 	position: absolute;
 	z-index: -1;
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-}
-.Backend-border{
-  border:2.7rem solid  #0089e6 ;
-  width: 148.2rem;
-  height: 66.7rem;
-  position: absolute;
-  top:0;
+  background-image: url(1.jpg);
+  background-size: cover;
 }
 .Backend-column{
   height: 100%;
   width: 20%;
   position: absolute;
   top: 0;
-  left: 16%;
+  left: 11%;
   background-color: #e5f5ff;
   box-shadow: 0 1px 2px 0 #697886;
+  opacity: 0.5;
 }
 .Backend-title{
 	text-align: center;
-	font-size: 6rem; 
+	font-size: 8rem; 
 	font-weight: 900; 
 	color: #CCCCFF;
 	z-index: 0;
 	position: absolute;
-	width: 5%;
-	top: 12%;
-  left: 20%;
+	top: 14%;
+  left: 15%;
+  width: 10%;
 }
 @keyframes scatter {
   0% {
@@ -147,7 +143,7 @@ h6 {
 	height: 80%;
 }
 .Backend-box-title{
-  background-color: #0089e6;
+  background-color: #330066;
   color: white;
   font-size: 2rem;
   font-weight: 900;
@@ -158,11 +154,11 @@ h6 {
 }
 .Backend-box1{
 	position: absolute;
-	background-image: linear-gradient(to bottom,#ccf2ff,white);
-	width: 40rem; 
-	height: 27rem;
-	top: 11%;
-	left: 42%;
+	background-image: linear-gradient(to bottom, #ccb3ff, #ffe5ff, #ffffe5);
+	width: 25%; 
+	height: 45%;
+	top: 10%;
+	left: 40%;
 	/*border-radius: 1rem;*/
 	float: left;
 	box-shadow:2px 2px 3px #aaaaaa;
@@ -172,17 +168,17 @@ h6 {
 	position: absolute;
 	top: 5%;
 	left: 8%;
-	width: 35rem;
+	width: 86%;
 	font-size: 2rem;
 	opacity: 1;
 }
 .Backend-box2{
 	position: absolute;
-	background-image: linear-gradient(to bottom, #ccf2ff,white);
-	width: 40rem; 
-	height: 27rem;
-	top: 51%;
-	left: 60%;
+	background-image: linear-gradient(to bottom,  #ccb3ff, #ffe5ff, #ffffe5);
+	width: 25%; 
+	height: 45%;
+	top: 47%;
+	left: 62%;
 	/*border-radius: 1rem;*/
 	float: left;
 	box-shadow:2px 2px 3px #aaaaaa;
@@ -192,7 +188,6 @@ h6 {
 	position: absolute;
 	top: 15%;
 	left: 8%;
-	width: 35rem;
 	font-size: 2rem;
 	opacity: 1;
 }
@@ -202,4 +197,18 @@ h6 {
 	left: 5%;
 	font-size: 2rem;
 	opacity: 1;
+}
+.Backend-logo{
+  width: 100%;
+  height: 100%;
+  /*border-radius: 1rem;*/
+  box-shadow:2px 2px 3px #aaaaaa;
+  opacity: 0.9;
+}
+.Backend-box3{
+  position: absolute;
+  top: 53%;
+  left: 48%;
+  width: 16%;
+  height: 51%;
 }
