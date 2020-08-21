@@ -1,6 +1,6 @@
 .container{
     width: 1200px;
-    margin: 11rem auto 0;
+    margin: 3rem auto 0;
 }
 .card{
     width: 120rem;
@@ -203,7 +203,7 @@
 @media screen and (min-width: 1200px){
     .container{
         width: 1200px;
-        margin: 11rem auto 0;
+        margin: 3rem auto 0;
     }
     .card{
         width: 120rem;

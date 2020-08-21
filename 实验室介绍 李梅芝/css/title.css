@@ -3,13 +3,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 35vh;
 
 }
 h1{
     color: #333333;
     font-size: 8rem;
     position: relative;
+    top: 43px;
 }
 h1::after{
     content: "实验室介绍";
