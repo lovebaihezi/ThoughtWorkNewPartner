@@ -36,4 +36,11 @@ window.onload=function(){
         }
     },500);
 
+    var InformationLi = document.querySelectorAll(".InformationValue");
+
+    for(let i=0;i<InformationLi.length;i++)
+    {
+         InformationLi[i].value="后台导入信息";
+    }
+
 };
