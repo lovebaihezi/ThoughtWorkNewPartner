@@ -24,13 +24,17 @@ input {
     background-color: transparent;
     outline: none;
     border: none;
-    width: 70%;
+    width: 60%;
     height: 4rem;
     font-size: 4rem;
     color: snow;
     display: inline-block;
     margin: 0 auto;
     border-bottom: 0.1rem solid snow;
+}
+
+article {
+    display: inline;
 }
 
 a {
@@ -154,6 +158,7 @@ h6 {
     background-image: linear-gradient(180deg, #d1e0f8 10%, transparent, #d1e0f8);
     border-radius: 2rem;
     margin-top: 6rem;
+    transition: all 1s ease;
 }
 
 .banner {
@@ -179,7 +184,6 @@ h6 {
     top: 10rem;
     width: 50%;
     height: calc(100% - 10rem);
-    min-height: 150rem;
     float: left;
     margin: 0;
     display: flex;
@@ -256,6 +260,19 @@ h6 {
     left: 0;
     z-index: 11;
     background-image: linear-gradient(180deg, transparent 40%, #000000);
+}
+
+.backStageAnimation {
+    animation: backStage 2s;
+    -webkit-animation: backStage 2s;
+    -moz-animation: backStage 2s;
+    -o-animation: backStage 2s;
+}
+
+@keyframes backStage {
+    0% {}
+    50% {}
+    100% {}
 }
 
 @media screen and(max-width:1280px) {}

@@ -29,14 +29,22 @@ function Submit() {
     this.password = "";
     this.telePhoneNumber = "";
     this.classInformation = "";
-    this.signInStatus = false;
-    this.accountLogInStatus = false;
+    this.signInStatus = false; //是否已报名
+    this.accountLogInStatus = false; //登入信息是否正确
     this.allInformation = undefined;
+    this.post = "";
+    this.switch = false;
 }
 
 //正则检查
 //点击上传
 //数据检查
+//数据检查:
+/*
+    首先是账号密码
+    然后是手机号个数
+    然后是Post是否选择!(一般来说正常人都会选了的)
+*/
 
 Submit.prototype = {
     check: function(NeedCheck, Rules) {
@@ -52,25 +60,73 @@ Submit.prototype = {
         return ["account", /^\d{6}$/g];
     },
     statusInformationCheck: function() {
-        return ["telePhoneNumber", /^\d{13}$/g];
+        return ["telePhoneNumber", /^\d{11}$/g];
+    },
+    warnIncorrect: function() {
+        this.clearWrongInformation();
+        document.getElementById("information1").placeholder = "错误输入,请重新输入";
+        document.getElementById("information1").style["background-color"] = "red";
+    },
+    clearWrongInformation: function() {
+        document.getElementById("information1").value = "";
+        document.getElementById("information2").value = "";
+    },
+    clearWarn: function() {
+        document.getElementById("information1").placeholder = "学号";
+        document.getElementById("information1").style["background-color"] = "transparent";
+    },
+    postCanBeChose: function() {
+        document.getElementById("CoverBack").style.display = "none";
+    },
+    nameChange: function() {
+        document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话号码:";
+        document.getElementById("information1").placeholder = "";
+        document.getElementById("information2").placeholder = "";
+        document.getElementById("information1").autocomplete = "none";
+        document.getElementById("information2").autocomplete = "none";
+        document.getElementById("information2").type = "text";
+        document.getElementById("clickThenSubmit").value = "报名";
+        document.getElementsByClassName("banner")[0].innerText = "请点击两边来选择你的方向";
+        document.getElementsByClassName("banner")[2].firstElementChild.innerText = "班级姓名:";
+    },
+    switchToSignIn: function() { //切换到报名
+        this.postCanBeChose();
+        this.nameChange();
+        this.clearWrongInformation();
     },
     alive: function() {
         var This = this;
         var StatusString = "";
         document.getElementById("clickThenSubmit").onclick = function() {
+            This.clearWarn();
             if (This.accountLogInStatus) {
+                StatusString = "statusInformationCheck";
                 This.getInformation(This["statusInformation"]()[0], This["statusInformation"]()[1]);
             } else {
+                StatusString = "statusAccountCheck";
                 This.getInformation(This["statusAccount"]()[0], This["statusAccount"]()[1]);
             }
-            This.setInformation();
-            This.clickAnimation();
+            if (This.check(This[This[StatusString]()[0]], This[StatusString]()[1])) {
+
+                if (This.accountLogInStatus) {
+                    if (StatusString == "statusAccountCheck") {
+                        This.clickAnimation();
+                        This.switchToSignIn();
+                    } else {
+                        This.post = Post.post;
+                        if (This.post == "") {
+                            alert("你还未选择方向!!!");
+                        }
+                        This.backInformation();
+                    }
+                }
+            } else {
+                This.warnIncorrect();
+            }
         }
     },
     clickAnimation: function() {
-        if (this.loginStatus) {
-
-        }
+        document.getElementsByClassName("square")[0].classList.add("backStageAnimation");
     }, //数据OK才开始动画,并且要跳转到下一个,status都要改
     getInformation: function(information1, information2) {
         this[information1] = document.getElementById("information1").value;
@@ -82,14 +138,21 @@ Submit.prototype = {
             "password": this.password,
             "telePhoneNumber": this.telePhoneNumber,
             "classInformation": this.classInformation,
-            "loginStatus": this.signInStatus
+            "post": this.post,
+            "signInStatus": this.signInStatus
         };
     },
-    setStatus: function() {
-        this.signInStatus = true;
+    setLoginStatus: function() {
+        this.accountLogInStatus = true;
+    },
+    backLoginInformation: function() {
+
     },
     backInformation: function() {
-
+        this.setInformation();
+        if (true) {
+            this.setLoginStatus();
+        }
     }
 }
 
@@ -97,3 +160,4 @@ var Post = new postChoose(document.getElementById("leftAngle"), document.getElem
 Post.whenCreated();
 var submitInformation = new Submit();
 submitInformation.alive();
+console.log(submitInformation);
