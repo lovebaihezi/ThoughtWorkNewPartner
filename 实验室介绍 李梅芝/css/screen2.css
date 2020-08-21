@@ -13,7 +13,7 @@
     height: 35rem;
     padding: 4.8rem;
     /* border: 1px solid red; */
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3267809603,1491662039&fm=26&gp=0.jpg);
+    background-image: url(../img/星球1.jpg);
     background-size: 111.215rem 40.5rem;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -74,7 +74,7 @@
         width: 70%;
         height: 50rem;
         padding: 8%;
-        background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3267809603,1491662039&fm=26&gp=0.jpg);
+        background-image: url(../img/星球1.jpg);
         background-size: 137.307rem 50rem;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -83,7 +83,8 @@
     }
     .card_1{
         background-position: -37.315rem 0;
-        /* opacity: 1; */
+        position: absolute;
+        z-index: 2;
         /* display: block; */
     }
     .card_2{
@@ -91,8 +92,8 @@
         position: absolute;
         top: 0;
         left: 0; 
-        opacity: 0;
-        /* display: none; */
+        z-index: 1;
+
     }
     .card div p{
         font-size: 2rem;
@@ -133,7 +134,7 @@
         width: 70%;
         height: 40rem;
         padding: 8%;
-        background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3267809603,1491662039&fm=26&gp=0.jpg);
+        background-image: url(../img/星球1.jpg);
         background-size: 137.307rem 50rem;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -174,7 +175,7 @@
         width: 70%;
         height: 40rem;
         padding: 8%;
-        background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3267809603,1491662039&fm=26&gp=0.jpg);
+        background-image: url(../img/星球1.jpg);
         background-size: 137.307rem 50rem;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -216,7 +217,7 @@
         height: 35rem;
         padding: 4.8rem;
         /* border: 1px solid red; */
-        background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3267809603,1491662039&fm=26&gp=0.jpg);
+        background-image: url(../img/星球1.jpg);
         background-size: 111.215rem 40.5rem;
         background-repeat: no-repeat;
         overflow: hidden;
