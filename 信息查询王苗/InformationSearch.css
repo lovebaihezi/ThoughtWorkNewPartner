@@ -1,0 +1,154 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: "PingFang SC", "Lantinghei SC", "Open Sans", Roboto, Arial, "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+	font-size:1.1rem;
+}
+
+/**/body{
+	position: absolute;
+	background-color: white;
+	width:100%;
+	height:100%;
+}
+
+html,body {
+    font-size: 62.5% !important;
+    margin: 0;
+    border: 0;
+    background-color: #f6f8fa!important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+a,
+ul,
+ol,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: unset;
+    border: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.top {
+    width: 90%;
+    height: 5rem;
+    background-image: linear-gradient(90deg, #d49fe4 1%, #CCCCFF 99%);
+    color: hsla(0, 0%, 100%, .7);
+    font-size: 4rem;
+    padding: 2rem 5%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0 1px 2px 0 #697886;
+}
+
+.left {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.right {
+    display: block;
+    margin-right: 2rem;
+    position: absolute;
+    right: 5%;
+}
+
+.button {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    width: max-content;
+    padding: 0.2rem 2rem;
+    height: 6rem;
+    display: flex;
+    text-justify: distribute;
+    color: #24292e;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+}
+
+
+#InformationUl{
+	position: relative;
+	list-style-type: none;
+	/*background-color: #CCCCFF;
+	box-shadow: 0px 0px 20px #CCCCFF;
+	*/
+	background-color: #CCCCFF;
+	box-shadow: 0px 0px 20px white;
+	border-radius: 20px;
+	width:60%;	
+	height:70%;
+	margin:0 auto;
+	top:9%;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.InformationBox{
+	width:60%;
+	height:90%;
+	margin:0 auto;
+}
+.InformationLi{
+	position: relative;
+	width:100%;
+	height:17%;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.MyInformation{
+	!important;
+	text-align: center;
+	font-size: 4rem;
+	/*font-family: STSong;*/
+	font-weight:500;
+	text-shadow: 0 5px 6px #336666, 0px -2px 3px #fff, 0px -2px 2px #fff;
+}
+.InformationName{
+	display: inline-block;
+	width:29%;
+	font-size: 2rem;
+}
+.InformationValue{
+	width:40%;
+	height:30%;
+	padding-left: 10px;
+	border-radius: 20px;
+	font-size:2rem;
+	border:1px solid transparent;
+	box-shadow:0px 0px 5px #f1ebe5;
+	background-color: white;
+}
+
+#divbg,#divbgTwo{
+        width:100%;
+        height: 100%;
+        background-image: url("深蓝大星（灰绿2）.jpg");/*添加背景图片*/
+        background-size: 100% 100%;
+        opacity:0.7;
+        filter:alpha(opacity=70);
+        position: absolute;
+    }
+#divbg{
+        opacity:0.8;
+        filter:alpha(opacity=80);
+    }
