@@ -1,30 +1,136 @@
 html{
-    font-size: 62.5% !important;
+    font-size: 62.5%;
 }
-
 body{
         margin: 0;
+        background-image: url(images/1.jpg);
+        background-attachment:fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 a.a {
         text-decoration:none;
         color:blue;
     }
-.video{
+video{
         width:100%;
-        height:30rem;
+        height:100%;
+        margin-top: -8rem;
     }
 .head{
         text-align: center;
-        margin-top:-430px;
+        margin-top:-60rem;
     }
-    .text{
+    .img2{ 
+            animation: rotate 6s linear infinite;
+            width:200px;
+            height: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+
+        }
+        @keyframes rotate{
+    0%{
+        transform: rotateZ(0deg);/*从0度开始*/
+    }
+    100%{
+        transform: rotateZ(360deg);/*360度结束*/
+    }
+}
+.img3{
+            display: block;
+            margin: 0 auto;
+
+        }
+.text{
         text-align: center;
         font-size: 62.5%;
     }
+.word{
+   position: absolute;
+   margin-top:-61rem;
+   margin-left: 73rem;
+   font-size: 3rem; 
+}
+.word1{
+   position: absolute;
+   margin-top:-41rem;
+   margin-left: 73rem;
+   font-size: 3rem;
+   color: blue; 
+}
+.word2{
+   position: absolute;
+   margin-top:-44rem;
+   margin-left: 13rem;
+   font-size: 3rem;
+   color: black; 
+}
+.word2:hover{
+    color: blue;
+}
+.word3{
+   position: absolute;
+   margin-top:-44rem;
+   margin-left: 106rem;
+   font-size: 3rem;
+   color: black; 
+}
+.word3:hover{
+    color: blue;
+}
+.word4{
+   position: absolute;
+   margin-left: 60rem;
+   font-size: 3rem;
+   color: black; 
+}
+.word4:hover{
+    color: red;
+}
+
+.word5{
+   position: absolute;
+   margin-top: -18rem;
+   margin-left: 72rem;
+   font-size: 3rem; 
+}
+.picture{
+    width: 80px;
+    height: 150px;
+    margin-left: 40px;
+    margin-top: -50rem;
+    position: absolute;
+}
+.logo{
+    margin-left: 5rem;
+    margin-top: -48rem;
+    position: absolute;
+    color: white;
+    font-size: 82.5%;
+}
+.picture2{
+    width: 80px;
+    height: 150px;
+    margin-left: 142rem;
+    margin-top: -50rem;
+    position: absolute;
+}
+.logo1{
+    margin-left: 143rem;
+    margin-top: -48rem;
+    position: absolute;
+    color: white;
+    font-size: 82.5%;
+}
+
+
    
 .top {
     width: 90%;
-    height: 6rem;
+    height: 4rem;
     background-image: linear-gradient(90deg, #d49fe4 1%, #CCCCFF 99%);
     color: hsla(0, 0%, 100%, .7);
     font-size: 4rem;
