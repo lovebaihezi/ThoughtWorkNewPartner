@@ -157,7 +157,7 @@ h6 {
 	display: inline-block;
 	width:32%;
 	font-size: 2.2rem;
-    font-weight: 530;
+    font-weight: 600;
     color:white;
     text-shadow: 0.05em -0.03em 0 #000066, 0.05em 0.005em 1px #000066, 0em 0.08em 0 #000066, 0.05em 0em 0.2rem #000066, 0px -0.03em 0 #000066, -0.03em -0.03em 0 #000066, -0.03em 0.08em 0 #000066, -0.03em 0 0 #000066;
     -webkit-animation: wave 1.2s linear infinite;
@@ -170,6 +170,7 @@ h6 {
     padding-left: 10px;
     border-radius: 20px;
     font-size:2rem;
+    font-weight:600;
     border:1px solid transparent;
     box-shadow:0px 0px 5px #f1ebe5;
     background-color: white;
