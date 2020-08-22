@@ -98,7 +98,7 @@ h6 {
 }
 
 .LogoArticle>p {
-    cursor: pointer;
+    cursor: default;
     z-index: 11;
     color: snow;
     background-color: transparent;
