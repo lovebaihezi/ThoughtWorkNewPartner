@@ -47,6 +47,45 @@ function Submit() {
 */
 
 Submit.prototype = {
+    alive: function() {
+        var This = this;
+        var StatusString = "";
+        document.getElementById("clickThenSubmit").onclick = function() {
+            if (This.post != "") {
+                alert("你已经报过名了哦,不能再次了哦!你选择的方向是" + This[This.post]());
+                return;
+            }
+            This.clearWarn();
+            if (This.accountLogInStatus) {
+                StatusString = "statusInformationCheck";
+                This.getInformation(This["statusInformation"]()[0], This["statusInformation"]()[1]);
+            } else {
+                StatusString = "statusAccountCheck";
+                This.getInformation(This["statusAccount"]()[0], This["statusAccount"]()[1]);
+            }
+            if (This.check(This[This[StatusString]()[0]], This[StatusString]()[1])) {
+                This.backInformation();
+                if (This.accountLogInStatus) {
+                    if (This.signInStatus) {
+                        window.location.href = "http://www.baidu.com";
+                        return;
+                    }
+                    if (StatusString == "statusAccountCheck") {
+                        This.clickAnimation();
+                        This.switchToSignIn();
+                    } else {
+                        This.post = Post.post;
+                        if (This.post == "") {
+                            alert("你还未选择方向!!!");
+                        }
+                        This.backInformation();
+                    }
+                }
+            } else {
+                This.warnIncorrect();
+            }
+        }
+    },
     check: function(NeedCheck, Rules) {
         return Rules.test(NeedCheck);
     },
@@ -64,7 +103,7 @@ Submit.prototype = {
     },
     warnIncorrect: function() {
         this.clearWrongInformation();
-        document.getElementById("information1").placeholder = "错误输入,请重新输入";
+        document.getElementById("information1").placeholder = "请重试";
         document.getElementById("information1").style["background-color"] = "red";
     },
     clearWrongInformation: function() {
@@ -85,56 +124,20 @@ Submit.prototype = {
         return "后台";
     },
     nameChange: function() {
-        document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话号码:";
-        document.getElementById("information1").placeholder = "";
-        document.getElementById("information2").placeholder = "";
+        document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话:";
+        // document.getElementById("information1").placeholder = "";
+        // document.getElementById("information2").placeholder = "";
         document.getElementById("information1").autocomplete = "none";
         document.getElementById("information2").autocomplete = "none";
         document.getElementById("information2").type = "text";
         document.getElementById("clickThenSubmit").value = "报名";
         document.getElementsByClassName("banner")[0].innerText = "请点击两边来选择你的方向";
-        document.getElementsByClassName("banner")[2].firstElementChild.innerText = "班级姓名:";
+        document.getElementsByClassName("banner")[2].firstElementChild.innerText = "班级:";
     },
     switchToSignIn: function() { //切换到报名
         this.postCanBeChose();
         this.nameChange();
         this.clearWrongInformation();
-    },
-    alive: function() {
-        var This = this;
-        var StatusString = "";
-        document.getElementById("clickThenSubmit").onclick = function() {
-            if (This.post != "") {
-                alert("你已经报过名了哦,不能再次了哦!你选择的方向是" + This[This.post]());
-                return;
-            }
-            This.clearWarn();
-            if (This.accountLogInStatus) {
-                StatusString = "statusInformationCheck";
-                This.getInformation(This["statusInformation"]()[0], This["statusInformation"]()[1]);
-            } else {
-                StatusString = "statusAccountCheck";
-                This.getInformation(This["statusAccount"]()[0], This["statusAccount"]()[1]);
-            }
-            if (This.check(This[This[StatusString]()[0]], This[StatusString]()[1])) {
-                This.backInformation();
-                if (This.accountLogInStatus) {
-                    // TODO: Bug happened! 点击报名后,会再次
-                    if (StatusString == "statusAccountCheck") {
-                        This.clickAnimation();
-                        This.switchToSignIn();
-                    } else {
-                        This.post = Post.post;
-                        if (This.post == "") {
-                            alert("你还未选择方向!!!");
-                        }
-                        This.backInformation();
-                    }
-                }
-            } else {
-                This.warnIncorrect();
-            }
-        }
     },
     clickAnimation: function() {
         document.getElementsByClassName("square")[0].classList.add("backStageAnimation");
