@@ -1,18 +1,19 @@
-*{
-	margin:0;
-	padding:0;
-	font-family: "PingFang SC", "Lantinghei SC", "Open Sans", Roboto, Arial, "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
-	font-size:1.1rem;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "PingFang SC", "Lantinghei SC", "Open Sans", Roboto, Arial, "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-size: 1.1rem;
 }
 
-/**/body{
-	position: absolute;
-	background-color: white;
-	width:100%;
-	height:100%;
+body {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
 }
 
-html,body {
+html,
+body {
     font-size: 62.5% !important;
     margin: 0;
     border: 0;
@@ -84,129 +85,139 @@ h6 {
     word-wrap: break-word;
 }
 
-#divbg,#divbgTwo{
-        width:100%;
-        height: 100%;
-        background-image: url("深蓝大星（灰绿2）.jpg");/*添加背景图片*/
-        background-size: 100% 100%;
-        opacity:0.7;
-        filter:alpha(opacity=70);
-        position: absolute;
-    }
-#divbg{
-        opacity:0.8;
-        filter:alpha(opacity=80);
-    }
+#divbg,
+#divbgTwo {
+    width: 100%;
+    height: 100%;
+    background-image: url("深蓝大星（灰绿2）.jpg");
+    /*添加背景图片*/
+    background-size: 100% 100%;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    position: absolute;
+}
 
-#InformationUl{
-	position: relative;
-	list-style-type: none;
-	/*background-color: #CCCCFF;
-	box-shadow: 0px 0px 20px #CCCCFF;
-	*/
-	background-color: #CCCCFF;
-	box-shadow: 0px 0px 20px white;
-	border-radius: 20px;
-	width:60%;	
-	height:70%;
-	margin:0 auto;
-	top:9%;
-	display: flex;
-	justify-content:center;
-	align-items:center;
+#divbg {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
 }
-.InformationBox{
-	width:60%;
-	height:90%;
-	margin:0 auto;
+
+#InformationUl {
+    position: relative;
+    list-style-type: none;
+    background-color: #CCCCFF;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+    width: 60%;
+    height: 70%;
+    margin: 0 auto;
+    top: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.InformationLi{
-	position: relative;
-	width:100%;
-	height:17%;
-	display: flex;
-	justify-content:center;
-	align-items:center;
+
+.InformationBox {
+    width: 60%;
+    height: 90%;
+    margin: 0 auto;
 }
-.MyInformation{
-	!important;
-	text-align: center;
-	font-size: 4.5rem;
-	/*font-family: STSong;*/
+
+.InformationLi {
+    position: relative;
+    width: 100%;
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MyInformation {
+    text-align: center;
+    font-size: 4.5rem;
+    /*font-family: STSong;*/
     letter-spacing: 10px;
-    color:#000066;
-	font-weight:600;
-	text-shadow: 0 5px 7px #CCCCCC, 0 3px 3px #000066, 0px -3px 3px #fff, 0px -2px 2px #fff;
-}
-#myImportant{
-    animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
-    
+    color: #000066;
+    font-weight: 600;
+    text-shadow: 0 5px 7px #CCCCCC, 0 3px 3px #000066, 0px -3px 3px #fff, 0px -2px 2px #fff;
 }
 
-@keyframes bop{
+#myImportant {
+    animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
+}
+
+@keyframes bop {
     0% {
         -webkit-transform: scale(0.9);
         transform: scale(0.9);
     }
-    50%, 100% {
+    50%,
+    100% {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
 }
-.InformationName{
-	display: inline-block;
-	width:32%;
-	font-size: 2.2rem;
+
+.InformationName {
+    display: inline-block;
+    width: 32%;
+    font-size: 2.2rem;
     font-weight: 600;
-    color:white;
+    color: white;
     text-shadow: 0.05em -0.03em 0 #000066, 0.05em 0.005em 1px #000066, 0em 0.08em 0 #000066, 0.05em 0em 0.2rem #000066, 0px -0.03em 0 #000066, -0.03em -0.03em 0 #000066, -0.03em 0.08em 0 #000066, -0.03em 0 0 #000066;
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
     animation-delay: 1.66667s;
 }
-.InformationValue{
-    width:40%;
-    height:30%;
+
+.InformationValue {
+    width: 40%;
+    height: 30%;
     padding-left: 10px;
     border-radius: 20px;
-    font-size:2rem;
-    font-weight:600;
-    border:1px solid transparent;
-    box-shadow:0px 0px 5px #f1ebe5;
+    font-size: 2rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 5px #f1ebe5;
     background-color: white;
-
 }
-.InformationBox .InformationLi:nth-child(2) .InformationName{
+
+.InformationBox .InformationLi:nth-child(2) .InformationName {
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
     -webkit-animation-delay: 1.11s;
     animation-delay: 1.11s;
 }
-.InformationBox .InformationLi:nth-child(3) .InformationName{
+
+.InformationBox .InformationLi:nth-child(3) .InformationName {
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
     -webkit-animation-delay: 0.666667s;
     animation-delay: 0.666667s;
 }
-.InformationBox .InformationLi:nth-child(4) .InformationName{
+
+.InformationBox .InformationLi:nth-child(4) .InformationName {
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
-.InformationBox .InformationLi:nth-child(5) .InformationName{
+
+.InformationBox .InformationLi:nth-child(5) .InformationName {
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
     -webkit-animation-delay: 1.33333s;
     animation-delay: 1.33333s;
 }
-.InformationBox .InformationLi:nth-child(6) .InformationName{
+
+.InformationBox .InformationLi:nth-child(6) .InformationName {
     -webkit-animation: wave 1.2s linear infinite;
     animation: wave 1.2s linear infinite;
-    -webkit-animation-delay:3s;
+    -webkit-animation-delay: 3s;
     animation-delay: 3s;
 }
-@keyframes wave{
+
+@keyframes wave {
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
@@ -218,4 +229,5 @@ h6 {
     100% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
+    }
 }
