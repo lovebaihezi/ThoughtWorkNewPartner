@@ -79,12 +79,47 @@
 //     })
 // })
 $(function(){
-    $('.arrow_right').click(function(){
+    if(window.innerWidth <= 360){
+        $(".content h2").text("介绍");
+    }
+    if(window.innerWidth > 360){
+        $(".content h2").text("实验室介绍");
+    }
+})
+$(function(){
+    $('.right1').click(function(){
         $('.card_1').stop().fadeOut(800);
         $('.card_2').stop().fadeIn(800);
     })
-    $('.arrow_left').click(function(){
+    $('.left1').click(function(){
         $('.card_2').stop().fadeOut(800);
         $('.card_1').stop().fadeIn(800);
     })
+    $('.right2').click(function(){
+        $('.card_3').stop().fadeOut(800);
+        $('.card_4').stop().fadeIn(800);
+    })
+    $('.left2').click(function(){
+        $('.card_4').stop().fadeOut(800);
+        $('.card_3').stop().fadeIn(800);
+    })
 })
+
+// $(function(){
+//     $('.card_2').click(function(){
+//         $('.card_1').css("zIndex", "1");
+//         $('.card_2').css("zIndex", "2");
+//     })
+//     $('.card_1').click(function(){
+//         $('.card_1').css("zIndex", "2");
+//         $('.card_2').css("zIndex", "1");
+//     })
+//     $('.card_4').click(function(){
+//         $('.card_3').css("zIndex", "1");
+//         $('.card_4').css("zIndex", "2");
+//     })
+//     $('.card_3').click(function(){
+//         $('.card_3').css("zIndex", "2");
+//         $('.card_4').css("zIndex", "1");
+//     })
+// })
