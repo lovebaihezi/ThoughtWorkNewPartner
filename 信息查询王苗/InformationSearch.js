@@ -37,10 +37,30 @@ window.onload=function(){
     },500);
 
     var InformationLi = document.querySelectorAll(".InformationValue");
+    var InformationName = document.querySelectorAll(".InformationName");
 
     for(let i=0;i<InformationLi.length;i++)
     {
-         InformationLi[i].value="后台导入信息";
+        if(InformationName[i].innerHTML=="姓名：")
+        {
+            InformationLi[i].value="后台导入信息1";
+        }
+        else if(InformationName[i].innerHTML=="学号：")
+        {
+            InformationLi[i].value="后台导入信息2";
+        }
+        else if(InformationName[i].innerHTML=="电话号码：")
+        {
+            InformationLi[i].value="后台导入信息3";
+        }
+        else if(InformationName[i].innerHTML=="邮箱：")
+        {
+            InformationLi[i].value="后台导入信息4";
+        }
+        else if(InformationName[i].innerHTML=="报名方向：")
+        {
+            InformationLi[i].value="后台导入信息5";
+        }
     }
 
 };
