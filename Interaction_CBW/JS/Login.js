@@ -111,7 +111,6 @@ Submit.prototype = {
         document.getElementById("information2").value = "";
     },
     clearWarn: function() {
-        document.getElementById("information1").placeholder = "学号";
         document.getElementById("information1").style["background-color"] = "transparent";
     },
     postCanBeChose: function() {
