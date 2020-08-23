@@ -1,88 +1,46 @@
-html,
-body {
-    font-size: 62.5% !important;
-    margin: 0;
-    border: 0;
-    background-color: #f6f8fa!important;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-
-a,
-ul,
-ol,
-li {
-    text-decoration: none;
-    list-style: none;
-    color: unset;
-    border: none;
-}
-
-a {
-    cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-}
-
-.top {
-    width: 90%;
-    height: 6rem;
-    background-image: linear-gradient(90deg, #d49fe4 1%, #CCCCFF 99%);
-    color: hsla(0, 0%, 100%, .7);
-    font-size: 4rem;
-    padding: 2rem 5%;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    box-shadow: 0 1px 2px 0 #697886;
-}
-
-.left {
-    margin-left: 2rem;
-    position: relative;
-}
-
-.right {
-    display: block;
-    margin-right: 2rem;
-    position: absolute;
-    right: 5%;
-}
-
-.button {
-    border: 1px solid rgba(0, 0, 0, 0.7);
-    border-radius: 1rem;
-    width: max-content;
-    padding: 0.2rem 2rem;
-    height: 6rem;
-    display: flex;
-    text-justify: distribute;
-    color: #24292e;
-    font-size: 2rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    word-wrap: break-word;
-}
-
-
 .Backend-background{
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-  background-image: url(background.jpg);
-  background-size: cover;
+	     width:100%;
+        height: 100%;
+        background-image: url("background.jpg");
+        background-size: 100% 100%;
+        opacity:0.7;
+        filter:alpha(opacity=70);
+        position: absolute;
 }
-.Backend-column{
+.Backend-title{
+            position: relative;
+            top: 25%;
+        }
+.Backend-title h2{
+            position: absolute;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            font-size: 8em;
+            top: 30%;
+            left: 50%;
+        }
+.Backend-title h2:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 2px #03a9f4;
+
+        }
+.Backend-title h2:nth-child(2){
+            color: #03a9f4;
+            animation: animate 4s ease-in-out infinite;
+            
+        }
+@keyframes animate {
+            0% {
+                clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+            }
+            50%{
+                clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+            }
+            100%{
+                clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+            }
+        }
+/*.Backend-column{
   height: 100%;
   width: 20%;
   position: absolute;
@@ -91,17 +49,16 @@ h6 {
   background-color: #e5f5ff;
   box-shadow: 0 1px 2px 0 #697886;
   opacity: 0.5;
-}
-.Backend-title{
+}*/
+/*.Backend-title{
 	text-align: center;
 	font-size: 8rem; 
 	font-weight: 900; 
 	color: #CCCCFF;
 	z-index: 0;
 	position: absolute;
-	top: 14%;
-  left: 15%;
-  width: 10%;
+	top: 10%;
+  width: 100%;
 }
 @keyframes scatter {
   0% {
@@ -136,14 +93,14 @@ h6 {
   color:  #555BFF;
   text-shadow: 0.25rem 0.25rem #E485F8;
   animation-delay: 0.45s;
-}
+}*/
 .Backend-container{
 	width: 100%;
 	position: absolute;
 	height: 80%;
 }
 .Backend-box-title{
-  background-color: #330066;
+  background-color: #006680;
   color: white;
   font-size: 2rem;
   font-weight: 900;
@@ -152,37 +109,52 @@ h6 {
   top: -1rem;
   left: -1rem;
 }
+.Backend-box1:hover{
+  transform: translateX(0.5rem);
+  transition: all 0.2s ease;
+}
+.Backend-box2:hover{
+  transform: translateX(0.5rem);
+  transition: all 0.2s ease;
+}
+.Backend-box3:hover{
+  transform: translateX(0.5rem);
+  transition: all 0.2s ease;
+}
 .Backend-box1{
 	position: absolute;
-	background-image: linear-gradient(to bottom, #ccb3ff, #ffe5ff, #ffffe5);
-	width: 25%; 
-	height: 45%;
-	top: 10%;
-	left: 40%;
+  /*background-image: linear-gradient(to bottom, #e5f2ff,  #b3d9ff, #29a3a3 );*/
+  background-color:  #c2f0f0;
+  width: 20%;
+	height: 30%;
+	top: 93%;
+	left: 15%;
 	/*border-radius: 1rem;*/
 	float: left;
 	box-shadow:2px 2px 3px #aaaaaa;
-	opacity: 0.9;
+  z-index: 2;
 }
-.Backend-text1{
-	position: absolute;
-	top: 5%;
-	left: 8%;
-	width: 86%;
+.Backend-text4{
 	font-size: 2rem;
-	opacity: 1;
+  opacity: 1;
+  position: absolute;
+  top: 37%;
+  left: 15%;
+  width: 70%;
+  height: 27%;
 }
 .Backend-box2{
 	position: absolute;
-	background-image: linear-gradient(to bottom,  #ccb3ff, #ffe5ff, #ffffe5);
-	width: 25%; 
-	height: 45%;
-	top: 47%;
-	left: 62%;
+	/*background-image: linear-gradient(to bottom,  #ccb3ff, #ffe5ff, #ffffe5);*/
+  background-color:  #c2f0f0;
+	width: 20%; 
+	height: 30%;
+	top: 93%;
+	left: 43%;
 	/*border-radius: 1rem;*/
 	float: left;
 	box-shadow:2px 2px 3px #aaaaaa;
-	opacity: 0.9;
+  z-index: 2;
 }
 .Backend-box2 ul{
 	position: absolute;
@@ -201,14 +173,183 @@ h6 {
 .Backend-logo{
   width: 100%;
   height: 100%;
-  /*border-radius: 1rem;*/
   box-shadow:2px 2px 3px #aaaaaa;
   opacity: 0.9;
 }
+.Backend-sql{
+  width: 100%;
+  height: 100%;
+  box-shadow:2px 2px 3px #aaaaaa;
+  opacity: 0.9;
+}
+.Backend-helloworld{
+  width: 100%;
+  height: 100%;
+  box-shadow:2px 2px 3px #aaaaaa;
+  opacity: 0.9;
+}
+.Backend-box3-pic{
+  position: absolute;
+  top: 70%;
+  left: 67%;
+  width: 18%;
+  height:35%;
+  z-index: 0;
+}
+.Backend-box2-pic{
+  position: absolute;
+  top: 70%;
+  left: 39%;
+  width: 18%;
+  height:35%;
+  z-index: 0;
+}
+.Backend-box1-pic{
+  position: absolute;
+  top: 70%;
+  left: 11%;
+  width: 18%;
+  height:35%;
+  z-index: 0;
+}
 .Backend-box3{
   position: absolute;
-  top: 53%;
-  left: 48%;
-  width: 16%;
-  height: 51%;
+  /*background-image: linear-gradient(to bottom, #ccb3ff, #ffe5ff, #ffffe5);*/
+  background-color:  #c2f0f0;
+  width: 20%; 
+  height: 30%;
+  top: 93%;
+  left: 71%;
+  /*border-radius: 1rem;*/
+  float: left;
+  box-shadow:2px 2px 3px #aaaaaa;
+  z-index: 2;
+}
+.Backend-text3{
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  width: 86%;
+  font-size: 2rem;
+}
+.Backend-box4{
+  position: absolute;
+  top: 33%;
+  left: 12%;
+  width: 76%;
+  height: 25%;
+  background-color: #e5f5ff;
+  box-shadow: 0 1px 2px 0 #697886;
+  opacity: 0.5;
+}
+.Backend-box1-text{
+  font-size: 1.3rem;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 10%;
+}
+.Backend-box2-text{
+  font-size: 1.3rem;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 10%;
+}
+.Backend-box3-text{
+  font-size: 1.3rem;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 10%;
+}
+.Backend-head{
+  color: #006680;
+  position: absolute;
+  top: 60%;
+  left: 11%;
+  font-weight: 900;
+  font-size: 3rem;
+}
+@media screen and (min-width:320px) and (max-width:450px){
+  .Backend-background{
+      width:100%;
+      height: 230%;
+      background-image: url("background.jpg");
+      background-size: 100% 100%;
+      opacity:0.7;
+      filter:alpha(opacity=70);
+      position: absolute;
+  }
+  .Backend-box1{
+    width: 70%;
+    left: 22%;
+    height: 45%;
+    position: absolute;
+    top: 95%;
+  }
+  .Backend-box1-pic{
+  width: 60%;
+  position: absolute;
+  top: 75%;
+  }
+  .Backend-box2{
+    width: 70%;
+    left: 22%;
+    position: absolute;
+    top: 165%;
+    height: 45%;
+  }
+  .Backend-box2-pic{
+    width: 60%;
+    position: absolute;
+    top: 143%;
+    left: 10%;
+  }
+  .Backend-box3{
+    width: 70%;
+    left: 22%;
+    position: absolute;
+    top: 235%;
+    height: 45%;
+  }
+  .Backend-box3-pic{
+    width: 60%;
+    position: absolute;
+    top: 213%;
+    left: 10%;
+  }
+  .Backend-box4{
+    height: 33%;
+  }
+  .Backend-title{
+            position: relative;
+            top: 25%;
+        }
+  .Backend-title h2{
+            position: absolute;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            font-size: 5em;
+            top: 30%;
+            left: 50%;
+        }
+  .Backend-title h2:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 2px #03a9f4;
+
+        }
+  .Backend-title h2:nth-child(2){
+            color: #03a9f4;
+            animation: animate 4s ease-in-out infinite;
+            
+        }
+  .Backend-text4{
+    font-size: 1.5rem;
+    top: 33%;
+  }
+  .Backend-head{
+    font-size: 2rem;
+    top: 68%;
+  }
 }

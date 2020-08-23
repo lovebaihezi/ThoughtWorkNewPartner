@@ -47,59 +47,6 @@ function Submit() {
 */
 
 Submit.prototype = {
-    check: function(NeedCheck, Rules) {
-        return Rules.test(NeedCheck);
-    },
-    statusAccount: function() {
-        return ["account", "password"];
-    },
-    statusInformation: function() {
-        return ["telePhoneNumber", "classInformation"];
-    },
-    statusAccountCheck: function() {
-        return ["account", /^\d{6}$/g];
-    },
-    statusInformationCheck: function() {
-        return ["telePhoneNumber", /^\d{11}$/g];
-    },
-    warnIncorrect: function() {
-        this.clearWrongInformation();
-        document.getElementById("information1").placeholder = "错误输入,请重新输入";
-        document.getElementById("information1").style["background-color"] = "red";
-    },
-    clearWrongInformation: function() {
-        document.getElementById("information1").value = "";
-        document.getElementById("information2").value = "";
-    },
-    clearWarn: function() {
-        document.getElementById("information1").placeholder = "学号";
-        document.getElementById("information1").style["background-color"] = "transparent";
-    },
-    postCanBeChose: function() {
-        document.getElementById("CoverBack").style.display = "none";
-    },
-    frontEndDevelopment: function() {
-        return "前端";
-    },
-    backStageManagement: function() {
-        return "后台";
-    },
-    nameChange: function() {
-        document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话号码:";
-        document.getElementById("information1").placeholder = "";
-        document.getElementById("information2").placeholder = "";
-        document.getElementById("information1").autocomplete = "none";
-        document.getElementById("information2").autocomplete = "none";
-        document.getElementById("information2").type = "text";
-        document.getElementById("clickThenSubmit").value = "报名";
-        document.getElementsByClassName("banner")[0].innerText = "请点击两边来选择你的方向";
-        document.getElementsByClassName("banner")[2].firstElementChild.innerText = "班级姓名:";
-    },
-    switchToSignIn: function() { //切换到报名
-        this.postCanBeChose();
-        this.nameChange();
-        this.clearWrongInformation();
-    },
     alive: function() {
         var This = this;
         var StatusString = "";
@@ -119,7 +66,10 @@ Submit.prototype = {
             if (This.check(This[This[StatusString]()[0]], This[StatusString]()[1])) {
                 This.backInformation();
                 if (This.accountLogInStatus) {
-                    // TODO: Bug happened! 点击报名后,会再次
+                    if (This.signInStatus) {
+                        window.location.href = "http://www.baidu.com";
+                        return;
+                    }
                     if (StatusString == "statusAccountCheck") {
                         This.clickAnimation();
                         This.switchToSignIn();
@@ -135,6 +85,58 @@ Submit.prototype = {
                 This.warnIncorrect();
             }
         }
+    },
+    check: function(NeedCheck, Rules) {
+        return Rules.test(NeedCheck);
+    },
+    statusAccount: function() {
+        return ["account", "password"];
+    },
+    statusInformation: function() {
+        return ["telePhoneNumber", "classInformation"];
+    },
+    statusAccountCheck: function() {
+        return ["account", /^\d{6}$/g];
+    },
+    statusInformationCheck: function() {
+        return ["telePhoneNumber", /^\d{11}$/g];
+    },
+    warnIncorrect: function() {
+        this.clearWrongInformation();
+        document.getElementById("information1").placeholder = "请重试";
+        document.getElementById("information1").style["background-color"] = "red";
+    },
+    clearWrongInformation: function() {
+        document.getElementById("information1").value = "";
+        document.getElementById("information2").value = "";
+    },
+    clearWarn: function() {
+        document.getElementById("information1").style["background-color"] = "transparent";
+    },
+    postCanBeChose: function() {
+        document.getElementById("CoverBack").style.display = "none";
+    },
+    frontEndDevelopment: function() {
+        return "前端";
+    },
+    backStageManagement: function() {
+        return "后台";
+    },
+    nameChange: function() {
+        document.getElementsByClassName("banner")[1].firstElementChild.innerText = "电话:";
+        // document.getElementById("information1").placeholder = "";
+        // document.getElementById("information2").placeholder = "";
+        document.getElementById("information1").autocomplete = "none";
+        document.getElementById("information2").autocomplete = "none";
+        document.getElementById("information2").type = "text";
+        document.getElementById("clickThenSubmit").value = "报名";
+        document.getElementsByClassName("banner")[0].innerText = "请点击两边来选择你的方向";
+        document.getElementsByClassName("banner")[2].firstElementChild.innerText = "班级:";
+    },
+    switchToSignIn: function() { //切换到报名
+        this.postCanBeChose();
+        this.nameChange();
+        this.clearWrongInformation();
     },
     clickAnimation: function() {
         document.getElementsByClassName("square")[0].classList.add("backStageAnimation");
