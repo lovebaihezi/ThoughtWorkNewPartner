@@ -10,7 +10,7 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-.Fixed {
+.fixed {
     position: fixed;
 }
 
@@ -19,18 +19,50 @@ html {
     transform: translateY(-50%);
 }
 
-.ScreenLeft {
+.screenLeft {
     left: 0;
 }
 
-.Round {
+.screenRight {
+    right: 0;
+}
+
+.screenBottom {
+    bottom: 0;
+}
+
+.round {
     border-radius: 100%;
 }
 
-#TouchPad {
+.touchPad {
     margin: 1rem;
-    width: 15rem;
+    width: 18rem;
+    height: 18rem;
+    display: flex;
     cursor: pointer;
-    height: 15rem;
-    border: 0.1rem solid skyblue;
+    background-color: skyblue;
+    color: snow;
+    box-shadow: 0 1px 3px 2px rgb(223, 223, 223);
+    text-shadow: 0 1px 3px 2px snow;
+    text-align: center;
+    font-size: 4rem;
+    transition: margin 0.2s linear;
+}
+
+.touchPad:hover {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.touchPad>* {
+    align-self: center;
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+}
+
+#BackToTop {
+    visibility: hidden;
 }

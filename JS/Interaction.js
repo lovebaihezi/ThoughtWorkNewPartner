@@ -1,5 +1,11 @@
 //Author:LQXC 柴博文
 
+function A_Inherit_B(A, B) {
+    var C = Object(B.prototype);
+    C.constructor = A;
+    A.prototype = C;
+}
+
 function Information(Name) { //!对象建立方式:不关心信息类型,只关心共同方法
     this.InformationName = Name;
     this.InformationValue;
@@ -42,8 +48,8 @@ Information.prototype = {
 
     createOwnInformationToJSON: function() {
         this.JsonData = {
-            "Name": this.InformationName,
-            "Value": this.InformationValue
+            'Name': this.InformationName,
+            'Value': this.InformationValue
         };
     },
 
@@ -103,7 +109,7 @@ Information.prototype = {
 
     //*检查函数----------------------------------------InspectFunction
 
-    checkInformation: function() {
+    inspectInformation: function() {
         return this.CheckRules.test(this.InformationValue);
     },
 
@@ -125,47 +131,62 @@ function InteractionInformation() {
     Information.call(this, "InformationStack");
 }
 
-// InteractionInformation.prototype = new Information("InteractionCheck");
+A_Inherit_B(InteractionInformation, Information);
 
-InteractionInformation.prototype = {
-    constructor: InteractionInformation,
-    //*基本函数----------------------------------------BasicFunction
+InteractionInformation.prototype.constructor = InteractionInformation;
 
-    //  建立Information对象----------------------------------------
+//*基本函数----------------------------------------BasicFunction
 
-    createInformationObject: function(Name) {
-        var I = new Information(Name);
-        I.Structure();
-        return;
-    },
+//  建立Information对象----------------------------------------
 
-    //  将全部Information对象建立为一个Array对象----------------------------------------
+InteractionInformation.prototype.createInformationObject = function(Name) {
+    var I = new Information(Name);
+    I.Structure();
+    return I;
+};
+//  将全部Information对象建立为一个Array对象----------------------------------------
 
-    containAllInformationObjectsInArray: function(NameArray) {
-        This = this;
-        NameArray.forEach(function(item) {
-            This.InformationList.push(This.createInformationObject(item));
-        });
-    },
+InteractionInformation.prototype.containAllInformationObjectsInArray = function(NameArray) {
+    This = this;
+    NameArray.forEach(function(item) {
+        This.InformationList.push(This.createInformationObject(item));
+    });
+};
 
-    //  为全体Information对象的信息建立JSON数据----------------------------------------
+//  为全体Information对象的信息建立JSON数据----------------------------------------
 
-    createJSONDataForObjectInformation: function() {
-        This = this;
-        this.InformationList.forEach(function(item) {
+InteractionInformation.prototype.createJSONDataForObjectInformation = function() {
+    This = this;
+    var Contain = {};
+    this.InformationList.forEach(
+        function(item) {
+            if (!item.inspectInformation()) {
+                // throw "信息不完全";
+            }
+            item.createOwnInformationToJSON();
+            Contain[item["InformationName"]] = item["InformationValue"];
+        }
+    );
+    this.ALLInformationJSONData = JSON.stringify(Contain);
+};
 
-        });
-    },
+//*交互函数----------------------------------------InteractionFunction
 
-    //*交互函数----------------------------------------InteractionFunction
+//*检查函数----------------------------------------InspectFunction
 
-    //*检查函数----------------------------------------InspectFunction
+InteractionInformation.prototype.inspectAllFunction = function() {
+    return this.InformationList.every(
+        function(item) {
+            return item.inspectInformation();
+        }
+    );
+};
 
-    //*整合函数----------------------------------------IntegrateFunction
+//*整合函数----------------------------------------IntegrateFunction
 
-}
 
 const InformationStack = new InteractionInformation();
+InformationStack.Structure()
 InformationStack.containAllInformationObjectsInArray(
     [
         "Account",
@@ -175,4 +196,3 @@ InformationStack.containAllInformationObjectsInArray(
         "Detail"
     ]
 );
-InformationStack.createJSONDataForObjectInformation();
