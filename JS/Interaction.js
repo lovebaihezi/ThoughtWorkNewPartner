@@ -153,7 +153,7 @@ InteractionInformation.prototype = {
     createJSONDataForObjectInformation: function() {
         This = this;
         this.InformationList.forEach(function(item) {
-            console.log(typeof this.JsonData);
+
         });
     },
 
