@@ -147,7 +147,7 @@ InteractionInformation.prototype.createInformationObject = function(Name) {
 //  将全部Information对象建立为一个Array对象----------------------------------------
 
 InteractionInformation.prototype.containAllInformationObjectsInArray = function(NameArray) {
-    This = this;
+    var This = this;
     NameArray.forEach(function(item) {
         This.InformationList.push(This.createInformationObject(item));
     });
@@ -156,7 +156,7 @@ InteractionInformation.prototype.containAllInformationObjectsInArray = function(
 //  为全体Information对象的信息建立JSON数据----------------------------------------
 
 InteractionInformation.prototype.createJSONDataForObjectInformation = function() {
-    This = this;
+    var This = this;
     var Contain = {};
     this.InformationList.forEach(
         function(item) {
@@ -184,15 +184,18 @@ InteractionInformation.prototype.inspectAllFunction = function() {
 
 //*整合函数----------------------------------------IntegrateFunction
 
+//  *将对象变为自己的属性----------------------------------------IntegrateFunction
+
+
+InteractionInformation.prototype.addInformationObjectToProperty = function() {
+    var This = this;
+    this.InformationList.forEach(function(item) {
+        This[item.InformationName] = item;
+    });
+}
 
 const InformationStack = new InteractionInformation();
+InformationStack.containAllInformationObjectsInArray(["Account", "Password", "Post", "MobilePhoneNumber", "Detail"]);
+InformationStack.addInformationObjectToProperty();
 InformationStack.Structure()
-InformationStack.containAllInformationObjectsInArray(
-    [
-        "Account",
-        "Password",
-        "Post",
-        "MobilePhoneNumber",
-        "Detail"
-    ]
-);
+console.log(InformationStack.InformationNotFunctionPropertyList);

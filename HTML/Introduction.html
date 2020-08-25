@@ -22,14 +22,23 @@
     <div class="fixed middle screenLeft round button touchPad">
         <img src="../ResourceFile/list.svg" alt="" srcset="">
     </div>
-    <div class="fixed middle screenRight round button touchPad">
-        <p>我要报名</p>
+    <div class="fixed middle screenRight round button touchPad" id="logIn">
+        <p>登录</p>
     </div>
     <a href="#" class="fixed screenRight round button touchPad screenBottom" id="BackToTop">
         <img src="../ResourceFile/up_to_top.svg" alt="" srcset="">
     </a>
-    <div style="widows: 10rem;height: 1000rem;">
-
+    <div class="fixed coverScreen linearWhiteBlack close" id="logInAndApply">
+        <form action="#" method="post" class="middle ">
+            <p>学号</p>
+            <input type="text" name="" id="account" autocomplete="username">
+            <p>密码</p>
+            <input type="password" name="" id="password" autocomplete="current-password">
+            <input type="submit" value="    登录" class="submitButton">
+        </form>
+        <div class="touchPad round screenRight screenTop absolute" id="closeLoginAndApply">
+            <img src="../ResourceFile/close.svg" alt="" srcset="">
+        </div>
     </div>
     <script src="../JS/vue.min.js"></script>
     <script src="../JS/Interaction.js "></script>

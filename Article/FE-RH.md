@@ -7,5 +7,3 @@ ThoughtWorks西邮联合创新实验室
 	三、JavaScript语言。做前端设计需要学习JavaScript的基本语法，以及如何使用JavaScript编程，这将会很大幅度提高开发人员的个人技能。
 	四、同时对Unix和Linux的基本知识进行了解，这对于开发人员有一定的益处。
 	五、了解Web服务器，包括对Apache的基本配置，htaccess配置技巧的掌握等。
-　　
-
