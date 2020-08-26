@@ -29,22 +29,22 @@
         <img src="../ResourceFile/up_to_top.svg" alt="" srcset="">
     </a>
     <div class="fixed coverScreen linearWhiteBlack close" id="logInAndApply">
-        <form action="#" method="post" class="middle ">
-            <p>学号</p>
-            <input type="text" name="" id="account" autocomplete="username">
-            <p>密码</p>
-            <input type="password" name="" id="password" autocomplete="current-password">
-            <input type="submit" value="    登录" class="submitButton">
-        </form>
+        <!-- <form action="" method="post" class="middle "> -->
+        <p>学号</p>
+        <input type="text" name="" id="Account" autocomplete="username" required>
+        <p>密码</p>
+        <input type="password" name="" id="Password" autocomplete="current-password" required>
+        <input type="submit" value="    登录" class="submitButton" id="LogInButton">
+        <!-- </form> -->
         <div class="touchPad round screenRight screenTop absolute" id="closeLoginAndApply">
             <img src="../ResourceFile/close.svg" alt="" srcset="">
         </div>
     </div>
     <script src="../JS/vue.min.js"></script>
     <script src="../JS/Interaction.js "></script>
+    <script src="../JS/ToolBox.js"></script>
     <script src="../JS/Login.js"></script>
     <script src="../JS/Apply.js"></script>
-    <script src="../JS/ToolBox.js"></script>
 </body>
 
 </html>

@@ -76,8 +76,8 @@ Information.prototype = {
 
     //      从用户输入获得信息----------------------------------------GetInformationFromInput
 
-    getInformationFromInput: function(ChooseName) {
-        this.InformationValue = this.InputFunction(ChooseName);
+    getInformationFromInput: function() {
+        this.InformationValue = window.btoa(this.InputFunction());
     },
 
     //  从服务器传回信息----------------------------------------GetInformationFromServer
@@ -98,7 +98,12 @@ Information.prototype = {
 
     sendInformationToServer: function() {
         //TODO2:
-        this.AjaxObject.send();
+        var This = this;
+        if (!this.inspectInformation()) {
+            throw this.InformationName + "不能为空!";
+        } else {
+            this.AjaxObject.send(This.JsonData);
+        }
     },
 
     //      传递到页面----------------------------------------DeliveryToWeb
@@ -127,7 +132,7 @@ Information.prototype = {
 
 function InteractionInformation() {
     this.InformationList = [];
-    this.ALLInformationJSONData = {};
+    this.JsonData = {};
     Information.call(this, "InformationStack");
 }
 
@@ -160,14 +165,11 @@ InteractionInformation.prototype.createJSONDataForObjectInformation = function()
     var Contain = {};
     this.InformationList.forEach(
         function(item) {
-            if (!item.inspectInformation()) {
-                // throw "信息不完全";
-            }
             item.createOwnInformationToJSON();
             Contain[item["InformationName"]] = item["InformationValue"];
         }
     );
-    this.ALLInformationJSONData = JSON.stringify(Contain);
+    this.JsonData = JSON.stringify(Contain);
 };
 
 //*交互函数----------------------------------------InteractionFunction
@@ -184,7 +186,7 @@ InteractionInformation.prototype.inspectAllFunction = function() {
 
 //*整合函数----------------------------------------IntegrateFunction
 
-//  *将对象变为自己的属性----------------------------------------IntegrateFunction
+//  将对象变为自己的属性----------------------------------------IntegrateFunction
 
 
 InteractionInformation.prototype.addInformationObjectToProperty = function() {
@@ -194,8 +196,20 @@ InteractionInformation.prototype.addInformationObjectToProperty = function() {
     });
 }
 
+//  为每个对象绑定输入函数----------------------------------------
+
+InteractionInformation.prototype.bindInputFunctionToEach = function() {
+    var This = this;
+    this.InformationList.forEach(function(item) {
+        item.InputFunction = function() {
+            // console.log(document.getElementById(item.InformationName).value);
+            return document.getElementById(item.InformationName).value;
+        };
+    });
+}
+
 const InformationStack = new InteractionInformation();
 InformationStack.containAllInformationObjectsInArray(["Account", "Password", "Post", "MobilePhoneNumber", "Detail"]);
 InformationStack.addInformationObjectToProperty();
 InformationStack.Structure()
-console.log(InformationStack.InformationNotFunctionPropertyList);
+InformationStack.bindInputFunctionToEach();
