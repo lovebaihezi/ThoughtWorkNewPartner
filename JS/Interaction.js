@@ -15,7 +15,7 @@ function Information(Name) { //!对象建立方式:不关心信息类型,只关�
     this.JsonData = {};
     this.AjaxObject;
     this.CheckRules = /^$/g;
-    this.Async = false;
+    this.Async = true;
     this.url = "?p=";
 }
 
