@@ -1,5 +1,7 @@
 //Author:LQXC 柴博文
 
+
+
 function A_Inherit_B(A, B) {
     var C = Object(B.prototype);
     C.constructor = A;

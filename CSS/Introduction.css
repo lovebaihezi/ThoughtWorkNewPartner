@@ -16,9 +16,9 @@ body {
 }
 
 .middle {
-    top: 50%;
+    /* top: 50%; */
     display: flex;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
 }
 
 .screenLeft {
@@ -43,8 +43,9 @@ body {
 
 form {
     width: 80rem;
-    height: 40rem;
+    height: max-content;
     flex-wrap: wrap;
+    font-size: 0;
 }
 
 form p {
@@ -55,7 +56,8 @@ form p {
 }
 
 input {
-    width: 80rem;
+    width: 100%;
+    min-width: 40rem;
     margin: 0 auto;
     height: 10rem;
     display: flex;
@@ -64,22 +66,31 @@ input {
     transition: all 0.1s;
     border-radius: 1rem;
     outline: none;
-    border: 0.1rem solid rgb(194, 216, 246);
+    border: 0.5rem solid rgb(194, 216, 246);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+input:valid {
+    border-color: goldenrod;
+}
+
+input:invalid {
+    border-color: red;
+}
+
 input:hover {
-    border: 0.1rem solid black;
+    border-color: black;
 }
 
 input:focus {
     outline: #9bc6f6;
-    border: 0.1rem solid black;
+    border-color: black;
     border-radius: 1rem;
     outline-offset: 0;
 }
 
 input:nth-of-type(3) {
+    min-width: unset;
     font-size: 4rem;
     text-align: center;
     box-shadow: 0 1px 1px snow;
@@ -164,5 +175,11 @@ input:nth-of-type(3):hover {
         top: unset;
         bottom: 0;
         transform: unset;
+    }
+    #closeLoginAndApply {
+        top: unset;
+        right: unset;
+        left: unset;
+        bottom: 0;
     }
 }

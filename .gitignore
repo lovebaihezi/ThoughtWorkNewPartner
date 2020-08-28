@@ -2,3 +2,7 @@ package-lock.json
 /node_modules/
 *.php
 /.vscode/
+a.txt
+Server.js
+package.json
+/JS/node_modules/

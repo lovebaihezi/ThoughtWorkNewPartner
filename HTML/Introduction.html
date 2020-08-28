@@ -29,13 +29,13 @@
         <img src="../ResourceFile/up_to_top.svg" alt="" srcset="">
     </a>
     <div class="fixed coverScreen linearWhiteBlack close" id="logInAndApply">
-        <!-- <form action="" method="post" class="middle "> -->
-        <p>学号</p>
-        <input type="text" name="" id="Account" autocomplete="username" required>
-        <p>密码</p>
-        <input type="password" name="" id="Password" autocomplete="current-password" required>
-        <input type="submit" value="    登录" class="submitButton" id="LogInButton">
-        <!-- </form> -->
+        <form action="../JS/Server.js" method="post" class="middle ">
+            <p>学号</p>
+            <input type="text" name="Account" id="Account" autocomplete="username" required pattern="[0-9]{6}">
+            <p>密码</p>
+            <input type="password" name="Password" id="Password" autocomplete="current-password">
+            <input type="submit" value="    登录" class="submitButton" id="LogInButton">
+        </form>
         <div class="touchPad round screenRight screenTop absolute" id="closeLoginAndApply">
             <img src="../ResourceFile/close.svg" alt="" srcset="">
         </div>
