@@ -2,16 +2,13 @@
 	margin:0;
 	padding:0;
 }
-#ImformationBlock{
+.flip-container{
 	width:25%;
 	height:20%;
 	margin-top:-3%;
 	margin-left:-5%;
 	cursor: pointer;
 	animation: myReverse 3s linear 2.5s;
-}
-#MyInformation:hover{
-	animation: myReverse 3s linear;
 }
 @keyframes myReverse{
 	0%{
@@ -21,7 +18,11 @@
 		transform: rotateY(360deg);
 	}
 }
-#MyInformation{
+#InformationBlock{
+	width:100%;
+	height:100%;
+}
+.MyInformation{
 	width:100%;
 	height:100%;
 	display: table;
@@ -30,19 +31,52 @@
 	background-color: black;
 	text-align:center;
 }
-#MyInformation p{
+.MyInformation p{
 	display: table-cell;
 	vertical-align: middle;
 	font-size:2.7rem;
 	color:white;
 }
-#Imformation{
+
+#InformationBlock:hover{
+		transform: rotateY(180deg);
+	}
+
+#InformationBlock{
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.front {
+	z-index: 2;
+}
+.back {
+	background-color: rgb(236, 229, 229);
+	font-size:3rem;
+	opacity: 0.9;
+	filter:alpha(opacity=90);
+	transform: rotateY(180deg);
+}
+.back p{
+	color:black;
+}
+
+
+#Information{
 	position: absolute;
 	width:100%;
 	height:100%;
 	background-image: url("../ResourceFile/WhiteTree.jpg");
 }
-#ImformationContent{
+#InformationContent{
 	position: absolute;
 	width:70%;
 	height:80%;
@@ -52,7 +86,7 @@
 	margin: 0 auto;
 	background:rgba(255,255,255,0.7);
 }
-#ImformationList{
+#InformationList{
 	/*position: absolute;*/
 	width:80%;
 	height:13%;
@@ -62,7 +96,7 @@
 	border-radius: 10px;
 	cursor: pointer;
 }
-#ImformationScroll{
+#InformationScroll{
 	width:100%;
 	height:45%;
 	margin:0 auto;
@@ -70,7 +104,7 @@
 	border-radius:20px;
 	border:1px solid transparent;
 }
-#ImformationList:hover{
+#InformationList:hover{
 	box-shadow: 0px 3px 6px rgb(192,192,192),0px -3px 6px white;
 }
 #ScrollColor{
@@ -162,7 +196,7 @@
     top: 0;
     left: 0;
     border-bottom: 2px solid white;
-    box-shadow:0px 20px 10px -16px #ccc,0px 5px 6px -6px gray,0px 2px 3px -3px gray;
+    box-shadow:0px 20px 10px -16px #ccc,0px 5px 6px -6px gray;
     width: 0;
     height: 100%;
 }
@@ -194,4 +228,614 @@
 
 .InformationLi:hover .InformationName,.InformationLi:hover .InformationValue{
 	color: #404040 ;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 359px) {
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationUl{
+		margin-top:5px;
+	}	
+	#Ul li{
+		display: inline-block;
+		position: absolute;
+		font-size:0.8rem;
+	}
+	#Ul li:nth-child(1){
+		left:2%;
+	}
+	#Ul li:nth-child(2){
+		left:30%;
+	}
+	#Ul li:nth-child(3){
+		left:55%;
+	}
+	#Ul li:nth-child(4){
+		left:80%;
+	}
+	.InformationBox{
+		width:90%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:50%;
+		font-size: 1rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:50%;
+		font-size:1rem;
+		color: #303030;
+		padding-left: 0rem;
+		background-color: transparent;
+		border-style:none;
+	}
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 374px) {
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:23%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+		background-color:	rgb(224,224,224) ;
+		border-radius:20px;
+		border:1px solid transparent;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:20%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:1.2rem;
+		letter-spacing: 0px;
+		display: inline-block;
+		position: absolute;
+		font-size:1.1rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.1rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.1rem;
+		color: #303030;
+		padding-left: 0rem;
+		background-color: transparent;
+		border-style:none;
+	}
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 479px){
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.3rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:18%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:1.2rem;
+		letter-spacing: 0px;
+		font-size:1rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.2rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.2rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 579px) {
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.3rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:18%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:1.2rem;
+		letter-spacing: 0px;
+		font-size:1.2rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.4rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.4rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+
+
+@media screen and (min-width: 580px) and (max-width: 679px) {
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.5rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:18%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:1.4rem;
+		letter-spacing: 0px;
+		font-size:1.2rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.6rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.6rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+
+
+@media screen and (min-width: 680px) and (max-width: 799px) {
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.5rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:18%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:1.4rem;
+		letter-spacing: 0px;
+		font-size:1.5rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.8rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.8rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+@media screen and (min-width: 800px) and (max-width:1023px){
+	.flip-container{
+		width:70%;
+		height:15%;
+		margin:0 auto;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.5rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:18%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:5rem;
+		letter-spacing: 0px;
+		font-size:1.4rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.6rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.6rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	.flip-container{
+		width:30%;
+		height:20%;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.5rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:12%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:12%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:5rem;
+		letter-spacing: 0px;
+		font-size:1.2rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.4rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.4rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+@media screen and (min-width: 1280px) and (max-width: 1365px){
+	.flip-container{
+		width:30%;
+		margin-bottom:10px;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.8rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:15%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:6%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:5rem;
+		letter-spacing: 0px;
+		font-size:1.4rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.8rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.8rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+@media screen and (min-width: 1366px) and (max-width: 1439px) {
+	.flip-container{
+		width:30%;
+		margin-bottom:20px;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.8rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:15%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:6%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:5rem;
+		letter-spacing: 0px;
+		font-size:1.3rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 1.5rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:1.5rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.flip-container{
+		width:30%;
+		margin-bottom:20px;
+		animation: myReverse 1.5s linear 2.5s;
+	}
+	.MyInformation p{
+		font-size:2.8rem;
+	}
+	#InformationList{
+		margin:0 auto;
+		height:15%;
+		margin-top:10px;
+		padding-bottom:0px;
+	}
+	#InformationScroll{
+		width:100%;
+		height:20%;
+		margin:0 auto;
+	}
+	#InformationUl{
+		margin-top:0px;
+	}	
+	#Ul{
+		width:80%;
+		height:6%;
+		margin-top:10px;
+	}
+	#Ul li{
+		width:5rem;
+		letter-spacing: 0px;
+		font-size:1.6rem;
+	}
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+	.InformationBox{
+		width:95%;
+		height:100%;
+		margin:0 auto;
+	}
+	.InformationName{
+		width:56%;
+		font-size: 2rem;
+		padding-left: 0px;
+	}
+	.InformationValue{
+		width:44%;
+		font-size:2rem;
+		color: #303030;
+		padding-left: 0rem;
+	}
 }
