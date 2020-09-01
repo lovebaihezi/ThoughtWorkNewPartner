@@ -6,7 +6,6 @@ body {
     border: 0;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
     background-color: snow !important;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
@@ -71,88 +70,70 @@ img{
 	display: block; 
 	clear:both;
 }
-.Backend-languages h1{
-	font-size: 5rem;
+
+.box2 {
+    width: 90%;
+	height: 65rem;
+    margin:20px auto;
+    background:#f5f5f5;
 }
-.Backend-languages p{
-	font-size: 3rem;
+.box2 li {
+    width: 70%;
+	height: 55rem;;
+    background:#fff;
+    float:left;
+    margin:10px 15px;
+    list-style:none;
+    transition:all .2s;
+    position:relative;
 }
-.Backend-languages{ 
-	width:90%;
-	height: 200%;
-	margin: 2rem auto;  
-	border:0.1rem #cccccc solid;
+.box2 li:hover.box2 li:focus {
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    transform:translate3d(0,-2px,0);
 }
-.list{ 
-	width:100%;
-	height: 24%;
+
+#aa{
+        height: auto;
+        font-size: 5rem;
+    }
+#w{
+    display: none;
+    }
+#w3{
+    font-size: 5rem;
+    margin-top: 5%;
+    }
+    .box3 {
+    width: 90%;
+	height: 65rem;
+    margin:20px auto;
+    background:#f5f5f5;
 }
-.list li{ 
-	width:80%; 
-	height:78%; 
-	float:left; 
-	margin:1rem; 
-	position: relative; 
-	left: 10%;
-	overflow: hidden;
+.box3 li {
+    width: 70%;
+	height: 55rem;;
+    background:#fff;
+    float:right;
+    margin:10px 15px;
+    list-style:none;
+    position:relative;
 }
-.list-text{ 
-	width:100%; 
-	height:0px; 
-	background:rgba(0,0,0,.5); 
-	position: absolute; 
-	left: 0; 
-	top:7rem; 
-	z-index: 2; 
-	overflow: hidden; 
-	transform:rotate(50deg); 
-	transition:.5s;
+ .box4 {
+    width: 90%;
+	height: 65rem;
+    margin:20px auto;
+    background:#f5f5f5;
 }
-.list-text h2{ 
-	height: 8rem; 
-	border-bottom:0.1rem #8a7881 solid; 
-	font-size: 6rem; 
-	color:white; 
-	line-height: 6rem; 
-	text-align: center;
+.box4 li {
+    width: 70%;
+	height: 55rem;;
+    background:#fff;
+    float:left;
+    margin:10px 15px;
+    list-style:none;
+    position:relative;
 }
-.list-text p{ 
-	border-top:2px #b1a5ab solid; 
-	line-height: 5rem; 
-	font-size: 4rem; 
-	color:white; 
-	padding-top: 1rem;
-}
-.list-maskUp{ 
-	width:150%; 
-	height:150%; 
-	position: absolute; 
-	left: 0; 
-	top: -150%; 
-	z-index: 1; 
-	background:rgba(199,4,109,.5); 
-	transform:rotate(45deg) translateX(-58%); 
-	transition:.5s;
-}
-.list-maskDown{ 
-	width:150%; 
-	height:150%; 
-	position: absolute; 
-	left: 0; 
-	top: 150%; 
-	z-index: 1; 
-	background:rgba(199,4,109,.5); 
-	transform:rotate(45deg) translateX(16%); 
-	transition:.5s;
-}
-.list li:hover .list-text{ 
-	height:55rem; 
-	transform:rotate(0deg);
-}
-.list li:hover .list-maskUp,.list li:hover .list-maskDown{ 
-	top:0;
-}
-.list-pic{
-	width: 100%;
-	height: 100%;
-}
+#w4{
+    font-size: 5rem;
+    margin-top: 5%;
+    }
