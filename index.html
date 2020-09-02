@@ -4,14 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./ResourceFile/favicon.ico" rel="shortcut icon">
+    <link href="./ResourceFile/favicon.ico" rel="icon">
+    <link href="./ResourceFile/favicon16x16.png" rel="icon " sizes="16x16">
+    <link href="./ResourceFile/favicon32x32.png" rel="icon " sizes="32x32">
+    <link href="./ResourceFile/android-chrome-192x192.png" rel="icon" sizes="192x192">
+    <link href="./ResourceFile/android-chrome-512x512.png" rel="icon" sizes="512x512">
+    <link href="./ResourceFile/touch-icon-iphone.png" rel="apple-touch-icon">
+    <link href="./ResourceFile/touch-icon-ipad.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="./ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="./ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
+    <link rel="stylesheet " href="./CSS/Introduction.css ">
     <title>欢迎来到ThoughtWork实验室</title>
 </head>
 
 <body>
-    <a href="./HTML/Backend.html">李艳 后端介绍</a>
-    <a href="./HTML/General_Introduction.html">李梅芝 实验室介绍</a>
-    <a href="./HTML/InformationSearch.html">王苗 个人信息查询</a>
-    <a href="./welcome/index.html">周贻欢 欢迎界面</a>
+
+    <div class="screenLeft fixed middle button contentPad childAbsolute " id="PadBox">
+
+        <div class="round touchPad ">
+            <img src="./ResourceFile/list.svg" alt="" srcset="">
+        </div>
+
+        <div class="round touchPad ">
+            <a href="./HTML/InformationSearch.html" target="_blank" rel="noopener noreferrer">报名信息</a>
+        </div>
+
+        <div class="round touchPad ">
+            <a href="./HTML/General_Introduction.html" target="_blank" rel="noopener noreferrer">实验室介绍</a>
+        </div>
+
+        <div class="round touchPad ">
+            <a href="./HTML/Backend.html" target="_blank" rel="noopener noreferrer">后端介绍</a>
+        </div>
+
+        <div class="round touchPad ">
+            <a href="./HTML/" target="_blank" rel="noopener noreferrer">前端介绍</a>
+        </div>
+
+        <div class="round touchPad" id="closePad">
+            <img src="./ResourceFile/arrow_up.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="fixed middle screenRight round button touchPad" id="logIn">
+        <p>登录</p>
+    </div>
+
+    <a href="#" class="fixed screenRight round button touchPad screenBottom" id="BackToTop">
+        <img src="./ResourceFile/up_to_top.svg" alt="" srcset="">
+    </a>
+
+    <div class="fixed coverScreen linearWhiteBlack close" id="logInAndApply">
+
+        <form action="" method="post" class="middle ">
+            <p>学号</p>
+            <!-- <label for="Account"> -->
+            <input type="text" name="Account" id="Account" autocomplete="username" required pattern="[0-9]{6}">
+            <!-- </label> -->
+            <p>密码</p>
+            <!-- <label for="Password"> -->
+            <input type="password" name="Password" id="Password" autocomplete="current-password">
+            <!-- </label> -->
+            <input type="submit" value="    登录" class="submitButton" id="LogInButton">
+        </form>
+
+        <div class="touchPad round screenRight screenTop" id="closeLoginAndApply">
+            <img src="./ResourceFile/close.svg" alt="" srcset="">
+        </div>
+
+    </div>
+
+    <!-- <p><a href="./HTML/Backend.html">李艳 后端介绍</a></p>
+    <p><a href="./HTML/General_Introduction.html">李梅芝 实验室介绍</a></p>
+    <p><a href="./HTML/InformationSearch.html">王苗 个人信息查询</a></p>
+    <p><a href="./welcome/index.html">周贻欢 欢迎界面</a></p> -->
+
+    <script src="./JS/vue.min.js"></script>
+    <script src="./JS/Interaction.js "></script>
+    <script src="./JS/ToolBox.js"></script>
+    <script src="./JS/Login.js"></script>
+    <script src="./JS/Apply.js"></script>
 </body>
 
 </html>
