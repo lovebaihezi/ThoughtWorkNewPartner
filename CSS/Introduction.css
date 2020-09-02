@@ -9,16 +9,28 @@ body {
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .fixed {
     position: fixed;
 }
 
+a {
+    text-emphasis: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .middle {
-    /* top: 50%; */
     display: flex;
-    /* transform: translateY(-50%); */
+    align-self: center;
+}
+
+.absolute {
+    position: absolute;
 }
 
 .screenLeft {
@@ -37,8 +49,13 @@ body {
     top: 0;
 }
 
-.absolute {
+.childAbsolute>* {
     position: absolute;
+    visibility: hidden;
+}
+
+.childAbsolute>*:nth-child(1) {
+    visibility: visible;
 }
 
 form {
@@ -68,6 +85,13 @@ input {
     outline: none;
     border: 0.5rem solid rgb(194, 216, 246);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.contentPad {
+    width: 20rem;
+    height: max-content;
+    min-height: 20rem;
+    flex-direction: column;
 }
 
 input:valid {
@@ -121,6 +145,10 @@ input:nth-of-type(3):hover {
     border-radius: 100%;
 }
 
+.unSee {
+    visibility: hidden;
+}
+
 .touchPad {
     z-index: 10;
     margin: 1rem;
@@ -130,11 +158,31 @@ input:nth-of-type(3):hover {
     cursor: pointer;
     background-color: skyblue;
     color: snow;
-    box-shadow: 0 1px 3px 2px rgb(223, 223, 223);
     text-shadow: 0 1px 1px #98d6ff;
     text-align: center;
     font-size: 4rem;
     transition: margin 0.2s linear;
+}
+
+.touchPad:nth-of-type(1) {
+    z-index: 10;
+    box-shadow: 0 1px 3px 2px rgb(223, 223, 223);
+}
+
+.touchPad:nth-of-type(2) {
+    z-index: 9;
+}
+
+.touchPad:nth-of-type(3) {
+    z-index: 8;
+}
+
+.touchPad:nth-of-type(4) {
+    z-index: 7;
+}
+
+.touchPad:nth-of-type(5) {
+    z-index: 6;
 }
 
 .touchPad:hover {
@@ -164,6 +212,11 @@ input:nth-of-type(3):hover {
 #logInAndApply {
     justify-content: center;
     align-items: center;
+    opacity: 1;
+}
+
+#closeLoginAndApply {
+    position: absolute;
 }
 
 .close {
