@@ -270,6 +270,7 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+           
         }
         .front,
         .back{
@@ -347,6 +348,7 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+            perspective: 2000px;
         }
         .front,
         .back{
