@@ -49,12 +49,12 @@ a {
     top: 0;
 }
 
-.childAbsolute>* {
+.childUnShow>* {
     position: absolute;
     visibility: hidden;
 }
 
-.childAbsolute>*:nth-child(1) {
+.childUnShow>*:nth-child(1) {
     visibility: visible;
 }
 
