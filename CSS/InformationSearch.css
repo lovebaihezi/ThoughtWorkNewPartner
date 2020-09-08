@@ -3,7 +3,6 @@
 	padding:0;
 }
 body{
-	/*background:#CCCCFF;*/
 	background: #FFFFCC;
 }
 .flip-container{
@@ -13,6 +12,8 @@ body{
 	margin-left:-5%;
 	cursor: pointer;
 	animation: myReverse 3s linear 2.5s;
+	perspective:1000;
+	-webkit-perspective:1000; /* Safari and Chrome */
 }
 @keyframes myReverse{
 	0%{
@@ -92,6 +93,9 @@ body{
 	background:rgba(255,255,255,0.7);
 	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 	border-radius:0.5rem;
+	perspective:1000;
+	-webkit-perspective:1000; /* Safari and Chrome */
+	/*transform: perspective(1000);*/
 }
 #InformationContent:hover{
 	box-shadow:0 0 3rem rgba(0, 0, 0, 0.1),0 0 2rem  rgba(0, 0, 0, 0.1),0 0 1rem rgba(0, 0, 0, 0.1),0 0 4rem rgba(255, 243, 69, 0.1);
