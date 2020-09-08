@@ -21,31 +21,37 @@
 <body>
     <div class="Login">
         <div class="img">
-
+            <img src="../ResourceFile/tw-logo.svg" alt="">
         </div>
-        <form action="" method="post">
+        <form>
             <p>请在这里填写你的报名信息:姓名,电话号码,专业班级,以及填写你所要选择的方向</p>
             <p>姓名:</p>
             <label for="Name">
                 <input type="text" name="Name" id="Name" required autocomplete="name">
+                <div></div>
             </label>
             <p>电话号码:</p>
             <label for="Telephone">
                 <input type="text" name="Telephone" id="Telephone" required pattern="[0-9]{11}" autocomplete="tel">
+                <div></div>
             </label>
             <p>专业班级:</p>
             <label for="ClassInformation">
                 <input type="text" name="ClassInformation" id="ClassInformation" required>
+                <div></div>
             </label>
             <p>选择方向:前端/后端</p>
             <label for="Choose">
-                <input type="text" name="Choose" id="Choose" required pattern="前端|后端">
+                <input type="text" name="方向" id="Choose" required pattern="前端|后端">
+                <div></div>
             </label>
             <label for="Submit">
-                <div id="Submit">
-                    APPLY
-                </div>
+                <input id="Submit" type="Submit" value="APPLY">
+                    <!-- APPLY
+                </div> -->
             </label>
+            <script src="../JS/Login.js"></script>
+            <script src="../JS/Apply.js"></script>
         </form>
     </div>
 </body>
