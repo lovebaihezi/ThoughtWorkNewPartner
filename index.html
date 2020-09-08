@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="screenLeft middle button contentPad " id="PadBox">
+    <!-- <div class="screenLeft middle button contentPad " id="PadBox">
 
         <div class="round touchPad ">
             <img src="./ResourceFile/list.svg" alt="" srcset="">
@@ -39,14 +39,14 @@
         </div>
 
         <div class="round touchPad ">
-            <a href="./HTML/" target="_blank" rel="noopener noreferrer">前端介绍</a>
+            <a href="./HTML/index.html" target="_blank" rel="noopener noreferrer">前端介绍</a>
         </div>
 
-        <div class="round touchPad" id="closePad">
-            <img src="./ResourceFile/arrow_up.png" alt="">
+        <div class="round touchPad">
+            
         </div>
 
-    </div>
+    </div> -->
 
     <div class="fixed middle screenRight round button touchPad" id="logIn">
         <p>登录</p>
@@ -58,7 +58,7 @@
 
     <div class="fixed coverScreen linearWhiteBlack close" id="logInAndApply">
 
-        <form action="" method="post" class="middle ">
+        <form action="" method="post" class="middle close" id="Login">
             <p>学号</p>
             <!-- <label for="Account"> -->
             <input type="text" name="Account" id="Account" autocomplete="username" required pattern="[0-9]{6}">
@@ -70,22 +70,30 @@
             <input type="submit" value="    登录" class="submitButton" id="LogInButton">
         </form>
 
+        <form action="" method="post" class="middle closeA" id="Apply">
+            <p>姓名</p>
+            <input type="text" name="Name" id="NewerName" required>
+            <p>电话号码</p>
+            <input type="tel" name="Telephone" id="TelephoneNumber" required>
+            <p>班级</p>
+            <input type="text" name="SubjectAndClass" id="SubjectAndClass" required>
+            <p>方向</p>
+            <input type="text" name="WhichPost" placeholder="前端/后端" id="WhichPost" required pattern="前端|后端">
+            <input type="submit" value="    报名" class="submitButton" id="ApplyButton">
+        </form>
+
         <div class="touchPad round screenRight screenTop" id="closeLoginAndApply">
             <img src="./ResourceFile/close.svg" alt="" srcset="">
         </div>
 
     </div>
 
-    <!-- <p><a href="./HTML/Backend.html">李艳 后端介绍</a></p>
-    <p><a href="./HTML/General_Introduction.html">李梅芝 实验室介绍</a></p>
-    <p><a href="./HTML/InformationSearch.html">王苗 个人信息查询</a></p>
-    <p><a href="./welcome/index.html">周贻欢 欢迎界面</a></p> -->
-
     <script src="./JS/vue.min.js"></script>
-    <script src="./JS/Interaction.js "></script>
+    <script src="./JS/Interaction.js"></script>
     <script src="./JS/ToolBox.js"></script>
     <script src="./JS/Login.js"></script>
     <script src="./JS/Apply.js"></script>
+
 </body>
 
 </html>
