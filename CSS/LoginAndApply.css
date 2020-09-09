@@ -32,6 +32,9 @@ body {
     min-height: 100%;
     margin: 0;
     background: #f1f1f1;
+    /* background-image: url(../ResourceFile/illust_73651556_20200610_083134.png); */
+    /* background-size: cover; */
+    /* background-position: center; */
 }
 
 .Login {
@@ -44,6 +47,7 @@ body {
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
     flex-direction: unset;
+    border-radius: 3%;
 }
 
 .img {
@@ -139,7 +143,7 @@ form p:nth-of-type(1) {
     text-align: center;
     cursor: pointer;
     border: 0.1rem solid #000000;
-    background-color: #007cba;
+    background-color: #00ba2e;
     border-radius: 0.5rem;
     transition: all 0.3s linear;
     background-repeat: no-repeat;

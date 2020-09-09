@@ -31,7 +31,7 @@ window.onload = function() {
             if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
                 ResponseTextFromServer = AjaxObject.responseText;
                 ResponseInformationObject = JSON.parse(ResponseTextFromServer);
-                ResponseInformationObject.status = 0;
+                ResponseInformationObject.status = 1;
                 // 0 1 2
                 // 登陆失败 登录但未注册 登录而且已经注册
                 switch (ResponseInformationObject.status) {
