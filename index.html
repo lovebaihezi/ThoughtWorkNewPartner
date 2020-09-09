@@ -20,6 +20,10 @@
 
 <body>
 
+    <script>
+        location.replace("./HTML/index.html");
+    </script>
+
     <!-- <div class="screenLeft middle button contentPad " id="PadBox">
 
         <div class="round touchPad ">
@@ -48,7 +52,7 @@
 
     </div> -->
 
-    <div class="fixed middle screenRight round button touchPad" id="logIn">
+    <!-- <div class="fixed middle screenRight round button touchPad" id="logIn">
         <p>登录</p>
     </div>
 
@@ -60,39 +64,33 @@
 
         <form action="" method="post" class="middle close" id="Login">
             <p>学号</p>
-            <!-- <label for="Account"> -->
-            <input type="text" name="Account" id="Account" autocomplete="username" required pattern="[0-9]{6}">
-            <!-- </label> -->
-            <p>密码</p>
-            <!-- <label for="Password"> -->
-            <input type="password" name="Password" id="Password" autocomplete="current-password">
-            <!-- </label> -->
-            <input type="submit" value="    登录" class="submitButton" id="LogInButton">
-        </form>
+            <label for="Account">
+    <input type="text" name="Account" id="Account" autocomplete="username" required pattern="[0-9]{6}">
+    </label>
+    <p>密码</p>
+    <label for="Password">
+    <input type="password" name="Password" id="Password" autocomplete="current-password">
+    </label>
+    <input type="submit" value="    登录" class="submitButton" id="LogInButton">
+    </form>
 
-        <form action="" method="post" class="middle closeA" id="Apply">
-            <p>姓名</p>
-            <input type="text" name="Name" id="NewerName" required>
-            <p>电话号码</p>
-            <input type="tel" name="Telephone" id="TelephoneNumber" required>
-            <p>班级</p>
-            <input type="text" name="SubjectAndClass" id="SubjectAndClass" required>
-            <p>方向</p>
-            <input type="text" name="WhichPost" placeholder="前端/后端" id="WhichPost" required pattern="前端|后端">
-            <input type="submit" value="    报名" class="submitButton" id="ApplyButton">
-        </form>
+    <form action="" method="post" class="middle closeA" id="Apply">
+        <p>姓名</p>
+        <input type="text" name="Name" id="NewerName" required>
+        <p>电话号码</p>
+        <input type="tel" name="Telephone" id="TelephoneNumber" required>
+        <p>班级</p>
+        <input type="text" name="SubjectAndClass" id="SubjectAndClass" required>
+        <p>方向</p>
+        <input type="text" name="WhichPost" placeholder="前端/后端" id="WhichPost" required pattern="前端|后端">
+        <input type="submit" value="    报名" class="submitButton" id="ApplyButton">
+    </form>
 
-        <div class="touchPad round screenRight screenTop" id="closeLoginAndApply">
-            <img src="./ResourceFile/close.svg" alt="" srcset="">
-        </div>
-
+    <div class="touchPad round screenRight screenTop" id="closeLoginAndApply">
+        <img src="./ResourceFile/close.svg" alt="" srcset="">
     </div>
 
-    <script src="./JS/vue.min.js"></script>
-    <script src="./JS/Interaction.js"></script>
-    <script src="./JS/ToolBox.js"></script>
-    <script src="./JS/Login.js"></script>
-    <script src="./JS/Apply.js"></script>
+    </div> -->
 
 </body>
 

@@ -152,7 +152,7 @@
 }
 .page_3, .page_4, .page_5{
     background: #FFCC99;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     overflow: hidden;
     border-radius: 4px;
 }
@@ -194,36 +194,9 @@
             padding: 2.5rem 1rem;
         }
         .page_3 p, .page_4 p, .page_5 p{
-            font-size: 1.9rem;
-        }
-}
-@media only screen
-    and (min-device-height : 600px)
-    and (max-device-height : 610px){
-        #card_1, #card_2{
-            height: 20rem;
-        }
-        .front,
-        .back{
-            min-height: 21rem; 
-        }
-        .front .inner p{
-            font-size: 2.2rem;
-        }
-        .back .inner p{
-            font-size: 1.7rem;
-        }
-        [class^="theme"]{           
-            font-size: 2rem;
-            padding: 1.5rem;
-        }
-        .page_3, .page_4, .page_5{
-            padding: 2rem 1rem;
-        }
-        .page_3 p, .page_4 p, .page_5 p{
             font-size: 1.6rem;
         }
-    }
+}
 @media only screen
     and (min-device-width : 451px)
     and (max-device-width : 767px){
@@ -256,12 +229,70 @@
             margin: 0.5rem 0;
         }
         .page_3, .page_4, .page_5{
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
         }
         .page_3 p, .page_4 p, .page_5 p{
-            font-size: 1.9rem;
+            font-size: 1.6rem;
         }
 }
+@media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 767px)
+    and (min-device-height : 568px)
+    and (max-device-height : 610px){
+        #card_1, #card_2{
+            height: 20rem;
+        }
+        .front,
+        .back{
+            min-height: 21rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.6rem;
+        }
+    }
+    @media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 767px)
+    and (min-device-height : 611px)
+    and (max-device-height : 670px){
+        #card_1, #card_2{
+            height: 23rem;
+        }
+        .front,
+        .back{
+            min-height: 23rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.6rem;
+        }
+    }
 @media only screen
     and (min-device-width : 768px)
     and (max-device-width : 991px){
@@ -380,6 +411,122 @@
             font-size: 1.9rem;
         }
 }
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1199px)
+    and (min-device-height : 568px)
+    and (max-device-height : 610px){
+        #card_1, #card_2{
+            height: 20rem;
+        }
+        .front,
+        .back{
+            min-height: 21rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.6rem;
+        }
+    }
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1199px)
+    and (min-device-height : 611px)
+    and (max-device-height : 730px){
+        #card_1, #card_2{
+            height: 23rem;
+        }
+        .front,
+        .back{
+            min-height: 23rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.7rem;
+        }
+    }
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1199px)
+    and (min-device-height : 731px)
+    and (max-device-height : 800px){
+        #card_1, #card_2{
+            height: 23rem;
+        }
+        .front,
+        .back{
+            min-height: 23rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.9rem;
+        }
+    }
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1199px)
+    and (min-device-height : 801px)
+    and (max-device-height : 949px){
+        #card_1, #card_2{
+            height: 29rem;
+        }
+        .front,
+        .back{
+            min-height: 29rem; 
+        }
+        .front .inner p{
+            font-size: 2.2rem;
+        }
+        .back .inner p{
+            font-size: 1.7rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 1.5rem;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.9rem;
+        }
+    }
 @media screen
     and (min-device-width : 1200px)
    {
@@ -419,3 +566,43 @@
             font-size: 1.9rem;
         }
 }
+@media only screen
+    and (min-device-width : 1200px)
+    and (min-device-height : 568px)
+    and (max-device-height : 610px){
+        #card_1, #card_2{
+            height: 40rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 3.5rem 0 0 0;
+        }
+        .front,
+        .back{
+            min-height: 40rem; 
+            width: 100%;
+        }
+        .front .inner p{
+            font-size: 2.5rem;
+        }
+        .back .inner p{
+            font-size: 1.9rem;
+        }
+        #title_1, #title_2{
+            top: 2%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        [class^="theme"]{           
+            font-size: 2.1rem;
+            padding: 1.5rem;
+        }
+        #card_3, #card_4, #card_5{
+            margin: 0.5rem 0;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 2.5rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.6rem;
+        }
+    }

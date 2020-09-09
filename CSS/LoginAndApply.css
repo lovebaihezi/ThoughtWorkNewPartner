@@ -23,6 +23,7 @@ label {
     justify-content: center;
     height: auto;
     min-height: 100%;
+    overflow: visible;
 }
 
 body {
@@ -46,12 +47,9 @@ body {
 }
 
 .img {
-    display: flex;
-    width: 0;
-    height: auto;
-    min-height: 100%;
-    flex-shrink: 0;
-    background-image: url(../ResourceFile/BG.jpg);
+    width: 100%;
+    position: absolute;
+    bottom: 100%;
 }
 
 label {
@@ -60,17 +58,16 @@ label {
     position: relative;
 }
 
-input:focus {
-    width: 260px;
-    margin-left: 40px;
-}
-
-.Animation {
-    width: 40px;
-    height: 100%;
+input+div {
     position: absolute;
-    left: 0;
-    top: 0;
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+    background-image: url(../ResourceFile/incomplete.png);
+    background-size: contain;
+    left: 6px;
+    top: 1px;
+    transition: all 0.2s linear;
 }
 
 input {
@@ -83,11 +80,48 @@ input {
 }
 
 input:focus {
-    outline: unset;
+    width: 260px;
+    /* opacity: 0.2; */
+    margin-right: -40px;
+    outline: none;
+}
+
+input:focus+div {
+    visibility: visible;
+}
+
+#Submit:focus,
+#Submit:hover {
+    margin: unset;
+    width: 80px;
+    height: 80px;
+    background-image: url(../ResourceFile/send.svg);
+    background-size: contain;
+    border-radius: 100%;
+    background-color: #000000;
+    color: transparent;
+    font-size: 0;
 }
 
 form {
     font-size: 16px;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid+div {
+    background-image: url(../ResourceFile/complete.png);
+}
+
+input:invalid+div {
+    background-image: url(../ResourceFile/close.svg);
+    color: red;
 }
 
 form p:nth-of-type(1) {
@@ -98,12 +132,16 @@ form p:nth-of-type(1) {
 
 #Submit {
     margin-top: 36px;
+    margin-bottom: 12px;
     width: 300px;
     font-size: 16px;
     height: 38px;
     text-align: center;
     cursor: pointer;
     border: 0.1rem solid #000000;
-    background-color: rgb(148, 173, 243);
+    background-color: #007cba;
     border-radius: 0.5rem;
+    transition: all 0.3s linear;
+    background-repeat: no-repeat;
+    background-position: center;
 }
