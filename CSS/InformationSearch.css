@@ -11,7 +11,7 @@ body{
 	margin-top:-3%;
 	margin-left:-5%;
 	cursor: pointer;
-	/**/animation: myReverse 3s linear 2.5s;
+	animation: myReverse 3s linear 2.5s;
 	perspective:1000;
 	-webkit-perspective:1000; /* Safari and Chrome */
 }
@@ -51,7 +51,6 @@ body{
 #InformationBlock{
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
@@ -65,7 +64,6 @@ body{
 	z-index: 2;
 }
 .back {
-	/*background-color:rgb(255, 248, 156);*/
 	background-color: #ffe597;
 	font-size:3rem;
 	transform: rotateY(180deg);
@@ -79,7 +77,6 @@ body{
 	position: absolute;
 	width:100%;
 	height:100%;
-/*	background-image: url("../ResourceFile/WhiteTree.jpg");*/
 }
 #InformationContent{
 	position: absolute;
@@ -334,6 +331,26 @@ body{
 		background-color: transparent;
 		border-style:none;
 	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
 }
 
 
@@ -401,6 +418,26 @@ body{
 		background-color: transparent;
 		border-style:none;
 	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
 }
 
 
@@ -460,6 +497,26 @@ body{
 		font-size:1rem;
 		color: #303030;
 		padding-left: 0rem;
+	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
 	}
 }
 
@@ -521,6 +578,26 @@ body{
 		color: #303030;
 		padding-left: 0rem;
 	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
 }
 
 
@@ -577,6 +654,46 @@ body{
 		font-size:1.4rem;
 		color: #303030;
 		padding-left: 0rem;
+	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
 	}
 }
 
@@ -635,6 +752,26 @@ body{
 		color: #303030;
 		padding-left: 0rem;
 	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
 }
 @media screen and (min-width: 800px) and (max-width:1023px){
 	.flip-container{
@@ -690,20 +827,42 @@ body{
 		color: #303030;
 		padding-left: 0rem;
 	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.25rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
+	}
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.flip-container{
-		width:30%;
-		height:20%;
+		width:70%;
+		height:15%;
 		animation: myReverse 1.5s linear 2.5s;
+		margin:0 auto;
+		margin-top:-3rem;
 	}
 	.MyInformation p{
-		font-size:2.5rem;
+		font-size:3.7rem;
 	}
 	#InformationList{
 		margin:0 auto;
 		height:12%;
-		margin-top:10px;
+		margin-top:5rem;
 		padding-bottom:0px;
 	}
 	#InformationScroll{
@@ -742,6 +901,26 @@ body{
 		font-size:1.4rem;
 		color: #303030;
 		padding-left: 0rem;
+	}
+	.back{
+		display:none;
+	}
+	#InformationBlock:hover{
+		transform: rotateY(0deg);
+	}
+	.front{
+		background-color:#ffe597;
+	}
+	.front p{
+		font-weight:800;
+		color:black;
+		text-shadow: 0px 0px 5px #FFFFCC, 0px 2px 2px #FFFFCC, 2px 0px 2px #FFFFCC, 0px -2px 2px #FFFFCC;
+	}
+	#InformationBlock:hover p{
+		color:#fd9205;
+            transform:translate(0,-0.1rem);
+            transition:all 0.2s;
+			text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.35rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
 	}
 }
 @media screen and (min-width: 1280px) and (max-width: 1365px){

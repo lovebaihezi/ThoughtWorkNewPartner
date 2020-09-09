@@ -1,13 +1,13 @@
 window.onload=function(){
     var InputContent = document.querySelectorAll(".InformationValue");
     var scrollWidth = document.getElementById("scrollBox");
-   
+    
     //1.创建对象
     const xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
 
     //2.初始化，设置类型与url
-    xhr.open("POST","http://127.0.0.1:8000/json-server");
+    xhr.open("GET","http://127.0.0.1:8000/json-server");
     //3.发送,把参数传给服务器
     xhr.send();
     //4.事件绑定
