@@ -217,7 +217,7 @@ body {
 	transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
 	position: absolute;
 	width: 100%;
-	height: 60%;
+	height: 70%;
 }
 .card1:hover .card__thumb1 {
 	height: 13rem;
