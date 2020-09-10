@@ -31,7 +31,7 @@ window.onload = function() {
             if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
                 ResponseTextFromServer = AjaxObject.responseText;
                 ResponseInformationObject = JSON.parse(ResponseTextFromServer);
-                ResponseInformationObject.status = 1;
+                ResponseInformationObject.status = 2;
                 // 0 1 2
                 // 登陆失败 登录但未注册 登录而且已经注册
                 switch (ResponseInformationObject.status) {
@@ -39,18 +39,28 @@ window.onload = function() {
                         {
                             for (i = 0; i < formInformation.elements.length - 1; i++) {
                                 (function(i) {
-                                    formInformation.elements[i].value = "";
+                                    formInformation.elements[i].value = null;
                                 })(i);
                             }
-                            location.reload();
+                            location.reload(true);
                             break;
                         }
                     case 1:
                         {
+                            location.replace("./Apply.html");
                             break
                         }
                     case 2:
                         {
+                            AjaxObject.open("get", "./InformationSearch.html?i=" + ResponseTextFromServer, true);
+                            AjaxObject.onreadystatechange = function() {
+                                if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
+                                    // if (AjaxObject.responseText == 1) {
+                                    location.replace("./InformationSearch.html");
+                                    // }
+                                }
+                            }
+                            AjaxObject.send();
                             break;
                         }
                 }
