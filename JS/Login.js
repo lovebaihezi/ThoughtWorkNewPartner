@@ -42,7 +42,7 @@ window.onload = function() {
                                     formInformation.elements[i].value = null;
                                 })(i);
                             }
-                            location.reload(true);
+                            location.reload();
                             break;
                         }
                     case 1:
