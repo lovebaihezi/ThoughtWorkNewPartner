@@ -57,7 +57,7 @@ body {
 }
 
 .card__thumb {
-	height: 24.5rem;	
+	height: 30%;	
 	overflow: hidden;
 	background-color: #000;
 	-webkit-transition: height 0.5s;
