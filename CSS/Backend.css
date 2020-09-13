@@ -57,7 +57,7 @@ body {
 }
 
 .card__thumb {
-	height: 24.5rem;	
+	height: 30%;	
 	overflow: hidden;
 	background-color: #000;
 	-webkit-transition: height 0.5s;
@@ -90,7 +90,7 @@ body {
 
 .card__body {
 	position: relative;
-	height: 100%;
+	height: 70%;
 	padding: 2rem;
 	-webkit-transition: height 0.5s;
 	transition: height 0.5s;
@@ -99,7 +99,7 @@ body {
 }
 
 .card:hover .card__body {
-	height: 100%;
+	height: 90%;
 }
 
 .card__category {
@@ -230,7 +230,7 @@ body {
 }
 
 .card1:hover .card__body {
-	height: 110%;
+	height: 90%;
 }
 
 .card__category {
@@ -773,7 +773,7 @@ body {
 	
 	.card__description {
 		line-height: 4rem;
-		font-size: 2.5rem;
+		font-size: 2.3rem;
 		top: 15%;
 	}
 	
@@ -790,7 +790,7 @@ body {
 	
 	.card__description1 {
 		line-height: 4rem;
-		font-size: 2.5rem;
+		font-size: 2.3rem;
 		top: 15%;
 	}
 	
