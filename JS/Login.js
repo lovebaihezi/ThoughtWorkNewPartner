@@ -56,7 +56,7 @@ window.onload = function() {
                             AjaxObject.onreadystatechange = function() {
                                 if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
                                     // if (AjaxObject.responseText == 1) {
-                                    location.replace("./InformationSearch.html");
+                                    location.replace("./InformationSearch.html?i=" + ResponseTextFromServer);
                                     // }
                                 }
                             }
