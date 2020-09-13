@@ -99,7 +99,7 @@ body {
 }
 
 .card:hover .card__body {
-	height: 100%;
+	height: 110%;
 }
 
 .card__category {
