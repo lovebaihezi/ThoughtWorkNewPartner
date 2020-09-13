@@ -315,9 +315,6 @@
         ctx.running = true;
         ctx.frame = 1;
 
-        logo = new Image();
-        logo.src = 'ht' + 'tp://ho' + 'vertree.c' + 'om/themes/hvtimages/hvtlogo.p' + 'ng';
-
         hue = new Oscillator({
             phase: Math.random() * Math.TWO_PI,
             amplitude: 85,

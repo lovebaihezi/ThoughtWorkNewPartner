@@ -1,4 +1,6 @@
- /* @import url('https://fonts.googleapis.com/css?family=Popins'); */
+.head{
+    height:70px;
+}
 *{
     margin:0;
     padding:0;
@@ -51,7 +53,6 @@ html,body{
 }
 .card .bottom-text{
     padding:0 20px 10px 20px;
-    /* margin-top: 5px; */
     background: white;
     opacity: 0;
     visibility: hidden;
