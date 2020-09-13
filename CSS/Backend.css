@@ -90,7 +90,7 @@ body {
 
 .card__body {
 	position: relative;
-	height: 80%;
+	height: 100%;
 	padding: 2rem;
 	-webkit-transition: height 0.5s;
 	transition: height 0.5s;
@@ -123,7 +123,11 @@ body {
 	font-weight: bold;
 	color: #666C74;
 }
-
+.card__description_s{
+	opacity: 1;
+	font-size: 1.8rem;
+	color: #666C74;
+}
 .card__description {
 	position: absolute;
 	left: 2rem;
@@ -151,6 +155,9 @@ body {
     transform: translateY(0);
 	-webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
+}
+.card:hover .card__description_s {
+	opacity: 0;
 }
 
 .card1 {
@@ -217,7 +224,7 @@ body {
 	transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
 	position: absolute;
 	width: 100%;
-	height: 70%;
+	height: 60%;
 }
 .card1:hover .card__thumb1 {
 	height: 13rem;
@@ -254,7 +261,11 @@ body {
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
+.card__description1_s{
+	opacity: 1;
+	font-size: 1.8rem;
+	color: #666C74;
+}
 .card__description1 {
 	position: absolute;
 	left: 2rem;
@@ -281,86 +292,50 @@ body {
 	-webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
-
-.demo{
+.card1:hover .card__description1_s {
+	opacity: 0;
+}
+.container{
 	position: absolute;
-	top:75%;
-	width: 70%;
-	left: 16%;
-	height: 40%;
-	padding: 0;
-	margin: 0;
+	top: 80%;
+	left: 15%;
 }
-
-a:hover,a:focus{
-	outline: none;
-	text-decoration: none;
-}
-
-.tab{
-	width: 100%;
+.title_s{
 	position: absolute;
-	top: 0;
-	box-shadow: 0 0.1rem 0.2rem 0 #697886;
-	border-top-right-radius: 1rem;
-		  border-top-left-radius: 1rem;
+	left: 30%;
+	top: 70%;
+	font-size: 3rem;
 }
-
-.tab .nav-tabs{
-	box-shadow: -0.1rem 0 0.2rem #6676ff;
-	border-bottom: 0 none;
+#title_1, #title_2{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 2.5rem;
 }
-
-.tab .nav-tabs li{
-	width: 16.6666666666666667%;
+[class^="col"]{
+    /* border: 1px solid black; */
 }
-
-.tab .nav-tabs li a{
-	display: block;
-	font-size: 1.8rem;
-	text-align: center;
-	border: none;
-	padding: 1.8rem;
-	background:#FFFFCC;
-	border-radius: 0;
-	margin: 0;
-	position: relative;
-	transition: all 0.3s ease 0s;
+[class^="theme"]{
+    background: #FFFFCC;
+    font-size: 2rem;
+    display: block;
+    padding: 1rem;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 4px;
 }
-
-.tab .nav-tabs li a:hover{
-	background: #6676ff;
+#card_4{
+    margin: 0.5rem 0;
 }
-
-.tab .nav-tabs li.active a,
-.tab .nav-tabs li.active a:focus,
-.tab .nav-tabs li.active a:hover{
-	border: none;
-	background: #6676ff;
-	color: #fff;
-	transition: all 0.20s ease 0s;
+.page_1, .page_2, .page_3, .page_4, .page_5, .page_6{
+    background: #FFCC99;
+    padding: 1rem 1rem;
+    overflow: hidden;
+    border-radius: 4px;
 }
-
-.tab .nav-tabs li.active a:after{
-	content: "";
-	position: absolute;
-	left: 40%;
-	top: -3.5rem;
-	border: 2rem solid transparent;
-	border-bottom-color: #6676ff;
-}
-
-.tab .tab-content{
-	font-size: 1.8rem;
-	background:#FFFFCC;
-	line-height: 2.5rem;
-	padding: 2rem;
-	color: #666C74;
-	border-top-right-radius: 1rem;
-	border-top-left-radius: 1rem;
-}
-.tab .tab-content h4{
-	font-size: 2.3rem;
+.page_1 p, .page_2 p, .page_3, .page_4, .page_5, .page_6 p{
+    font-size: 1.6rem;
 }
 @media screen and (min-width:280px) and (max-width:330px){
 	html,body{
@@ -376,17 +351,16 @@ a:hover,a:focus{
 	.Backend-background{
 		height: 50%;
 	}
-	.tab .nav-tabs li{
-		width: 100%;
-		margin-bottom: 2px;
+	.container{
+		width: 98%;
+		left: 2%;
+		top: 121%;
 	}
-	.tab .nav-tabs li.active a:after{
-		border: none;
-	}
-	.demo{
-		width: 80%;
-		left: 11%;
-		top: 116%;
+	.title_s{
+		position: absolute;
+		left: 10%;
+		top: 117%;
+		font-size: 2rem;
 	}
 	.card{
 		left: 51%;
@@ -416,18 +390,17 @@ a:hover,a:focus{
 			.Backend-background{
 				height: 50%;
 			}
-		    .tab .nav-tabs li{
-		        width: 100%;
-		        margin-bottom: 2px;
-		    }
-		    .tab .nav-tabs li.active a:after{
-		        border: none;
-		    }
-		    .demo{
-		    	width: 80%;
-		    	left: 11%;
-		    	top: 116%;
-		    }
+			.container{
+				width: 98%;
+				left: 2%;
+				top: 121%;
+			}
+			.title_s{
+				position: absolute;
+				left: 10%;
+				top: 117%;
+				font-size: 2rem;
+			}
 		    .card{
 		    	left: 51%;
 				width: 80%;
@@ -457,20 +430,16 @@ a:hover,a:focus{
 	.Backend-background{
 		height: 50%;
 	}
-	.tab .nav-tabs li{
-		width: 100%;
-		margin-bottom: 0.2rem;
+	.title_s{
+		position: absolute;
+		left: 17%;
+		top: 117%;
+		font-size: 2.5rem;
 	}
-	.tab .nav-tabs li.active a:after{
-		border: none;
-	}
-	.tab .nav-tabs li a{
-	font-size: 2.5rem;
-	}
-	.demo{
-		width: 65%;
-		left: 18%;
-		top: 113%;
+	.container{
+		width: 78%;
+		left: 12%;
+		top: 121%;
 	}
 	.card{
 		left: 50%;
@@ -512,13 +481,6 @@ a:hover,a:focus{
 	.card__description{
 		top: 14%;
 	}
-	.tab .tab-content{
-	font-size: 2rem;
-	line-height: 3rem;
-	}
-	.tab .tab-content h4{
-		font-size: 2.5rem;
-	}
 }
 
 @media screen and (min-width:550px) and (max-width:768px){
@@ -531,24 +493,17 @@ a:hover,a:focus{
 			.Backend-background{
 				height: 50%;
 			}
-		    .tab .nav-tabs li{
-		        width: 100%;
-		        margin-bottom: 0.2rem;
-		    }
-		    .tab .nav-tabs li.active a:after{
-		        border: none;
-		    }
-		    .demo h4{
-		    	font-size: 3rem;
-		    }
-		    .tab .nav-tabs li a{
-		    font-size: 3.5rem;
+		    .container{
+		    	width: 85%;
+		    	left: 8%;
+		    	top: 120%;
 			}
-		    .demo{
-		    	width: 65%;
-		    	left: 18%;
-		    	top: 113%;
-		    }
+			.title_s{
+				position: absolute;
+				left: 19%;
+				top: 117%;
+				font-size: 2.5rem;
+			}
 		    .card{
 		    	left: 50%;
 		    	width: 65%;
@@ -589,13 +544,6 @@ a:hover,a:focus{
 		    .card__description{
 		    	top: 14%;
 		    }
-		    .tab .tab-content{
-		    font-size: 2.5rem;
-		    line-height: 4.5rem;
-			}
-			.tab .tab-content h4{
-				font-size: 3.5rem;
-			}
 }
 @media screen and (min-width:769px) and (max-width:1200px){
 	
@@ -630,9 +578,16 @@ body {
 	top: 18%;
 }
 
-.demo{
-	width: 80%;
-	left: 11%;
+.container{
+	width: 100%;
+	left: 0%;
+	top: 80%;
+}
+.title_s{
+	position: absolute;
+	left: 19%;
+	top:75%;
+	font-size: 2.5rem;
 }
 }
 @media screen and (min-width:1200px) and (max-width:1499px){
@@ -672,21 +627,16 @@ body {
 		font-size: 1.7rem;
 		top: 15%;
 	}
-	
-	.tab .nav-tabs li a{
-		font-size: 2rem;
+	.container{
+		width: 100%;
+		left: 0%;
+		top: 80%;
 	}
-	
-	.tab .nav-tabs li.active a:after{
-		top: -3.5rem;
-	}
-	
-	.tab .tab-content{
-		font-size: 1.7rem;
-		line-height: 2.7rem;
-	}
-	.tab .tab-content h4{
-		font-size: 2rem;
+	.title_s{
+		position: absolute;
+		left: 19%;
+		top:75%;
+		font-size: 2.5rem;
 	}
 	}
 	
@@ -734,20 +684,16 @@ body {
 	top: 15%;
 }
 
-.tab .nav-tabs li a{
-	font-size: 1.8rem;
+.container{
+	width: 100%;
+	left: 1%;
+	top: 80%;
 }
-
-.tab .nav-tabs li.active a:after{
-	top: -3.1rem;
-}
-
-.tab .tab-content{
-	font-size: 1.8rem;
-	line-height: 2.8rem;
-}
-.tab .tab-content h4{
-	font-size: 2.3rem;
+.title_s{
+	position: absolute;
+	left: 19%;
+	top:75%;
+	font-size: 2.5rem;
 }
 }
 @media screen and (min-width:1701px) and (max-width:2001px){
@@ -794,20 +740,16 @@ body {
 		top: 15%;
 	}
 	
-	.tab .nav-tabs li a{
-		font-size: 2.3rem;
+	.container{
+		width: 100%;
+		left: 1%;
+		top: 80%;
 	}
-	
-	.tab .nav-tabs li.active a:after{
-		top: -3.1rem;
-	}
-	
-	.tab .tab-content{
-		font-size: 2.3rem;
-		line-height: 4rem;
-	}
-	.tab .tab-content h4{
-		font-size: 2.8rem;
+	.title_s{
+		position: absolute;
+		left: 20%;
+		top:75%;
+		font-size: 2.5rem;
 	}
 	}
 	
