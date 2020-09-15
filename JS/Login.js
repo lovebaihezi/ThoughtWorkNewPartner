@@ -48,20 +48,19 @@ window.onload = function() {
                     case 1:
                         {
                             location.replace("./Apply.html");
-                            break;
+                            break
                         }
                     case 2:
                         {
-                            alert(1)
-                            location.href = "./InformationSearch.html?" + "txt=" + encodeURI(ResponseTextFromServer);
-                            // AjaxObject.open("get", "./InformationSearch.html?i=" + ResponseTextFromServer, true);
-                            // AjaxObject.onreadystatechange = function() {
-                            // if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
-                            // if (AjaxObject.responseText == 1) {
-                            // }
-                            // }
-                            // }
-                            // AjaxObject.send();
+                            AjaxObject.open("get", "./InformationSearch.html?i=" + ResponseTextFromServer, true);
+                            AjaxObject.onreadystatechange = function() {
+                                if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
+                                    // if (AjaxObject.responseText == 1) {
+                                    location.replace("./InformationSearch.html?i=" + ResponseTextFromServer);
+                                    // }
+                                }
+                            }
+                            AjaxObject.send();
                             break;
                         }
                 }
