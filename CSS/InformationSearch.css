@@ -512,6 +512,11 @@ body{
 		font-size:1.4rem;
 	}
 }
+@media screen and (min-width: 640px) and (max-width: 679px){
+	#Ul li{
+		width:4rem;
+	}
+}
 @media screen and (min-width: 680px) and (max-width: 799px) {
 	.flip-container{
 		width:70%;
