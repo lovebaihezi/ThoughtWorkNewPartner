@@ -1,5 +1,5 @@
 window.onload=function(){
-    var InputContent = document.querySelectorAll(".InformationValue");
+/*    var InputContent = document.querySelectorAll(".InformationValue");
     var scrollWidth = document.getElementById("scrollBox");
     
     //1.创建对象
@@ -33,5 +33,8 @@ window.onload=function(){
         }
     };
 
-
+*/
+    var InputContent = document.querySelectorAll(".InformationValue");
+    var scrollWidth = document.getElementById("scrollBox");
+    
 };
