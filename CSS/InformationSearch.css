@@ -208,25 +208,7 @@ body{
     justify-content: center;
     align-items: center;
     border-bottom:1px solid #505050;
-}/*
-.InformationLi::before{
-	position: absolute;
-	content: "";
-    top: 0;
-    left: 0;
-    border-bottom: 2px solid white;
-    box-shadow:0px 20px 10px -16px #ccc,0px 5px 6px -6px gray;
-    width: 0;
-    height: 100%;
 }
-.InformationLi:hover{
-	border-bottom-color:transparent;
-}
-.InformationLi:hover::before{
-    width: 100%;
-    transition: 0.4s all linear;
-    transition-delay: 0.1s;
-}*/
 .InformationName{
 	width:35%;
 	font-size: 1.3rem;
