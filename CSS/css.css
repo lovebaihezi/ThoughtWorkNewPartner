@@ -188,8 +188,11 @@ h1, h2 {
 }
 
 #hovertreecontainer div p strong a {
-    color: #999;
-    font-size: 0.5em;
+    color: gray;
+    font-size: 0.8em;
+    padding: 25px 30px;
+    margin:50px 0;
+    transition: 0.5;
 }
 
 body, td, th {
@@ -211,4 +214,23 @@ a:hover {
 a:active {
     text-decoration: none;
 }
-    
+.in{
+    animation: 2s opacity2 0s infinite; 
+    -webkit-animation: 2s opacity2 0s infinite;
+    -moz-animation: 2s opacity2 0s infinite;
+}
+@keyframes opacity2{
+            0%{opacity:0}
+            50%{opacity:.8;}
+            100%{opacity:0;}
+        }
+ @-webkit-keyframes opacity2{
+            0%{opacity:0}
+            50%{opacity:.8;}
+            100%{opacity:0;}
+        }
+ @-moz-keyframes opacity2{
+            0%{opacity:0}
+            50%{opacity:.8;}
+            100%{opacity:0;}
+ }
