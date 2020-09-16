@@ -61,8 +61,8 @@ label {
 
 input+div {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     visibility: hidden;
     background-image: url(../ResourceFile/incomplete.png);
     background-size: contain;
@@ -91,7 +91,13 @@ input:focus+div {
     visibility: visible;
 }
 
+#searchByNumber {
+    margin-bottom: 36px;
+}
+
 #Submit:focus,
+#Search:focus,
+#Search:hover,
 #Submit:hover {
     margin: unset;
     width: 80px;
@@ -131,7 +137,8 @@ form p:nth-of-type(1) {
     line-height: 120%;
 }
 
-#Submit {
+#Submit,
+#Search {
     margin-top: 36px;
     margin-bottom: 12px;
     width: 300px;
@@ -140,9 +147,17 @@ form p:nth-of-type(1) {
     text-align: center;
     cursor: pointer;
     border: 0.1rem solid #000000;
-    background-color: #00ba2e;
+    background-color: #486ac7;
     border-radius: 0.5rem;
     transition: all 0.3s linear;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#Search {
+    margin-top: 12px;
+}
+
+#closeIfNotFind {
+    display: none;
 }

@@ -22,18 +22,18 @@
 
     <div class="Login">
         <div class="img">
-            <img src="../ResourceFile/tw-logo.svg" alt="">
+            <img src="../ResourceFile/tw-logo.svg" alt=""> 西安邮电大学联合创新实验室
         </div>
         <form action="" method="post">
             <p>欢迎加入ThoughtWork实验室,请在这里登录吧,使用学号与校园卡密码登录</p>
             <p>学号:</p>
             <label for="Account">
-                <input type="text" name="Account" id="Account" required pattern="[0-9]{6}" autocomplete="username">
+                <input type="text" name="Account" id="Account" required pattern="[0-9]{8} | \w{6}" autocomplete="username">
                 <div></div>
             </label>
             <p>密码:</p>
             <label for="Password">
-                <input type="password" name="Password" id="Password" required pattern="\w{6,12}" autocomplete="current-password">
+                <input type="password" name="Password" id="Password" required pattern="\w{6,12} | \w{12}" autocomplete="current-password">
                 <div></div>
             </label>
             <label for="Submit">
