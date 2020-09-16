@@ -208,7 +208,7 @@ body{
     justify-content: center;
     align-items: center;
     border-bottom:1px solid #505050;
-}
+}/*
 .InformationLi::before{
 	position: absolute;
 	content: "";
@@ -226,7 +226,7 @@ body{
     width: 100%;
     transition: 0.4s all linear;
     transition-delay: 0.1s;
-}
+}*/
 .InformationName{
 	width:35%;
 	font-size: 1.3rem;
@@ -338,11 +338,14 @@ body{
 		width:70%;
 		height:15%;
 	}
+	#InformationContent{
+		height:88%;
+	}	
 	.MyInformation p{
 		font-size:2rem;
 	}
 	#InformationList{
-		height:21%;
+		height:6.5rem;
 		margin-top:10px;
 	}
 	#InformationScroll{
@@ -351,7 +354,7 @@ body{
 	}	
 	#Ul{
 		width:80%;
-		height:15%;
+		height:4.6rem;
 		margin-top:10px;
 	}
 	#Ul li{
@@ -507,6 +510,11 @@ body{
 	.InformationValue{
 		width:60%;
 		font-size:1.4rem;
+	}
+}
+@media screen and (min-width: 640px) and (max-width: 679px){
+	#Ul li{
+		width:4rem;
 	}
 }
 @media screen and (min-width: 680px) and (max-width: 799px) {
