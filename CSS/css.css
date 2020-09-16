@@ -14,7 +14,6 @@ html, body {
     font: 16px/1.4 'Lato', sans-serif;
     color: #fefeff;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
 }
 
 body {
@@ -157,7 +156,6 @@ h1, h2 {
         font-weight: 300;
         color: #76747a;
         -webkit-font-smoothing: subpixel-antialiased;
-        font-smoothing: subpixel-antialiased;
     }
 
         #hovertreecontainer p strong {
