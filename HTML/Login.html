@@ -20,15 +20,15 @@
 
 <body>
 
-    <div class="Login">
+    <!-- <div class="Login">
         <div class="img">
-            <img src="../ResourceFile/tw-logo.svg" alt="">
+            <img src="../ResourceFile/tw-logo.svg" alt=""> 西安邮电大学联合创新实验室
         </div>
         <form action="" method="post">
             <p>欢迎加入ThoughtWork实验室,请在这里登录吧,使用学号与校园卡密码登录</p>
             <p>学号:</p>
             <label for="Account">
-                <input type="text" name="Account" id="Account" required pattern="[0-9]{6}" autocomplete="username">
+                <input type="text" name="Account" id="Account" required pattern="[0-9]{8}" autocomplete="username">
                 <div></div>
             </label>
             <p>密码:</p>
@@ -38,11 +38,42 @@
             </label>
             <label for="Submit">
                 <input id="Submit" type="Submit" value="LOGIN">
-                    <!-- <p>LOGIN</p>
-                </div> -->
+            </label>
+        </form>
+    </div> -->
+
+    <div class="Login">
+        <div class="img">
+            <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
+        </div>
+        <form>
+            <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
+            <p>学号:</p>
+            <label for="Account">
+                <input type="text" name="Account" id="Account" required pattern="[0-9]{8}" autocomplete="username">
+                <div></div>
+            </label>
+            <p>密码:</p>
+            <label for="Password">
+                <input type="password" name="Password" id="Password" required pattern="\w{6,12}" autocomplete="current-password">
+                <div></div>
+            </label>
+            <p>电话号码:</p>
+            <label for="Telephone">
+                <input type="text" name="Telephone" id="Telephone" required pattern="[0-9]{11}" autocomplete="tel">
+                <div></div>
+            </label>
+            <p>选择方向:前端/后端</p>
+            <label for="Choose">
+                <input type="text" name="方向" id="Choose" required pattern="前端|后端">
+                <div></div>
+            </label>
+            <label for="Submit">
+                <input id="Submit" type="Submit" value="APPLY">
             </label>
         </form>
     </div>
+
     <script src="../JS/Login.js"></script>
 </body>
 
