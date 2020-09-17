@@ -1,3 +1,4 @@
+// Copyright (c) chai bo wen LQXC All rights reserved.
 window.onload = () => {
     let loginButton = document.getElementById("Submit");
     let leftButton = document.getElementById("leftButton");

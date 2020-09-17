@@ -1,3 +1,4 @@
+// Copyright (c) chai bo wen LQXC All rights reserved.
 const upToTop = document.getElementById("BackToTop");
 window.onscroll = function() {
     let ScrollHeight = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
