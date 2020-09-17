@@ -45,6 +45,15 @@
     <div class="Login">
         <div class="img">
             <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
+
+        </div>
+        <div class="switch">
+            <div class="actionButton on" id="leftButton">
+                <p>普通登录</p>
+            </div>
+            <div class="actionButton" id="rightButton">
+                <p>管理员登录</p>
+            </div>
         </div>
         <form>
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
@@ -69,9 +78,27 @@
                 <div></div>
             </label>
             <label for="Submit">
-                <input id="Submit" type="Submit" value="APPLY">
+                <input id="normalSubmit" type="Submit" value="LOGIN" class="actionButton">
             </label>
         </form>
+
+        <form class="close">
+            <p>管理员请使用管理账号登录</p>
+            <p>学号:</p>
+            <label for="Account">
+                <input type="text" name="Account" id="adminAccount" required pattern="[0-9]{8}" autocomplete=off>
+                <div></div>
+            </label>
+            <p>密码:</p>
+            <label for="Password">
+                <input type="password" name="Password" id="adminPassword" required pattern="\w{6,12}" autocomplete=off>
+                <div></div>
+            </label>
+            <label for="Submit">
+                <input id="adminSubmit" type="Submit" value="IAmADMIN" class="actionButton">
+            </label>
+        </form>
+
     </div>
 
     <script src="../JS/Login.js"></script>
