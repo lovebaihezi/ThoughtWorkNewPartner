@@ -1,4 +1,3 @@
-// Copyright (c) chai bo wen LQXC All rights reserved.
 window.onload = () => {
     let loginButton = document.getElementById("Submit");
     let leftButton = document.getElementById("leftButton");
@@ -25,7 +24,7 @@ window.onload = () => {
     let AjaxObject;
     let ResponseTextFromServer;
     let ResponseInformationObject;
-    let NewDefault = (formEvent) => {
+    document.getElementsByTagName("form")[0].addEventListener("submit", function(formEvent) {
         formEvent.preventDefault();
         for (i = 0; i < formInformation.elements.length - 1; i++) {
             ((i) => {
@@ -34,10 +33,20 @@ window.onload = () => {
         }
         AjaxObject = new XMLHttpRequest();
         window[formEvent.submitter.value]();
-    }
-    document.getElementsByTagName("form")[0].addEventListener("submit", NewDefault(form), true);
 
-    document.getElementsByTagName("form")[1].addEventListener("submit", NewDefault(form), true);
+    }, true);
+
+    document.getElementsByTagName("form")[1].addEventListener("submit", function(formEvent) {
+        formEvent.preventDefault();
+        for (i = 0; i < formInformation.elements.length - 1; i++) {
+            ((i) => {
+                JsonDataObject[formInformation.elements[i].name] = formInformation.elements[i].value;
+            })(i);
+        }
+        AjaxObject = new XMLHttpRequest();
+        window[formEvent.submitter.value]();
+
+    }, true);
 
     window.LOGIN = () => {
             JsonDataObject.Password = encryptDate(JsonDataObject.Password);
@@ -51,14 +60,20 @@ window.onload = () => {
     window.IAmADMIN = () => {
 
     }
+    encryptDate();
 }
 
-function encryptDate(StringObject) {
+function encryptDate() {
     let RsaAjax = new XMLHttpRequest();
+    // http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html
     let rsa = new RSAKey();
-    RsaAjax.open("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), "post", false);
+    RsaAjax.open("get", "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), false);
+    RsaAjax.setRequestHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
     RsaAjax.addEventListener("readystatechange", () => {
-
+        if (RsaAjax.readyState == 4 && RsaAjax.status == 200) {
+            console.log(RsaAjax.response);
+        }
     });
     RsaAjax.send();
 }
+// "User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0"
