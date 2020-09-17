@@ -19,10 +19,15 @@ window.onload = () => {
     }, false);
 
     window.LOGIN = () => {
-
-    }
+            JsonDataObject.Password = encryptDate(JsonDataObject.Password);
+            JsonData = JSON.stringify(JsonDataObject);
+        } //最后再来
 
     window.APPLY = () => {
 
     }
+}
+
+function encryptDate(StringObject) {
+
 }

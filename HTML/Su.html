@@ -14,54 +14,69 @@
     <link href="../ResourceFile/touch-icon-ipad.png" rel="apple-touch-icon" sizes="72x72">
     <link href="../ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
     <link href="../ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
-    <link rel="stylesheet" href="../CSS/LoginAndApply.css">
+    <link rel="stylesheet" href="../CSS/su.css">
     <title>欢迎报名ThoughtWork实验室</title>
 </head>
 
 <body>
+
     <div class="Login">
         <div class="img">
-            <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室超级用户管理系统
+            <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室管理界面
         </div>
         <form>
-            <p>学号查找:</p>
+
             <label for="SearchNumber">
-                <input type="text" name="Number" id="searchByNumber" required pattern="[0-9]{6}"> 
-            </label>
-            <label for="Post">
-                <input type="button" value="Search" id="Search">
+                <p>学号查找:</p>
+                <input type="text" name="Number" id="searchByNumber" required pattern="[0-9]{6}">
             </label>
 
-            <div id="closeIfNotFind">
-                <p>姓名:</p>
-                <label for="Name">
-                    <input type="text" name="Name" id="Name" autocomplete=off>
-                    <div></div>
-                </label>
-                <p>电话号码:</p>
-                <label for="Telephone">
-                    <input type="text" name="Telephone" id="Telephone"  pattern="[0-9]{11}" autocomplete=off>
-                    <div></div>
-                </label>
-                <p>专业班级:</p>
-                <label for="ClassInformation">
-                    <input type="text" name="ClassInformation" id="ClassInformation" >
-                    <div></div>
-                </label>
-                <p>选择方向:前端/后端</p>
-                <label for="Choose">
-                    <input type="text" name="方向" id="Choose" pattern="前端|后端">
-                    <div></div>
-                </label>
-                <label for="Submit">
-                    <input id="Submit" type="Submit" value="APPLY">
-                </label>
-            </div>
+            <label for="Post">
+                <input type="button" value="Search" id="Search" class="actionButton">
+            </label>
 
         </form>
+
+        <form>
+            <label for="Post">
+                <a href="./filtrate.html"><input type="button" value="filtrate" id="Search" class="actionButton"></a>
+            </label>
+        </form>
+
     </div>
-    <script src="../JS/Login.js"></script>
-    <script src="../JS/Apply.js"></script>
+
+    <div id="tableOfNewerInformation">
+
+        <div class="cell">
+            <div class="Information">
+                <div class="detail">
+                    <p class="Number">
+                    </p>
+                </div>
+                <div class="detail">
+                    <p class="class">
+                    </p>
+                </div>
+                <div class="detail">
+                    <p class="phoneNumber">
+                    </p>
+                </div>
+                <div class="detail">
+                    <p class="post">
+                    </p>
+                </div>
+            </div>
+            <div class="status">
+                <p class="meetingStatus">
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="../JS/su.js"></script>
 </body>
 
 </html>
