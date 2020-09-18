@@ -83,7 +83,7 @@ function encryptDate() {
     TryConnection.open("get", "https://lqxclqxc.com/ExpressWeb/app.js?time=" + new Date().getTime(), true);
     TryConnection.addEventListener("readystatechange", () => {
         if (TryConnection.status == 200 && TryConnection.readyState == 4) {
-            console.log("Response:" + TryConnection);
+            console.log("Response:" + TryConnection.response);
         }
     });
     TryConnection.send();
