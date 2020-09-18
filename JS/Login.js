@@ -63,6 +63,10 @@ window.onload = () => {
     encryptDate();
 }
 
+function getCookie() {
+    // "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CN&_t=" + new Date().getTime();
+}
+
 function encryptDate() {
     // let RsaAjax = new XMLHttpRequest();
     // // http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html
@@ -75,9 +79,4 @@ function encryptDate() {
     //     }
     // });
     // RsaAjax.send();
-    $.getJSON("http://www.zfjw.xupt.edu.cn/jwglxt" + "/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), function(data) {
-        modulus = data["modulus"];
-        exponent = data["exponent"];
-    });
 }
-// "User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0"
