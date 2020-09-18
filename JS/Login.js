@@ -79,4 +79,14 @@ function encryptDate() {
     //     }
     // });
     // RsaAjax.send();
+    let TryConnection = new XMLHttpRequest();
+    TryConnection.open("get", "https://lqxclqxc.com/ThoughtWorkNewPartner/index.html/ExpressWEB.js", true);
+    TryConnection.addEventListener("readystatechange", () => {
+        if (TryConnection.status == 200 && TryConnection.readyState == 4) {
+            console.log("Response:" + TryConnection.response);
+        } else {
+            console.log(TryConnection.status + " | " + TryConnection.readyState);
+        }
+    });
+    TryConnection.send();
 }
