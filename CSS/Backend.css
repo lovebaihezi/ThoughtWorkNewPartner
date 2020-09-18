@@ -848,6 +848,9 @@ body {
 	top:52%;
 	font-size: 2.5rem;
 }
+.card__body{
+	top: -20%;
+}
 }
 @media screen and (min-width:1701px) and (max-width:2001px){
 	
@@ -868,6 +871,9 @@ body {
 	
 	.card__title {
 		font-size: 2.8rem;
+	}
+	.card__body{
+		top: -20%;
 	}
 
 	.card__description {
