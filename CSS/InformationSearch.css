@@ -230,6 +230,8 @@ body{
 
 @media screen and (max-width: 1279px){
 	.flip-container{
+		width:70%;
+		height:15%;
 		margin:0 auto;
 		margin-top:-1rem;
 	}
@@ -239,9 +241,6 @@ body{
 	}
 	#InformationScroll{
 		margin:0 auto;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}
 	#Ul li{
 		letter-spacing: 0px;
@@ -277,14 +276,41 @@ body{
 		text-shadow: 0 0.5px #fdfdbe, 0 0.5rem 0.7rem #fdfdbe, 0 2px #fdfdbe, 0.35rem 0px #fdfdbe, 0px -2px 1px #fff, 2px 0px 2px rgba(255, 255, 255);
 	}
 }
-@media screen and (min-width: 320px) and (max-width: 359px) {
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
+@media screen and (max-width: 579px) {
 	#InformationContent{
 		width:80%;
 	}
+}
+@media screen and (min-width: 375px) and (max-width: 1279px) {
+	.InformationBox{
+		width:95%;
+		height:100%;
+	}
+}
+@media screen and (min-width: 360px) {
+	#InformationScroll{
+		width:100%;
+		height:20%;
+	}
+}
+@media screen and (min-width: 375px) {
+	#InformationUl{
+		margin-top:0px;
+	}
+}
+@media screen and (min-width: 375px) and (max-width: 799px){
+	#Ul{
+		width:80%;
+		height:15%;
+		margin-top:10px;
+	}
+}
+@media screen and (min-width: 580px) and (max-width: 1023px) {
+	.MyInformation p{
+		font-size:2.5rem;
+	}
+}
+@media screen and (min-width: 320px) and (max-width: 359px) {	
 	.MyInformation p{
 		font-size:2rem;
 	}
@@ -304,7 +330,6 @@ body{
 	.InformationBox{
 		width:95%;
 		height:100%;
-		margin:0 auto;
 	}
 	.InformationName{
 		width:35%;
@@ -316,10 +341,6 @@ body{
 	}
 }
 @media screen and (min-width: 360px) and (max-width: 374px) {
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
 	#InformationContent{
 		height:88%;
 	}	
@@ -329,10 +350,6 @@ body{
 	#InformationList{
 		height:6.5rem;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
 	}	
 	#Ul{
 		width:80%;
@@ -342,9 +359,6 @@ body{
 	#Ul li{
 		width:1rem;
 		font-size:1rem;
-	}
-	#InformationContent{
-		width:80%;
 	}
 	.InformationBox{
 		width:95%;
@@ -361,10 +375,6 @@ body{
 	}
 }
 @media screen and (min-width: 375px) and (max-width: 479px){
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
 	.MyInformation p{
 		font-size:2.3rem;
 	}
@@ -375,25 +385,10 @@ body{
 	#InformationScroll{
 		width:100%;
 		height:18%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
-	#Ul{
-		width:80%;
-		height:15%;
-		margin-top:10px;
-	}
 	#Ul li{
 		width:1rem;
 		font-size:1rem;
-	}
-	#InformationContent{
-		width:80%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:40%;
@@ -405,40 +400,17 @@ body{
 	}
 }
 @media screen and (min-width: 480px) and (max-width: 579px) {
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
 	.MyInformation p{
 		font-size:2.3rem;
 	}
 	#InformationList{
 		height:20%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
-	#Ul{
-		width:80%;
-		height:15%;
-		margin-top:10px;
-	}
 	#Ul li{
 		width:1.1rem;
 		letter-spacing: 0px;
 		font-size:1.2rem;
-	}
-	#InformationContent{
-		width:80%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:40%;
@@ -450,29 +422,10 @@ body{
 	}
 }
 @media screen and (min-width: 580px) and (max-width: 679px) {
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
-	.MyInformation p{
-		font-size:2.5rem;
-	}
 	#InformationList{
 		height:20%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
-	#Ul{
-		width:80%;
-		height:15%;
-		margin-top:10px;
-	}
 	#Ul li{
 		width:1.4rem;
 		letter-spacing: 0px;
@@ -480,10 +433,6 @@ body{
 	}
 	#Ul li:nth-child(4){
 		left:90%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:40%;
@@ -498,39 +447,19 @@ body{
 	#Ul li{
 		width:4rem;
 	}
+	#Ul li:nth-child(4){
+		left:85%;
+	}
 }
 @media screen and (min-width: 680px) and (max-width: 799px) {
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
-	.MyInformation p{
-		font-size:2.5rem;
-	}
 	#InformationList{
 		height:18%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
-	#Ul{
-		width:80%;
-		height:15%;
-		margin-top:10px;
-	}
 	#Ul li{
 		width:1.3rem;
 		letter-spacing: 0px;
 		font-size:1.5rem;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:40%;
@@ -542,23 +471,9 @@ body{
 	}
 }
 @media screen and (min-width: 800px) and (max-width:1023px){
-	.flip-container{
-		width:70%;
-		height:15%;
-	}
-	.MyInformation p{
-		font-size:2.5rem;
-	}
 	#InformationList{
 		height:13%;
 		margin-top:3rem;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
 	#Ul{
 		width:80%;
@@ -570,10 +485,6 @@ body{
 		letter-spacing: 0px;
 		font-size:1.4rem;
 	}
-	.InformationBox{
-		width:95%;
-		height:100%;
-	}
 	.InformationName{
 		width:40%;
 		font-size: 1.6rem;
@@ -583,6 +494,11 @@ body{
 		font-size:1.6rem;
 	}
 }
+@media screen and (min-width: 1024px) {
+	#Ul li:nth-child(4){
+		left:90%;
+	}
+} 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.flip-container{
 		width:70%;
@@ -595,13 +511,6 @@ body{
 	#InformationList{
 		height:12%;
 		margin-top:5rem;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
 	#Ul{
 		width:80%;
@@ -613,13 +522,6 @@ body{
 		letter-spacing: 0px;
 		font-size:1.2rem;
 	}
-	#Ul li:nth-child(4){
-		left:90%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
-	}
 	.InformationName{
 		width:56%;
 		font-size: 1.4rem;
@@ -629,46 +531,25 @@ body{
 		font-size:1.4rem;
 	}
 }
-@media screen and (min-width: 1280px) and (max-width: 1365px){
-	.flip-container{
-		animation: myReverse 1.5s linear 2.5s;
-	}
-	#InformationList{
-		margin:0 auto;
-		padding-bottom:0px;
-	}
-	#InformationScroll{
-		margin:0 auto;
-	}
-	#Ul li{
-		letter-spacing: 0px;
-	}
-	.InformationBox{
-		height:100%;
-		margin:0 auto;
-	}
-	.InformationName{
-		padding-left: 0px;
+@media screen and (min-width: 1280px){
+	.MyInformation p{
+		font-size:2.8rem;
 	}
 }
 @media screen and (min-width: 1280px) and (max-width: 1365px){
 	.flip-container{
+		animation: myReverse 1.5s linear 2.5s;
 		width:30%;
 		margin-bottom:10px;
 	}
-	.MyInformation p{
-		font-size:2.8rem;
+	#InformationScroll{
+		margin:0 auto;
 	}
 	#InformationList{
+		margin:0 auto;
+		padding-bottom:0px;
 		height:15%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
 	#Ul{
 		width:80%;
@@ -676,16 +557,17 @@ body{
 		margin-top:10px;
 	}
 	#Ul li{
+		letter-spacing: 0px;
 		width:5rem;
 		font-size:1.4rem;
 	}
-	#Ul li:nth-child(4){
-		left:90%;
-	}
 	.InformationBox{
+		height:100%;
+		margin:0 auto;
 		width:95%;
 	}
 	.InformationName{
+		padding-left: 0px;
 		width:56%;
 		font-size: 1.8rem;
 	}
@@ -699,19 +581,9 @@ body{
 		width:30%;
 		margin-bottom:20px;
 	}
-	.MyInformation p{
-		font-size:2.8rem;
-	}
 	#InformationList{
 		height:11%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
 	#Ul{
 		width:80%;
@@ -721,13 +593,6 @@ body{
 	#Ul li{
 		width:5rem;
 		font-size:1.3rem;
-	}
-	#Ul li:nth-child(4){
-		left:90%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:56%;
@@ -744,19 +609,9 @@ body{
 		margin-bottom:20px;
 		animation: myReverse 3s linear 2.5s;
 	}
-	.MyInformation p{
-		font-size:2.8rem;
-	}
 	#InformationList{
 		height:15%;
 		margin-top:10px;
-	}
-	#InformationScroll{
-		width:100%;
-		height:20%;
-	}
-	#InformationUl{
-		margin-top:0px;
 	}	
 	#Ul{
 		width:80%;
@@ -766,13 +621,6 @@ body{
 	#Ul li{
 		width:5rem;
 		font-size:1.6rem;
-	}
-	#Ul li:nth-child(4){
-		left:90%;
-	}
-	.InformationBox{
-		width:95%;
-		height:100%;
 	}
 	.InformationName{
 		width:56%;
