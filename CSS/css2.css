@@ -1,11 +1,12 @@
 .head{
-    height:70px;
+    height:88px;
 }
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: "Popins",sans-serif;
+    /* font-family: "Popins",sans-serif; */
+    
 }
 html,body{
     height:100%;
@@ -13,6 +14,13 @@ html,body{
     place-items: center;
     background:  rgb(8,5,16);
     text-align: center;
+    font: 30px/1.4 'Cinzel', serif;
+    /* font: 3em 'Cinzel', serif; */
+    /* font-weight: 400;
+    letter-spacing: 0.5em;
+    text-shadow: 0 0 25px rgba(254,254,255,0.85) */
+    color: #fefeff;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container{
@@ -43,16 +51,16 @@ html,body{
     object-fit: cover;
 }
 .card .top-text{
-    padding:30px 5px 20px;
+    padding:30px 5px 1px;
 }
 .card .top-text p{
     font-size:30px;
     font-weight:600;
-    color:#e74c3c;
+    color:#920e0ede;
     line-height:20px;
 }
 .card .bottom-text{
-    padding:0 20px 10px 20px;
+    padding:20px 20px 10px 5px;
     background: white;
     opacity: 0;
     visibility: hidden;
@@ -69,8 +77,8 @@ html,body{
 }
 .card .bottom-text .btn a{
     text-decoration: none;
-    background: #e74c3c;
-    color:#f2f2f2;
+    background: #b82727f6;
+    color:#ffffff;
     padding:5px 8px;
     border-radius:3px;
     display: inline-flex;
@@ -79,7 +87,7 @@ html,body{
 .card .bottom-text .btn a:hover{
     transform: scale(0.9);
 }
-@media screen and (max-width:978px){
+@media screen and (max-width:1080px){
     .container{
         flex-wrap: wrap;
         flex-direction: column;
@@ -88,10 +96,6 @@ html,body{
         max-width: 700px;
         margin:0 20px 20px;
     }
-}
-span{
-    color: #fefeff;
-    font: 1.5em 'Cinzel', serif;
 }
 span.mark {
     border-right: 2px solid white;
@@ -107,3 +111,65 @@ span.mark {
       border-color: white;
     }
   }
+ 
+  .cont {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin:0 auto;
+}
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: hsl(0, 0%, 35%);
+}
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+@keyframes move {
+    25% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}

@@ -1,76 +1,90 @@
-window.onload = function() {
+window.onload = () => {
     let loginButton = document.getElementById("Submit");
-    let formInformation = document.getElementsByTagName("form")[0];
+    let leftButton = document.getElementById("leftButton");
+    let rightButton = document.getElementById("rightButton");
+    formInformation = document.getElementsByTagName("form")[0];
+    leftButton.addEventListener("click", () => {
+        leftButton.classList.remove("on");
+        rightButton.classList.add("on");
+        formInformation = document.getElementsByTagName("form")[0];
+        formInformation.classList.remove("close");
+        document.getElementsByTagName("form")[1].classList.add("close");
+    });
+
+    rightButton.addEventListener("click", () => {
+        leftButton.classList.add("on");
+        rightButton.classList.remove("on");
+        formInformation = document.getElementsByTagName("form")[1];
+        formInformation.classList.remove("close");
+        document.getElementsByTagName("form")[0].classList.add("close");
+    });
     let inputList = document.getElementsByTagName("input");
     let JsonDataObject = {};
     let JsonData;
     let AjaxObject;
     let ResponseTextFromServer;
     let ResponseInformationObject;
-    formInformation.addEventListener("submit", function(form) {
-        form.preventDefault();
+    document.getElementsByTagName("form")[0].addEventListener("submit", function(formEvent) {
+        formEvent.preventDefault();
         for (i = 0; i < formInformation.elements.length - 1; i++) {
-            (function(i) {
+            ((i) => {
                 JsonDataObject[formInformation.elements[i].name] = formInformation.elements[i].value;
             })(i);
         }
-        JsonData = JSON.stringify(JsonDataObject);
-        try {
-            AjaxObject = new XMLHttpRequest();
-        } catch (err) {
-            AjaxObject = new ActiveXObject("Microsoft.XMLHTTP ");
-            alert("Your explorer is too old to use,try firefox please");
-        }
-        window[form.submitter.value]();
-    }, false);
+        AjaxObject = new XMLHttpRequest();
+        window[formEvent.submitter.value]();
 
-    window.LOGIN = function() {
-        AjaxObject.open("post", "https://lqxclqxc.com/Test.php", true);
-        // AjaxObject.setRequestHeader("Content-Type", "application/json");
-        AjaxObject.onreadystatechange = function() {
-            if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
-                ResponseTextFromServer = AjaxObject.responseText;
-                ResponseInformationObject = JSON.parse(ResponseTextFromServer);
-                ResponseInformationObject.status = 2;
-                // 0 1 2
-                // 登陆失败 登录但未注册 登录而且已经注册
-                switch (ResponseInformationObject.status) {
-                    case 0:
-                        {
-                            for (i = 0; i < formInformation.elements.length - 1; i++) {
-                                (function(i) {
-                                    formInformation.elements[i].value = null;
-                                })(i);
-                            }
-                            location.reload();
-                            break;
-                        }
-                    case 1:
-                        {
-                            location.replace("./Apply.html");
-                            break
-                        }
-                    case 2:
-                        {
-                            AjaxObject.open("get", "./InformationSearch.html?i=" + ResponseTextFromServer, true);
-                            AjaxObject.onreadystatechange = function() {
-                                if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
-                                    // if (AjaxObject.responseText == 1) {
-                                    location.replace("./InformationSearch.html?i=" + ResponseTextFromServer);
-                                    // }
-                                }
-                            }
-                            AjaxObject.send();
-                            break;
-                        }
-                }
-            }
+    }, true);
+
+    document.getElementsByTagName("form")[1].addEventListener("submit", function(formEvent) {
+        formEvent.preventDefault();
+        for (i = 0; i < formInformation.elements.length - 1; i++) {
+            ((i) => {
+                JsonDataObject[formInformation.elements[i].name] = formInformation.elements[i].value;
+            })(i);
         }
-        AjaxObject.send(JsonData);
+        AjaxObject = new XMLHttpRequest();
+        window[formEvent.submitter.value]();
+
+    }, true);
+
+    window.LOGIN = () => {
+            JsonDataObject.Password = encryptDate(JsonDataObject.Password);
+            JsonData = JSON.stringify(JsonDataObject);
+        } //最后再来
+
+    window.APPLY = () => {
+
     }
 
-    window.APPLY = function() {
-        location.replace("./InformationSearch.html");
-    }
+    window.IAmADMIN = () => {
 
+    }
+    encryptDate();
+}
+
+function getCookie() {
+    // "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CN&_t=" + new Date().getTime();
+}
+
+function encryptDate() {
+    // let RsaAjax = new XMLHttpRequest();
+    // // http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html
+    // let rsa = new RSAKey();
+    // RsaAjax.open("get", "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), false);
+    // RsaAjax.setRequestHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+    // RsaAjax.addEventListener("readystatechange", () => {
+    //     if (RsaAjax.readyState == 4 && RsaAjax.status == 200) {
+    //         console.log(RsaAjax.response);
+    //     }
+    // });
+    // RsaAjax.send();
+    let TryConnection = new XMLHttpRequest();
+    TryConnection.open("get", "https://lqxclqxc.com/ExpressWeb?time=" + new Date().getTime(), true);
+    TryConnection.addEventListener("readystatechange", () => {
+        if (TryConnection.status == 200 && TryConnection.readyState == 4) {
+            console.log("Response:" + TryConnection.response);
+        }
+    });
+    TryConnection.send();
 }
