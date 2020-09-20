@@ -37,6 +37,33 @@
     padding-bottom: 2rem;
     margin: 3.5rem 0 0 0;
 }
+.login{
+	width: 7rem;
+	height:7rem;
+	border-radius:50%;
+	background-color: cornflowerblue;
+	margin: 1rem;
+	box-shadow: 0 0.1rem 0.2rem 0 #697886d3;
+    position:absolute;
+    top: -0.3rem;
+}
+
+.login:hover{
+	transform: translateX(1rem);
+    transition: 0.5s;
+}
+.login:hover a{
+    text-decoration: none;
+}
+
+.login_{
+	color:white;
+	font-size: 2rem;
+	position:absolute;
+	top: 28%;
+	left: 20%;
+}
+
 .front,
 .back{
     transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -228,6 +255,9 @@
     cursor: pointer;
     margin-bottom: 0;
     border-radius: 4px;
+    font-weight: 6
+    00;
+    color: #666C74;
 }
 #card_3, #card_4, #card_5{
     margin: 0.5rem 0;
@@ -944,7 +974,16 @@
             margin: 3.5rem 0 0 0;
            
         }
-        
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
+        }
         .front,
         .back{
             min-height: 35rem; 
@@ -985,6 +1024,16 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -1028,6 +1077,16 @@
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
             perspective: 2000px;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
