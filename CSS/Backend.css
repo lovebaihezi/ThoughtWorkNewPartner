@@ -402,7 +402,7 @@ body {
 }
 @media screen and (min-width:330px) and (max-width:380px){
 	html,body{
-		height: 175%;
+		height: 180%;
 	}
 	.Backend-background{
 		height: 50%;
@@ -462,7 +462,7 @@ body {
 }
 @media screen and (min-width:380px) and (max-width:480px){
 	html,body{
-		height: 160%;
+		height: 170%;
 	}
 	.Backend-background{
 		height: 50%;
@@ -681,7 +681,7 @@ body {
 
 @media only screen and (device-width: 375px) and (device-height: 812px) {
 	html,body{
-		height: 155%;
+		height: 160%;
 	}
 	.Backend-background{
 		height: 50%;
