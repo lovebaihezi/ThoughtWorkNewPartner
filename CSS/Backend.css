@@ -14,7 +14,7 @@ body {
 
 .Backend-background{
 	width: 100%;
-	height: 90%;
+	height: 130%;
 	position: relative;
 }
 
@@ -94,7 +94,6 @@ body {
 	-webkit-transition: height 0.5s;
 	transition: height 0.5s;
 	background:#FFFFCC;
-	top: -5%;
 }
 
 .card:hover .card__body {
@@ -161,13 +160,12 @@ body {
 
 .card1 {
 	position: absolute;
-	top: 42%;
+	top: 30%;
 	left: 70%;
 	-webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
     transform: translateX(-50%) translateY(-50%) translateZ(0);
 	width: 30%;
-	height: 45%;
-	height: 45%;
+	height: 30%;
 	background-color: #fff;
 	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -179,13 +177,12 @@ body {
 
 .card {
 	position: absolute;
-	top: 42%;
+	top: 30%;
 	left: 31%;
 	-webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
     transform: translateX(-50%) translateY(-50%) translateZ(0);
 	width: 30%;
-	height: 45%;
-	height: 45%;
+	height: 30%;
 	background-color: #fff;
 	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -223,7 +220,7 @@ body {
 	transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
 	position: absolute;
 	width: 100%;
-	height: 60%;
+	height: 63%;
 }
 .card1:hover .card__thumb1 {
 	height: 13rem;
@@ -342,7 +339,7 @@ body {
 }
 @media screen and (min-width:280px) and (max-width:330px){
 	html,body{
-		height: 195%;
+		height: 185%;
 	}
 	.login{
 		width: 5rem;
@@ -357,81 +354,181 @@ body {
 	.container{
 		width: 98%;
 		left: 2%;
-		top: 121%;
+		top: 107%;
 	}
 	.title_s{
-		position: absolute;
 		left: 10%;
-		top: 117%;
+		top: 102%;
 		font-size: 2.5rem;
 	}
+	.card__body{
+		top: -30%;
+	}
+	.card1:hover {
+		height: 40%;
+	}
+	.card:hover {
+		height: 40%;
+	}
+	.card1:hover .card__body{
+		top: -15%;
+	} 
+	.card:hover .card__body{
+		top: -15%;
+	} 
 	.card{
 		left: 51%;
 		width: 80%;
-		top: 38%;
-		height: 40%;
+		top: 35%;
+		height: 30%;
 	}
 	.card1{
 		width: 80%;
 		left: 51%;
-		top: 88%;
-		height: 40%;
+		top: 75%;
+		height: 30%;
 	}
 	.card__description{
-		top: 15%;
+		top: 14%;
 		line-height: 2.5rem;
 	}
 	.card__description1{
-		top: 16%;
+		top: 15%;
 		line-height: 2.2rem;
 	}
 	.card__thumb1 img {
 		height: 55%;
 	}
 }
-@media screen and (min-width:330px) and (max-width:480px){
-			html,body{
-				height: 190%;
-			}
-			.Backend-background{
-				height: 50%;
-			}
-			.container{
-				width: 98%;
-				left: 2%;
-				top: 121%;
-			}
-			.title_s{
-				position: absolute;
-				left: 10%;
-				top: 117%;
-				font-size: 2rem;
-			}
-		    .card{
-		    	left: 51%;
-				width: 80%;
-				top: 38%;
-		    }
-		    .card1{
-		    	width: 80%;
-		    	left: 51%;
-		    	top: 88%;
-		    }
-		    .card__description{
-				top: 15%;
-				line-height: 3rem;
-			}
-			.card__description1{
-				top: 14%;
-				line-height: 3rem;
-			}
-			.card__thumb1 img {
-				height: 55%;
-			}
+@media screen and (min-width:330px) and (max-width:380px){
+	html,body{
+		height: 180%;
+	}
+	.Backend-background{
+		height: 50%;
+	}
+	.container{
+		width: 98%;
+		left: 2%;
+		top: 113%;
+	}
+	.title_s{
+		position: absolute;
+		left: 10%;
+		top: 108%;
+		font-size: 2rem;
+	}
+	.card__body{
+		top: -30%;
+	}
+	.card1:hover {
+		height: 45%;
+	}
+	.card:hover {
+		height: 45%;
+	}
+	.card1:hover .card__body{
+		top: -10%;
+	} 
+	.card:hover .card__body{
+		top: -10%;
+	} 
+	.card{
+		left: 51%;
+		width: 80%;
+		top: 37%;
+		height: 33%;
+	}
+	.card1{
+		width: 80%;
+		left: 51%;
+		top: 83%;
+		height: 33%;
+	}
+	.card__description{
+		top: 13%;
+		line-height: 3rem;
+	}
+	.card__description1{
+		top: 10%;
+		line-height: 3rem;
+	}
+	.card__thumb1 img {
+		height: 55%;
+	}
+	.card__thumb img {
+		top: -10%;
+	}
+}
+@media screen and (min-width:380px) and (max-width:480px){
+	html,body{
+		height: 170%;
+	}
+	.Backend-background{
+		height: 50%;
+	}
+	.container{
+		width: 98%;
+		left: 2%;
+		top: 120%;
+	}
+	.title_s{
+		position: absolute;
+		left: 10%;
+		top: 115%;
+		font-size: 2rem;
+	}
+	.card__body{
+		top: -30%;
+	}
+	.card1:hover {
+		height: 45%;
+	}
+	.card:hover {
+		height: 45%;
+	}
+	.card1:hover .card__body{
+		top: -10%;
+	} 
+	.card:hover .card__body{
+		top: -10%;
+	} 
+	.card{
+		left: 51%;
+		width: 80%;
+		top: 40%;
+		height: 33%;
+	}
+	.card1{
+		width: 80%;
+		left: 51%;
+		top: 88%;
+		height: 33%;
+	}
+	.card__description{
+		top: 15%;
+		line-height: 3rem;
+	}
+	.card__description1{
+		top: 15%;
+		line-height: 3rem;
+	}
+	.card__description_s{
+		font-size: 2rem;
+	}
+	.card__description1_s{
+		font-size: 2rem;
+	}
+	.card__thumb1 img {
+		height: 55%;
+	}
+	.card__thumb img {
+		top: -10%;
+	}
 }
 @media screen and (min-width:480px) and (max-width:550px){
 	html,body{
-		height: 170%;
+		height: 155%;
 	}
 	.Backend-title{
 		font-size: 5rem;
@@ -442,18 +539,39 @@ body {
 	.title_s{
 		position: absolute;
 		left: 17%;
-		top: 117%;
+		top: 112%;
 		font-size: 2.5rem;
 	}
 	.container{
 		width: 78%;
 		left: 12%;
-		top: 121%;
+		top: 117%;
 	}
+	.card__body{
+		top: -35%;
+	}
+	.card1:hover {
+		height: 45%;
+	}
+	.card:hover {
+		height: 45%;
+	}
+	.card1:hover .card__body{
+		top: -15%;
+	} 
+	.card:hover .card__body{
+		top: -15%;
+	} 
 	.card{
 		left: 50%;
 		width: 65%;
-		height: 45%;
+		height: 35%;
+		top: 37%;
+	}
+	.card1{
+		left: 50%;
+		width: 65%;
+		height: 35%;
 		top: 35%;
 	}
 	.card__description {
@@ -470,17 +588,11 @@ body {
 		font-size: 2.5rem;
 	}
 	.card__category {
-		position: absolute;
 		top: -3.5rem;
-		left: 0;
 		height: 3.5rem;
 		padding:0.5rem 1.5rem;
-		background-color:#6676ff;
-		color: #fff;
-		text-transform: uppercase;
 		font-size: 2.5rem;
 		line-height: 3rem;
-		border-top-right-radius: 1rem;
 	}
 	.card1{
 		width: 65%;
@@ -493,11 +605,14 @@ body {
 	.card__thumb1 img {
 		height: 55%;
 	}
+	.card__thumb img {
+		top: -20%;
+	}
 }
 
 @media screen and (min-width:550px) and (max-width:768px){
 			html,body{
-				height: 160%;
+				height: 135%;
 			}
 			.Backend-title{
 				font-size: 5rem;
@@ -508,56 +623,123 @@ body {
 		    .container{
 		    	width: 85%;
 		    	left: 8%;
-		    	top: 120%;
+		    	top: 130%;
 			}
 			.title_s{
-				position: absolute;
 				left: 19%;
-				top: 117%;
+				top: 125%;
 				font-size: 2.5rem;
 			}
+			.card__body{
+				top: -5%;
+			}
+			.card1:hover .card__body{
+				top: -15%;
+			} 
+			.card:hover .card__body{
+				top: -15%;
+			} 
 		    .card{
 		    	left: 50%;
 		    	width: 65%;
 				height: 45%;
-				top: 35%;
+				top: 40%;
 		    }
 			.card__description {
-				font-size: 3rem;
-				line-height: 4.5rem;
-				top: 35%;
+				font-size: 2.5rem;
+				line-height: 3.5rem;
+				top: 16%;
 			}
 			.card__description1 {
-				font-size: 3rem;
-				line-height: 4.5rem;
-				top: 15%;
+				font-size: 2.5rem;
+				line-height: 3.5rem;
+				top: 16%;
 			}
 			.card__title{
 				font-size: 4rem;
 			}
 			.card__category {
-				position: absolute;
 				top: -4.5rem;
-				left: 0;
 				height: 4.5rem;
 				padding:0.5rem 1.5rem;
-				background-color:#6676ff;
-				color: #fff;
-				text-transform: uppercase;
 				font-size: 3rem;
 				line-height: 3.5rem;
-				border-top-right-radius: 1rem;
 			}
 		    .card1{
 		    	width: 65%;
 		    	left: 50%;
-		    	top: 85%;
-		    }
-		    .card__description{
-		    	top: 14%;
-		    }
+				top: 93%;
+				height: 45%;
+			}
+			.card__description_s {
+				font-size: 3rem;
+			}
+			.card__description1_s {
+				font-size: 3rem;
+			}
 }
-@media screen and (min-width:769px) and (max-width:1200px){
+
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+	html,body{
+		height: 160%;
+	}
+	.Backend-background{
+		height: 50%;
+	}
+	.container{
+		width: 98%;
+		left: 2%;
+		top: 118%;
+	}
+	.title_s{
+		position: absolute;
+		left: 10%;
+		top: 113%;
+		font-size: 2rem;
+	}
+	.card__body{
+		top: -30%;
+	}
+	.card1:hover {
+		height: 45%;
+	}
+	.card:hover {
+		height: 45%;
+	}
+	.card1:hover .card__body{
+		top: -10%;
+	} 
+	.card:hover .card__body{
+		top: -10%;
+	} 
+	.card{
+		left: 51%;
+		width: 80%;
+		top: 37%;
+		height: 33%;
+	}
+	.card1{
+		width: 80%;
+		left: 51%;
+		top: 85%;
+		height: 33%;
+	}
+	.card__description{
+		top: 13%;
+		line-height: 3rem;
+	}
+	.card__description1{
+		top: 10%;
+		line-height: 3rem;
+	}
+	.card__thumb1 img {
+		height: 55%;
+	}
+	.card__thumb img {
+		top: -10%;
+	}
+}
+@media screen and (min-width:769px) and (max-width:1199px){
 	
 html,
 body {
@@ -575,32 +757,41 @@ body {
 .card1 {
 	width: 35%;
 	left: 72%;
-	height: 40%;
+	height: 38%;
 }
-
-.card {
+.card__body{
+	top: -10%;
+}
+.card{
 	width: 35%;
 	left: 30%;
-	height: 40%;
+	height: 35%;
+}
+.card1{
+	height: 35%;
 }
 .card__description {
-	top: 18%;
+	top: 15%;
 }
 .card__description1 {
-	top: 18%;
+	top: 15%;
 }
-
 .container{
 	width: 100%;
 	left: 0%;
-	top: 80%;
+	top: 65%;
 }
 .title_s{
-	position: absolute;
 	left: 19%;
-	top:75%;
+	top:60%;
 	font-size: 2.5rem;
 }
+.card1:hover .card__body{
+	top: -15%;
+} 
+.card:hover .card__body{
+	top: -15%;
+} 
 }
 @media screen and (min-width:1200px) and (max-width:1499px){
 	html,body{
@@ -617,6 +808,10 @@ body {
 		font-size: 2rem;
 	}
 	
+	.card__body {
+		top: -20%;
+	}
+
 	.card__description {
 		line-height: 2.7rem;
 		font-size: 1.7rem;
@@ -625,13 +820,15 @@ body {
 	
 	
 	.card1 {
-		width: 33%;
-		height: 52%;
+		top: 30;
+		width: 25%;
+		height: 27%;
 	}
 	
 	.card {
-		width: 33%;
-		height: 52%;
+		top: 30%;
+		width: 25%;
+		height: 27%;
 	}
 	
 	.card__description1 {
@@ -642,12 +839,11 @@ body {
 	.container{
 		width: 100%;
 		left:0%;
-		top: 80%;
+		top: 55%;
 	}
 	.title_s{
-		position: absolute;
 		left: 19%;
-		top:75%;
+		top:50%;
 		font-size: 2.5rem;
 	}
 	}
@@ -673,6 +869,7 @@ body {
 	font-size: 2.3rem;
 }
 
+
 .card__description {
 	line-height: 3rem;
 	font-size: 1.8rem;
@@ -682,12 +879,12 @@ body {
 
 .card1 {
 	width: 25%;
-	height: 42%;
+	height: 25%;
 }
 
 .card {
 	width: 25%;
-	height: 42%;
+	height: 25%;
 }
 
 .card__description1 {
@@ -699,13 +896,15 @@ body {
 .container{
 	width: 100%;
 	left: 0%;
-	top: 80%;
+	top: 55%;
 }
 .title_s{
-	position: absolute;
 	left: 19%;
-	top:75%;
+	top:52%;
 	font-size: 2.5rem;
+}
+.card__body{
+	top: -20%;
 }
 }
 @media screen and (min-width:1701px) and (max-width:2001px){
@@ -728,40 +927,43 @@ body {
 	.card__title {
 		font-size: 2.8rem;
 	}
-	
+	.card__body{
+		top: -20%;
+	}
+
 	.card__description {
-		line-height: 4rem;
-		font-size: 2.5rem;
+		line-height: 3.5rem;
+		font-size: 2rem;
 		top: 15%;
 	}
 	
 	
 	.card1 {
 		width: 25%;
-		height: 42%;
+		height: 25%;
+		
 	}
 	
 	.card {
 		width: 25%;
-		height: 42%;
+		height: 25%;
+		
 	}
 	
 	.card__description1 {
-		line-height: 4rem;
-		font-size: 2.5rem;
+		line-height: 3.5rem;
+		font-size: 2rem;
 		top: 15%;
 	}
 	
 	.container{
 		width: 100%;
 		left: 1%;
-		top: 80%;
+		top: 60%;
 	}
 	.title_s{
-		position: absolute;
 		left: 20%;
-		top:75%;
+		top:55%;
 		font-size: 2.5rem;
 	}
 	}
-	

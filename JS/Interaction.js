@@ -1,5 +1,5 @@
 //Author:LQXC 柴博文
-
+// Copyright (c) chai bo wen LQXC All rights reserved.
 
 
 function A_Inherit_B(A, B) {

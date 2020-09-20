@@ -7,6 +7,26 @@
     /* background-image: linear-gradient(rgba(153, 204, 255, 0.521)
     , #99CCFF); */
 }
+
+#fp-nav ul li a.active span,
+#fp-nav ul li a span{
+    background-color: #5c6eda;
+}
+/* #fp-nav ul li a.active span{
+    height: 10px;
+    width: 10px;
+    margin: -5px 0 0 -5px;
+}
+#fp-nav ul li a span{
+    height: 6px;
+    width: 6px;
+    margin: -3px 0 0 -3px;
+} */
+#fp-nav ul li a span{
+    height: 6px;
+    width: 6px;
+    margin: -3px 0 0 -3px;
+}
 #card_1, #card_2{
     cursor: pointer;
     transform-style: preserve-3d;
@@ -17,6 +37,33 @@
     padding-bottom: 2rem;
     margin: 3.5rem 0 0 0;
 }
+.login{
+	width: 7rem;
+	height:7rem;
+	border-radius:50%;
+	background-color: cornflowerblue;
+	margin: 1rem;
+	box-shadow: 0 0.1rem 0.2rem 0 #697886d3;
+    position:absolute;
+    top: -0.3rem;
+}
+
+.login:hover{
+	transform: translateX(1rem);
+    transition: 0.5s;
+}
+.login:hover a{
+    text-decoration: none;
+}
+
+.login_{
+	color:white;
+	font-size: 2rem;
+	position:absolute;
+	top: 28%;
+	left: 20%;
+}
+
 .front,
 .back{
     transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -133,7 +180,7 @@
     position: relative;
     height: 478px;
 } */
-#section1_a{
+/* #section1_a{
     display: inline-block;
     position: absolute;
     left: 50%;
@@ -185,21 +232,19 @@
     100% {
     opacity: 0;
     }
-}
+} */
 .section2 {
     background-image: linear-gradient(rgba(153, 204, 255, 0.521)
     , #99CCFF);
 }
 #title_1, #title_2{
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 2.5rem;
 }
-[class^="col"]{
-    /* border: 1px solid black; */
-}
+
 [class^="theme"]{
     background: #FFFFCC;
     font-size: 2rem;
@@ -208,6 +253,10 @@
     cursor: pointer;
     margin-bottom: 0;
     border-radius: 4px;
+    font-weight: 6
+    00;
+    color: #666C74;
+    font-weight: 600;
 }
 #card_3, #card_4, #card_5{
     margin: 0.5rem 0;
@@ -225,11 +274,43 @@
     and (min-width : 150px)
     and (max-width : 375px)
     {
+        .login{
+            width: 5rem;
+            height:5rem;
+            top: -0.3rem;
+        }
+        .login_ {
+            font-size: 1.5rem;
+        }
+        #fp-nav ul li a{
+            left: 160%;
+            top: 167%;
+        }
         #card_1, #card_2{
             height: 22rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a.active span{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -245,7 +326,7 @@
             font-size: 1.7rem;
         }
         #title_1, #title_2{
-            top: 2%;
+            top: 1%;
             left: 50%;
             font-size: 2.5rem;
         }
@@ -288,8 +369,13 @@
         .back .inner p{
             font-size: 1.6rem;
         }
-        #title_1, #title_2{
-            top: 2%;
+        #title_1{
+            top: 1%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        #title_2{
+            top: -0.5%;
             left: 50%;
             font-size: 2.5rem;
         }
@@ -315,6 +401,7 @@
     and (max-width : 375px)
     and (min-height : 476px)
     and (max-height : 501px){
+       
         #card_1, #card_2{
             height: 16.5rem;
             padding-top: 2rem;
@@ -367,9 +454,13 @@
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
         }
+        #fp-nav ul li a{
+            left: 160%;
+            top: 188%;
+        }
         .front,
         .back{
-            min-height: 17rem; 
+            min-height: 19rem; 
         }
         .front{
             background-position: -272px -201px;
@@ -413,9 +504,13 @@
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
         }
+        #fp-nav ul li a{
+            left: 160%;
+            top: 148%;
+        }
         .front,
         .back{
-            min-height: 18rem; 
+            min-height: 19rem; 
         }
         .front{
             background-position: -272px -201px;
@@ -456,6 +551,10 @@
         #card_1, #card_2{
             height: 20rem;
         }
+        #fp-nav ul li a{
+            left: 160%;
+            top: 181%;
+        }
         .front,
         .back{
             min-height: 21rem; 
@@ -480,11 +579,43 @@
 @media only screen
     and (min-width : 375px)
     and (max-width : 450px){
+        .login{
+            width: 5rem;
+            height:5rem;
+            top: -0.3rem;
+        }
+        .login_ {
+            font-size: 1.5rem;
+        }
         #card_1, #card_2{
             height: 26rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a{
+            left: 149%;
+            top: 167%;
+        }
+        #fp-nav ul li a.active span{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -520,12 +651,44 @@
 }
 @media only screen
     and (min-width : 451px)
-    and (max-width : 767px){
+    and (max-width : 768px){
         #card_1, #card_2{
             height: 26rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+        }
+        .login{
+            width: 5rem;
+            height:5rem;
+            top: -0.3rem;
+        }
+        .login_ {
+            font-size: 1.5rem;
+        }
+        #fp-nav ul li a{
+            left: 145%;
+            top: 132%;
+        }
+        #fp-nav ul li a.active span{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 10px;
+            width: 10px;
+            margin: -5px 0 0 -5px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -561,7 +724,206 @@
 }
 @media only screen
     and (min-width : 375px)
-    and (max-width : 767px)
+    and (max-width : 768px)
+    and (min-height : 450px)
+    and (max-height : 476px){
+        #card_1, #card_2{
+            height: 15.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 3.5rem 0 0 0;
+        }
+        .front,
+        .back{
+            min-height: 16.5rem; 
+        }
+        .front{
+            background-position: -272px -201px;
+        }
+        .front .inner p{
+            font-size: 1.9rem;
+        }
+        .back .inner p{
+            font-size: 1.6rem;
+        }
+        #title_1{
+            top: 1%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        #title_2{
+            top: -0.5%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        [class^="theme"]{           
+            font-size: 1.7rem;
+            padding: 0.8rem;
+        }
+        #card_3, #card_4, #card_5{
+            margin: 0.2rem 0;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 0.5rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.4rem;
+        }
+        #page4_p{
+            margin-bottom: 2px;
+        }
+    }
+    @media only screen
+    and (min-width : 375px)
+    and (max-width : 768px)
+    and (min-height : 476px)
+    and (max-height : 501px){
+       
+        #card_1, #card_2{
+            height: 16.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a{
+            top: 154%;
+        }
+        .front,
+        .back{
+            min-height: 17rem; 
+        }
+        .front{
+            background-position: -272px -201px;
+        }
+        .front .inner p{
+            font-size: 1.9rem;
+        }
+        .back .inner p{
+            font-size: 1.6rem;
+        }
+        #title_1, #title_2{
+            top: 2%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        [class^="theme"]{           
+            font-size: 1.7rem;
+            padding: 0.8rem;
+        }
+        #card_3, #card_4, #card_5{
+            margin: 0.2rem 0;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 0.5rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.4rem;
+        }
+        #page4_p{
+            margin-bottom: 2px;
+        }
+    }
+    @media only screen
+    and (min-width : 375px)
+    and (max-width : 768px)
+    and (min-height : 501px)
+    and (max-height : 531px){
+        #card_1, #card_2{
+            height: 17.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a{
+            top: 188%;
+        }
+        .front,
+        .back{
+            min-height: 19rem; 
+        }
+        .front{
+            background-position: -272px -201px;
+        }
+        .front .inner p{
+            font-size: 1.9rem;
+        }
+        .back .inner p{
+            font-size: 1.6rem;
+        }
+        #title_1, #title_2{
+            top: 2%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        [class^="theme"]{           
+            font-size: 1.8rem;
+            padding: 0.8rem;
+        }
+        #card_3, #card_4, #card_5{
+            margin: 0.4rem 0;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 0.5rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.4rem;
+        }
+        #page4_p{
+            margin-bottom: 2px;
+        }
+    }
+    @media only screen
+    and (min-width : 375px)
+    and (max-width : 768px)
+    and (min-height : 531px)
+    and (max-height : 568px){
+        #card_1, #card_2{
+            height: 18.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a{
+            top: 148%;
+        }
+        .front,
+        .back{
+            min-height: 19rem; 
+        }
+        .front{
+            background-position: -272px -201px;
+        }
+        .front .inner p{
+            font-size: 1.9rem;
+        }
+        .back .inner p{
+            font-size: 1.6rem;
+        }
+        #title_1, #title_2{
+            top: 2%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
+        [class^="theme"]{           
+            font-size: 2rem;
+            padding: 0.8rem;
+        }
+        #card_3, #card_4, #card_5{
+            margin: 0.4rem 0;
+        }
+        .page_3, .page_4, .page_5{
+            padding: 0.5rem 1rem;
+        }
+        .page_3 p, .page_4 p, .page_5 p{
+            font-size: 1.6rem;
+        }
+        #page4_p{
+            margin-bottom: 2px;
+        }
+    }
+@media only screen
+    and (min-width : 375px)
+    and (max-width : 768px)
     and (min-height : 568px)
     and (max-height : 610px){
         #card_1, #card_2{
@@ -579,7 +941,7 @@
         }
         [class^="theme"]{           
             font-size: 2rem;
-            padding: 1.5rem;
+            padding: 1rem;
         }
         .page_3, .page_4, .page_5{
             padding: 2rem 1rem;
@@ -587,14 +949,22 @@
         .page_3 p, .page_4 p, .page_5 p{
             font-size: 1.6rem;
         }
+        #title_2{
+            top: 0.5%;
+            left: 50%;
+            font-size: 2.5rem;
+        }
     }
     @media only screen
     and (min-width : 375px)
-    and (max-width : 767px)
-    and (min-height : 611px)
+    and (max-width : 768px)
+    and (min-height : 610px)
     and (max-height : 670px){
         #card_1, #card_2{
             height: 23rem;
+        }
+        #fp-nav ul li a{
+            top: 138%;
         }
         .front,
         .back{
@@ -608,7 +978,7 @@
         }
         [class^="theme"]{           
             font-size: 2rem;
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
         .page_3, .page_4, .page_5{
             padding: 2rem 1rem;
@@ -626,6 +996,28 @@
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
            
+        }
+        #fp-nav ul li a{
+            left: 0%;
+            top: 167%;
+        }
+        .login{
+            width: 7rem;
+            height:7rem;
+            top: -0.3rem;
+        }
+        .login_ {
+            font-size: 2rem;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -667,6 +1059,16 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
@@ -710,6 +1112,16 @@
             padding-bottom: 2rem;
             margin: 3.5rem 0 0 0;
             perspective: 2000px;
+        }
+        #fp-nav ul li a.active span:hover{
+            height: 12px;
+            width: 12px;
+            margin: -6px 0 0 -6px;
+        }
+        #fp-nav ul li a span:hover{
+            height: 6px;
+            width: 6px;
+            margin: -3px 0 0 -3px;
         }
         .front,
         .back{
