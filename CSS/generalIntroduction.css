@@ -244,9 +244,7 @@
     transform: translate(-50%, 0);
     font-size: 2.5rem;
 }
-[class^="col"]{
-    /* border: 1px solid black; */
-}
+
 [class^="theme"]{
     background: #FFFFCC;
     font-size: 2rem;
@@ -258,6 +256,7 @@
     font-weight: 6
     00;
     color: #666C74;
+    font-weight: 600;
 }
 #card_3, #card_4, #card_5{
     margin: 0.5rem 0;
