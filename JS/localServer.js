@@ -36,18 +36,35 @@ app.post('/Login', (req, response) => {
     console.log("gonna Log in");
     // console.log("what will show below is what you send from post method");
     let formInformation = req.body;
-    let backInformation;
+    let formSubmit = "yhm=" +
+        formInformation["yhm"] +
+        "&" +
+        "mm=" +
+        formInformation["mm"] +
+        "&" +
+        "mm=" +
+        formInformation["mm"];
     // console.log(formInformation);
-    Axios
-        .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
-            new Date().getTime(), req.body)
+    Axios({
+            method: 'post',
+            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
+                new Date().getTime(),
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
+            },
+            data: req.body
+        })
         .then(res => {
-            console.log(res);
+            console.log("<---------------------->");
+            console.log(res.status);
+            console.log("<---------------------->");
         })
         .catch(error => {
             console.error(error);
         });
-    response.json("Success\n");
+    console.log("<---------------------->");
+    response.json("Success!");
+    console.log("<---------------------->");
     return;
 })
 

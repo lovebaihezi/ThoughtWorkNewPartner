@@ -77,6 +77,7 @@ window.onload = () => {
                     "mm": enPassword,
                 });
                 var fakeFakeJson = fakeJson.slice(0, fakeJson.indexOf('}')) + "," + "\"mm\":\"" + enPassword + "\"}";
+                console.log(fakeFakeJson);
                 fakeSubmit.open("post", "http://localhost:3000/Login",
                     true);
                 fakeSubmit.addEventListener("readystatechange", () => {
