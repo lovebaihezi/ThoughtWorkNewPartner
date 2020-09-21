@@ -36,7 +36,15 @@ app.post('/Login', (req, response) => {
     console.log("gonna Log in");
     // console.log("what will show below is what you send from post method");
     let formInformation = req.body;
-    let backInformation;
+    let formSubmit 
+        = "yhm=""
+        + formInformation["yhm"]
+        + "&"
+        + "mm="
+        + formInformation["mm"]
+        + "&"
+        + "mm="
+        + formInformation["mm"];
     // console.log(formInformation);
     Axios
         .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
