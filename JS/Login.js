@@ -27,16 +27,15 @@ window.onload = () => {
     let AjaxObject;
     let ResponseTextFromServer;
     let ResponseInformationObject;
-    document.getElementsByTagName("form")[0].addEventListener("submit", function(formEvent) {
-        formEvent.preventDefault();
+    document.getElementById("normalSubmit").addEventListener("click", () => {
         for (i = 0; i < formInformation.elements.length - 1; i++) {
             ((i) => {
                 JsonDataObject[formInformation.elements[i].name] =
                     formInformation.elements[i].value;
             })(i);
         }
-        window[formEvent.submitter.value]();
-    }, true);
+        window.LOGIN();
+    });
 
     document.getElementsByTagName("form")[1].addEventListener("submit", function(formEvent) {
         formEvent.preventDefault();
@@ -50,11 +49,7 @@ window.onload = () => {
     }, true);
 
     window.LOGIN = () => {
-        JsonDataObject.Password = encryptDate(JsonDataObject.Password);
-    }
-
-    window.APPLY = () => {
-
+        receiveRSAKeyAnd();
     }
 
     window.IAmADMIN = () => {
@@ -63,39 +58,29 @@ window.onload = () => {
 
     window.RsaKey = null;
 
-    window.receiveRSAKeyAnd = (truePassword) => {
+    window.receiveRSAKeyAnd = () => {
         RsaKey = '';
         let TryConnection = new XMLHttpRequest();
-        let fakeSubmit = new XMLHttpRequest();
-        TryConnection.open("post", "http://localhost:3000/getRSA", true);
+        TryConnection.open("post", "http://localhost:3000/getRSA", true); //GET RSA
         TryConnection.addEventListener("readystatechange", () => {
             if (TryConnection.status == 200 && TryConnection.readyState == 4) {
                 RsaKey = JSON.parse(TryConnection.responseText);
-                var rsaKey = new RSAKey();
-                rsaKey.setPublic(b64tohex(RsaKey.modulus), b64tohex(RsaKey.exponent));
-                var enPassword = hex2b64(rsaKey.encrypt("laserjet200pro"));
-                fakeJson = JSON.stringify({
-                    "yhm": "04194012",
-                    "mm": enPassword,
-                });
-                var fakeFakeJson = fakeJson.slice(0, fakeJson.indexOf('}')) + "," + "\"mm\":\"" + enPassword + "\"}";
-                console.log(fakeFakeJson);
-                fakeSubmit.open("post", "http://localhost:3000/Login",
-                    true);
-                fakeSubmit.addEventListener("readystatechange", () => {
+                let password = encryptDate(JsonDataObject['mm'], RsaKey);
+                console.log(password);
+                document.getElementById("mm").value = password;
+                console.log(document.getElementById("mm").value);
+                document.getElementById("password").value = password;
+                var submitAction = setTimeout(() => { document.forms[0].submit(); }, 100);
 
-                    if (fakeSubmit.status == 200 && fakeSubmit.readyState == 4) {
-                        console.log(fakeSubmit.responseText);
-                    }
-
-                });
-                fakeSubmit.send(fakeFakeJson);
             }
         });
         TryConnection.send();
+        clearTimeout(submitAction);
     }
 
-    // encryptDate("123456789");
+}
+
+function postToXUPT() {
 
 }
 
@@ -103,8 +88,9 @@ function getCookie() {
     // "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CN&_t=" + new Date().getTime();
 }
 
-function encryptDate(truePassword) {
-
-    receiveRSAKeyAnd(truePassword);
-
+function encryptDate(truePassword, RSA) {
+    var rsaKey = new RSAKey();
+    rsaKey.setPublic(b64tohex(RSA.modulus), b64tohex(RSA.exponent));
+    var enPassword = hex2b64(rsaKey.encrypt(truePassword));
+    return enPassword;
 }

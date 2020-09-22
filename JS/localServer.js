@@ -35,7 +35,8 @@ app.post('/getRSA', (req, response) => {
 app.post('/Login', (req, response) => {
     console.log("gonna Log in");
     // console.log("what will show below is what you send from post method");
-    let formInformation = JSON.parse(req.body);
+    let formInformation = req.body;
+    console.log(req.body);
     let formSubmit = "yhm=" +
         formInformation["yhm"] +
         "&" +
@@ -44,7 +45,7 @@ app.post('/Login', (req, response) => {
         "&" +
         "mm=" +
         formInformation["mm"];
-    console.log(formSubmit);
+    // console.log(formSubmit);
     Axios({
             method: 'post',
             url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
@@ -52,21 +53,22 @@ app.post('/Login', (req, response) => {
             headers: {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
             },
+            refer: "http://www.zfjw.xupt.edu.cn",
             data: req.body
         })
         .then((req, res) => {
-            console.log("<---------------------->");
+            console.log("<---------------------->1");
             console.log(req);
-            console.log("<---------------------->");
+            console.log("<---------------------->2");
             console.log(res);
-            console.log("<---------------------->");
+            console.log("<---------------------->3");
         })
         .catch(error => {
             console.error(error);
         });
-    console.log("<---------------------->");
+    console.log("<---------------------->4");
     response.json("Success!");
-    console.log("<---------------------->");
+    console.log("<---------------------->5");
     return;
 })
 
