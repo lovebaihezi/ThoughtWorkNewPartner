@@ -35,7 +35,7 @@ app.post('/getRSA', (req, response) => {
 app.post('/Login', (req, response) => {
     console.log("gonna Log in");
     // console.log("what will show below is what you send from post method");
-    let formInformation = req.body;
+    let formInformation = JSON.parse(req.body);
     let formSubmit = "yhm=" +
         formInformation["yhm"] +
         "&" +
@@ -44,7 +44,7 @@ app.post('/Login', (req, response) => {
         "&" +
         "mm=" +
         formInformation["mm"];
-    // console.log(formInformation);
+    console.log(formSubmit);
     Axios({
             method: 'post',
             url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
@@ -54,9 +54,11 @@ app.post('/Login', (req, response) => {
             },
             data: req.body
         })
-        .then(res => {
+        .then((req, res) => {
             console.log("<---------------------->");
-            console.log(res.status);
+            console.log(req);
+            console.log("<---------------------->");
+            console.log(res);
             console.log("<---------------------->");
         })
         .catch(error => {
@@ -67,6 +69,10 @@ app.post('/Login', (req, response) => {
     console.log("<---------------------->");
     return;
 })
+
+app.post('/SBWLK', (req, res) => {
+    console.log(rea.body);
+});
 
 app.get('/', (req, res) => {
     res.send("Host");

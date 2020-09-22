@@ -3,9 +3,11 @@ window.onload = () => {
     let leftButton = document.getElementById("leftButton");
     let rightButton = document.getElementById("rightButton");
     formInformation = document.getElementsByTagName("form")[0];
+    let otherInformation = document.getElementById("otherInformation");
     leftButton.addEventListener("click", () => {
         leftButton.classList.add("on");
         rightButton.classList.remove("on");
+        otherInformation.classList.remove("close");
         formInformation = document.getElementsByTagName("form")[0];
         formInformation.classList.remove("close");
         document.getElementsByTagName("form")[1].classList.add("close");
@@ -16,6 +18,7 @@ window.onload = () => {
         rightButton.classList.add("on");
         formInformation = document.getElementsByTagName("form")[1];
         formInformation.classList.remove("close");
+        otherInformation.classList.add("close");
         document.getElementsByTagName("form")[0].classList.add("close");
     });
     let inputList = document.getElementsByTagName("input");
@@ -48,7 +51,6 @@ window.onload = () => {
 
     window.LOGIN = () => {
         JsonDataObject.Password = encryptDate(JsonDataObject.Password);
-        JsonData = JSON.stringify(JsonDataObject);
     }
 
     window.APPLY = () => {

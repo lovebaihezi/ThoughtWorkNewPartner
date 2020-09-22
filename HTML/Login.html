@@ -39,28 +39,31 @@
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
             <p>学号:</p>
             <label for="Account">
-                <input type="text" name="Account" id="Account"  autocomplete="username">
+                <input type="text" name="Account" id="mm"  autocomplete="username">
                 <div></div>
             </label>
             <p>密码:</p>
             <label for="Password">
-                <input type="password" name="Password" id="Password"  autocomplete="current-password">
+                <input type="password" name="Password" id="mm"  autocomplete="current-password">
                 <div></div>
             </label>
+            <input type="password" name="" id="password" style="display: none;">
+        </form>
+        <div id="otherInformation">
             <p>电话号码:</p>
             <label for="Telephone">
-                <input type="text" name="Telephone" id="Telephone"  autocomplete="tel">
-                <div></div>
-            </label>
+                    <input type="text" name="Telephone" id="Telephone"  autocomplete="tel">
+                    <div></div>
+                </label>
             <p>选择方向:前端/后端</p>
             <label for="Choose">
-                <input type="text" name="方向" id="Choose" >
-                <div></div>
-            </label>
+                    <input type="text" name="方向" id="Choose" >
+                    <div></div>
+                </label>
             <label for="Submit">
-                <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
-            </label>
-        </form>
+                    <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
+                </label>
+        </div>
 
         <form class="close">
             <p>管理员请使用管理账号登录</p>
