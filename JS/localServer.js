@@ -16,11 +16,14 @@ app.use((req, res, next) => {
     next();
 });
 
+let TimeSet ;
+
 app.post('/getRSA', (req, response) => {
+    TimeSet = new Data().getTime();
     console.log("gonna receive RSA");
     var responseData = "";
     Axios
-        .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), {})
+        .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + TimeSet, {})
         .then(res => {
             responseData = res.data;
             response.json(responseData);
@@ -49,7 +52,7 @@ app.post('/Login', (req, response) => {
     Axios({
             method: 'post',
             url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
-                new Date().getTime(),
+        TimeSet,
             headers: {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
             },
