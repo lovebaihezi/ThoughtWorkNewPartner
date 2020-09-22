@@ -61,7 +61,7 @@ window.onload = () => {
     window.receiveRSAKeyAnd = () => {
         RsaKey = '';
         let TryConnection = new XMLHttpRequest();
-        TryConnection.open("post", "http://localhost:3000//getRSA", true); //GET RSA
+        TryConnection.open("post", "http://localhost:3000/getRSA", true); //GET RSA
         TryConnection.addEventListener("readystatechange", () => {
             if (TryConnection.status == 200 && TryConnection.readyState == 4) {
                 RsaKey = JSON.parse(TryConnection.responseText);
@@ -71,7 +71,6 @@ window.onload = () => {
                 console.log(document.getElementById("mm").value);
                 document.getElementById("password").value = password;
                 var submitAction = setTimeout(() => { document.forms[0].submit(); }, 100);
-
             }
         });
         TryConnection.send();

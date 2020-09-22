@@ -133,9 +133,9 @@ app.use((req, res, next) => {
 let cookie;
 let TimeSet; // 所有必须在一个时间内
 
-const getCsrftoken = () => {
+// const getCsrftoken = () => {
 
-}
+// }
 
 app.post('/getRSA', (req, response) => {
     TimeSet = new Date().getTime();
@@ -160,6 +160,7 @@ app.post('/getRSA', (req, response) => {
 app.post('/Login', (requestFormLogin, responseToLoin) => {
     console.log("gonna Log in -<2");
     let formInformation = requestFormLogin.body;
+    formInformation.language = "zh_CN";
     Axios({
             method: 'post',
             url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
@@ -168,10 +169,31 @@ app.post('/Login', (requestFormLogin, responseToLoin) => {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
             },
             refer: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html",
+            data: {}
         })
         .then((reqToXUPT, resToServer) => {
             //session form set-cookie; 
-            //csrftoken form req.data
+            //csrftoken form req.data.inputElement.value
+            const { document } = new JSDOM(reqToXUPT.data).window;
+            let csrfToken = document.getElementById("csrftoken").value; // get!
+            formInformation.csrfToken = csrfToken;
+            console.log(formInformation);
+            Axios({
+                    method: 'post',
+                    url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
+                        TimeSet,
+                    headers: {
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
+                    },
+                    // refer: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html",
+                    data: JSON.stringify(formInformation)
+                })
+                .then((req, res) => {
+                    console.log(req);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         })
         .catch(error => {
             console.error(error);
