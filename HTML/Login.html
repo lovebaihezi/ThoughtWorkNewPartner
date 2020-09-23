@@ -35,7 +35,7 @@
                 <p>管理员登录</p>
             </div>
         </div>
-        <form action="http://localhost:3000/Login" method="post">
+        <form action="http://localhost:3000/login" method="post">
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
             <p>学号:</p>
             <label for="Account">
@@ -49,22 +49,22 @@
                 <div></div>
             </label>
 
-        </form>
-        <div id="otherInformation">
-            <p>电话号码:</p>
-            <label for="Telephone">
+            <div id="otherInformation">
+                <p>电话号码:</p>
+                <label for="Telephone">
                     <input type="text" name="Telephone" id="Telephone"  autocomplete="tel">
                     <div></div>
                 </label>
-            <p>选择方向:前端/后端</p>
-            <label for="Choose">
+                <p>选择方向:前端/后端</p>
+                <label for="Choose">
                     <input type="text" name="方向" id="Choose" >
                     <div></div>
                 </label>
-            <label for="Submit">
+                <label for="Submit">
                     <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
                 </label>
-        </div>
+            </div>
+        </form>
 
         <form class="close">
             <p>管理员请使用管理账号登录</p>

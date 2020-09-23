@@ -61,20 +61,17 @@ window.onload = () => {
     window.receiveRSAKeyAnd = () => {
         RsaKey = '';
         let TryConnection = new XMLHttpRequest();
-        TryConnection.open("post", "http://localhost:3000/getRSA", true); //GET RSA
+        TryConnection.open("post", "http://localhost:3000/getData", true); //GET RSA
         TryConnection.addEventListener("readystatechange", () => {
             if (TryConnection.status == 200 && TryConnection.readyState == 4) {
                 RsaKey = JSON.parse(TryConnection.responseText);
                 let password = encryptDate(JsonDataObject['mm'], RsaKey);
-                console.log(password);
                 document.getElementById("mm").value = password;
-                console.log(document.getElementById("mm").value);
                 document.getElementById("password").value = password;
-                var submitAction = setTimeout(() => { document.forms[0].submit(); }, 100);
+                document.forms[0].submit();
             }
         });
         TryConnection.send();
-        clearTimeout(submitAction);
     }
 
 }
