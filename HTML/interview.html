@@ -26,43 +26,45 @@
 
             <label for="Number">
                 <p>学号</p>
-                <input type="text" name="Number" class="Number" autocomplete=off>
+                <input type="text" name="Number" id="studentID" class="Number" autocomplete=off>
             </label>
 
             <label for="Name">
                 <p>姓名:</p>
-                <input type="text" name="Name" class="Name" autocomplete=off>
+                <input type="text" name="Name" id="studentName" class="Name" autocomplete=off>
             </label>
 
             <label for="Telephone">
                 <p>电话号码:</p>
-                <input type="text" name="Telephone" class="Telephone"  pattern="[0-9]{11}" autocomplete=off>
+                <input type="text" name="Telephone" id="studentTel" class="Telephone"  pattern="[0-9]{11}" autocomplete=off>
             </label>
 
             <label for="ClassInformation">
                 <p>专业班级:</p>
-                <input type="text" name="ClassInformation" class="ClassInformation" >
+                <input type="text" name="ClassInformation" id="studentInformation" class="ClassInformation" >
             </label>
 
             <label for="Choose">
                 <p>选择方向:前端/后端</p>
-                <input type="text" name="方向" class="Choose" pattern="前端|后端">
+                <input type="text" name="方向" id="studentPost" class="Choose" pattern="前端|后端">
             </label>
+
 
             <label for="filtrateChoose">
                 <p>评分</p>
-                <input type="number" name="" class="">
+                <input type="text" name="point" id="studentPoint" class="">
             </label>
 
             <label for="Comment" class="Comment">
                 <p>评价</p>
-                <textarea wrap="hard">  </textarea>
+                <textarea id="comment" wrap="hard">  </textarea>
             </label>
             <label for="SubmitInterviewInformation" class="Confirm">
                 <input  type="button" value="APPLY." class="actionButton">
             </label>
 
         </form>
+        <script src = "../JS/interview.js" ></script>
 </body>
 
 </html>
