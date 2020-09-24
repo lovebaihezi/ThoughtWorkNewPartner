@@ -5,7 +5,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* font-family: "Popins",sans-serif; */
+    font-family: "Popins",sans-serif;
     
 }
 html,body{
@@ -14,7 +14,7 @@ html,body{
     place-items: center;
     background:  rgb(8,5,16);
     text-align: center;
-    font: 30px/1.4 'Cinzel', serif;
+    /* font: 30px/1.4 'Cinzel', serif; */
     /* font: 3em 'Cinzel', serif; */
     /* font-weight: 400;
     letter-spacing: 0.5em;
@@ -64,11 +64,13 @@ html,body{
     background: white;
     opacity: 0;
     /* visibility: hidden; */
+    display:none;
     transition:0.1s;
 }
 .card:hover .bottom-text{
     opacity: 1;
-    visibility: visible;
+    /* visibility: visible; */
+    display:block;
 }
 
 .card .bottom-text .btn{
