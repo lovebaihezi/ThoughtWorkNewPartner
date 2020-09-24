@@ -21,6 +21,19 @@
 </head>
 
 <body>
+    <!-- 
+    <div id="headTable" class="table">
+        <div id="back">
+            <div class="actionButton">
+                <img src="../ResourceFile/return.png" alt="">
+            </div>
+        </div>
+        <div class="login">
+            <div class="actionButton">
+                <p>login</p>
+            </div>
+        </div>
+    </div> -->
 
     <div class="Login">
         <div class="img">
@@ -48,8 +61,11 @@
                 <input type="password" name="mm" id="mm"  autocomplete="current-password">
                 <div></div>
             </label>
+            <div id="showApplyButton" class=" actionButton">
+                <p>还未报名?</p>
+            </div>
+            <div id="otherInformation" style="display: none;">
 
-            <div id="otherInformation">
                 <p>电话号码:</p>
                 <label for="Telephone">
                     <input type="text" name="Telephone" id="Telephone"  autocomplete="tel">
@@ -60,10 +76,10 @@
                     <input type="text" name="方向" id="Choose" >
                     <div></div>
                 </label>
-                <label for="Submit">
-                    <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
-                </label>
             </div>
+            <label for="Submit">
+                <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
+            </label>
         </form>
 
         <form class="close">
@@ -91,6 +107,7 @@
     <script type="text/javascript " src="../JS/RSAandSupport/rsa.js "></script>
     <script type="text/javascript " src="../JS/RSAandSupport/base64.js "></script>
     <script type="text/javascript " src="../JS/Login.js?version=1.0.8 "></script>
+    <!-- <script src="../JS/normal.js"></script> -->
 </body>
 
 </html>

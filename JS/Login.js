@@ -1,9 +1,18 @@
 window.onload = () => {
-    let loginButton = document.getElementById("Submit");
-    let leftButton = document.getElementById("leftButton");
-    let rightButton = document.getElementById("rightButton");
+
+    // if (sessionStorage.student) {
+    // location.href = "../HTML/informationSearch.html";
+    // } else {
+    var loginButton = document.getElementById("Submit");
+    var leftButton = document.getElementById("leftButton");
+    var rightButton = document.getElementById("rightButton");
     formInformation = document.getElementsByTagName("form")[0];
-    let otherInformation = document.getElementById("otherInformation");
+    var otherInformation = document.getElementById("otherInformation");
+    var showApplyInformation = document.getElementById("showApplyButton");
+    showApplyInformation.onclick = function() {
+        otherInformation.style.display = "block";
+        showApplyInformation.style.display = "none";
+    }
     leftButton.addEventListener("click", () => {
         leftButton.classList.add("on");
         rightButton.classList.remove("on");
@@ -21,14 +30,11 @@ window.onload = () => {
         otherInformation.classList.add("close");
         document.getElementsByTagName("form")[0].classList.add("close");
     });
-    let inputList = document.getElementsByTagName("input");
-    let JsonDataObject = {};
-    let JsonData;
-    let AjaxObject;
-    let ResponseTextFromServer;
-    let ResponseInformationObject;
+    var JsonDataObject = {};
+    var JsonData;
+    var AjaxObject;
     document.getElementById("normalSubmit").addEventListener("click", () => {
-        for (i = 0; i < formInformation.elements.length - 1; i++) {
+        for (var i = 0; i < formInformation.elements.length - 1; i++) {
             ((i) => {
                 JsonDataObject[formInformation.elements[i].name] =
                     formInformation.elements[i].value;
@@ -39,7 +45,7 @@ window.onload = () => {
 
     document.getElementsByTagName("form")[1].addEventListener("submit", function(formEvent) {
         formEvent.preventDefault();
-        for (i = 0; i < formInformation.elements.length - 1; i++) {
+        for (var i = 0; i < formInformation.elements.length - 1; i++) {
             ((i) => {
                 JsonDataObject[formInformation.elements[i].name] =
                     formInformation.elements[i].value;
@@ -49,31 +55,69 @@ window.onload = () => {
     }, true);
 
     window.LOGIN = () => {
-        receiveRSAKeyAnd();
+        // receiveRSAKeyAnd();
+        AjaxObject = new XMLHttpRequest();
+        AjaxObject.open("post", "http://localhost:3000/login", true);
+        AjaxObject.onreadystatechange = function() {
+            if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
+                if (this.responseText == 1) {
+                    sessionStorage.student = JSON.stringify(JsonDataObject);
+                    history.go(-1);
+                } else {
+                    for (var i = 0; i < 2; i++) {
+                        ((i) => {
+                            formInformation.elements[i].value = "";
+
+                        })(i);
+                    }
+                    formInformation.elements[0].placeHolder = "账号或密码错误哦";
+                }
+            } else {
+                alert("网络不太好哦，刷新试试吧");
+            }
+        }
     }
 
     window.IAmADMIN = () => {
+        AjaxObject = new XMLHttpRequest();
+        AjaxObject.open("post", "/admin-login", true);
+        AjaxObject.onreadystatechange = function() {
+            if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
+                if (this.responseText == 1) {
+                    sessionStorage.interview = JSON.stringify(JsonDataObject);
+                } else {
+                    for (var i = 0; i < 2; i++) {
+                        ((i) => {
+                            formInformation.elements[i].value = "";
 
+                        })(i);
+                    }
+                    formInformation.elements[0].placeHolder = "账号或密码错误哦";
+                }
+            } else {
+                alert("网络不太好哦，刷新试试吧");
+            }
+        }
     }
 
     window.RsaKey = null;
 
     window.receiveRSAKeyAnd = () => {
         RsaKey = '';
-        let TryConnection = new XMLHttpRequest();
+        var TryConnection = new XMLHttpRequest();
         TryConnection.open("post", "http://localhost:3000/getData", true); //GET RSA
         TryConnection.addEventListener("readystatechange", () => {
             if (TryConnection.status == 200 && TryConnection.readyState == 4) {
                 RsaKey = JSON.parse(TryConnection.responseText);
-                let password = encryptDate(JsonDataObject['mm'], RsaKey);
+                var password = encryptDate(JsonDataObject['mm'], RsaKey);
                 document.getElementById("mm").value = password;
                 document.getElementById("password").value = password;
                 document.forms[0].submit();
             }
         });
         TryConnection.send();
+        // }
     }
-
 }
 
 function postToXUPT() {

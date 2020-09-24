@@ -1,4 +1,3 @@
 window.onload = () => {
-    let commment = document.getElementById("comment").innerHTML;
-    console.log(document.cookie);
+    let comment = document.getElementById("comment").innerHTML;
 }
