@@ -23,12 +23,15 @@
     <script src="../JS/jquery.min.js"></script>
     <script src="../JS/fullpage.min.js"></script>
     <script src="../JS/generalIntroduction.js"></script>
+    <script src="../JS/animateaaa.js"></script>
+    <script src="../JS/up.js"></script>
     <script>
-        $(function() {
-            $('#dowebok').fullpage({
-                navigation: true
-            });
-        });
+        $(function(){
+	    $('#dowebok').fullpage({
+		anchors: ['page1','page2'],
+		menu: '#menu'
+	});
+});
     </script>
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
@@ -78,7 +81,7 @@
                        
                     </div>
                 </div>
-                 <!-- <a href="#section22" id="section1_a"><span></span><span></span></a> -->
+                 <a href="#page2" id="section1_a"><span></span><span></span></a>
             </div>
             <div class="section section2" id="section22">
                 <div class="container">
