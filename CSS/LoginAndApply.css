@@ -129,7 +129,7 @@ form p:nth-of-type(1) {
 }
 
 .actionButton {
-    margin-top: 36px;
+    margin-top: 12px;
     margin-bottom: 12px;
     width: 300px;
     font-size: 16px;
@@ -195,4 +195,63 @@ form p:nth-of-type(1) {
     color: #000000;
     -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
     box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+}
+
+#showApplyButton {
+    width: 40%;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
+    cursor: pointer;
+    -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+}
+
+.table {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
+}
+
+#back {
+    width: 40px;
+    height: 40px;
+    margin-left: 12px;
+}
+
+.login {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+
+.table .actionButton {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    border: 1px solid black;
+}
+
+.table .actionButton img {
+    width: 34px;
+    height: auto;
+}
+
+.table .actionButton:nth-of-type(1):hover {
+    background: none;
+}
+
+.login .actionButton * {
+    margin: 0;
 }

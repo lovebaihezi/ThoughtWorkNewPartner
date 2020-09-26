@@ -339,7 +339,7 @@ body {
 }
 @media screen and (min-width:280px) and (max-width:330px){
 	html,body{
-		height: 185%;
+		height: 188%;
 	}
 	.login{
 		width: 5rem;
@@ -402,7 +402,7 @@ body {
 }
 @media screen and (min-width:330px) and (max-width:380px){
 	html,body{
-		height: 180%;
+		height: 177%;
 	}
 	.Backend-background{
 		height: 50%;
@@ -450,7 +450,7 @@ body {
 		line-height: 3rem;
 	}
 	.card__description1{
-		top: 10%;
+		top: 13%;
 		line-height: 3rem;
 	}
 	.card__thumb1 img {
@@ -462,7 +462,7 @@ body {
 }
 @media screen and (min-width:380px) and (max-width:480px){
 	html,body{
-		height: 170%;
+		height: 168%;
 	}
 	.Backend-background{
 		height: 50%;
@@ -729,7 +729,7 @@ body {
 		line-height: 3rem;
 	}
 	.card__description1{
-		top: 10%;
+		top: 13%;
 		line-height: 3rem;
 	}
 	.card__thumb1 img {
@@ -795,7 +795,7 @@ body {
 }
 @media screen and (min-width:1200px) and (max-width:1499px){
 	html,body{
-		height: 120%;
+		height: 125%;
 	}
 	.card__category {
 		top: -2.5rem;
@@ -809,12 +809,12 @@ body {
 	}
 	
 	.card__body {
-		top: -20%;
+		top: -15%;
 	}
 
 	.card__description {
-		line-height: 2.7rem;
-		font-size: 1.7rem;
+		line-height: 2.5rem;
+		font-size: 1.5rem;
 		top: 15%;
 	}
 	
@@ -832,8 +832,8 @@ body {
 	}
 	
 	.card__description1 {
-		line-height: 2.7rem;
-		font-size: 1.7rem;
+		line-height: 2.5rem;
+		font-size: 1.5rem;
 		top: 15%;
 	}
 	.container{
@@ -871,8 +871,8 @@ body {
 
 
 .card__description {
-	line-height: 3rem;
-	font-size: 1.8rem;
+	line-height: 2.5rem;
+	font-size: 1.5rem;
 	top: 15%;
 }
 
@@ -888,8 +888,8 @@ body {
 }
 
 .card__description1 {
-	line-height: 3rem;
-	font-size: 1.8rem;
+	line-height: 2.5rem;
+	font-size: 1.5rem;
 	top: 13%;
 }
 
@@ -904,8 +904,9 @@ body {
 	font-size: 2.5rem;
 }
 .card__body{
-	top: -20%;
+	top: -10%;
 }
+
 }
 @media screen and (min-width:1701px) and (max-width:2001px){
 	
@@ -928,12 +929,12 @@ body {
 		font-size: 2.8rem;
 	}
 	.card__body{
-		top: -20%;
+		top: -5%;
 	}
 
 	.card__description {
-		line-height: 3.5rem;
-		font-size: 2rem;
+		line-height: 3rem;
+		font-size: 1.8rem;
 		top: 15%;
 	}
 	
@@ -951,8 +952,8 @@ body {
 	}
 	
 	.card__description1 {
-		line-height: 3.5rem;
-		font-size: 2rem;
+		line-height: 3rem;
+		font-size: 1.8rem;
 		top: 15%;
 	}
 	
