@@ -1,5 +1,5 @@
 window.onload = () => {
-    let studentID = document.getElementById("ID");
+    let studentID = document.getElementById("searchByNumber");
     let sendID = new XMLHttpRequest();
     sendID.open("post", "http://localhost:3000/sign", true);
     sendID.addEventListener("readystatechange", () => {

@@ -57,25 +57,24 @@ window.onload = () => {
     window.LOGIN = () => {
         // receiveRSAKeyAnd();
         AjaxObject = new XMLHttpRequest();
-        AjaxObject.open("post", "http://localhost:3000/login", true);
+        AjaxObject.open("post", "studentLogin", true);
         AjaxObject.onreadystatechange = function() {
             if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
-                if (this.responseText == 1) {
+                responseParse = JSON.parse(AjaxObject.responseText);
+                if (responseParse.status == "failed") {
                     sessionStorage.student = JSON.stringify(JsonDataObject);
-                    history.go(-1);
+                    location.href == "http://www.baidu.com";
                 } else {
                     for (var i = 0; i < 2; i++) {
                         ((i) => {
                             formInformation.elements[i].value = "";
-
                         })(i);
                     }
                     formInformation.elements[0].placeHolder = "账号或密码错误哦";
                 }
-            } else {
-                alert("网络不太好哦，刷新试试吧");
             }
         }
+        AjaxObject.send(JsonDataObject);
     }
 
     window.IAmADMIN = () => {
@@ -99,38 +98,4 @@ window.onload = () => {
             }
         }
     }
-
-    window.RsaKey = null;
-
-    window.receiveRSAKeyAnd = () => {
-        RsaKey = '';
-        var TryConnection = new XMLHttpRequest();
-        TryConnection.open("post", "http://localhost:3000/getData", true); //GET RSA
-        TryConnection.addEventListener("readystatechange", () => {
-            if (TryConnection.status == 200 && TryConnection.readyState == 4) {
-                RsaKey = JSON.parse(TryConnection.responseText);
-                var password = encryptDate(JsonDataObject['mm'], RsaKey);
-                document.getElementById("mm").value = password;
-                document.getElementById("password").value = password;
-                document.forms[0].submit();
-            }
-        });
-        TryConnection.send();
-        // }
-    }
-}
-
-function postToXUPT() {
-
-}
-
-function getCookie() {
-    // "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CN&_t=" + new Date().getTime();
-}
-
-function encryptDate(truePassword, RSA) {
-    var rsaKey = new RSAKey();
-    rsaKey.setPublic(b64tohex(RSA.modulus), b64tohex(RSA.exponent));
-    var enPassword = hex2b64(rsaKey.encrypt(truePassword));
-    return enPassword;
 }

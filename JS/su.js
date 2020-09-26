@@ -1,6 +1,6 @@
 // Copyright (c) chai bo wen LQXC All rights reserved.
 window.onload = () => {
-    let interview = document.getElementById("");
+    let interview = document.getElementById("Search");
     interview.isClick = false;
     interview.addEventListener("click",
         () => {
@@ -8,7 +8,7 @@ window.onload = () => {
                 return;
             }
             interview.isClick = true;
-            let ID = document.getElementById("studentID").value;
+            let ID = document.getElementById("searchByNumber").value;
             let sendID = new XMLDocument();
             sendID.open("post", "http://localhost:3000/studentInterview", true);
             sendID.onreadystatechange = () => {
