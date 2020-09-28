@@ -61,7 +61,7 @@ window.onload = () => {
         AjaxObject.onreadystatechange = function() {
             if (AjaxObject.readyState == 4 && AjaxObject.status == 200) {
                 responseParse = JSON.parse(AjaxObject.responseText);
-                if (responseParse.status == "failed") {
+                if (responseParse.status == "success") {
                     sessionStorage.student = JSON.stringify(JsonDataObject);
                     location.href == "http://www.baidu.com";
                 } else {

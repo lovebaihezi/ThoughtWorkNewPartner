@@ -21,6 +21,8 @@ var extraForm = document.getElementById("otherInformation");
 loginOrApply['isClick'] = false;
 loginOrApply.addEventListener("click", function () {
     loginOrApply['isClick'] = true;
+    loginOrApply.classList.add("close");
+    extraForm.style.display = "none";
 });
 studentForm.addEventListener("submit", function (formEvent) {
     formEvent.preventDefault();
@@ -47,10 +49,6 @@ changeToStudentApplyOrLogin.addEventListener("click", function () {
     showForm(studentForm);
     closeForm(adminForm);
 });
-loginOrApply.addEventListener("click", function () {
-    loginOrApply.classList.add("close");
-    extraForm.style.display = "none";
-});
 function packInformation(form) {
     var allInformation = {};
     for (var i = 0; i < form.elements.length; i++) {
@@ -75,13 +73,13 @@ function showForm(formElement) {
     formElement.classList.remove("close");
 }
 function login() {
-    sendInformation(packInformation(studentForm), "/studentLogin", loginEndAction);
+    sendInformation(packInformation(studentForm), "http://localhost:3000/studentLogin", loginEndAction);
 }
 function apply() {
-    sendInformation(packInformation(studentForm), "/apply", applyEndAction);
+    sendInformation(packInformation(studentForm), "http://localhost:3000/apply", applyEndAction);
 }
 function adminLogin() {
-    sendInformation(packInformation(adminForm), "/adminLogin", adminEndAction);
+    sendInformation(packInformation(adminForm), "http://localhost:3000/adminLogin", adminEndAction);
 }
 function loginEndAction(response) {
     sessionStorage.student = JSON.parse(response);

@@ -50,10 +50,6 @@ function getRSA(responseToLoin) {
 let formInformation;
 //need cookie need csrftoken need session get all of them in one site
 
-function encryptPW() {
-
-}
-
 function getCsrftoken(requestFormLogin) {
     formInformation = requestFormLogin.body;
     console.log("gonna receive csrftoken -< 2");
@@ -97,7 +93,33 @@ app.post('/getData', (requestFormLogin, responseToLoin) => {
         }));
 })
 
-app.post('/login', (requestFormLogin, responseToLoin) => {
+app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
+    formInformation.yhm = requestFormLogin.body.yhm;
+    formInformation.mm = requestFormLogin.body.mm;
+    console.log(formInformation);
+    console.log("gonna send to XUPT server");
+    Axios2({
+            method: 'post',
+            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" + cookieTime,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset:utf-8',
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+                'Origin': 'http://www.zfjw.xupt.edu.cn',
+                'Cookie': cookie[0].slice(0, 43)
+            },
+            // data: formInformation
+            data: formInformation
+        }).then((req, res) => {
+            console.log(req.config);
+            console.log(res.status);
+            console.log("<----------------Login ended---------------->");
+        })
+        .catch(error => {
+            console.error(error)
+        });
+})
+
+app.post('/apply', (requestFormLogin, responseToLoin) => {
     formInformation.yhm = requestFormLogin.body.yhm;
     formInformation.mm = requestFormLogin.body.mm;
     console.log(formInformation);
