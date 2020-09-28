@@ -56,7 +56,6 @@
                 <div></div>
             </label>
             <p>密码:</p>
-            <input type="text" name="mm" id="password" style="display: none;" autocomplete=off>
             <label for="Password">
                 <input type="password" name="mm" id="mm" pattern="\w{6,40}"required autocomplete="current-password">
                 <div></div>
@@ -65,12 +64,12 @@
 
                 <p>电话号码:</p>
                 <label for="Telephone">
-                    <input type="text" name="Telephone" id="Telephone"  pattern="[0-9]{11}" autocomplete="tel">
+                    <input type="text" name="Telephone" id="Telephone" required pattern="[0-9]{11}" autocomplete="tel">
                     <div></div>
                 </label>
                 <p>选择方向:前端/后端</p>
                 <label for="Choose">
-                    <input type="text" name="方向" pattern="前端|后台" id="Choose" >
+                    <input type="text" name="way" pattern="前端|后台" required id="Choose" >
                     <div></div>
                 </label>
             </div>
@@ -106,7 +105,7 @@
     <script type="text/javascript " src="../JS/RSAandSupport/rng.js "></script>
     <script type="text/javascript " src="../JS/RSAandSupport/rsa.js "></script>
     <script type="text/javascript " src="../JS/RSAandSupport/base64.js "></script>
-    <script type="text/javascript " src="../JS/login_Java.js "></script>
+    <script type="text/javascript " src="../JS/login_Node.js "></script>
     <!-- <script src="../JS/normal.js"></script> -->
 </body>
 
