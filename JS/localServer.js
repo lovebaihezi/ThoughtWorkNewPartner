@@ -1,19 +1,17 @@
 const express = require('express');
-const http = require('http');
-const request = require('request');
-const https = require('https');
 const Axios = require('axios');
 const Axios2 = require('axios');
 const app = express();
 const bodyParser = require('body-parser');
-const { getHeapCodeStatistics } = require('v8');
-RsaKey = null;
-
+let RsaKey = null;
 const jsdom = require('jsdom');
-const { url } = require('inspector');
-const { JSDOM } = jsdom;
+const {
+    JSDOM
+} = jsdom;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 
@@ -24,10 +22,6 @@ app.use((req, res, next) => {
 
 let cookie;
 let TimeSet; // 所有必须在一个时间内
-
-// const getCsrftoken = () => {
-
-// }
 
 function getRSA(responseToLoin) {
     TimeSet = new Date().getTime();
@@ -67,11 +61,15 @@ function getCsrftoken(requestFormLogin) {
         .then((reqToXUPT, resToServer) => {
             //session form set-cookie; 
             //csrftoken form req.data.inputElement.value
-            const { headers } = reqToXUPT;
+            const {
+                headers
+            } = reqToXUPT;
             cookie = headers['set-cookie'];
             console.log(cookie);
             console.log(cookie[1].slice(-1, -24))
-            const { document } = new JSDOM(reqToXUPT.data).window;
+            const {
+                document
+            } = new JSDOM(reqToXUPT.data).window;
             // console.log(resToServer.headers);
             let csrfToken = document.getElementById("csrftoken").value; // get!
             formInformation.csrfToken = csrfToken;
