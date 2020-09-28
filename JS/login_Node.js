@@ -19,6 +19,8 @@ var adminForm = document.forms[1];
 var loginOrApply = document.getElementById("showApplyButton");
 var extraForm = document.getElementById("otherInformation");
 loginOrApply['isClick'] = false;
+var isClickStudent = false;
+var isClickAdmin = false;
 loginOrApply.addEventListener("click", function () {
     loginOrApply['isClick'] = true;
     loginOrApply.classList.add("close");
@@ -28,16 +30,27 @@ loginOrApply.addEventListener("click", function () {
 });
 studentForm.addEventListener("submit", function (formEvent) {
     formEvent.preventDefault();
-    if (loginOrApply['isClick']) {
-        login();
+    if (isClickStudent) {
+        return;
     }
     else {
-        apply();
+        isClickStudent = true;
+        if (loginOrApply['isClick']) {
+            login();
+        }
+        else {
+            apply();
+        }
     }
 });
 adminForm.addEventListener("submit", function (formEvent) {
     formEvent.preventDefault();
-    adminLogin();
+    if (isClickAdmin) {
+        return;
+    }
+    else {
+        adminLogin();
+    }
 });
 changeToAdminLogin.addEventListener("click", function () {
     changeToAdminLogin.classList.add("on");
@@ -99,6 +112,9 @@ function loginSuccessAction(response) {
     if (JSON.parse(response).status == "success") {
         if (JSON.parse(response).Telephone == "") {
             alert("你还未报名，请先报名哦！");
+            isClickStudent = false;
+            loginOrApply['isClick'] = false;
+            location.reload();
         }
         else {
             sessionStorage.student = JSON.parse(response);
@@ -111,13 +127,13 @@ function loginSuccessAction(response) {
         }
     }
     else {
+        isClickStudent = false;
         alert("账号或密码错误");
         for (var i in studentForm.elements) {
             if (studentForm.elements[i]['name'] == "mm") {
                 studentForm.elements[i]['value'] = "";
             }
         }
-        loginOrApply['isClick'] = false;
     }
 }
 function applySuccessAction(response) {

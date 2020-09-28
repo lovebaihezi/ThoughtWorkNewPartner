@@ -64,8 +64,7 @@ function getCsrftoken(requestFormLogin) {
                 headers
             } = reqToXUPT;
             cookie = headers['set-cookie'];
-            console.log(cookie);
-            console.log(cookie[1].slice(-1, -24))
+            // console.log(headers);
             const {
                 document
             } = new JSDOM(reqToXUPT.data).window;
@@ -93,11 +92,11 @@ app.post('/getData', (requestFormLogin, responseToLoin) => {
 app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
     formInformation.yhm = JSON.parse(requestFormLogin.body).yhm;
     formInformation.mm = JSON.parse(requestFormLogin.body).mm;
-    console.log("-<" + JSON.stringify(formInformation) + ">-");
+    console.log(cookie[1].split(","));
     console.log("gonna send to XUPT server");
     Axios2({
             method: 'post',
-            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" + "cookieTime",
+            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" + (TimeSet - 8 * 60 * 60 * 10),
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset:utf-8',
                 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
@@ -107,8 +106,11 @@ app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
             // data: formInformation
             data: formInformation
         }).then((req, res) => {
-            console.log(req.config);
-            console.log(res.status);
+            try {
+                console.log(res.status);
+            } catch (err) {
+                console.log("failed");
+            }
             console.log("<----------------Login ended---------------->");
         })
         .catch(error => {
