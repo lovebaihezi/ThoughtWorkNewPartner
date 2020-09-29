@@ -59,7 +59,8 @@ function getCsrftoken(requestFormLogin) {
         })
         .then((reqToXUPT, resToServer) => {
             //session form set-cookie; 
-            //csrftoken form req.data.inputElement.value
+            //csrftoken form req.data.inputElement.value 
+            //!!! csrftoken useless ! not important!
             const {
                 headers
             } = reqToXUPT;
@@ -68,6 +69,7 @@ function getCsrftoken(requestFormLogin) {
             const {
                 document
             } = new JSDOM(reqToXUPT.data).window;
+            console.log(resToServer);
             // console.log(resToServer.headers);
             let csrfToken = document.getElementById("csrftoken").value; // get!
             formInformation.csrfToken = csrfToken;
@@ -89,14 +91,18 @@ app.post('/getData', (requestFormLogin, responseToLoin) => {
         }));
 })
 
+let studentInformation = {};
+
 app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
-    formInformation.yhm = JSON.parse(requestFormLogin.body).yhm;
-    formInformation.mm = JSON.parse(requestFormLogin.body).mm;
-    console.log(cookie[1].split(","));
+    studentInformation = formInformation;
+    console.log(studentInformation);
+})
+
+app.post('/XUPT', (reqForm, resBack) => {
     console.log("gonna send to XUPT server");
     Axios2({
             method: 'post',
-            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" + (TimeSet - 8 * 60 * 60 * 10),
+            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin?time=" + TimeSet,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset:utf-8',
                 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
@@ -104,12 +110,15 @@ app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
                 'Cookie': cookie[0].slice(0, 43)
             },
             // data: formInformation
-            data: formInformation
+            data: res
         }).then((req, res) => {
+            console.log(res);
             try {
                 console.log(res.status);
+                responseToLoin.json(res.status)
             } catch (err) {
                 console.log("failed");
+                responseToLoin.json(formInformation);
             }
             console.log("<----------------Login ended---------------->");
         })
