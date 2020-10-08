@@ -17,11 +17,23 @@
     <link href="../ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
     <link href="../ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
     <link rel="stylesheet" href="../CSS/LoginAndApply.css">
+    <link rel="stylesheet" href="../CSS/normal.css">
     <title>LOGIN登录</title>
 </head>
 
 <body>
-
+    <!-- <div id="headTable" class="table">
+        <div id="back">
+            <div class="actionButton">
+                <img src="../ResourceFile/return.png" alt="">
+            </div>
+        </div>
+        <div class="login">
+            <div class="actionButton">
+                <p><a href="./Login.html">login</a></p>
+            </div>
+        </div>
+    </div> -->
     <div class="Login">
         <div class="img">
             <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
@@ -44,7 +56,7 @@
             </label>
             <p>密码:</p>
             <label for="Password">
-                <input type="password" name="mm" id="mm" pattern="\w{6,40}"required autocomplete="current-password">
+                <input type="password" name="mm" id="mm" pattern="\w{6,40}" required autocomplete="current-password">
                 <div></div>
             </label>
             <div id="otherInformation">
@@ -55,7 +67,7 @@
                 </label>
                 <p>选择方向:前端/后端</p>
                 <label for="Choose">
-                    <input type="text" name="way" pattern="前端|后台" required id="Choose" >
+                    <input type="text" name="way" pattern="前端|后台" required id="Choose">
                     <div></div>
                 </label>
             </div>
@@ -85,19 +97,8 @@
         </form>
 
     </div>
-    <form action="http;//localhost:3000/XUPT" style="display: none;">
-        <input type="text" name="yhm" id="trueYHM">
-        <input type="text" name="mm" id="trueMM">
-        <input type="text" name="mm" id="trueMM1">
-    </form>
-    <script type="text/javascript " src="../JS/jquery.min.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/jsbn.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/prng4.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/rng.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/rsa.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/base64.js "></script>
     <script type="text/javascript " src="../JS/login_Node.js "></script>
-    <!-- <script src="../JS/normal.js"></script> -->
+
 </body>
 
 </html>
