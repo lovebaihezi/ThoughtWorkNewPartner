@@ -26,13 +26,15 @@
     <script src="../JS/animateaaa.js"></script>
     <script src="../JS/up.js"></script>
     <script>
-        $(function(){
-	    $('#dowebok').fullpage({
-		anchors: ['page1','page2'],
-		menu: '#menu'
-	});
-});
+        $(function() {
+            $('#dowebok').fullpage({
+                anchors: ['page1', 'page2'],
+                menu: '#menu'
+            });
+        });
     </script>
+    <link rel="stylesheet" href="../CSS/normal.css">
+
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
@@ -42,6 +44,18 @@
 <body>
 
     <body>
+        <div id="headTable" class="table">
+            <div id="back">
+                <div class="actionButton">
+                    <img src="../ResourceFile/return.png" alt="">
+                </div>
+            </div>
+            <div class="login">
+                <div class="actionButton">
+                    <p>login</p>
+                </div>
+            </div>
+        </div>
         <div id="dowebok">
             <div class="section section1">
                 <div class="container">
@@ -78,10 +92,10 @@
                             </div>
 
                         </div>
-                       
+
                     </div>
                 </div>
-                 <a href="#page2" id="section1_a"><span></span><span></span></a>
+                <a href="#page2" id="section1_a"><span></span><span></span></a>
             </div>
             <div class="section section2" id="section22">
                 <div class="container">
