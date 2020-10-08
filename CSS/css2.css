@@ -1,3 +1,5 @@
+
+/* 修改 */
 .head{
     height:88px;
 }
@@ -5,8 +7,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* font-family: "Popins",sans-serif; */
-    
+    font-family: "Popins",sans-serif;
 }
 html,body{
     height:100%;
@@ -14,11 +15,7 @@ html,body{
     place-items: center;
     background:  rgb(8,5,16);
     text-align: center;
-    /* font: 30px/1.4 'Cinzel', serif; */
-    /* font: 3em 'Cinzel', serif; */
-    /* font-weight: 400;
-    letter-spacing: 0.5em;
-    text-shadow: 0 0 25px rgba(254,254,255,0.85) */
+    font: 30px/1.4 'Lato', sans-serif;
     color: #fefeff;
     -webkit-font-smoothing: antialiased;
 }
@@ -56,21 +53,19 @@ html,body{
 .card .top-text p{
     font-size:30px;
     font-weight:600;
-    color:#920e0ede;
+    color:#3ce7d0de;
     line-height:20px;
 }
 .card .bottom-text{
     padding:20px 20px 10px 5px;
     background: white;
     opacity: 0;
-    /* visibility: hidden; */
-    display:none;
+    visibility: hidden;
     transition:0.1s;
 }
 .card:hover .bottom-text{
     opacity: 1;
-    /* visibility: visible; */
-    display:block;
+    visibility: visible;
 }
 
 .card .bottom-text .btn{
@@ -79,7 +74,7 @@ html,body{
 }
 .card .bottom-text .btn a{
     text-decoration: none;
-    background: #b82727f6;
+    background: #3ce7bcf6;
     color:#ffffff;
     padding:5px 8px;
     border-radius:3px;
@@ -141,7 +136,7 @@ span.mark {
     top: 0;
     height: 100%;
     width: 51%;
-    background: hsl(0, 0%, 35%);
+    background: hsl(172, 100%, 57%);
 }
 .chevron:before {
     left: 0;
