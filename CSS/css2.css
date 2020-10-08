@@ -1,118 +1,135 @@
-.head{
-    height:88px;
+.head {
+    height: 88px;
 }
-*{
-    margin:0;
-    padding:0;
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-html,body{
-    height:100%;
+
+html,
+body {
+    width: 100%;
+    height: 100%;
     display: grid;
     place-items: center;
-    background:  rgb(8,5,16);
+    background: rgb(8, 5, 16);
     text-align: center;
     /* font: 30px/1.4 'Lato', sans-serif; */
     color: #fefeff;
     -webkit-font-smoothing: antialiased;
 }
 
-.container{
-    display:flex;
+.container {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.card{
-    height:290px;
-    max-width:350px;
+
+.card {
+    height: 290px;
+    max-width: 350px;
     background: white;
-    margin:0 20px 20px;
+    margin: 0 20px 20px;
     transition: 0.4s;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
-.card:hover{
-    height:360px;
+
+.card:hover {
+    height: 360px;
     box-shadow: 5px 5px 10px rgb(20, 58, 139);
 }
-.img{
-    height:160px;
-    width:100%; 
+
+.img {
+    height: 160px;
+    width: 100%;
     min-width: 100%;
 }
-.img img{
-    height:100%;
-    width:100%;
+
+.img img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
-.card .top-text{
-    padding:30px 5px 1px;
+
+.card .top-text {
+    padding: 30px 5px 1px;
 }
-.card .top-text p{
-    font-size:30px;
-    font-weight:600;
-    color:#3ce7d0de;
-    line-height:20px;
+
+.card .top-text p {
+    font-size: 30px;
+    font-weight: 600;
+    color: #3ce7d0de;
+    line-height: 20px;
 }
-.card .bottom-text{
-    padding:20px 20px 10px 5px;
+
+.card .bottom-text {
+    padding: 20px 20px 10px 5px;
     background: white;
     opacity: 0;
     visibility: hidden;
-    transition:0.1s;
+    transition: 0.1s;
 }
-.card:hover .bottom-text{
+
+.card:hover .bottom-text {
     opacity: 1;
     visibility: visible;
 }
 
-.card .bottom-text .btn{
-    margin:10px 0;
-    text-align:center;
+.card .bottom-text .btn {
+    margin: 10px 0;
+    text-align: center;
 }
-.card .bottom-text .btn a{
+
+.card .bottom-text .btn a {
     text-decoration: none;
     background: #3ce7bcf6;
-    color:#ffffff;
-    padding:5px 8px;
-    border-radius:3px;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 3px;
     display: inline-flex;
     transition: 0.2s;
 }
-.card .bottom-text .btn a:hover{
+
+.card .bottom-text .btn a:hover {
     transform: scale(0.9);
 }
-@media screen and (max-width:1080px){
-    .container{
+
+@media screen and (max-width:1080px) {
+    .container {
         flex-wrap: wrap;
         flex-direction: column;
     }
-    .card{
+    .card {
         max-width: 700px;
-        margin:0 20px 20px;
+        margin: 0 20px 20px;
     }
 }
+
 span.mark {
     border-right: 2px solid white;
     animation: blink 0.6s step-end infinite;
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     from,
     to {
-      border-color: transparent;
+        border-color: transparent;
     }
     50% {
-      border-color: white;
+        border-color: white;
     }
-  }
- 
-  .cont {
+}
+
+.cont {
     position: relative;
     width: 30px;
     height: 30px;
-    margin:0 auto;
+    margin: 0 auto;
 }
+
 .chevron {
     position: absolute;
     width: 28px;
@@ -121,12 +138,15 @@ span.mark {
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move 3s ease-out infinite;
 }
+
 .chevron:first-child {
     animation: move 3s ease-out 1s infinite;
 }
+
 .chevron:nth-child(2) {
     animation: move 3s ease-out 2s infinite;
 }
+
 .chevron:before,
 .chevron:after {
     content: ' ';
@@ -136,15 +156,18 @@ span.mark {
     width: 51%;
     background: hsl(172, 100%, 57%);
 }
+
 .chevron:before {
     left: 0;
     transform: skew(0deg, 30deg);
 }
+
 .chevron:after {
     right: 0;
     width: 50%;
     transform: skew(0deg, -30deg);
 }
+
 @keyframes move {
     25% {
         opacity: 1;
