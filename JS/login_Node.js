@@ -3,11 +3,11 @@ if (sessionStorage.student) {
         location.href = "./su.html";
     }
     else {
-        try {
+        if (history.length > 1) {
             history.go(-1);
         }
-        catch (error) {
-            location.href = "./selection.html";
+        else {
+            location.replace("./selection.html");
         }
     }
 }
@@ -66,14 +66,15 @@ changeToStudentApplyOrLogin.addEventListener("click", function () {
 });
 function packInformation(form) {
     var allInformation = {};
-    for (var i = 0; i < form.elements.length - 1; i++) {
-        allInformation[form.elements[i]['name']] = form.elements[i]['value'];
-    }
+    Array.from(form.elements).forEach(function (item) {
+        item.name != "" ? allInformation[item.name] = item.value : 0;
+    });
     return JSON.stringify(allInformation);
 }
 function sendInformation(json, place, thenAction) {
     var newAjax = new XMLHttpRequest();
     newAjax.open("post", place, true);
+    // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
     newAjax.addEventListener("readystatechange", function () {
         if (newAjax.readyState == 4 && newAjax.status == 200) {
             thenAction(newAjax.response);
@@ -88,7 +89,8 @@ function showForm(formElement) {
     formElement.classList.remove("close");
 }
 function login() {
-    sendInformation("", "http://localhost:3000/getData", loginAction);
+    var formInformation = JSON.parse(packInformation(studentForm));
+    sendInformation(JSON.stringify(formInformation), "http://localhost:3000/studentLogin", loginSuccessAction);
 }
 function apply() {
     login();
@@ -96,18 +98,6 @@ function apply() {
 function adminLogin() {
     sendInformation(packInformation(adminForm), "http://localhost:3000/adminLogin", adminSuccessAction);
 }
-// function getDataSuccessAction(response: string): void {
-//     sendInformation(packInformation(studentForm), "http://localhost:3000/studentLogin", loginSuccessAction);
-// }
-function loginAction(response) {
-    var rsaKey = JSON.parse(response);
-    var formInformation = JSON.parse(packInformation(studentForm));
-    formInformation['mm'] = encryptPassWord(formInformation['mm'], rsaKey);
-    formInformation['mm'] = [formInformation['mm'], formInformation['mm']];
-    sendInformation(JSON.stringify(formInformation), "http://localhost:3000/studentLogin", loginSuccessAction);
-}
-// function applyAction(response: string): void {
-// }
 function loginSuccessAction(response) {
     if (JSON.parse(response).status == "success") {
         if (JSON.parse(response).Telephone == "") {
@@ -142,9 +132,5 @@ function applySuccessAction(response) {
 function adminSuccessAction(response) {
     sessionStorage.interview = JSON.parse(response);
 }
-function encryptPassWord(truePassword, encryptModule) {
-    var rsa = new RSAKey();
-    rsa.setPublic(b64tohex(encryptModule['modulus']), b64tohex(encryptModule['exponent']));
-    var enPassword = hex2b64(rsa.encrypt(truePassword));
-    return enPassword;
+function waitingResponse() {
 }

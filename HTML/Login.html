@@ -49,7 +49,7 @@
         </div>
         <form action="" method="post">
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
-            <p>学号:</p>
+            <!-- <p>学号:</p>
             <label for="Account">
                 <input type="text" name="yhm" id="ID" pattern="[0-9]{8}" required autocomplete="username">
                 <div></div>
@@ -59,7 +59,7 @@
                 <input type="password" name="mm" id="mm" pattern="\w{6,40}" required autocomplete="current-password">
                 <div></div>
             </label>
-            <div id="otherInformation">
+
                 <p>电话号码:</p>
                 <label for="Telephone">
                     <input type="text" name="Telephone" id="Telephone" required pattern="[0-9]{11}" autocomplete="tel">
@@ -70,35 +70,67 @@
                     <input type="text" name="way" pattern="前端|后台" required id="Choose">
                     <div></div>
                 </label>
-            </div>
+
             <div id="showApplyButton" class=" actionButton">
-                <p>已报名</p>
+                <p>已报名?</p>
             </div>
             <label for="Submit">
                 <input id="normalSubmit" type="submit" value="LOGIN" class="actionButton">
-            </label>
+            </label> -->
+            <input type="text" style="display: none;" name="user" value="student">
+            <div class="label">
+                <label for="">学号</label>
+                <input type="text" name="ID" required pattern="^[0-9]{8}$" autocomplete="username">
+                <div class="showInformation">请输入你正确的学号哦</div>
+            </div>
+            <div class="label">
+                <label for="">密码(双击密码框显示密码哦)</label>
+                <input type="password" name="password" required id="password" pattern="^\w{6,20}$" autocomplete="current-password">
+                <div class="showInformation">请输入你正确的密码哦</div>
+            </div>
+            <div id="otherInformation">
+                <div class="label">
+                    <label for="">电话号码</label>
+                    <input type="tel" name="Telephone" required pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
+                    <div class="showInformation">请输入你的电话号码哦</div>
+                </div>
+                <div class="label">
+                    <label for="">方向:填写前端或者后台</label>
+                    <input type="text" name="way" required pattern="前端|后台" id="Choose" autocomplete=off>
+                    <div class="showInformation">请填写你所需的方向哦</div>
+                </div>
+            </div>
+            <div id="showApplyButton" class=" actionButton">
+                <p>已报名?</p>
+            </div>
+            <div class="label">
+                <label for=""></label>
+                <input type="submit" class="actionButton" name="" id="submitButton" value="login">
+            </div>
         </form>
 
         <form class="close">
             <p>管理员请使用管理账号登录</p>
-            <p>学号:</p>
-            <label for="Account">
-                <input type="text" name="Account" id="adminAccount" required pattern="[0-9]{8}" autocomplete=off>
-                <div></div>
-            </label>
-            <p>密码:</p>
-            <label for="Password">
-                <input type="password" name="Password" id="adminPassword" required pattern="\w{6,12}" autocomplete=off>
-                <div></div>
-            </label>
-            <label for="Submit">
-                <input id="adminSubmit" type="submit" value="IAmADMIN" class="actionButton">
-            </label>
+            <input type="text" style="display: none;" name="user" value="admin">
+            <div class="label">
+                <label for="">学号</label>
+                <input type="text" name="adminID" required pattern="^[0-9]{8}$" autocomplete="username">
+                <div class="showInformation">请输入你正确的学号哦</div>
+            </div>
+            <div class="label">
+                <label for="">密码(双击密码框显示密码哦)</label>
+                <input type="password" name="adminPassword" required id="adminPassword" pattern="^\w{6,20}$" autocomplete="current-password">
+                <div class="showInformation">请输入你正确的密码哦</div>
+            </div>
+            <div class="label">
+                <label for=""></label>
+                <input type="submit" class="actionButton" name="" id="" value="login">
+            </div>
         </form>
 
     </div>
     <script type="text/javascript " src="../JS/login_Node.js "></script>
-
+    <script src="../JS/login.js"></script>
 </body>
 
 </html>
