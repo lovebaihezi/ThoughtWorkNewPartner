@@ -1,0 +1,92 @@
+.table {
+    width: 100%;
+    min-width: 368px;
+    z-index: 9999;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
+}
+
+.actionButton {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 300px;
+    font-size: 16px;
+    height: 38px;
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.actionButton:hover {
+    background-image: url(../ResourceFile/send.svg);
+    background-size: contain;
+    color: transparent;
+}
+
+.actionButton:focus {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 300px;
+    margin-right: 0;
+}
+
+#backButton {
+    width: 40px;
+    height: 40px;
+    margin-left: 12px;
+}
+
+.loginButton {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+
+.table .actionButton {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    border: 1px solid black;
+}
+
+.table .actionButton img {
+    width: 34px;
+    height: auto;
+}
+
+.table .actionButton:nth-of-type(-n+1) {
+    border: transparent;
+    background: none;
+}
+
+.table .actionButton:nth-of-type(1):hover {
+    background: none;
+}
+
+.login .actionButton * {
+    margin: 0;
+}
+
+.actionButton p {
+    margin: 0;
+}
+
+.actionButton a {
+    text-decoration: none;
+    color: #000000;
+}

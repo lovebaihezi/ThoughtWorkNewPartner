@@ -4,6 +4,7 @@
 <!-- Copyright (c) chai bo wen LQXC All rights reserved. -->
 
 <head>
+    <script src="../JS/change.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../ResourceFile/favicon.ico" rel="shortcut icon">
@@ -17,11 +18,18 @@
     <link href="../ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
     <link href="../ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
     <link rel="stylesheet" href="../CSS/LoginAndApply.css">
+    <link rel="stylesheet" href="../CSS/normal.css">
     <title>LOGIN登录</title>
 </head>
 
 <body>
-
+    <div id="headTable" class="table">
+        <div id="backButton">
+            <div class="actionButton">
+                <img src="../ResourceFile/return.png" alt="">
+            </div>
+        </div>
+    </div>
     <div class="Login">
         <div class="img">
             <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
@@ -35,62 +43,63 @@
                 <p>管理员登录</p>
             </div>
         </div>
-        <form action="http://localhost:3000/Login" method="post">
+        <form action="" method="post">
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
-            <p>学号:</p>
-            <label for="Account">
-                <input type="text" name="yhm" id="ID"  autocomplete="username">
-                <div></div>
-            </label>
-            <p>密码:</p>
-            <input type="text" name="mm" id="password" style="display: none;" autocomplete=off>
-            <label for="Password">
-                <input type="password" name="mm" id="mm"  autocomplete="current-password">
-                <div></div>
-            </label>
-
+            <input type="text" style="display: none;" name="user" value="student">
+            <div class="label">
+                <label for="">学号</label>
+                <input type="text" name="ID" required pattern="^[0-9]{8}$" autocomplete="username">
+                <div class="showInformation">请输入你正确的学号哦</div>
+            </div>
+            <div class="label">
+                <label for="">密码(双击密码框显示密码哦)</label>
+                <input type="password" name="password" required id="password" pattern="^\w{6,20}$" autocomplete="current-password">
+                <div class="showInformation">请输入你正确的密码哦</div>
+            </div>
+            <div id="otherInformation">
+                <div class="label">
+                    <label for="">电话号码</label>
+                    <input type="tel" name="Telephone" required pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
+                    <div class="showInformation">请输入你的电话号码哦</div>
+                </div>
+                <div class="label">
+                    <label for="">方向:填写前端或者后台</label>
+                    <input type="text" name="way" required pattern="前端|后台" id="Choose" autocomplete=off>
+                    <div class="showInformation">请填写你所需的方向哦</div>
+                </div>
+            </div>
+            <div id="showApplyButton" class=" actionButton">
+                <p>已报名?</p>
+            </div>
+            <div class="label">
+                <label for=""></label>
+                <input type="submit" class="actionButton" name="" id="submitButton" value="login">
+            </div>
         </form>
-        <div id="otherInformation">
-            <p>电话号码:</p>
-            <label for="Telephone">
-                    <input type="text" name="Telephone" id="Telephone"  autocomplete="tel">
-                    <div></div>
-                </label>
-            <p>选择方向:前端/后端</p>
-            <label for="Choose">
-                    <input type="text" name="方向" id="Choose" >
-                    <div></div>
-                </label>
-            <label for="Submit">
-                    <input id="normalSubmit" type="button" value="LOGIN" class="actionButton">
-                </label>
-        </div>
 
         <form class="close">
             <p>管理员请使用管理账号登录</p>
-            <p>学号:</p>
-            <label for="Account">
-                <input type="text" name="Account" id="adminAccount" required pattern="[0-9]{8}" autocomplete=off>
-                <div></div>
-            </label>
-            <p>密码:</p>
-            <label for="Password">
-                <input type="password" name="Password" id="adminPassword" required pattern="\w{6,12}" autocomplete=off>
-                <div></div>
-            </label>
-            <label for="Submit">
-                <input id="adminSubmit" type="Submit" value="IAmADMIN" class="actionButton">
-            </label>
+            <input type="text" style="display: none;" name="user" value="admin">
+            <div class="label">
+                <label for="">学号</label>
+                <input type="text" name="adminID" required pattern="^[0-9]{8}$" autocomplete="username">
+                <div class="showInformation">请输入你正确的学号哦</div>
+            </div>
+            <div class="label">
+                <label for="">密码(双击密码框显示密码哦)</label>
+                <input type="password" name="adminPassword" required id="adminPassword" pattern="^\w{6,20}$" autocomplete="current-password">
+                <div class="showInformation">请输入你正确的密码哦</div>
+            </div>
+            <div class="label">
+                <label for=""></label>
+                <input type="submit" class="actionButton" name="" id="" value="login">
+            </div>
         </form>
 
     </div>
-    <script type="text/javascript " src="../JS/jquery.min.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/jsbn.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/prng4.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/rng.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/rsa.js "></script>
-    <script type="text/javascript " src="../JS/RSAandSupport/base64.js "></script>
-    <script type="text/javascript " src="../JS/Login.js?version=1.0.8 "></script>
+    <script type="text/javascript " src="../JS/login_Node.js "></script>
+    <script src="../JS/login_check.js"></script>
+    <script src="../JS/normal.js"></script>
 </body>
 
 </html>

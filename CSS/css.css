@@ -212,12 +212,12 @@ a:hover {
 a:active {
     text-decoration: none;
 }
-/* .in{
+.in{
     animation: 2s opacity2 0s infinite; 
     -webkit-animation: 2s opacity2 0s infinite;
     -moz-animation: 2s opacity2 0s infinite;
-} */
-/* @keyframes opacity2{
+} 
+ @keyframes opacity2{
             0%{opacity:0}
             50%{opacity:.8;}
             100%{opacity:0;}
@@ -231,4 +231,4 @@ a:active {
             0%{opacity:0}
             50%{opacity:.8;}
             100%{opacity:0;}
- } */
+ } 
