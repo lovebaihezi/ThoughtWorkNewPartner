@@ -1,5 +1,6 @@
 .table {
     width: 100%;
+    min-width: 368px;
     z-index: 9999;
     height: 40px;
     position: absolute;
@@ -79,4 +80,13 @@
 
 .login .actionButton * {
     margin: 0;
+}
+
+.actionButton p {
+    margin: 0;
+}
+
+.actionButton a {
+    text-decoration: none;
+    color: #000000;
 }

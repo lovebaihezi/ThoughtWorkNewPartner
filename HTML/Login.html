@@ -4,6 +4,7 @@
 <!-- Copyright (c) chai bo wen LQXC All rights reserved. -->
 
 <head>
+    <script src="../JS/change.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../ResourceFile/favicon.ico" rel="shortcut icon">
@@ -22,18 +23,13 @@
 </head>
 
 <body>
-    <!-- <div id="headTable" class="table">
-        <div id="back">
+    <div id="headTable" class="table">
+        <div id="backButton">
             <div class="actionButton">
                 <img src="../ResourceFile/return.png" alt="">
             </div>
         </div>
-        <div class="login">
-            <div class="actionButton">
-                <p><a href="./Login.html">login</a></p>
-            </div>
-        </div>
-    </div> -->
+    </div>
     <div class="Login">
         <div class="img">
             <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
@@ -49,34 +45,6 @@
         </div>
         <form action="" method="post">
             <p>请在这里登录并报名哦:学号,密码,电话号码(请确认自己的电话号码,出错请及时告知实验室学长学姐哦!)以及填写你所要选择的方向</p>
-            <!-- <p>学号:</p>
-            <label for="Account">
-                <input type="text" name="yhm" id="ID" pattern="[0-9]{8}" required autocomplete="username">
-                <div></div>
-            </label>
-            <p>密码:</p>
-            <label for="Password">
-                <input type="password" name="mm" id="mm" pattern="\w{6,40}" required autocomplete="current-password">
-                <div></div>
-            </label>
-
-                <p>电话号码:</p>
-                <label for="Telephone">
-                    <input type="text" name="Telephone" id="Telephone" required pattern="[0-9]{11}" autocomplete="tel">
-                    <div></div>
-                </label>
-                <p>选择方向:前端/后端</p>
-                <label for="Choose">
-                    <input type="text" name="way" pattern="前端|后台" required id="Choose">
-                    <div></div>
-                </label>
-
-            <div id="showApplyButton" class=" actionButton">
-                <p>已报名?</p>
-            </div>
-            <label for="Submit">
-                <input id="normalSubmit" type="submit" value="LOGIN" class="actionButton">
-            </label> -->
             <input type="text" style="display: none;" name="user" value="student">
             <div class="label">
                 <label for="">学号</label>
@@ -130,7 +98,8 @@
 
     </div>
     <script type="text/javascript " src="../JS/login_Node.js "></script>
-    <script src="../JS/login.js"></script>
+    <script src="../JS/login_check.js"></script>
+    <script src="../JS/normal.js"></script>
 </body>
 
 </html>

@@ -37,7 +37,8 @@ body {
 }
 
 .Login {
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
     padding: 24px;
     margin: 72px auto 68px;
     height: auto;

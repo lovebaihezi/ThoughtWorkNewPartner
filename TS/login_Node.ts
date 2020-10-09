@@ -2,9 +2,9 @@ if (sessionStorage.student) {
     if (sessionStorage.interview) {
         location.href = "./su.html"
     } else {
-        if(history.length >1){
+        if (history.length > 1) {
             history.go(-1)
-        }else{
+        } else {
             location.replace("./selection.html")
         }
     }
@@ -29,6 +29,8 @@ loginOrApply.addEventListener("click", () => {
     document.getElementById("Telephone").removeAttribute("required")
     document.getElementById("Choose").removeAttribute("required")
 })
+
+let pro: string = "login"
 
 studentForm.addEventListener("submit", formEvent => {
     formEvent.preventDefault()
@@ -79,7 +81,7 @@ function packInformation(form: HTMLFormElement): string {
 function sendInformation(json: string, place: string, thenAction: Function): void {
     const newAjax: XMLHttpRequest = new XMLHttpRequest()
     newAjax.open("post", place, true)
-    newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
+    // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
     newAjax.addEventListener("readystatechange", function (): void {
         if (newAjax.readyState == 4 && newAjax.status == 200) {
             thenAction(newAjax.response)
@@ -96,9 +98,12 @@ function showForm(formElement: HTMLElement): void {
     formElement.classList.remove("close")
 }
 
+// const url :string = "http://176.122.165.147:3000/"
+const url: string = "http://localhost:3000/"
+
 function login(): void {
     let formInformation: Object = JSON.parse(packInformation(studentForm))
-    sendInformation(JSON.stringify(formInformation), "http://127.0.0.1:3000/studentLogin", loginSuccessAction)
+    sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginSuccessAction)
 }
 
 function apply(): void {
@@ -106,10 +111,11 @@ function apply(): void {
 }
 
 function adminLogin(): void {
-    sendInformation(packInformation(adminForm), "http://127.0.0.1:3000/adminLogin", adminSuccessAction)
+    sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction)
 }
 
 function loginSuccessAction(response: string): void {
+    console.log(JSON.parse(response))
     if (JSON.parse(response).status == "success") {
         if (JSON.parse(response).Telephone == "") {
             alert("你还未报名，请先报名哦！")
@@ -119,9 +125,9 @@ function loginSuccessAction(response: string): void {
         }
         else {
             sessionStorage.student = JSON.parse(response)
-            if(history.length >1){
+            if (history.length > 1) {
                 history.go(-1)
-            }else{
+            } else {
                 location.replace("./selection.html")
             }
         }

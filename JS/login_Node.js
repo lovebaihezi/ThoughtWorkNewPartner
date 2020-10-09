@@ -28,6 +28,7 @@ loginOrApply.addEventListener("click", function () {
     document.getElementById("Telephone").removeAttribute("required");
     document.getElementById("Choose").removeAttribute("required");
 });
+var pro = "login";
 studentForm.addEventListener("submit", function (formEvent) {
     formEvent.preventDefault();
     if (isClickStudent) {
@@ -88,17 +89,20 @@ function closeForm(formElement) {
 function showForm(formElement) {
     formElement.classList.remove("close");
 }
+// const url :string = "http://176.122.165.147:3000/"
+var url = "http://localhost:3000/";
 function login() {
     var formInformation = JSON.parse(packInformation(studentForm));
-    sendInformation(JSON.stringify(formInformation), "http://localhost:3000/studentLogin", loginSuccessAction);
+    sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginSuccessAction);
 }
 function apply() {
     login();
 }
 function adminLogin() {
-    sendInformation(packInformation(adminForm), "http://localhost:3000/adminLogin", adminSuccessAction);
+    sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction);
 }
 function loginSuccessAction(response) {
+    console.log(JSON.parse(response));
     if (JSON.parse(response).status == "success") {
         if (JSON.parse(response).Telephone == "") {
             alert("你还未报名，请先报名哦！");
@@ -108,11 +112,11 @@ function loginSuccessAction(response) {
         }
         else {
             sessionStorage.student = JSON.parse(response);
-            try {
+            if (history.length > 1) {
                 history.go(-1);
             }
-            catch (error) {
-                location.replace("../HTML/selection.html");
+            else {
+                location.replace("./selection.html");
             }
         }
     }
