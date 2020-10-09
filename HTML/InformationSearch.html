@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="Cache" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 
-    <meta charset="UTF-8">
-    <title>欢迎来到ThoughtWorks实验室</title>
+	<meta charset="UTF-8">
+	<title>欢迎来到ThoughtWorks实验室</title>
     <link rel="stylesheet" type="text/css" href="../CSS/InformationSearch.css">
-    <script src="../JS/InformationSearch.js"></script>
+	<script src="../JS/InformationSearch.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../ResourceFile/favicon.ico" rel="shortcut icon">
     <link href="../ResourceFile/favicon.ico" rel="icon">
@@ -22,84 +21,68 @@
     <link href="../ResourceFile/touch-icon-ipad.png" rel="apple-touch-icon" sizes="72x72">
     <link href="../ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
     <link href="../ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
-    <link rel="stylesheet" href="../CSS/normal.css">
-
+ 
 </head>
-
 <body>
-    <div id="headTable" class="table">
-        <div id="backButton">
-            <div class="actionButton">
-                <img src="../ResourceFile/return.png" alt="">
-            </div>
-        </div>
-        <div class="loginButton">
-            <div class="actionButton">
-                <p><a href="./Login.html">login</a></p>
-            </div>
-        </div>
-    </div>
-    <div id="Information">
-        <div id="InformationContent">
+	<div id="Information">
+		<div id="InformationContent">
 
-            <div class="flip-container">
-                <div id="InformationBlock">
-                    <div class="MyInformation front">
-                        <p>我的信息</p>
-                    </div>
-                    <div class="MyInformation back">
-                        <p>我的信息</p>
-                    </div>
-                </div>
-            </div>
+			<div class="flip-container">
+				<div id="InformationBlock">
+					<div class="MyInformation front">
+						<p>我的信息</p>
+					</div>
+					<div class="MyInformation back">
+						<p>我的信息</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="InformationList">
+					<div id="InformationScroll">
+						<div id="scrollBox">
+							<div id="ScrollColor"></div>
+						</div>
+						
+					</div>
+						<ul id="Ul">
+							<li>已报名</li>
+							<li>一面</li>
+							<li>二面</li>
+							<li>三面</li>
+						</ul>
+			</div>
 
-            <div id="InformationList">
-                <div id="InformationScroll">
-                    <div id="scrollBox">
-                        <div id="ScrollColor"></div>
-                    </div>
+			<ul id="InformationUl">
+		        <div class="InformationBox">
+		            <li class="InformationLi">
+		                <span class="InformationName">姓名：</span>
+		                <input class="InformationValue" disabled="disabled" type="text" value="王苗" />
+		            </li>
 
-                </div>
-                <ul id="Ul">
-                    <li>已报名</li>
-                    <li>一面</li>
-                    <li>二面</li>
-                    <li>三面</li>
-                </ul>
-            </div>
+		            <li class="InformationLi">
+		                <span class="InformationName">学号：</span>
+		                <input class="InformationValue" disabled="disabled" type="text" value="04193146" />
+		            </li>
 
-            <ul id="InformationUl">
-                <div class="InformationBox">
-                    <li class="InformationLi">
-                        <span class="InformationName">姓名：</span>
-                        <input class="InformationValue" disabled="disabled" type="text" value="王苗" />
-                    </li>
+		            <li class="InformationLi">
+		                <span class="InformationName">电话号码：</span>
+		                <input class="InformationValue" disabled="disabled" type="text" value="18729324573" />
+		            </li class="InformationLi">
 
-                    <li class="InformationLi">
-                        <span class="InformationName">学号：</span>
-                        <input class="InformationValue" disabled="disabled" type="text" value="04193146" />
-                    </li>
+		            <li class="InformationLi">
+		                <span class="InformationName">邮箱：</span>
+		                <input class="InformationValue" disabled="disabled" type="text" value="2507332458@qq.com" />
+		            </li>
 
-                    <li class="InformationLi">
-                        <span class="InformationName">电话号码：</span>
-                        <input class="InformationValue" disabled="disabled" type="text" value="18729324573" />
-                    </li class="InformationLi">
+		            <li class="InformationLi">
+		                <span class="InformationName">报名方向：</span>
+		                <input class="InformationValue" disabled="disabled" type="text" value="前端" />
+		            </li>
+		        </div>
+		    </ul>
 
-                    <li class="InformationLi">
-                        <span class="InformationName">邮箱：</span>
-                        <input class="InformationValue" disabled="disabled" type="text" value="2507332458@qq.com" />
-                    </li>
-
-                    <li class="InformationLi">
-                        <span class="InformationName">报名方向：</span>
-                        <input class="InformationValue" disabled="disabled" type="text" value="前端" />
-                    </li>
-                </div>
-            </ul>
-
-        </div>
-    </div>
-    <script src="../JS/normal.js"></script>
+		</div>
+	</div>
 </body>
-
 </html>

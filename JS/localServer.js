@@ -1,18 +1,14 @@
 const express = require('express');
+const http = require('http');
+const request = require('request');
+const https = require('https');
 const Axios = require('axios');
-const Axios2 = require('axios');
 const app = express();
 const bodyParser = require('body-parser');
-let RsaKey = null;
-const jsdom = require('jsdom');
-const {
-    JSDOM
-} = jsdom;
+RsaKey = null;
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 app.use(bodyParser.text());
 
 app.use((req, res, next) => {
@@ -20,112 +16,65 @@ app.use((req, res, next) => {
     next();
 });
 
-let cookie;
-let TimeSet; // 所有必须在一个时间内
-
-function getRSA(responseToLoin) {
-    TimeSet = new Date().getTime();
-    console.log("gonna receive RSA-<1");
+app.post('/getRSA', (req, response) => {
+    console.log("gonna receive RSA");
     var responseData = "";
-    return Axios
-        .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" +
-            TimeSet, {})
+    Axios
+        .post("http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=" + new Date().getTime(), {})
         .then(res => {
             responseData = res.data;
-            // responseToLoin.json(responseData);
-            console.log("1 >- receive RSA success!");
-            return responseData;
+            response.json(responseData);
+            console.log("Success!");
         })
         .catch(error => {
             console.error(error);
         });
-}
+    return;
+})
 
-let formInformation = {};
-//need cookie need csrftoken need session get all of them in one site
-
-function getCsrftoken(requestFormLogin) {
-    console.log("gonna receive csrftoken -< 2");
-    formInformation.language = "zh_CN";
-    return Axios({
+app.post('/Login', (req, response) => {
+    console.log("gonna Log in");
+    // console.log("what will show below is what you send from post method");
+    let formInformation = req.body;
+    console.log(req.body);
+    let formSubmit = "yhm=" +
+        formInformation["yhm"] +
+        "&" +
+        "mm=" +
+        formInformation["mm"] +
+        "&" +
+        "mm=" +
+        formInformation["mm"];
+    // console.log(formSubmit);
+    Axios({
             method: 'post',
             url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html?time=" +
-                TimeSet,
+                new Date().getTime(),
             headers: {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"
             },
             refer: "http://www.zfjw.xupt.edu.cn",
-            data: {}
+            data: req.body
         })
-        .then((reqToXUPT, resToServer) => {
-            //session form set-cookie; 
-            //csrftoken form req.data.inputElement.value 
-            //!!! csrftoken useless ! not important!
-            const {
-                headers
-            } = reqToXUPT;
-            cookie = headers['set-cookie'];
-            // console.log(headers);
-            const {
-                document
-            } = new JSDOM(reqToXUPT.data).window;
-            console.log(resToServer);
-            // console.log(resToServer.headers);
-            let csrfToken = document.getElementById("csrftoken").value; // get!
-            formInformation.csrfToken = csrfToken;
-            console.log("2 >- receive csrftoken");
-            console.log("data create success! next -> send to XUPT");
+        .then((req, res) => {
+            console.log("<---------------------->1");
+            console.log(req);
+            console.log("<---------------------->2");
+            console.log(res);
+            console.log("<---------------------->3");
         })
         .catch(error => {
             console.error(error);
         });
-}
-
-app.post('/getData', (requestFormLogin, responseToLoin) => {
-    console.log("<------------------new request for login---------------->");
-    console.log("gonna Log in -<0");
-    Axios.all([getRSA(responseToLoin), getCsrftoken(requestFormLogin)]).then(
-        Axios.spread((RSA, csrfToken) => {
-            console.log("all success!");
-            responseToLoin.json(RSA);
-        }));
+    console.log("<---------------------->4");
+    response.json("Success!");
+    console.log("<---------------------->5");
+    return;
 })
 
-let studentInformation = {};
-
-app.post('/studentLogin', (requestFormLogin, responseToLoin) => {
-    studentInformation = formInformation;
-    console.log(studentInformation);
-})
-
-app.post('/XUPT', (reqForm, resBack) => {
-    console.log("gonna send to XUPT server");
-    Axios2({
-            method: 'post',
-            url: "http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin?time=" + TimeSet,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset:utf-8',
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
-                'Origin': 'http://www.zfjw.xupt.edu.cn',
-                'Cookie': cookie[0].slice(0, 43)
-            },
-            // data: formInformation
-            data: res
-        }).then((req, res) => {
-            console.log(res);
-            try {
-                console.log(res.status);
-                responseToLoin.json(res.status)
-            } catch (err) {
-                console.log("failed");
-                responseToLoin.json(formInformation);
-            }
-            console.log("<----------------Login ended---------------->");
-        })
-        .catch(error => {
-            console.error(error)
-        });
-})
+app.post('/SBWLK', (req, res) => {
+    console.log(rea.body);
+});
 
 app.get('/', (req, res) => {
     res.send("Host");
