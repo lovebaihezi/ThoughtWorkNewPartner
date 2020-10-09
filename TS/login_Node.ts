@@ -98,7 +98,7 @@ function showForm(formElement: HTMLElement): void {
 
 function login(): void {
     let formInformation: Object = JSON.parse(packInformation(studentForm))
-    sendInformation(JSON.stringify(formInformation), "http://localhost:3000/studentLogin", loginSuccessAction)
+    sendInformation(JSON.stringify(formInformation), "http://127.0.0.1:3000/studentLogin", loginSuccessAction)
 }
 
 function apply(): void {
@@ -106,7 +106,7 @@ function apply(): void {
 }
 
 function adminLogin(): void {
-    sendInformation(packInformation(adminForm), "http://localhost:3000/adminLogin", adminSuccessAction)
+    sendInformation(packInformation(adminForm), "http://127.0.0.1:3000/adminLogin", adminSuccessAction)
 }
 
 function loginSuccessAction(response: string): void {
