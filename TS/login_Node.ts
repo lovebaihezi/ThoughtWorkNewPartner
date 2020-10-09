@@ -124,7 +124,7 @@ function loginSuccessAction(response: string): void {
             location.reload()
         }
         else {
-            sessionStorage.student = JSON.parse(response)
+            sessionStorage.setItem("student", JSON.parse(response))
             if (history.length > 1) {
                 history.go(-1)
             } else {
