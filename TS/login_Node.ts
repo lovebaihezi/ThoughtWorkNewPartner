@@ -79,12 +79,15 @@ function packInformation(form: HTMLFormElement): string {
 }
 
 function sendInformation(json: string, place: string, thenAction: Function): void {
+    waitingResponse()
     const newAjax: XMLHttpRequest = new XMLHttpRequest()
     newAjax.open("post", place, true)
     // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
     newAjax.addEventListener("readystatechange", function (): void {
         if (newAjax.readyState == 4 && newAjax.status == 200) {
             thenAction(newAjax.response)
+        }else{
+            waitingResponse()
         }
     })
     newAjax.send(json)
@@ -99,7 +102,7 @@ function showForm(formElement: HTMLElement): void {
 }
 
 // const url :string = "http://176.122.165.147:3000/"
-const url: string = "http://localhost:3000/"
+const url: string = "http://localhost:30100/"
 
 function login(): void {
     let formInformation: Object = JSON.parse(packInformation(studentForm))
@@ -115,8 +118,8 @@ function adminLogin(): void {
 }
 
 function loginSuccessAction(response: string): void {
-    console.log(JSON.parse(response))
-    if (JSON.parse(response).status == "success") {
+    // console.log(JSON.parse(JSON.parse(response)))
+    if (JSON.parse(JSON.parse(response)).status == "success") {
         if (JSON.parse(response).Telephone == "") {
             alert("你还未报名，请先报名哦！")
             isClickStudent = false

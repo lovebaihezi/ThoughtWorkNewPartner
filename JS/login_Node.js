@@ -90,7 +90,7 @@ function showForm(formElement) {
     formElement.classList.remove("close");
 }
 // const url :string = "http://176.122.165.147:3000/"
-var url = "http://localhost:3000/";
+var url = "http://localhost:30100/";
 function login() {
     var formInformation = JSON.parse(packInformation(studentForm));
     sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginSuccessAction);
@@ -102,8 +102,8 @@ function adminLogin() {
     sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction);
 }
 function loginSuccessAction(response) {
-    console.log(JSON.parse(response));
-    if (JSON.parse(response).status == "success") {
+    // console.log(JSON.parse(JSON.parse(response)))
+    if (JSON.parse(JSON.parse(response)).status == "success") {
         if (JSON.parse(response).Telephone == "") {
             alert("你还未报名，请先报名哦！");
             isClickStudent = false;
@@ -111,7 +111,7 @@ function loginSuccessAction(response) {
             location.reload();
         }
         else {
-            sessionStorage.student = JSON.parse(response);
+            sessionStorage.setItem("student", JSON.parse(response));
             if (history.length > 1) {
                 history.go(-1);
             }
