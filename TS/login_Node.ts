@@ -70,89 +70,93 @@ changeToStudentApplyOrLogin.addEventListener("click", () => {
     closeForm(adminForm)
 })
 
-function packInformation(form: HTMLFormElement): string {
-    let allInformation: Object = {}
-    Array.from(form.elements).forEach((item: HTMLInputElement): void => {
-        item.name != "" ? allInformation[item.name] = item.value : 0
-    })
-    return JSON.stringify(allInformation)
-}
+let { login, apply, adminLogin, closeForm, showForm } = TW_Login()
+function TW_Login() {
+    let packInformation = (form: HTMLFormElement): string => {
+        let allInformation: Object = {}
+        Array.from(form.elements).forEach((item: HTMLInputElement): void => {
+            item.name != "" ? allInformation[item.name] = item.value : 0
+        })
+        return JSON.stringify(allInformation)
+    }
 
-function sendInformation(json: string, place: string, thenAction: Function): void {
-    waitingResponse()
-    const newAjax: XMLHttpRequest = new XMLHttpRequest()
-    newAjax.open("post", place, true)
-    // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
-    newAjax.addEventListener("readystatechange", function (): void {
-        if (newAjax.readyState == 4 && newAjax.status == 200) {
-            thenAction(newAjax.response)
-        }else{
-            waitingResponse()
-        }
-    })
-    newAjax.send(json)
-}
-
-function closeForm(formElement: HTMLElement): void {
-    formElement.classList.add("close")
-}
-
-function showForm(formElement: HTMLElement): void {
-    formElement.classList.remove("close")
-}
-
-// const url :string = "http://176.122.165.147:3000/"
-const url: string = "http://localhost:30100/"
-
-function login(): void {
-    let formInformation: Object = JSON.parse(packInformation(studentForm))
-    sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginSuccessAction)
-}
-
-function apply(): void {
-    login()
-}
-
-function adminLogin(): void {
-    sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction)
-}
-
-function loginSuccessAction(response: string): void {
-    // console.log(JSON.parse(JSON.parse(response)))
-    if (JSON.parse(JSON.parse(response)).status == "success") {
-        if (JSON.parse(response).Telephone == "") {
-            alert("你还未报名，请先报名哦！")
-            isClickStudent = false
-            loginOrApply['isClick'] = false
-            location.reload()
-        }
-        else {
-            sessionStorage.setItem("student", JSON.parse(response))
-            if (history.length > 1) {
-                history.go(-1)
+    let sendInformation = (json: string, place: string, thenAction: Function): void => {
+        waitingResponse()
+        const newAjax: XMLHttpRequest = new XMLHttpRequest()
+        newAjax.open("post", place, true)
+        // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
+        newAjax.addEventListener("readystatechange", (): void => {
+            if (newAjax.readyState == 4 && newAjax.status == 200) {
+                thenAction(newAjax.response)
             } else {
-                location.replace("./selection.html")
+                waitingResponse()
             }
-        }
-    } else {
-        isClickStudent = false
-        alert("账号或密码错误")
-        for (let i in studentForm.elements) {
-            if (studentForm.elements[i]['name'] == "mm") {
-                studentForm.elements[i]['value'] = ""
+        })
+        newAjax.send(json)
+    }
+
+    let closeForm = (formElement: HTMLElement): void => {
+        formElement.classList.add("close")
+    }
+
+    let showForm = (formElement: HTMLElement): void => {
+        formElement.classList.remove("close")
+    }
+
+    // const url :string = "http://176.122.165.147:3000/"
+    const url: string = "http://localhost:30100/"
+
+    let login = (): void => {
+        let formInformation: Object = JSON.parse(packInformation(studentForm))
+        sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginSuccessAction)
+    }
+
+    let apply = (): void => {
+        login()
+    }
+
+    let adminLogin = (): void => {
+        sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction)
+    }
+
+    let loginSuccessAction = (response: string): void => {
+        // console.log(JSON.parse(JSON.parse(response)))
+        if (JSON.parse(JSON.parse(response)).status == "success") {
+            if (JSON.parse(response).Telephone == "") {
+                alert("你还未报名，请先报名哦！")
+                isClickStudent = false
+                loginOrApply['isClick'] = false
+                location.reload()
+            }
+            else {
+                sessionStorage.setItem("student", JSON.parse(response))
+                if (history.length > 1) {
+                    history.go(-1)
+                } else {
+                    location.replace("./selection.html")
+                }
+            }
+        } else {
+            isClickStudent = false
+            alert("账号或密码错误")
+            for (let i in studentForm.elements) {
+                if (studentForm.elements[i]['name'] == "mm") {
+                    studentForm.elements[i]['value'] = ""
+                }
             }
         }
     }
+
+    // let applySuccessAction = (response: string): void => {
+    //     loginSuccessAction(response)
+    // }
+
+    let adminSuccessAction = (response: string): void => {
+        sessionStorage.interview = JSON.parse(response)
+    }
+
+    let waitingResponse = () => {
+    }
+    return { login, apply, adminLogin, closeForm, showForm }
 }
 
-function applySuccessAction(response: string): void {
-    loginSuccessAction(response)
-}
-
-function adminSuccessAction(response: string): void {
-    sessionStorage.interview = JSON.parse(response)
-}
-
-function waitingResponse() {
-
-}

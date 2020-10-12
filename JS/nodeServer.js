@@ -37,10 +37,14 @@ app.post('/studentLogin', (req, resToClient) => {
         fakeLoginInformation.mm = userInformation.password
         fakeLoginInformation.Telephone = userInformation.Telephone
         fakeLoginInformation.方向 = userInformation.way
+    } else {
+        fakeLoginInformation.yhm = userInformation.ID
+        fakeLoginInformation.mm = userInformation.password
     }
     Axios
         .post(
-            url + "student" + method,
+            url + userInformation.user + method,
+            // "http://47.93.233.174:8080/thoughtworksNaXin/studentLogin",
             JSON.stringify(fakeLoginInformation)
         ).then(response => {
             console.log(JSON.stringify(response.data))
@@ -48,6 +52,9 @@ app.post('/studentLogin', (req, resToClient) => {
         }).catch(err => {
             console.log("<----------------->")
             console.log(err)
+            resToClient.json({
+                status: "failure"
+            })
             console.log("<----------------->")
 
         })
