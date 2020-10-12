@@ -1,6 +1,10 @@
 let back = document.getElementById("backButton");
 back.onclick = function() {
-    location.replace("../HTML/selection.html")
+    if (history.length > 1) {
+        history.go(-1)
+    } else {
+        location.replace("../HTML/selection.html")
+    }
 }
 try {
     let goLoginButton = document.getElementsByClassName("loginButton")[0];
@@ -8,7 +12,7 @@ try {
         if (sessionStorage.student) {
             location.replace("../HTML/informationSearch.html");
         } else {
-            loginButton.onclick = function() {
+            goLoginButton.onclick = function() {
                 location.href = "../HTML/Login.html";
             }
         }
