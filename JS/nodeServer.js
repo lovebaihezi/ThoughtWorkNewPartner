@@ -12,34 +12,36 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 
-app.use((req, resToClient, next) => {
-    resToClient.header("Access-Control-Allow-Origin", "*")
-    resToClient.header("content-type", "application/json; charset=UTF-8")
+app.use((req, resToBrowser, next) => {
+    resToBrowser.header("Access-Control-Allow-Origin", "*")
+    resToBrowser.header("content-type", "application/json; charset=UTF-8")
     next();
 });
 
-app.post('/studentLogin', (req, resToClient) => {
+app.post('/studentLogin', (req, resToBrowser) => {
     let userInformation
     try {
         userInformation = JSON.parse(req.body)
     } catch (error) {
         typeof req.body == 'object' ?
             userInformation = req.body :
-            resToClient.json({
+            resToBrowser.json({
                 status: "failure"
             })
     }
     let fakeLoginInformation = {}
     let url = "http://47.93.233.174:8080/thoughtworksNaXin/"
-    let method = "Login"
-    if (userInformation.user == "student") {
+    let method = ""
+    if (userInformation.Telephone != "") {
         fakeLoginInformation.yhm = userInformation.ID
         fakeLoginInformation.mm = userInformation.password
         fakeLoginInformation.Telephone = userInformation.Telephone
         fakeLoginInformation.方向 = userInformation.way
+        method = "Apply"
     } else {
         fakeLoginInformation.yhm = userInformation.ID
         fakeLoginInformation.mm = userInformation.password
+        method = "Login"
     }
     Axios
         .post(
@@ -48,16 +50,20 @@ app.post('/studentLogin', (req, resToClient) => {
             JSON.stringify(fakeLoginInformation)
         ).then(response => {
             console.log(JSON.stringify(response.data))
-            resToClient.json(JSON.stringify(response.data))
+            resToBrowser.json(JSON.stringify(response.data))
         }).catch(err => {
             console.log("<----------------->")
             console.log(err)
-            resToClient.json({
+            resToBrowser.json({
                 status: "failure"
             })
             console.log("<----------------->")
 
         })
+})
+
+app.post('/Sign', (req, resToBrowser) => {
+
 })
 
 app.post('/adminLogin', (req, res) => {
