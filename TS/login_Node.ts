@@ -92,7 +92,13 @@ function TW_Login() {
                 waitingResponse()
             }
         })
-        newAjax.send(json)
+        try{
+            newAjax.send(json)
+        }catch(err){
+            alert("服务器好像出了点问题。。。")
+            isClickStudent = false
+        }
+        
     }
 
     let closeForm = (formElement: HTMLElement): void => {
