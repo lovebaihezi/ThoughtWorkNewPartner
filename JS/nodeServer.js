@@ -63,7 +63,20 @@ app.post('/studentLogin', (req, resToBrowser) => {
 })
 
 app.post('/Sign', (req, resToBrowser) => {
-
+    let {
+        studentID
+    } = req.body;
+    console.log(studentID)
+    Axios.post(
+        url + "sign",
+        JSON.stringify({
+            studentID: studentID
+        })
+    ).then((reqServer, resServer) => {
+        resToBrowser.json(resToBrowser.data)
+    }).catch(err => {
+        console.log(err)
+    })
 })
 
 app.post('/adminLogin', (req, res) => {
