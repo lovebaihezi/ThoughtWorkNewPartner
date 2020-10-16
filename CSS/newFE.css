@@ -1,0 +1,200 @@
+body{
+    color: #666;
+}
+.head h2{
+    padding:10px 0;
+}
+.head p{
+    padding:10px 0;
+}
+.web{
+    position: relative;
+}
+.head{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.htm-introduction {
+    width: 320px;
+    height: 320px;
+}
+.htm{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.htm-pic{
+    display: inline-block;
+    margin: 0 50px;
+    width: 320px;
+    height: 320px;
+}
+.hidden1{
+    background-color: #f61947;
+    z-index: 1;
+    opacity: 0;
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    top:0;
+}
+.white-border{
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px white solid;
+}
+.htm-pic:hover .hidden1{
+    opacity: 1;
+    transition: 0.4s;
+}
+.htm-pic:hover .link{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.4s;
+}
+.htm-pic:hover .title1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    transition: 0.4s;
+}
+.title1{
+    color: white;
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    transform: translate(0%,-30%);
+}
+.link{
+    width: 28px;
+    height: 28px;
+    background-color: #666;
+    border-radius: 50%;
+    display:block;
+    position: absolute;
+    top: 50%;
+    right:0%;
+    transform: translate(0%,-50%);
+}
+.htm-introduction{
+    display: inline-block;
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(102, 102, 102, 0.308);
+    padding: 0 20px;
+}
+.css{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.js{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.es6{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.react{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.node{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+.vue{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin: 50px 0;
+}
+@media screen and (max-width:1000px){
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .htm-pic{
+        margin: 0 auto;
+    }
+    .htm-introduction{
+        margin: 0 auto;
+    }
+    .htm{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .css{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .js{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .es6{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .react{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .vue{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+    .node{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+    }
+}
