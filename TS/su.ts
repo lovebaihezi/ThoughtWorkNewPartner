@@ -25,4 +25,5 @@ let waitingResponse = () => {
 let form = document.forms[0]
 form.addEventListener("submit", (defaultEvent: Event): void => {
     console.log(packInformation(form))
+    defaultEvent.preventDefault()
 })

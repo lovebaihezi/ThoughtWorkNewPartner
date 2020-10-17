@@ -1,0 +1,423 @@
+/* * {
+    outline: dashed antiquewhite;
+} */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#Information {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(93, 93, 93, 0.8);
+}
+
+#InformationContent {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 65%;
+    height: 80%;
+    /* min-width: 1280px; */
+    /* height: 640px; */
+    box-shadow: 0px 2px 15px black;
+}
+
+#InformationLeft {
+    display: inline-block;
+    width: 49%;
+    /* min-width: 640px; */
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#InformationLeft img {
+    width: 80%;
+    height: 90%;
+}
+
+#InformationRight {
+    display: inline-block;
+    width: 51%;
+    /* min-width: 640px; */
+    height: 100%;
+    background-color: #5d5d5d;
+}
+
+#InformationName {
+    width: 50%;
+    height: 15%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-size: 38px;
+    font-weight: 500;
+    margin-top: 9%;
+}
+
+#InformationName::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 60px;
+    background-color: #c0c0c0;
+    margin-top: 0px;
+    margin-left: -10px;
+    border-radius: 150px;
+}
+
+#InformationName::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 50px;
+    background-color: #c0c0c0;
+    margin-top: 52px;
+    margin-left: -45px;
+    border-radius: 150px;
+}
+
+#InformationScroll {
+    width: 80%;
+    height: 4%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid transparent;
+    margin-bottom: 1.5%;
+}
+
+#scrollBox {
+    width: 33%;
+    height: 100%;
+    /* background-image:linear-gradient(to bottom, rgba(238, 172, 172),  #f61947); */
+    background-color: #f61947;
+    position: relative;
+    overflow: hidden;
+    animation: animate-positive 1.5s linear 1s 1;
+}
+
+#ScrollColor {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+    background: linear-gradient(to right, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent 100%);
+    z-index: 2;
+    background-size: 100px;
+    animation: move 1s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 0px;
+    }
+}
+
+@keyframes animate-positive {
+    0% {
+        width: 0px;
+    }
+}
+
+#Ul {
+    width: 80%;
+    height: 5%;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+#Ul li {
+    display: inline-block;
+    position: relative;
+    color: #f0ecec;
+    font-size: 15px;
+}
+
+#Ul li:nth-child(1) {
+    left: 2%;
+}
+
+#Ul li:nth-child(2) {
+    left: 20%;
+}
+
+#Ul li:nth-child(3) {
+    left: 35%;
+}
+
+#Ul li:nth-child(4) {
+    left: 55%;
+}
+
+#InformationUl {
+    width: 80%;
+    height: 58%;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.InformationBox {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.InformationLi {
+    position: relative;
+    width: 100%;
+    height: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InformationName {
+    width: 28%;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.InformationValue {
+    width: 72%;
+    height: 25px;
+    background-color: white;
+    border-radius: 3px;
+    color: #303030;
+    font-size: 14px;
+    padding: 0.3rem;
+    padding-left: 20px;
+    border-style: none;
+}
+
+@media screen and (max-width: 600px) {
+    #InformationLeft {
+        display: none;
+    }
+    #InformationRight {
+        width: 100%;
+    }
+    #InformationName {
+        width: 80%;
+        font-size: 32px;
+        height: 13%;
+    }
+    #InformationScroll {
+        width: 70%;
+    }
+    #Ul {
+        height: 11%;
+    }
+    #Ul li {
+        width: 15px;
+        font-size: 15px;
+        vertical-align: top;
+    }
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #InformationUl {
+        width: 85%;
+    }
+    .InformationName {
+        width: 43%;
+    }
+    .InformationValue {
+        width: 57%;
+        padding-left: 8px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width:479px) {
+    #InformationScroll {
+        margin-top: 3%;
+    }
+    #InformationUl {
+        width: 85%;
+    }
+    #InformationName {
+        font-size: 30px;
+    }
+    #InformationName::after {
+        margin-top: 42px;
+    }
+    #Ul li {
+        font-size: 13px;
+    }
+    #Ul li:nth-child(2) {
+        left: 22%;
+    }
+    #Ul li:nth-child(3) {
+        left: 40%;
+    }
+    #Ul li:nth-child(4) {
+        left: 56%;
+    }
+    .InformationName {
+        width: 45%;
+        font-size: 14px;
+    }
+    .InformationValue {
+        width: 55%;
+        padding-left: 8px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    #InformationName {
+        width: 80%;
+        font-size: 26px;
+        height: 15%;
+        margin-bottom: 10px;
+    }
+    #InformationName::after {
+        margin-top: 42px;
+    }
+    #InformationScroll {
+        width: 70%;
+    }
+    #Ul {
+        height: 10%;
+    }
+    #Ul li {
+        font-size: 12px;
+        vertical-align: top;
+    }
+    #Ul li:nth-child(1) {
+        left: 4%;
+    }
+    #Ul li:nth-child(2) {
+        left: 10%;
+    }
+    #Ul li:nth-child(3) {
+        left: 16%;
+    }
+    #Ul li:nth-child(4) {
+        left: 24%;
+    }
+    #InformationUl {
+        margin-top: 0px;
+        width: 75%;
+    }
+    .InformationName {
+        width: 42%;
+        font-size: 12px;
+    }
+    .InformationValue {
+        width: 58%;
+        height: 15px;
+        padding-left: 8px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (width: 600px) {
+    #Ul li {
+        display: inline-block;
+        position: relative;
+        color: #f0ecec;
+        font-size: 15px;
+    }
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 26%;
+    }
+    #Ul li:nth-child(3) {
+        left: 47%;
+    }
+    #Ul li:nth-child(4) {
+        left: 70%;
+    }
+}
+
+@media screen and (width: 800px) {
+    #Ul li {
+        display: inline-block;
+        position: relative;
+        color: #f0ecec;
+        font-size: 15px;
+    }
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 10%;
+    }
+    #Ul li:nth-child(3) {
+        left: 20%;
+    }
+    #Ul li:nth-child(4) {
+        left: 28%;
+    }
+}
+
+@media screen and (width: 768px) {
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 13%;
+    }
+    #Ul li:nth-child(3) {
+        left: 25%;
+    }
+    #Ul li:nth-child(4) {
+        left: 35%;
+    }
+    .InformationValue {
+        height: 18px;
+    }
+}
+
+@media screen and (width: 480px) {
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 25%;
+    }
+    #Ul li:nth-child(3) {
+        left: 44%;
+    }
+    #Ul li:nth-child(4) {
+        left: 62%;
+    }
+}
+
+@media screen and (width: 1024px) {
+    #Ul li:nth-child(1) {
+        left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 20%;
+    }
+    #Ul li:nth-child(3) {
+        left: 30%;
+    }
+    #Ul li:nth-child(4) {
+        left: 48%;
+    }
+}

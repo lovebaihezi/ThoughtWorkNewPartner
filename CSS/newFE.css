@@ -22,7 +22,7 @@ body{
     position: relative;
 }
 .htm-introduction {
-    width: 320px;
+    width: 280px;
     height: 320px;
 }
 .htm{
@@ -144,28 +144,10 @@ body{
     margin: 50px 0;
 }
 @media screen and (max-width:1000px){
-    @keyframes point
-    {
-    0%   {opacity: 0;}
-    50%  {opacity: 1;}
-    100% {opacity: 0;}
-    }
     .container{
         width: 100%;
         margin: 0 auto;
         padding: 0;
-    }
-    .small{
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        border: rgba(102, 102, 102, 0.418) 5px solid;
-        box-shadow: 0 0 5rem rgba(0, 0, 0, 0.473);
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%,-20%);
-        animation: point 3s infinite linear;
     }
     .htm-pic{
         margin: 0 auto;
