@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +30,13 @@
             background-color: #ffffff;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: 400px;
             z-index: 9999;
             background-image: url(../ResourceFile/loader1.gif);
         }
     </style>
     <script>
-        document.addEventListener("readystatechange", function () {
+        document.addEventListener("readystatechange", function() {
             if (document.readyState == 'complete') {
                 document.getElementById("loading").style.display = "none";
             }
@@ -46,315 +47,314 @@
     <link rel="stylesheet" type="text/css" href="../CSS/newFE.css">
     <link rel="stylesheet" href="../CSS/general.css">
 </head>
+
 <body>
 
     <div class="loading" id="loading"></div>
 
-<!--    LMZ-->
+    <!--    LMZ-->
 
-<h1>实验室介绍</h1>
-<div class="container" id="block_1">
-    <div class="cow" >
-        <div class="image col-xs-12 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-1">
-            <img src="../ResourceFile/logo.jpg" alt="实验室logo">
+    <h1>实验室介绍</h1>
+    <div class="container" id="block_1">
+        <div class="cow">
+            <div class="image col-xs-12 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-1">
+                <img src="../ResourceFile/logo.jpg" alt="实验室logo">
+            </div>
+            <div class="page col-xs-12 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-md-7 col-lg-offset-0">
+                <h4><strong>实验室的创立</strong></h4>
+                <p>ThoughtWorks西邮联合创新实验室是ThoughtWorks公司联合西安邮电大学于2015年12月创立的一个以web为主要方向的实验室，位于东区逸夫教学楼FZ148，拥有舒适宽敞整洁的学习环境。
+                </p>
+                <h4><strong>实验室的情况</strong> </h4>
+                <p>实验室有完备健全的培养方案，以“前端+后台”的学习为切入点，通过pair、任务卡、Code-Review等各种方式来培养实验室成员的学习习惯、学习兴趣、学习热情，成立五年以来向全国各地各大互联网公司输送了几十名人才。
+                </p>
+            </div>
         </div>
-        <div class="page col-xs-12 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-md-7 col-lg-offset-0">
-            <h4><strong>实验室的创立</strong></h4>
-            <p>ThoughtWorks西邮联合创新实验室是ThoughtWorks公司联合西安邮电大学于2015年12月创立的一个以web为主要方向的实验室，位于东区逸夫教学楼FZ148，拥有舒适宽敞整洁的学习环境。
+    </div>
+    <div class="container" id="block_2">
+        <h4>预备知识</h4>
+        <div class="cow" id="all_card">
+            <div class="card col-xs-6 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-2" id="card_1">
+                <div>
+                    <div class="img">
+                        <img src="../ResourceFile/C语言.png" alt="C语言">
+                    </div>
+                    <p>C语言</p>
+                </div>
+            </div>
+            <div class="card col-xs-6 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0" id="card_1">
+                <div>
+                    <div class="img">
+                        <img src="../ResourceFile/计算机.png" alt="计算机科学导论">
+                    </div>
+                    <p>计算机科学导论</p>
+                </div>
+            </div>
+            <div class="card col-xs-6 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0">
+                <div>
+                    <div class="img">
+                        <img src="../ResourceFile/web.png" alt="web前端">
+                    </div>
+                    <p>web前端</p>
+                </div>
+            </div>
+            <div class="card col-xs-6 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0">
+                <div>
+                    <div class="img">
+                        <img src="../ResourceFile/后台.png" alt="Servlet后台">
+                    </div>
+                    <p>Servlet后台</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--LMZ-->
+
+    <!--    FE-->
+    <div class="web">
+        <div class="head">
+            <h2>
+                前端介绍
+            </h2>
+            <p>
+                前端即网站前台部分，运行在PC端，移动端等浏览器上展现给用户浏览的网页。随着互联网技术的发展，HTML5，CSS3，前端框架的应用，跨平台响应式网页设计能够适应各种屏幕分辨率，合适的动效设计，给用户带来极高的用户体验。
             </p>
-            <h4><strong>实验室的情况</strong> </h4>
-            <p>实验室有完备健全的培养方案，以“前端+后台”的学习为切入点，通过pair、任务卡、Code-Review等各种方式来培养实验室成员的学习习惯、学习兴趣、学习热情，成立五年以来向全国各地各大互联网公司输送了几十名人才。
+
+        </div>
+        <div class="container">
+            <div class="htm">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/htm.jpg" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">HTML</h3>
+                        <a class="link" href="https://www.runoob.com/html/html-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        超文本标记语言（标准通用标记语言下的一个应用，外语缩写HTML），是迄今为止网络上应用最为广泛的语言，也是构成网页文档的主要语言。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字、图形、动画、声音、表格、链接等。HTML的结构包括头部（Head）、主体（Body）两大部分，其中头部描述浏览器所需的信息，而主体则包含所要说明的具体内容。
+                    </p>
+                </div>
+            </div>
+            <div class="css">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/css.jpg" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">CSS</h3>
+                        <a class="link" href="https://www.runoob.com/css/css-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。 CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。
+                    </p>
+                </div>
+            </div>
+            <div class="js">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/js.jpg" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">JS</h3>
+                        <a class="link" href="https://www.runoob.com/js/js-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。虽然它是作为开发Web页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
+                    </p>
+                </div>
+            </div>
+            <div class="es6">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/es6.jpg" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">ES6</h3>
+                        <a class="link" href="https://es6.ruanyifeng.com/#README"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言 [1] 。 另外，一些情况下ES6也泛指ES2015及之后的新增特性，虽然之后的版本应当称为ES7、ES8等。
+                    </p>
+                </div>
+            </div>
+            <div class="react">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/react.jpg" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">React</h3>
+                        <a class="link" href="https://www.runoob.com/react/react-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        React 是一个用于构建用户界面的 JAVASCRIPT 库,主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图），它起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源，拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="vue">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/vue.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">Vue.js</h3>
+                        <a class="link" href="https://www.runoob.com/vue2/vue-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。
+                    </p>
+                </div>
+            </div>
+            <div class="node">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/node.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">Node.js</h3>
+                        <a class="link" href="https://www.runoob.com/nodejs/nodejs-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
+
+                <div class="htm-introduction">
+                    <p>
+                        Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型。Node 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言。发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。 Node对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。V8引擎执行Javascript的速度非常快，性能非常好。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--FE -->
+
+    <!--BE-->
+
+    <div class="web">
+        <div class="head">
+            <h2>
+                后台介绍
+            </h2>
+            <p>
+                后台即指网站后台，有时也称为网站管理后台，是指用于管理网站前台的一系列操作，如：产品、企业信息的增加、更新、删除等。通过后台管理网站，可以有效的管理网站供浏览者查阅的信息。
             </p>
-        </div>
-    </div>
-</div>
-<div class="container" id="block_2">
-    <h4>预备知识</h4>
-    <div class="cow" id="all_card">
-        <div class="card col-xs-6 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-2" id="card_1">
-            <div>
-                <div class="img">
-                    <img src="../ResourceFile/C语言.png" alt="C语言">
-                </div>
-                <p>C语言</p>
-            </div>
-        </div>
-        <div class="card col-xs-6 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0" id="card_1">
-            <div>
-                <div class="img">
-                    <img src="../ResourceFile/计算机.png" alt="计算机科学导论">
-                </div>
-                <p>计算机科学导论</p>
-            </div>
-        </div>
-        <div class="card col-xs-6 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0">
-            <div>
-                <div class="img">
-                    <img src="../ResourceFile/web.png" alt="web前端">
-                </div>
-                <p>web前端</p>
-            </div>
-        </div>
-        <div class="card col-xs-6 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0">
-            <div>
-                <div class="img">
-                    <img src="../ResourceFile/后台.png" alt="Servlet后台">
-                </div>
-                <p>Servlet后台</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!--LMZ-->
+        </div>
+        <div class="container">
+            <div class="htm">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/c.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">C语言</h3>
+                        <a class="link" href="https://www.runoob.com/cprogramming/c-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
 
-<!--    FE-->
-<div class="web">
-    <div class="head">
-        <h2>
-            前端介绍
-        </h2>
-        <p>
-            前端即网站前台部分，运行在PC端，移动端等浏览器上展现给用户浏览的网页。随着互联网技术的发展，HTML5，CSS3，前端框架的应用，跨平台响应式网页设计能够适应各种屏幕分辨率，合适的动效设计，给用户带来极高的用户体验。
-        </p>
-
-    </div>
-    <div class="container">
-        <div class="htm">
-            <div class="htm-pic">
-                <img src="../ResourceFile/htm.jpg" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">HTML</h3>
-                    <a class="link" href="https://www.runoob.com/html/html-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        C语言:是一门面向过程的、抽象化的通用程序设计语言，广泛应用于底层开发。C语言是仅产生少量的机器语言以及不需要任何运行环境支持便能运行的高效率程序设计语言。尽管C语言提供了许多低级处理的功能，但仍然保持着跨平台的特性，以一个标准规格写出的C语言程序可在包括类似嵌入式处理器以及超级计算机等作业平台的许多计算机平台上进行编译。
+                    </p>
                 </div>
             </div>
+            <div class="css">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/JAVA.png" width="320px" height="280px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">JAVA</h3>
+                        <a class="link" href="https://www.runoob.com/java/java-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
 
-            <div class="htm-introduction">
-                <p>
-                    超文本标记语言（标准通用标记语言下的一个应用，外语缩写HTML），是迄今为止网络上应用最为广泛的语言，也是构成网页文档的主要语言。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字、图形、动画、声音、表格、链接等。HTML的结构包括头部（Head）、主体（Body）两大部分，其中头部描述浏览器所需的信息，而主体则包含所要说明的具体内容。
-                </p>
-            </div>
-        </div>
-        <div class="css">
-            <div class="htm-pic">
-                <img src="../ResourceFile/css.jpg" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">CSS</h3>
-                    <a class="link" href="https://www.runoob.com/css/css-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        JAVA:是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。
+                    </p>
                 </div>
             </div>
+            <div class="js">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/python.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">Python</h3>
+                        <a class="link" href="https://www.runoob.com/python/python-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
 
-            <div class="htm-introduction">
-                <p>
-                    层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
-                    CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。
-                </p>
-            </div>
-        </div>
-        <div class="js">
-            <div class="htm-pic">
-                <img src="../ResourceFile/js.jpg" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">JS</h3>
-                    <a class="link" href="https://www.runoob.com/js/js-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        Python:是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。
+                    </p>
                 </div>
             </div>
+            <div class="es6">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/SQL.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">数据库</h3>
+                        <a class="link" href="https://es6.ruanyifeng.com/#README"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
 
-            <div class="htm-introduction">
-                <p>
-                    JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。虽然它是作为开发Web页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
-                </p>
-            </div>
-        </div>
-        <div class="es6">
-            <div class="htm-pic">
-                <img src="../ResourceFile/es6.jpg" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">ES6</h3>
-                    <a class="link" href="https://es6.ruanyifeng.com/#README"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        数据库:数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。它具有整体性、共享性。
+                    </p>
                 </div>
             </div>
+            <div class="react">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/codeOcean.png" width="320px" height="300px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">Web基础</h3>
+                        <a class="link" href="https://www.runoob.com/react/react-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
+                </div>
 
-            <div class="htm-introduction">
-                <p>
-                    ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言 [1]  。
-                    另外，一些情况下ES6也泛指ES2015及之后的新增特性，虽然之后的版本应当称为ES7、ES8等。
-                </p>
-            </div>
-        </div>
-        <div class="react">
-            <div class="htm-pic">
-                <img src="../ResourceFile/react.jpg" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">React</h3>
-                    <a class="link" href="https://www.runoob.com/react/react-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        Web基础:它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。是建立在Internet上的一种网络服务，为浏览者在Internet上查找和浏览信息提供了图形化的、易于访问的直观界面，其中的文档及超级链接将Internet上的信息节点组织成一个互为关联的网状结构。
+                    </p>
                 </div>
             </div>
-
-            <div class="htm-introduction">
-                <p>
-                    React 是一个用于构建用户界面的 JAVASCRIPT 库,主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图），它起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源，拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
-
-
-                </p>
-            </div>
-        </div>
-        <div class="vue">
-            <div class="htm-pic">
-                <img src="../ResourceFile/vue.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">Vue.js</h3>
-                    <a class="link" href="https://www.runoob.com/vue2/vue-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+            <div class="vue">
+                <div class="htm-pic">
+                    <img src="../ResourceFile/dian.png" width="320px" height="320px">
+                    <div class="hidden1">
+                        <div class="white-border"></div>
+                        <h3 class="title1">Algorithm</h3>
+                        <a class="link" href="https://www.runoob.com/vue2/vue-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="htm-introduction">
-                <p>
-                    Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。
-                </p>
-            </div>
-        </div>
-        <div class="node">
-            <div class="htm-pic">
-                <img src="../ResourceFile/node.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">Node.js</h3>
-                    <a class="link" href="https://www.runoob.com/nodejs/nodejs-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
+                <div class="htm-introduction">
+                    <p>
+                        Algorithm(算法):在数学和计算机科学之中，为任何良定义的具体计算步骤的一个序列，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。
+                    </p>
                 </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型。Node 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言。发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。
-                    Node对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。V8引擎执行Javascript的速度非常快，性能非常好。
-                </p>
             </div>
         </div>
 
     </div>
-</div>
-<!--FE -->
-
-<!--BE-->
-
-<div class="web">
-    <div class="head">
-        <h2>
-            后台介绍
-        </h2>
-        <p>
-            后台即指网站后台，有时也称为网站管理后台，是指用于管理网站前台的一系列操作，如：产品、企业信息的增加、更新、删除等。通过后台管理网站，可以有效的管理网站供浏览者查阅的信息。
-        </p>
-
     </div>
-    <div class="container">
-        <div class="htm">
-            <div class="htm-pic">
-                <img src="../ResourceFile/c.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">C语言</h3>
-                    <a class="link" href="https://www.runoob.com/cprogramming/c-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    C语言:是一门面向过程的、抽象化的通用程序设计语言，广泛应用于底层开发。C语言是仅产生少量的机器语言以及不需要任何运行环境支持便能运行的高效率程序设计语言。尽管C语言提供了许多低级处理的功能，但仍然保持着跨平台的特性，以一个标准规格写出的C语言程序可在包括类似嵌入式处理器以及超级计算机等作业平台的许多计算机平台上进行编译。
-                </p>
-            </div>
-        </div>
-        <div class="css">
-            <div class="htm-pic">
-                <img src="../ResourceFile/JAVA.png" width="320px" height="280px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">JAVA</h3>
-                    <a class="link" href="https://www.runoob.com/java/java-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    JAVA:是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。
-                </p>
-            </div>
-        </div>
-        <div class="js">
-            <div class="htm-pic">
-                <img src="../ResourceFile/python.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">Python</h3>
-                    <a class="link" href="https://www.runoob.com/python/python-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    Python:是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。
-                </p>
-            </div>
-        </div>
-        <div class="es6">
-            <div class="htm-pic">
-                <img src="../ResourceFile/SQL.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">数据库</h3>
-                    <a class="link" href="https://es6.ruanyifeng.com/#README"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    数据库:数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。它具有整体性、共享性。
-                </p>
-            </div>
-        </div>
-        <div class="react">
-            <div class="htm-pic">
-                <img src="../ResourceFile/codeOcean.png" width="320px" height="300px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">Web基础</h3>
-                    <a class="link" href="https://www.runoob.com/react/react-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    Web基础:它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。是建立在Internet上的一种网络服务，为浏览者在Internet上查找和浏览信息提供了图形化的、易于访问的直观界面，其中的文档及超级链接将Internet上的信息节点组织成一个互为关联的网状结构。
-                </p>
-            </div>
-        </div>
-        <div class="vue">
-            <div class="htm-pic">
-                <img src="../ResourceFile/dian.png" width="320px" height="320px">
-                <div class="hidden1">
-                    <div class="white-border"></div>
-                    <h3 class="title1">Algorithm</h3>
-                    <a class="link" href="https://www.runoob.com/vue2/vue-tutorial.html"><img src="../ResourceFile/link.png" width="25px" height="25px"></a>
-                </div>
-            </div>
-
-            <div class="htm-introduction">
-                <p>
-                    Algorithm(算法):在数学和计算机科学之中，为任何良定义的具体计算步骤的一个序列，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。
-                </p>
-            </div>
-        </div>
-    </div>
-
-</div>
-</div>
-<!--BE-->
+    <!--BE-->
 </body>
+
 </html>

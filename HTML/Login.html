@@ -58,7 +58,7 @@
             <div id="otherInformation">
                 <div class="label">
                     <label for="">姓名</label>
-                    <input type="tel" name="name" required pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
+                    <input type="tel" name="name" required pattern="/^\w+$/u" id="name" autocomplete="tel">
                     <div class="showInformation">请输入你的真实姓名哦</div>
                 </div>
                 <div class="label">
@@ -102,8 +102,8 @@
 
     </div>
     <script type="text/javascript " src="../JS/login_Node.js "></script>
-    <script src="../JS/login_check.js"></script>
-    <script src="../JS/normal.js"></script>
+    <script type="text/javascript src=" ../JS/login_check.js "></script>
+    <script type="text/javascript src="../JS/normal.js"></script>
 </body>
 
 </html>

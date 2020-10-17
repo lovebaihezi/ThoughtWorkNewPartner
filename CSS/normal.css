@@ -1,6 +1,6 @@
 .table {
     width: 100%;
-    min-width: 320px;
+    min-width: auto;
     z-index: 9999;
     height: 40px;
     position: absolute;
@@ -9,7 +9,8 @@
     left: 0;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
+    background-color: #ffffff;
+    box-shadow: 0 0 12px 0 gray;
 }
 
 .actionButton {
