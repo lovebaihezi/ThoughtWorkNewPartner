@@ -22,8 +22,17 @@ let sendInformation = (json: string, place: string, thenAction: Function): void 
 }
 let waitingResponse = () => {
 }
-let searchForm : HTMLFormElement = document.getElementsByClassName('Login')[0].querySelector('form')
+let searchForm: HTMLFormElement = document.getElementsByClassName('Login')[0].querySelector('form')
 searchForm.addEventListener("submit", (defaultEvent: Event): void => {
     console.log(packInformation(searchForm))
     defaultEvent.preventDefault()
+    sendInformation(packInformation(searchForm), "", (response: string): void => {
+        let student = JSON.parse(JSON.parse(response))
+        if (student['status'] == "success") {
+            sessionStorage.setItem(student['name'], JSON.stringify(student))
+            location.href = "../HTML/interview.html"
+        }else{
+            alert("查无此人！")
+        }
+    })
 })
