@@ -1,3 +1,11 @@
+let interviewForm: HTMLFormElement = document.forms[0]
+let save :HTMLInputElement = document.getElementById('save') as HTMLInputElement
+let inputList : HTMLInputElement[] = Array.from(document.querySelectorAll('label')).map((item:HTMLLabelElement):HTMLInputElement=>{return item.querySelector('input')})
+inputList.pop()
+inputList.pop()
+let student : object = JSON.parse(sessionStorage['student']) || {}
+let interviewer : object = JSON.parse(sessionStorage['interview']) || {}
+
 let packInformation = (form: HTMLFormElement): string => {
     let allInformation: Object = {}
     Array.from(form.elements).forEach((item: HTMLInputElement): void => {
@@ -21,4 +29,22 @@ let sendInformation = (json: string, place: string, thenAction: Function): void 
     newAjax.send(json)
 }
 let waitingResponse = () => {
+    // document.getElementById("loading").style.display = "block"
+}
+
+let setInformation = ()=>{
+    if(sessionStorage['interview']){
+        (document.getElementById('interview') as HTMLInputElement).value = interviewer['name']
+        alert("你好" + interviewer['name'])
+    }else{
+        location.replace('../HTML/Login.html');
+    }
+}
+
+save.addEventListener("click",()=>{
+    saveInformation();
+})
+
+let saveInformation = ()=>{
+    sessionStorage.setItem(student['name'],packInformation(interviewForm))
 }

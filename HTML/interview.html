@@ -24,9 +24,11 @@
     <div class="Login">
         <form>
 
+            <input type="text" style="display: none;" id="interview" name="Interviewer">
+
             <label for="Number">
                 <p>学号</p>
-                <input type="text" name="Number" id="studentID" class="Number" autocomplete=off>
+                <input type="text" name="ID" id="studentID" class="Number" autocomplete=off>
             </label>
 
             <label for="Name">
@@ -36,37 +38,40 @@
 
             <label for="Telephone">
                 <p>电话号码:</p>
-                <input type="text" name="Telephone" id="studentTel" class="Telephone"  pattern="[0-9]{11}" autocomplete=off>
+                <input type="text" name="Tel" id="studentTel" class="Telephone"  pattern="[0-9]{11}" autocomplete=off>
             </label>
 
             <label for="ClassInformation">
                 <p>专业班级:</p>
-                <input type="text" name="ClassInformation" id="studentInformation" class="ClassInformation" >
+                <input type="text" name="Subject" id="studentInformation" class="ClassInformation" >
             </label>
 
             <label for="Choose">
                 <p>选择方向:前端/后端</p>
-                <input type="text" name="方向" id="studentPost" class="Choose" pattern="前端|后端">
+                <input type="text" name="Way" id="studentPost" class="Choose" pattern="前端|后端">
             </label>
 
 
             <label for="filtrateChoose">
                 <p>评分</p>
-                <input type="text" name="point" id="studentPoint" class="">
+                <input type="text" name="Point" id="studentPoint" class="">
             </label>
 
 
             <label for="interviewProcess">
                 <p>面试进度</p>
-                <input type="text" name="interviewProcess" id="interviewProcess" class="">
+                <input type="text" name="InterviewProcess" id="interviewProcess" class="">
             </label>
 
             <label for="CommentArea" class="Comment">
                 <p>评价</p>
-                <textarea id="comment" wrap="hard"></textarea>
+                <input type="text" name="Comment" id="comment" wrap="hard">
+            </label>
+            <label for="save">
+                <input type="button" value="save" id="save" class="actionButton">
             </label>
             <label for="SubmitInterviewInformation" class="Confirm">
-                <input type="button" value="APPLY." id="apply" class="actionButton">
+                <input type="button" value="Confirm." id="apply" class="actionButton">
             </label>
 
         </form>

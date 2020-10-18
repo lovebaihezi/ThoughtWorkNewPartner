@@ -1,47 +1,46 @@
-window.onload = () => {
-    let apply = document.getElementById("apply");
-    let comment = document.getElementById("comment").innerHTML;
-    let form = document.forms[0];
-    sessionStorage.student = "{}";
-    // if (sessionStorage.student) {
-    //     let student = JSON.parse(sessionStorage.student);
-    //     comment = sessionStorage.student.comment;
-    //     for (let i in form.elements) {
-    //         student[form.elements[i].value] = student[form.elements[i].name];
-    //     }
-    // } else {
-    //     alert('这个人为什么会没有信息啊，快去问服务器管理员！！！');
-    //     history.go(-1) || location.href = "http://www.baidu.com";
-    // }
-
-    apply.isClick = false;
-    apply.onclick = function() {
-        if (apply.isClick) {
-            return;
-        } else {
-            let newStudent = {};
-            apply.isClick = true;
-            comment = document.getElementById("comment").value;
-            for (let i in form.elements) {
-                newStudent[form.elements[i].name] = newStudent[form.elements[i].value] || "";
-            }
-            newStudent['comment'] = comment;
-            newStudent['interviewer'] = sessionStorage.interviewer;
-            console.log(newStudent);
-            let AjaxObject = new XMLHttpRequest();
-            AjaxObject.open("post", "/interview", true);
-            AjaxObject.onreadystatechange = function() {
-                if (AjaxObject.readyState == 4 && AjaxObject.status == 4) {
-                    if (AjaxObject.responseText == 1) {
-                        alert("success!");
-                        sessionStorage.removeItem('student');
-                    } else {
-                        apply.isClick = true;
-                    }
-
-                }
-            }
-            AjaxObject.send(sessionStorage.student);
+var interviewForm = document.forms[0];
+var save = document.getElementById('save');
+var inputList = Array.from(document.querySelectorAll('label')).map(function (item) { return item.querySelector('input'); });
+inputList.pop();
+inputList.pop();
+// let student : object = JSON.parse(sessionStorage['student'])
+// let interviewer : object = JSON.parse(sessionStorage['interview'])
+var packInformation = function (form) {
+    var allInformation = {};
+    Array.from(form.elements).forEach(function (item) {
+        item.name != "" ? allInformation[item.name] = item.value : 0;
+    });
+    return JSON.stringify(allInformation);
+};
+var sendInformation = function (json, place, thenAction) {
+    waitingResponse();
+    var newAjax = new XMLHttpRequest();
+    newAjax.open("post", place, true);
+    // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
+    newAjax.addEventListener("readystatechange", function () {
+        if (newAjax.readyState == 4 && newAjax.status == 200) {
+            thenAction(newAjax.response);
         }
-    }
-}
+        else {
+            waitingResponse();
+        }
+    });
+    newAjax.send(json);
+};
+var waitingResponse = function () {
+    // document.getElementById("loading").style.display = "block"
+};
+// let setInformation = ()=>{
+//     if(sessionStorage['interview']){
+//         (document.getElementById('interview') as HTMLInputElement).value = interviewer['name']
+//         alert("你好" + interviewer['name'])
+//     }else{
+//         location.replace('../HTML/Login.html');
+//     }
+// }
+save.addEventListener("click", function () {
+    saveInformation();
+});
+var saveInformation = function () {
+    // sessionStorage.setItem(student['name'],packInformation(interviewForm))
+};

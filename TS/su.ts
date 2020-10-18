@@ -22,8 +22,8 @@ let sendInformation = (json: string, place: string, thenAction: Function): void 
 }
 let waitingResponse = () => {
 }
-let form = document.forms[0]
-form.addEventListener("submit", (defaultEvent: Event): void => {
-    console.log(packInformation(form))
+let searchForm : HTMLFormElement = document.getElementsByClassName('Login')[0].querySelector('form')
+searchForm.addEventListener("submit", (defaultEvent: Event): void => {
+    console.log(packInformation(searchForm))
     defaultEvent.preventDefault()
 })

@@ -2,9 +2,9 @@ const express = require('express');
 const Axios = require('axios');
 const app = express();
 const bodyParser = require('body-parser');
-const {
-    response
-} = require('express');
+// const {
+//     response
+// } = require('express');
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -18,6 +18,8 @@ app.use((req, resToBrowser, next) => {
     next();
 });
 
+let url = "http://47.93.233.174:80/thoughtworksNaXin/"
+
 app.post('/studentLogin', (req, resToBrowser) => {
     let userInformation
     try {
@@ -30,7 +32,7 @@ app.post('/studentLogin', (req, resToBrowser) => {
             })
     }
     let fakeLoginInformation = {}
-    let url = "http://47.93.233.174:8080/thoughtworksNaXin/"
+
     let method = ""
     if (userInformation.Telephone != "") {
         fakeLoginInformation.yhm = userInformation.ID
@@ -68,9 +70,9 @@ app.post('/Sign', (req, resToBrowser) => {
     } = req.body;
     console.log(studentID)
     Axios.post(
-        url + "sign",
+        url + "Signin",
         JSON.stringify({
-            studentID: studentID
+            id: studentID
         })
     ).then((reqServer, resServer) => {
         resToBrowser.json(resToBrowser.data)
@@ -82,6 +84,10 @@ app.post('/Sign', (req, resToBrowser) => {
 app.post('/adminLogin', (req, res) => {
     console.log(req.body)
     res.json(req.body)
+})
+
+app.post('/interview', (req, res) => {
+
 })
 
 app.listen(30100, () => {
