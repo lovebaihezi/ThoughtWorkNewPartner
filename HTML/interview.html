@@ -16,11 +16,54 @@
     <link href="../ResourceFile/touch-icon-ipad.png" rel="apple-touch-icon" sizes="72x72">
     <link href="../ResourceFile/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="114x114">
     <link href="../ResourceFile/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="144x144">
+    <style>
+        .loading {
+            width: 100%;
+            width: 100vw;
+            height: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: #ffffff;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 400px;
+            z-index: 9999;
+            background-image: url(../ResourceFile/loader1.gif);
+        }
+    </style>
+    <script>
+        document.addEventListener("readystatechange", function() {
+            if (document.readyState == 'complete') {
+                document.getElementById("loading").style.display = "none";
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="../CSS/headTable.css">
     <link rel="stylesheet" href="../CSS/interview.css">
     <title>面试记录界面</title>
 </head>
 
 <body>
+
+    <div class="loading" id="loading"></div>
+
+    <div id="headTable" class="table">
+        <div id="backButton">
+            <a href="./Login.html">
+                <div class="actionButton">
+                    <svg t="1603178516026" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="828" width="200" height="200">
+                        <path
+                            d="M677.391515 873.916768c-7.86101 0-15.618586-2.999596-21.617778-8.895354L324.473535 533.721212c-11.998384-11.894949-11.998384-31.340606 0-43.235555L655.670303 159.288889c5.999192-5.999192 13.756768-8.895354 21.617778-8.895354 7.757576 0 15.618586 2.999596 21.617778 8.895354 11.894949 11.894949 11.894949 31.237172 0 43.235555L389.223434 512.103434 698.905859 821.785859c11.894949 11.998384 11.894949 31.340606 0 43.235555-5.895758 5.895758-13.756768 8.895354-21.514344 8.895354z m0 0"
+                            p-id="829" fill="#f61947"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="Login">
         <form>
 
@@ -28,7 +71,7 @@
 
             <label for="Number">
                 <p>学号</p>
-                <input type="text" name="ID" id="studentID" class="Number" autocomplete=off>
+                <input type="text" name="ID" required pattern="[0-9]{8}" id="studentID" class="Number" autocomplete=off>
             </label>
 
             <label for="Name">
@@ -38,12 +81,12 @@
 
             <label for="Telephone">
                 <p>电话号码:</p>
-                <input type="text" name="Tel" id="studentTel" class="Telephone"  pattern="[0-9]{11}" autocomplete=off>
+                <input type="text" name="Tel" id="studentTel" class="Telephone" pattern="[0-9]{11}" autocomplete=off>
             </label>
 
             <label for="ClassInformation">
                 <p>专业班级:</p>
-                <input type="text" name="Subject" id="studentInformation" class="ClassInformation" >
+                <input type="text" name="Subject" id="studentInformation" class="ClassInformation">
             </label>
 
             <label for="Choose">
@@ -54,24 +97,29 @@
 
             <label for="filtrateChoose">
                 <p>评分</p>
-                <input type="text" name="Point" id="studentPoint" class="">
+                <input type="text" name="Point" id="studentPoint" pattern="SSR|SR|R" class="">
             </label>
 
 
             <label for="interviewProcess">
                 <p>面试进度</p>
-                <input type="text" name="InterviewProcess" id="interviewProcess" class="">
+                <input type="text" name="InterviewProcess" required id="interviewProcess" class="">
             </label>
 
             <label for="CommentArea" class="Comment">
                 <p>评价</p>
-                <input type="text" name="Comment" id="comment" wrap="hard">
+                <input type="text" name="Comment" id="comment" required wrap="hard">
+                <!-- <textarea name="" id="" id="comment" cols="30" required rows="10"></textarea> -->
             </label>
             <label for="save">
-                <input type="button" value="save" id="save" class="actionButton">
+                <div class="animationButton">
+                    <input type="button" value="save" id="save" class="actionButton">
+                </div>
             </label>
             <label for="SubmitInterviewInformation" class="Confirm">
-                <input type="button" value="Confirm." id="apply" class="actionButton">
+                <div class="animationButton">
+                    <input type="submit" value="Confirm." id="apply" class="actionButton">
+                </div>
             </label>
 
         </form>

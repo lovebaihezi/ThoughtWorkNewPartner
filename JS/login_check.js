@@ -8,6 +8,9 @@ inputList.forEach(function(item) {
     item.addEventListener("click", function() {
         item.classList.add("inputNotEmpty");
     });
+    item.addEventListener("input", function() {
+        item.classList.add("inputNotEmpty");
+    })
 });
 var passwordList = [password, adminPassword];
 passwordList.forEach(function(item) {

@@ -33,11 +33,11 @@ body {
     height: auto;
     min-height: 100%;
     margin: 0;
-    background: #f1f1f1;
+    background: #ffffff;
 }
 
 .Login {
-    max-width: 320px;
+    max-width: 640px;
     width: 100%;
     padding: 24px;
     margin: 72px auto 68px;
@@ -56,6 +56,8 @@ body {
     margin: 6px 0;
     padding: 3px 0;
     position: relative;
+    height: 84px;
+    min-height: unset;
 }
 
 .img {
@@ -73,6 +75,7 @@ label {
 input {
     border: unset;
     border-bottom: 0.1rem solid #000000;
+    background-color: transparent;
     width: 300px;
     height: 26px;
     font-size: 18px;
@@ -99,6 +102,8 @@ input:focus+.showInformation {
 
 form {
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 input:valid :nth-child(-1+1n) {
@@ -130,6 +135,10 @@ input:invalid+.showInformation {
     margin-bottom: 36px;
 }
 
+#rightButton {
+    color: #000000;
+}
+
 .actionButton {
     margin-top: 12px;
     margin-bottom: 12px;
@@ -137,18 +146,45 @@ input:invalid+.showInformation {
     font-size: 16px;
     height: 38px;
     text-align: center;
+    position: relative;
     cursor: pointer;
-    color: #000000;
-    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
-    border-radius: 0.5rem;
+    color: #f61947;
+    /* background-color: #f61947; */
     transition: all 0.3s linear;
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid #f61947;
+    z-index: 10;
+}
+
+.animationButton {
+    position: relative;
+}
+
+.actionButton:hover,
+.actionButton:hover {
+    -webkit-box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
+    box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
+}
+
+.animationButton::after {
+    content: "";
+    width: 0;
+    height: 60%;
+    position: absolute;
+    z-index: 9;
+    top: 20%;
+    left: 0;
+    background-color: #f61947;
+    transition: width ease-out 0.5s;
+}
+
+.animationButton:hover::after {
+    width: 100%;
 }
 
 .actionButton:hover {
     background-image: url(../ResourceFile/send.svg);
-    background-size: contain;
     color: transparent;
     font-size: 0;
 }
@@ -183,16 +219,15 @@ input:invalid+.showInformation {
     text-align: center;
     vertical-align: middle;
     justify-content: center;
-    border-radius: 0;
+    /* border-radius: 0; */
     margin: 0;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
 
 .switch .actionButton:hover {
     background-image: none;
+    font-size: 15px;
     color: #000000;
-    font-size: unset;
-    border-radius: 5%;
 }
 
 .switch .actionButton p {
@@ -200,8 +235,8 @@ input:invalid+.showInformation {
 }
 
 .switch .on {
-    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
-    color: #000000;
+    background-color: #f61947;
+    color: #ffffff !important;
     -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
     box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
 }
@@ -213,7 +248,8 @@ input:invalid+.showInformation {
     background: #ffffff;
     cursor: pointer;
     font-size: 14px;
-    border-radius: 4px;
+    border: 0;
+    /* border-radius: 4px; */
     margin-right: 0;
     margin-left: auto;
     color: rgb(49, 49, 248);
@@ -227,4 +263,30 @@ input:invalid+.showInformation {
 #showApplyButton:hover {
     font-size: 15px;
     color: #000000;
+}
+
+#formBugFix {
+    flex-direction: row;
+    display: flex;
+}
+
+.spaceBetween {
+    display: flex;
+    width: 50%;
+    min-width: 320px;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container {
+    justify-content: center;
+}
+
+@media screen and (max-width:720px) {
+    .Login {
+        max-width: 320px;
+    }
+    #formBugFix {
+        flex-direction: column;
+    }
 }

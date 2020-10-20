@@ -33,22 +33,24 @@ body {
     height: auto;
     min-height: 100%;
     margin: 0;
-    background: #f1f1f1;
+    background: #ffffff;
     justify-items: flex-start;
 }
 
 .Login {
-    display: inline-flex;
-    float: left;
-    width: 95%;
-    min-width: 320px;
-    margin: 40px 2.5%;
+    max-width: 960px;
+    width: 100%;
+    padding: 24px;
+    margin: 72px auto 68px;
     height: auto;
-    background: #fff;
+    display: flex;
     position: relative;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
     flex-direction: unset;
+    flex-shrink: 0;
+    flex-direction: row;
+    background-color: #fff;
 }
 
 .Login:nth-of-type(1) {
@@ -70,6 +72,7 @@ label {
     margin: 6px 5%;
     width: 100%;
     float: left;
+    position: relative;
 }
 
 p {
@@ -85,16 +88,11 @@ input {
     height: 38px;
     font-size: 18px;
     transition: all 0.2s linear;
+    background-color: transparent;
 }
 
 input:focus {
     outline: none;
-}
-
-.actionButton:hover {
-    background-image: url(../ResourceFile/send.svg);
-    background-size: contain;
-    color: transparent;
 }
 
 .Comment {
@@ -118,19 +116,33 @@ input:invalid {
 }
 
 .actionButton {
-    margin: 12px 0;
-    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 300px;
     font-size: 16px;
     height: 38px;
     text-align: center;
+    position: relative;
     cursor: pointer;
-    color: #fff;
-    border: 0.1rem solid #fff;
-    background-image: linear-gradient(90deg, #27C1CB, #61DED2);
-    border-radius: 0.5rem;
+    color: #f61947;
+    /* background-color: #f61947; */
     transition: all 0.3s linear;
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid #f61947;
+    z-index: 10;
+}
+
+.actionButton:hover {
+    background-image: url(../ResourceFile/send.svg);
+    background-size: contain;
+    color: transparent;
+}
+
+.actionButton:hover,
+.actionButton:hover {
+    -webkit-box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
+    box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
 }
 
 textarea {
@@ -179,7 +191,7 @@ a {
     float: left;
     width: 60%;
     height: 100%;
-    background-color: #27C1CB;
+    background-color: #f61947;
     padding: 0 10%;
     justify-content: center;
 }
@@ -207,11 +219,39 @@ a {
     text-align: center;
     font-size: 16px;
     padding: 0 5%;
-    background-color: #48d5df;
+    background-color: #f33259;
     height: 100%;
 }
 
 .status p {
     display: inline;
     vertical-align: middle;
+}
+
+.animationButton {
+    position: relative;
+}
+
+.animationButton::after {
+    content: "";
+    width: 0;
+    height: 60%;
+    position: absolute;
+    z-index: 9;
+    top: 20%;
+    left: 0;
+    background-color: #f61947;
+    transition: width ease-out 0.5s;
+}
+
+.animationButton:hover::after {
+    width: 100%;
+}
+
+#Search:hover {
+    background-image: url(../ResourceFile/搜索.svg);
+}
+
+#filtrate:hover {
+    background-image: url(../ResourceFile/高级报表.svg);
 }

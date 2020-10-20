@@ -31,7 +31,7 @@ var waitingResponse = function () {
 };
 var signForm = document.forms[0];
 var studentID = signForm.querySelector("input");
-var url = "";
+var url = "localhost:30000";
 signForm.addEventListener("submit", function (defaultEvent) {
     defaultEvent.preventDefault();
     sendInformation(JSON.stringify({ studentID: studentID.value }), url, function (response) {

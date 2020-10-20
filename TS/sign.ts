@@ -30,7 +30,7 @@ let waitingResponse = () => {
 }
 let signForm: HTMLFormElement = document.forms[0]
 let studentID: HTMLInputElement = signForm.querySelector("input")
-const url = ""
+const url = "localhost:30000"
 signForm.addEventListener("submit", (defaultEvent: Event) => {
     defaultEvent.preventDefault()
     sendInformation(JSON.stringify({ studentID: studentID.value }), url, (response: string) => {
