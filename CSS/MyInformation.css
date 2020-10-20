@@ -1,18 +1,7 @@
-/* * {
-    outline: dashed antiquewhite;
-} */
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 #Information {
     width: 100%;
     height: 100%;
+    min-height: 840px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,31 +14,29 @@ body {
     flex-wrap: nowrap;
     width: 65%;
     height: 80%;
-    /* min-width: 1280px; */
-    /* height: 640px; */
+    /* width:65vw;
+    height:32.5vw; */
     box-shadow: 0px 2px 15px black;
 }
 
 #InformationLeft {
     display: inline-block;
     width: 49%;
-    /* min-width: 640px; */
     height: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#InformationLeft img {
-    width: 80%;
-    height: 90%;
+    background-image: url("../ResourceFile/thoughtworks.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 100%;
+    -moz-background-size: 90% 100%;
 }
 
 #InformationRight {
     display: inline-block;
     width: 51%;
-    /* min-width: 640px; */
     height: 100%;
     background-color: #5d5d5d;
 }
@@ -62,7 +49,8 @@ body {
     color: white;
     font-size: 38px;
     font-weight: 500;
-    margin-top: 9%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 #InformationName::before {
@@ -97,7 +85,7 @@ body {
 }
 
 #scrollBox {
-    width: 33%;
+    width: 0;
     height: 100%;
     /* background-image:linear-gradient(to bottom, rgba(238, 172, 172),  #f61947); */
     background-color: #f61947;
@@ -201,7 +189,7 @@ body {
 
 .InformationValue {
     width: 72%;
-    height: 25px;
+    min-height: 20px;
     background-color: white;
     border-radius: 3px;
     color: #303030;
@@ -211,7 +199,7 @@ body {
     border-style: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #InformationLeft {
         display: none;
     }
@@ -221,7 +209,12 @@ body {
     #InformationName {
         width: 80%;
         font-size: 32px;
-        height: 13%;
+        margin-top: 9%;
+        margin-bottom: 9%;
+        height: 8%;
+    }
+    #InformationName::after {
+        margin-top: 42px;
     }
     #InformationScroll {
         width: 70%;
@@ -249,7 +242,7 @@ body {
     }
 }
 
-@media screen and (min-width: 320px) and (max-width:479px) {
+@media screen and (min-width: 250px) and (max-width:599px) {
     #InformationScroll {
         margin-top: 3%;
     }
@@ -259,9 +252,6 @@ body {
     #InformationName {
         font-size: 30px;
     }
-    #InformationName::after {
-        margin-top: 42px;
-    }
     #Ul li {
         font-size: 13px;
     }
@@ -269,10 +259,10 @@ body {
         left: 22%;
     }
     #Ul li:nth-child(3) {
-        left: 40%;
+        left: 38%;
     }
     #Ul li:nth-child(4) {
-        left: 56%;
+        left: 52%;
     }
     .InformationName {
         width: 45%;
@@ -284,115 +274,48 @@ body {
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 800px) {
-    #InformationName {
-        width: 80%;
-        font-size: 26px;
-        height: 15%;
-        margin-bottom: 10px;
-    }
-    #InformationName::after {
-        margin-top: 42px;
-    }
-    #InformationScroll {
-        width: 70%;
-    }
-    #Ul {
-        height: 10%;
-    }
-    #Ul li {
-        font-size: 12px;
-        vertical-align: top;
-    }
+@media screen and (min-width: 330px) and (max-width:339px) {
     #Ul li:nth-child(1) {
-        left: 4%;
+        left: 6%;
     }
     #Ul li:nth-child(2) {
-        left: 10%;
+        left: 23%;
     }
     #Ul li:nth-child(3) {
-        left: 16%;
+        left: 40%;
     }
     #Ul li:nth-child(4) {
-        left: 24%;
-    }
-    #InformationUl {
-        margin-top: 0px;
-        width: 75%;
+        left: 55%;
     }
     .InformationName {
-        width: 42%;
-        font-size: 12px;
+        width: 40%;
+        font-size: 14px;
     }
     .InformationValue {
-        width: 58%;
-        height: 15px;
+        width: 62%;
         padding-left: 8px;
-        font-size: 12px;
     }
 }
 
-@media screen and (width: 600px) {
-    #Ul li {
-        display: inline-block;
-        position: relative;
-        color: #f0ecec;
-        font-size: 15px;
-    }
-    #Ul li:nth-child(1) {
-        left: 5%;
-    }
+@media screen and (min-width: 340px) and (max-width:430px) {
     #Ul li:nth-child(2) {
-        left: 26%;
+        left: 24%;
     }
     #Ul li:nth-child(3) {
-        left: 47%;
+        left: 42%;
     }
     #Ul li:nth-child(4) {
-        left: 70%;
+        left: 58%;
     }
-}
-
-@media screen and (width: 800px) {
-    #Ul li {
-        display: inline-block;
-        position: relative;
-        color: #f0ecec;
-        font-size: 15px;
-    }
-    #Ul li:nth-child(1) {
-        left: 5%;
-    }
-    #Ul li:nth-child(2) {
-        left: 10%;
-    }
-    #Ul li:nth-child(3) {
-        left: 20%;
-    }
-    #Ul li:nth-child(4) {
-        left: 28%;
-    }
-}
-
-@media screen and (width: 768px) {
-    #Ul li:nth-child(1) {
-        left: 5%;
-    }
-    #Ul li:nth-child(2) {
-        left: 13%;
-    }
-    #Ul li:nth-child(3) {
-        left: 25%;
-    }
-    #Ul li:nth-child(4) {
-        left: 35%;
+    .InformationName {
+        width: 38%;
     }
     .InformationValue {
-        height: 18px;
+        width: 64%;
     }
 }
 
-@media screen and (width: 480px) {
+@media screen and (min-width: 431px) and (max-width:469px) {
     #Ul li:nth-child(1) {
         left: 5%;
     }
@@ -403,21 +326,284 @@ body {
         left: 44%;
     }
     #Ul li:nth-child(4) {
-        left: 62%;
+        left: 60%;
+    }
+    .InformationName {
+        width: 34%;
+        font-size: 14px;
+    }
+    .InformationValue {
+        width: 60%;
+        padding-left: 8px;
     }
 }
 
-@media screen and (width: 1024px) {
+@media screen and (min-width: 470px) and (max-width: 600px) {
+    #InformationName {
+        width: 80%;
+        font-size: 32px;
+        height: 8%;
+        margin-top: 10%;
+        margin-bottom: 6%;
+    }
+    #InformationScroll {
+        margin-bottom: 3%;
+    }
+    #Ul li:nth-child(2) {
+        left: 25%;
+    }
+    #Ul li:nth-child(3) {
+        left: 44%;
+    }
+    #Ul li:nth-child(4) {
+        left: 66%;
+    }
+    .InformationName {
+        width: 30%;
+        font-size: 14px;
+    }
+    .InformationValue {
+        width: 60%;
+        padding-left: 8px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 799px) {
+    #InformationName {
+        width: 80%;
+        font-size: 26px;
+        height: 12%;
+        margin-bottom: 15px;
+        margin-top: 5%;
+    }
+    #InformationName::after {
+        margin-top: 36px;
+    }
+    #InformationScroll {
+        width: 70%;
+    }
+    #Ul {
+        height: 10%;
+    }
+    #Ul li {
+        font-size: 12px;
+        vertical-align: top;
+        /* width:15px; */
+        width: auto;
+    }
     #Ul li:nth-child(1) {
         left: 5%;
+    }
+    #Ul li:nth-child(2) {
+        left: 22%;
+    }
+    #Ul li:nth-child(3) {
+        left: 38%;
+    }
+    #Ul li:nth-child(4) {
+        left: 52%;
+    }
+    #InformationUl {
+        margin-top: 0px;
+        width: 75%;
+    }
+    .InformationName {
+        width: 40%;
+        font-size: 12px;
+    }
+    .InformationValue {
+        width: 60%;
+        /* height: 15px; */
+        padding-left: 8px;
+        font-size: 12px;
+    }
+}
+
+
+/* @media screen and (min-width: 600px) and (max-width: 639px) {
+    #Ul li:nth-child(1){
+        left:6%;
+    }
+    #Ul li:nth-child(2){
+        left:28%;
+    }
+    #Ul li:nth-child(3){
+        left:48%;
+    }
+    #Ul li:nth-child(4){
+        left:70%;
+    }
+} */
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    #Ul li:nth-child(1) {
+        left: 6%;
     }
     #Ul li:nth-child(2) {
         left: 20%;
     }
     #Ul li:nth-child(3) {
-        left: 30%;
+        left: 40%;
     }
     #Ul li:nth-child(4) {
+        left: 58%;
+    }
+}
+
+@media screen and (width: 600px) {
+    #Ul li:nth-child(1) {
+        left: 6%;
+    }
+    #Ul li:nth-child(2) {
+        left: 28%;
+    }
+    #Ul li:nth-child(3) {
         left: 48%;
+    }
+    #Ul li:nth-child(4) {
+        left: 70%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+    #Ul li:nth-child(1) {
+        left: 6%;
+    }
+    #Ul li:nth-child(2) {
+        left: 14%;
+    }
+    #Ul li:nth-child(3) {
+        left: 25%;
+    }
+    #Ul li:nth-child(4) {
+        left: 36%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #InformationContent {
+        width: 65vw;
+        height: 32.5vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px) {
+    #InformationName {
+        width: 80%;
+        font-size: 30px;
+        height: 13%;
+        margin-bottom: 10px;
+        /* margin-top:40px; */
+    }
+    #InformationName::after {
+        margin-top: 40px;
+    }
+    #Ul li {
+        display: inline-block;
+        position: relative;
+        color: #f0ecec;
+        font-size: 13px;
+    }
+    .InformationName {
+        width: 42%;
+        font-size: 13px;
+    }
+    .InformationValue {
+        width: 58%;
+        height: 16px;
+        padding-left: 8px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    #Ul li:nth-child(1) {
+        left: 2%;
+    }
+    #Ul li:nth-child(2) {
+        left: 10%;
+    }
+    #Ul li:nth-child(3) {
+        left: 25%;
+    }
+    #Ul li:nth-child(4) {
+        left: 40%;
+    }
+    .InformationValue {
+        width: 65%;
+        /* height: 25px; */
+        padding-left: 8px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    #Ul li:nth-child(1) {
+        left: 2%;
+    }
+    #Ul li:nth-child(2) {
+        left: 14%;
+    }
+    #Ul li:nth-child(3) {
+        left: 32%;
+    }
+    #Ul li:nth-child(4) {
+        left: 46%;
+    }
+    .InformationName {
+        width: 35%;
+    }
+    .InformationValue {
+        width: 65%;
+        height: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width:1119px) {
+    #Ul li:nth-child(1) {
+        left: 2%;
+    }
+    #Ul li:nth-child(2) {
+        left: 16%;
+    }
+    #Ul li:nth-child(3) {
+        left: 32%;
+    }
+    #Ul li:nth-child(4) {
+        left: 46%;
+    }
+}
+
+@media screen and (min-width: 1120px) and (max-width:1299px) {
+    #Ul li:nth-child(1) {
+        left: 2%;
+    }
+    #Ul li:nth-child(2) {
+        left: 18%;
+    }
+    #Ul li:nth-child(3) {
+        left: 34%;
+    }
+    #Ul li:nth-child(4) {
+        left: 52%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #Ul li:nth-child(1) {
+        left: 1%;
+    }
+    #Ul li:nth-child(2) {
+        left: 18%;
+    }
+    #Ul li:nth-child(3) {
+        left: 38%;
+    }
+    #Ul li:nth-child(4) {
+        left: 58%;
+    }
+    .InformationValue {
+        width: 65%;
+        min-height: 25px;
     }
 }
