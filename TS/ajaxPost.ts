@@ -28,3 +28,12 @@ export class AjaxPost extends XMLHttpRequest {
         }
     }
 }
+
+export class data {
+    url :string = ""
+    data : string = ""
+    dataOrigin : HTMLElement = document.querySelector("div")
+    constructor(url : string ,dataOrigin : HTMLElement ,data : string ,dataAbsorb : Function ){
+        this.url = url
+    }
+}

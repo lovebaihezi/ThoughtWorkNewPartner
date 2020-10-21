@@ -10,6 +10,8 @@ if (sessionStorage.student) {
     }
 }
 
+import { AjaxPost } from "./ajaxPost";
+
 const loginButton: HTMLDivElement = document.getElementById("normalSubmit") as HTMLDivElement
 const changeToStudentApplyOrLogin: HTMLDivElement = document.getElementById("leftButton") as HTMLDivElement
 const changeToAdminLogin: HTMLDivElement = document.getElementById("rightButton") as HTMLDivElement
