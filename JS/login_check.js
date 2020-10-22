@@ -12,13 +12,10 @@ inputList.forEach(function(item) {
         item.classList.add("inputNotEmpty");
     })
 });
-var passwordList = [password, adminPassword];
-passwordList.forEach(function(item) {
-    item.addEventListener("dblclick", function() {
-        if (item.type == "password") {
-            item.setAttribute("type", "text");
-        } else {
-            item.setAttribute("type", "password");
-        }
-    });
+password.addEventListener("dblclick", function() {
+    if (password.type == "password") {
+        password.setAttribute("type", "text");
+    } else {
+        password.setAttribute("type", "password");
+    }
 });

@@ -40,9 +40,25 @@
 }
 
 #backButton {
-    width: 40px;
+    width: 160px;
     height: 40px;
     margin-left: 12px;
+}
+
+#backButton img {
+    width: 100%;
+    height: 22px;
+}
+
+#backButton .actionButton {
+    width: 100%;
+}
+
+#backButton i {
+    font-size: 1px !important;
+    width: 100%;
+    color: #337ab7;
+    text-align: start;
 }
 
 .loginButton {
@@ -87,4 +103,52 @@
 .actionButton a {
     text-decoration: none;
     color: #000000;
+}
+
+.API {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    opacity: 0.9;
+    background-image: linear-gradient(0, #fff, #000);
+    display: none;
+    justify-content: center;
+}
+
+.API div {
+    position: absolute;
+    top: 40px;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* #failed {
+    display: flex;
+} */
+
+#waiting div {
+    background-image: url(../ResourceFile/loader1.gif);
+    background-size: 300px;
+}
+
+#failed div {
+    background-image: url(../ResourceFile/close.svg);
+}
+
+#success div {
+    background-image: url(../ResourceFile/complete.png);
+}
+
+#error div {
+    background-image: url(../ResourceFile/Wrong.png);
 }

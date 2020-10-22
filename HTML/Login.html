@@ -49,6 +49,18 @@
 
 <body>
     <div class="loading" id="loading"></div>
+    <div class="API" id="waiting">
+        <div></div>
+    </div>
+    <div class="API" id="failed">
+        <div>失败了哦,请检查下填写的信息是否正确,或者网络是否正常</div>
+    </div>
+    <div class="API" id="success">
+        <div></div>
+    </div>
+    <div class="API" id="error">
+        <div>出现了预期之外的错误呢,请检查下网络状况,或者询问我们哦</div>
+    </div>
     <div id="headTable" class="table">
         <div id="backButton">
             <a href="./index.html">
@@ -74,7 +86,7 @@
                 <p>我是管理员</p>
             </div>
         </div>
-
+        <p>请使用你的教务系统账号登录哦</p>
         <div id="formBugFix">
 
             <form action="" method="post">
@@ -93,35 +105,34 @@
                             </div>
                         </div>
                     </div>
-                    <div id="otherInformation" class="spaceBetween">
+                    <div id="otherInformation" class="spaceBetween" style="display: none">
                         <div class="label">
                             <label for="">姓名</label>
-                            <input type="text" name="name" required pattern="" id="name" autocomplete="name">
+                            <input type="text" name="name" pattern="" id="name" autocomplete="name">
                             <div class="showInformation">请输入你的真实姓名哦</div>
                         </div>
                         <div class="label">
                             <label for="">专业班级</label>
-                            <input type="text" name="subject" required pattern="" autocomplete=off>
+                            <input type="text" name="subject" pattern="" autocomplete=off>
                             <div class="showInformation">请输入你的真实班级哦</div>
                         </div>
                         <div class="label">
                             <label for="">电话号码</label>
-                            <input type="tel" name="Tel" required pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
+                            <input type="tel" name="Tel" pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
                             <div class="showInformation">请输入你的电话号码哦</div>
                         </div>
                         <div class="label">
                             <label for="">方向:填写前端或者后台</label>
-                            <input type="text" name="way" required pattern="前端|后台" id="Choose" autocomplete=off>
+                            <input type="text" name="way" pattern="前端|后台" id="Choose" autocomplete=off>
                             <div class="showInformation">请填写你所需的方向哦</div>
                         </div>
 
                     </div>
                 </div>
                 <input type="text" style="display: none;" name="user" value="student">
-
                 <div>
                     <div id="showApplyButton" class=" actionButton">
-                        <p>已报名?</p>
+                        <p>未报名?</p>
                     </div>
                     <div class="label">
                         <label for=""></label>
@@ -142,7 +153,9 @@
                 </div>
                 <div class="label">
                     <label for=""></label>
-                    <input type="submit" class="actionButton" name="" id="" value="login">
+                    <div class="animationButton">
+                        <input type="submit" class="actionButton" name="" id="" value="login">
+                    </div>
                 </div>
             </form>
 

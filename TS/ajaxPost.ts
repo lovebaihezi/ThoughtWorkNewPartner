@@ -9,10 +9,10 @@ export class AjaxPost extends XMLHttpRequest {
     constructor(url: string = "", data: string = "{}", err?: Function, wait?: Function, next?: Function, fail?: Function) {
         super()
         this.url = url || ""
-        this.error = err || (()=>{})
-        this.waiting = wait || (()=>{})
-        this.success = next || (()=>{})
-        this.failed = fail || (()=>{})
+        this.error = err || (() => { })
+        this.waiting = wait || (() => { })
+        this.success = next || (() => { })
+        this.failed = fail || (() => { })
         this.open("post", url, true)
         this.onreadystatechange = () => {
             this.readyState == 4 && this.status == 200 ?
@@ -29,11 +29,13 @@ export class AjaxPost extends XMLHttpRequest {
     }
 }
 
-export class data {
-    url :string = ""
-    data : string = ""
-    dataOrigin : HTMLElement = document.querySelector("div")
-    constructor(url : string ,dataOrigin : HTMLElement ,data : string ,dataAbsorb : Function ){
+export class AjaxData {
+    url: string = ""
+    data: string = ""
+    dataOrigin: HTMLElement = document.querySelector("div")
+    constructor(url: string, dataOrigin: HTMLElement, getData: Function) {
         this.url = url
+        this.dataOrigin = dataOrigin
+        this.data = getData(this.dataOrigin)
     }
 }

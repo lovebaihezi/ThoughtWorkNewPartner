@@ -21,35 +21,29 @@ app.use((req, resToBrowser, next) => {
 let url = "http://47.93.233.174:80/thoughtworksNaXin/"
 
 app.post('/studentLogin', (req, resToBrowser) => {
-    let userInformation
-    try {
-        userInformation = JSON.parse(req.body)
-    } catch (error) {
-        typeof req.body == 'object' ?
-            userInformation = req.body :
+    Axios
+        .post(
+            url + "studentLogin",
+            req.body
+        ).then(response => {
+            console.log(JSON.stringify(response.data))
+            resToBrowser.json(JSON.stringify(response.data))
+        }).catch(err => {
+            console.log("<----------------->")
+            console.log(err)
             resToBrowser.json({
                 status: "failure"
             })
-    }
-    let fakeLoginInformation = {}
+            console.log("<----------------->")
 
-    let method = ""
-    if (userInformation.Telephone != "") {
-        fakeLoginInformation.yhm = userInformation.ID
-        fakeLoginInformation.mm = userInformation.password
-        fakeLoginInformation.Telephone = userInformation.Telephone
-        fakeLoginInformation.方向 = userInformation.way
-        method = "Apply"
-    } else {
-        fakeLoginInformation.yhm = userInformation.ID
-        fakeLoginInformation.mm = userInformation.password
-        method = "Login"
-    }
+        })
+})
+
+app.post('/studentApply', (req, res) => {
     Axios
         .post(
-            url + userInformation.user + method,
-            // "http://47.93.233.174:8080/thoughtworksNaXin/studentLogin",
-            JSON.stringify(fakeLoginInformation)
+            url + "Apply",
+            req.body
         ).then(response => {
             console.log(JSON.stringify(response.data))
             resToBrowser.json(JSON.stringify(response.data))
@@ -65,29 +59,60 @@ app.post('/studentLogin', (req, resToBrowser) => {
 })
 
 app.post('/Sign', (req, resToBrowser) => {
-    let {
-        studentID
-    } = req.body;
-    console.log(studentID)
-    Axios.post(
-        url + "Signin",
-        JSON.stringify({
-            id: studentID
+    Axios
+        .post(
+            url + "Signin",
+            req.body
+        ).then(response => {
+            console.log(JSON.stringify(response.data))
+            resToBrowser.json(JSON.stringify(response.data))
+        }).catch(err => {
+            console.log("<----------------->")
+            console.log(err)
+            resToBrowser.json({
+                status: "failure"
+            })
+            console.log("<----------------->")
+
         })
-    ).then((reqServer, resServer) => {
-        resToBrowser.json(resToBrowser.data)
-    }).catch(err => {
-        console.log(err)
-    })
 })
 
 app.post('/adminLogin', (req, res) => {
-    console.log(req.body)
-    res.json(req.body)
+    Axios
+        .post(
+            url + "administrator",
+            req.body
+        ).then(response => {
+            console.log(JSON.stringify(response.data))
+            resToBrowser.json(JSON.stringify(response.data))
+        }).catch(err => {
+            console.log("<----------------->")
+            console.log(err)
+            resToBrowser.json({
+                status: "failure"
+            })
+            console.log("<----------------->")
+
+        })
 })
 
 app.post('/interview', (req, res) => {
+    Axios
+        .post(
+            url + "interview",
+            req.body
+        ).then(response => {
+            console.log(JSON.stringify(response.data))
+            resToBrowser.json(JSON.stringify(response.data))
+        }).catch(err => {
+            console.log("<----------------->")
+            console.log(err)
+            resToBrowser.json({
+                status: "failure"
+            })
+            console.log("<----------------->")
 
+        })
 })
 
 app.listen(30100, () => {
