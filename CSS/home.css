@@ -150,6 +150,7 @@ h2.transition-in [class^="letter"] {
     width: 100vw;
     height: 100vh;
     cursor: none;
+    background-color: black;
 }
 
 #stats {
