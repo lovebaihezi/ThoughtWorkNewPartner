@@ -4,7 +4,7 @@
 <!-- Copyright (c) chai bo wen LQXC All rights reserved. -->
 
 <head>
-    <script src="../JS/change.js"></script>
+    <!-- <script src="../JS/change.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../ResourceFile/favicon.ico" rel="shortcut icon">
@@ -53,19 +53,19 @@
         <div></div>
     </div>
     <div class="API" id="failed">
-        <div>失败了哦,请检查下填写的信息是否正确,或者网络是否正常</div>
+        <div>失败了哦,请检查下填写的信息是否正确</div>
     </div>
     <div class="API" id="success">
-        <div></div>
+        <div>登录成功,正在跳转</div>
     </div>
     <div class="API" id="error">
-        <div>出现了预期之外的错误呢,请检查下网络状况,或者询问我们哦</div>
+        <div>出现了预期之外的错误呢,请检查下网络状况,或者询问运维哦</div>
     </div>
     <div id="headTable" class="table">
         <div id="backButton">
             <a href="./index.html">
                 <div class="actionButton">
-                    <svg t="1603178516026" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="828" width="200" height="200">
+                    <svg t="1603178516026" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="828" width="40" height="40">
                         <path
                             d="M677.391515 873.916768c-7.86101 0-15.618586-2.999596-21.617778-8.895354L324.473535 533.721212c-11.998384-11.894949-11.998384-31.340606 0-43.235555L655.670303 159.288889c5.999192-5.999192 13.756768-8.895354 21.617778-8.895354 7.757576 0 15.618586 2.999596 21.617778 8.895354 11.894949 11.894949 11.894949 31.237172 0 43.235555L389.223434 512.103434 698.905859 821.785859c11.894949 11.998384 11.894949 31.340606 0 43.235555-5.895758 5.895758-13.756768 8.895354-21.514344 8.895354z m0 0"
                             p-id="829" fill="#f61947"></path>
@@ -95,12 +95,12 @@
                         <div class="">
                             <div class="label">
                                 <label for="">学号</label>
-                                <input type="text" name="id" required pattern="^[0-9]{8}$" autocomplete="username">
+                                <input type="text" name="id" autofocus required pattern="^[0-9]{8}$" autocomplete="username" value="04194012">
                                 <div class="showInformation">请输入你正确的学号哦</div>
                             </div>
                             <div class="label">
                                 <label for="">密码(双击密码框显示密码哦)</label>
-                                <input type="password" name="password" required id="password" pattern="^\w{6,20}$" autocomplete="current-password">
+                                <input type="password" name="password" required id="password" pattern="^\w{6,20}$" autocomplete="current-password" value="laserjet200pro">
                                 <div class="showInformation">请输入你正确的密码哦</div>
                             </div>
                         </div>
@@ -108,12 +108,12 @@
                     <div id="otherInformation" class="spaceBetween" style="display: none">
                         <div class="label">
                             <label for="">姓名</label>
-                            <input type="text" name="name" pattern="" id="name" autocomplete="name">
+                            <input type="text" name="name" pattern="\d{2,10}" id="name" autocomplete="name">
                             <div class="showInformation">请输入你的真实姓名哦</div>
                         </div>
                         <div class="label">
                             <label for="">专业班级</label>
-                            <input type="text" name="subject" pattern="" autocomplete=off>
+                            <input type="text" name="subject" pattern="\d{2,20}" autocomplete=off>
                             <div class="showInformation">请输入你的真实班级哦</div>
                         </div>
                         <div class="label">

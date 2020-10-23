@@ -1,0 +1,16 @@
+I'm listening on port 3000!
+data:
+"id=1"
+error
+data:
+"id=1"
+error
+data:
+{ yhm: '04194012', mm: 'laserjet200pro' }
+{"status":"failed"}
+data:
+"id=1"
+error
+data:
+"id=1"
+error

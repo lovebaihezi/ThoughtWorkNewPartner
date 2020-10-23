@@ -161,8 +161,7 @@ input:invalid+.showInformation {
     position: relative;
 }
 
-.actionButton:hover,
-.actionButton:hover {
+.actionButton.actionButton:hover {
     -webkit-box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
     box-shadow: 4px 5px 6px rgba(0, 0, 0, .2);
 }

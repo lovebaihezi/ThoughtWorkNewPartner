@@ -1,4 +1,5 @@
-; (function (window) {
+;
+(function(window) {
 
     var ctx,
         hue,
@@ -25,26 +26,26 @@
         this.init(options || {});
     }
 
-    Oscillator.prototype = (function () {
+    Oscillator.prototype = (function() {
 
         var value = 0;
 
         return {
 
-            init: function (options) {
+            init: function(options) {
                 this.phase = options.phase || 0;
                 this.offset = options.offset || 0;
                 this.frequency = options.frequency || 0.001;
                 this.amplitude = options.amplitude || 1;
             },
 
-            update: function () {
+            update: function() {
                 this.phase += this.frequency;
                 value = this.offset + Math.sin(this.phase) * this.amplitude;
                 return value;
             },
 
-            value: function () {
+            value: function() {
                 return value;
             }
         };
@@ -59,7 +60,7 @@
         this.init(options || {});
     }
 
-    Tendril.prototype = (function () {
+    Tendril.prototype = (function() {
 
         function Node() {
             this.x = 0;
@@ -70,7 +71,7 @@
 
         return {
 
-            init: function (options) {
+            init: function(options) {
 
                 this.spring = options.spring + (Math.random() * 0.1) - 0.05;
                 this.friction = settings.friction + (Math.random() * 0.01) - 0.005;
@@ -86,7 +87,7 @@
                 }
             },
 
-            update: function () {
+            update: function() {
 
                 var spring = this.spring,
                     node = this.nodes[0];
@@ -117,7 +118,7 @@
                 }
             },
 
-            draw: function () {
+            draw: function() {
 
                 var x = this.nodes[0].x,
                     y = this.nodes[0].y,
@@ -180,14 +181,14 @@
         if (!ctx.running) return;
 
         ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = 'rgba(8,5,16,0.4)';
+        ctx.fillStyle = 'rgb(72, 72, 72)';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.globalCompositeOperation = 'lighter';
         ctx.strokeStyle = 'hsla(' + Math.round(hue.update()) + ',90%,50%,0.25)';
         ctx.lineWidth = 1;
 
         if (ctx.frame % 60 == 0) {
-            console.log(hue.update(), Math.round(hue.update()), hue.phase, hue.offset, hue.frequency, hue.amplitude);
+            // console.log(hue.update(), Math.round(hue.update()), hue.phase, hue.offset, hue.frequency, hue.amplitude);
         }
 
         for (var i = 0, tendril; i < settings.trails; i++) {
@@ -258,7 +259,7 @@
         }
 
         el.innerHTML = heading;
-        setTimeout(function () {
+        setTimeout(function() {
             el.className = 'transition-in';
         }, (Math.random() * 500) + 500);
     }
@@ -282,7 +283,7 @@
             document.body.appendChild(form);
         }
 
-        buffer.ctx.fillStyle = 'rgba(8,5,16)';
+        buffer.ctx.fillStyle = 'rgb(0,0,0)';
         buffer.ctx.fillRect(0, 0, buffer.width, buffer.height);
 
         buffer.ctx.drawImage(canvas,
@@ -303,11 +304,11 @@
         // form.submit(); hovertree.com
     }
 
-    window.requestAnimFrame = (function () {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (fn) { window.setTimeout(fn, 1000 / 60) };
+    window.requestAnimFrame = (function() {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(fn) { window.setTimeout(fn, 1000 / 60) };
     })();
 
-    window.onload = function () {
+    window.onload = function() {
 
         ctx = document.getElementById('canvas').getContext('2d');
         ctx.stats = new Stats();
