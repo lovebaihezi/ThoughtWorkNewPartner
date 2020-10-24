@@ -78,16 +78,16 @@
     <div class="Login">
         <form>
 
-            <input type="text" style="display: none;" id="interview" name="Interviewer">
+            <input type="text" style="display: none;" id="interview" name="InterViewer">
 
             <label for="Number">
                 <p>学号</p>
-                <input type="text" name="ID" required pattern="[0-9]{8}" id="studentID" class="Number" autocomplete=off>
+                <input type="text" name="id" required pattern="[0-9]{8}" id="studentID" class="Number" autocomplete=off>
             </label>
 
             <label for="Name">
                 <p>姓名:</p>
-                <input type="text" name="Name" id="studentName" class="Name" autocomplete=off>
+                <input type="text" name="name" id="studentName" class="Name" autocomplete=off>
             </label>
 
             <label for="Telephone">
@@ -97,29 +97,29 @@
 
             <label for="ClassInformation">
                 <p>专业班级:</p>
-                <input type="text" name="Subject" id="studentInformation" class="ClassInformation">
+                <input type="text" name="subject" id="studentInformation" pattern="\d{2,20}" class="ClassInformation">
             </label>
 
             <label for="Choose">
                 <p>选择方向:前端/后端</p>
-                <input type="text" name="Way" id="studentPost" class="Choose" pattern="前端|后端">
+                <input type="text" name="way" id="studentPost" class="Choose" pattern="前端|后端">
             </label>
 
 
             <label for="filtrateChoose">
                 <p>评分</p>
-                <input type="text" name="Point" id="studentPoint" pattern="SSR|SR|R" class="">
+                <input type="text" name="point" id="studentPoint" pattern="SSR|SR|R" class="">
             </label>
 
 
             <label for="interviewProcess">
                 <p>面试进度</p>
-                <input type="text" name="InterviewProcess" required id="interviewProcess" class="">
+                <input type="text" name="InterViewProcess" required pattern="一面|二面|三面" id="interviewProcess" class="">
             </label>
 
             <label for="CommentArea" class="Comment">
                 <p>评价</p>
-                <input type="text" name="Comment" id="comment" required wrap="hard">
+                <input type="text" name="comment" id="comment" required wrap="hard">
                 <!-- <textarea name="" id="" id="comment" cols="30" required rows="10"></textarea> -->
             </label>
             <label for="save">

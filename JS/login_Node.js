@@ -222,6 +222,7 @@ function TW_Login() {
         var status = res.status;
         if (status == "success") {
             showStatus(status, function () {
+                sessionStorage.setItem("student", response);
                 location.replace('../HTML/index.html');
             });
         }
@@ -233,7 +234,17 @@ function TW_Login() {
     //     loginCheckAction(response)
     // }
     var adminSuccessAction = function (response) {
-        sessionStorage.interview = JSON.parse(response);
+        var res = JSON.parse(response);
+        var status = res.status;
+        if (status == "success") {
+            showStatus(status, function () {
+                sessionStorage.setItem("interview", response);
+                location.replace('../HTML/Su.html');
+            });
+        }
+        else {
+            showStatus(status);
+        }
     };
     var waitingResponse = function () {
         document.getElementById("waiting").style.display = "flex";

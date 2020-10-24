@@ -31,38 +31,11 @@ let dataProduce = (Origin) => {
 }
 
 let newAxios = (method, req, resToBrowser, data) => {
-    // console.log(JSON.parse(req.body))
-    // data = JSON.parse(req.body)
-    // let data = "{}"
-    // for (let i in req.body) {
-    //     data = i
-    // }
-    // console.log(data)
-    // console.log(req.body)
-    // console.log(dataProduce({
-    //     "yhm": "04194012",
-    //     "mm": "laserjet200pro",
-    //     "name": "",
-    //     "subject": "",
-    //     "Tel": "",
-    //     "way": "",
-    //     "user": "student"
-    // }))
     console.log("data:")
     console.log(data)
     Axios
         .post(
             url + method,
-            // req.body
-            // dataProduce({
-            //     "yhm": "04194012",
-            //     "mm": "laserjet200pro",
-            //     "name": "",
-            //     "subject": "",
-            //     "Tel": "",
-            //     "way": "",
-            //     "user": "student"
-            // })
             data
         ).then(response => {
             console.log(JSON.stringify(response.data))
@@ -70,7 +43,7 @@ let newAxios = (method, req, resToBrowser, data) => {
         }).catch(err => {
             // console.error(err);
             // console.log(err.response.data)
-            console.log("error")
+            // console.log("error")
             resToBrowser.json({
                 status: "error",
                 ServerType: "node",

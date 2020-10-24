@@ -182,7 +182,7 @@ changeToStudentApplyOrLogin.addEventListener("click", () => {
 
 let { login, apply, adminLogin, closeForm, showForm } = TW_Login()
 function TW_Login() {
-    let packInformation = (form: HTMLFormElement): string => {
+    let packInformation :Function = (form: HTMLFormElement): string => {
         let allInformation: Object = {}
         Array.from(form.elements).forEach((item: HTMLInputElement): void => {
             item.name != "" ? allInformation[item.name] = item.value : 0
@@ -190,7 +190,7 @@ function TW_Login() {
         return JSON.stringify(allInformation)
     }
 
-    let sendInformation = (json: string, place: string, thenAction: Function): void => {
+    let sendInformation :Function = (json: string, place: string, thenAction: Function): void => {
         waitingResponse()
         // let timeCount = setTimeout(() => {
         //     showStatus("error")
@@ -214,33 +214,33 @@ function TW_Login() {
             newAjax.send(json)
     }
 
-    let closeForm = (formElement: HTMLElement): void => {
+    let closeForm  :Function= (formElement: HTMLElement): void => {
         formElement.classList.add("close")
     }
 
-    let showForm = (formElement: HTMLElement): void => {
+    let showForm :Function = (formElement: HTMLElement): void => {
         formElement.classList.remove("close")
     }
 
     // const url :string = "http://176.122.165.147:3000/"
     const url: string = "http://localhost:3000/"
 
-    let login = (): void => {
+    let login :Function = (): void => {
         let formInformation: Object = JSON.parse(packInformation(studentForm))
         sendInformation(JSON.stringify(formInformation), url + "studentLogin", loginCheckAction)
     }
 
-    let apply = (): void => {
+    let apply :Function = (): void => {
         let formInformation: Object = JSON.parse(packInformation(studentForm))
         sendInformation(JSON.stringify(formInformation), url + "studentApply", loginCheckAction)
 
     }
 
-    let adminLogin = (): void => {
+    let adminLogin :Function = (): void => {
         sendInformation(packInformation(adminForm), url + "adminLogin", adminSuccessAction)
     }
 
-    let loginCheckAction = (response: string): void => {
+    let loginCheckAction :Function = (response: string): void => {
         let res: response = JSON.parse(response)
         let { status } = res
         if (status == "success") {
@@ -257,11 +257,20 @@ function TW_Login() {
     //     loginCheckAction(response)
     // }
 
-    let adminSuccessAction = (response: string): void => {
-        sessionStorage.interview = JSON.parse(response)
+    let adminSuccessAction :Function = (response: string): void => {
+        let res: response = JSON.parse(response)
+        let { status } = res
+        if (status == "success") {
+            showStatus(status, () => {
+                sessionStorage.setItem("interview",response)
+                location.replace('../HTML/Su.html')
+            })
+        } else {
+            showStatus(status)
+        }
     }
 
-    let waitingResponse = (): void => {
+    let waitingResponse :Function = (): void => {
         document.getElementById("waiting").style.display = "flex"
         // document.getElementById("waiting").onclick = () => { document.getElementById("waiting").style.display = "none" }
     }
