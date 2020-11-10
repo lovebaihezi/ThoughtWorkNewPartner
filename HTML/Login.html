@@ -36,7 +36,7 @@
         }
     </style>
     <script>
-        document.addEventListener("readystatechange", function() {
+        document.addEventListener("readystatechange", function () {
             if (document.readyState == 'complete') {
                 document.getElementById("loading").style.display = "none";
             }
@@ -53,15 +53,22 @@
         <div></div>
     </div>
     <div class="API" id="failed">
-        <div>失败了哦,请检查下填写的信息是否正确</div>
+        <div>
+            失败了哦,请检查下填写的信息是否正确
+            <!-- <strong>或者说您是否已报名呢,报了名才能登陆哦</strong> -->
+            <p style="position:absolute;bottom:0;width:100%;">请不要重复报名!</p>
+        </div>
     </div>
     <div class="API" id="success">
-        <div>登录成功,正在跳转</div>
+        <div>
+            登录成功,
+            <strong>2s后即将跳转</strong>
+        </div>
     </div>
     <div class="API" id="error">
         <div>出现了预期之外的错误呢,请检查下网络状况,或者询问运维哦</div>
     </div>
-    <div id="headTable" class="table">
+    <!-- <div id="headTable" class="table">
         <div id="backButton">
             <a href="./index.html">
                 <div class="actionButton">
@@ -73,10 +80,27 @@
                 </div>
             </a>
         </div>
+    </div> -->
+    <div class="table" id="exceptIndex">
+        <div id="headTable">
+            <div id="backButton">
+                <a href="./index.html">
+                    <div class="actionButton">
+                        <svg t="1603178516026" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="828" width="40" height="40">
+                            <path
+                                d="M677.391515 873.916768c-7.86101 0-15.618586-2.999596-21.617778-8.895354L324.473535 533.721212c-11.998384-11.894949-11.998384-31.340606 0-43.235555L655.670303 159.288889c5.999192-5.999192 13.756768-8.895354 21.617778-8.895354 7.757576 0 15.618586 2.999596 21.617778 8.895354 11.894949 11.894949 11.894949 31.237172 0 43.235555L389.223434 512.103434 698.905859 821.785859c11.894949 11.998384 11.894949 31.340606 0 43.235555-5.895758 5.895758-13.756768 8.895354-21.514344 8.895354z m0 0"
+                                p-id="829" fill="#f61947"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="Login">
         <div class="img">
-            <img src="../ResourceFile/tw-logo.svg" alt="">西安邮电大学联合创新实验室
+            <img src="../ResourceFile/tw-logo.svg" alt="">
+            <p>西安邮电大学联合创新实验室</p>
         </div>
         <div class="switch">
             <div class="actionButton on" id="leftButton">
@@ -95,43 +119,50 @@
                         <div class="">
                             <div class="label">
                                 <label for="">学号</label>
-                                <input type="text" name="id" autofocus required pattern="^[0-9]{8}$" autocomplete="username" value="04194012">
+                                <input type="text" name="id" oninput="setCustomValidity('')" pattern="[0-9]{8}"
+                                    oninvalid="setCustomValidity('学号应为八位')" autofocus required autocomplete="username">
                                 <div class="showInformation">请输入你正确的学号哦</div>
                             </div>
                             <div class="label">
                                 <label for="">密码(双击密码框显示密码哦)</label>
-                                <input type="password" name="password" required id="password" pattern="^\w{6,20}$" autocomplete="current-password" value="laserjet200pro">
+                                <input type="password" name="password" oninput="setCustomValidity('')" pattern=".{6,20}"
+                                    oninvalid="setCustomValidity('密码应大于6位小于20位')" required id="password"
+                                    autocomplete="current-password">
                                 <div class="showInformation">请输入你正确的密码哦</div>
                             </div>
+                        </div>
+                        <div class="label" id="formatChange">
+                            <label for="">姓名</label>
+                            <input type="text" name="name" oninput="setCustomValidity('')" pattern="[^\x00-\xff]{2,}"
+                                oninvalid="setCustomValidity('请输入真实姓名哦')" id="name" autocomplete="name">
+                            <div class="showInformation">请输入你的真实姓名哦</div>
                         </div>
                     </div>
                     <div id="otherInformation" class="spaceBetween" style="display: none">
                         <div class="label">
-                            <label for="">姓名</label>
-                            <input type="text" name="name" pattern="\d{2,10}" id="name" autocomplete="name">
-                            <div class="showInformation">请输入你的真实姓名哦</div>
-                        </div>
-                        <div class="label">
                             <label for="">专业班级</label>
-                            <input type="text" name="subject" pattern="\d{2,20}" autocomplete=off>
+                            <input type="text" name="subject" oninput="setCustomValidity('')" pattern="*{6,}"
+                                oninvalid="setCustomValidity('请输入你的真实班级哦')" autocomplete=off>
                             <div class="showInformation">请输入你的真实班级哦</div>
                         </div>
                         <div class="label">
                             <label for="">电话号码</label>
-                            <input type="tel" name="Tel" pattern="^[0-9]{11}$" id="Telephone" autocomplete="tel">
-                            <div class="showInformation">请输入你的电话号码哦</div>
+                            <input type="tel" name="Tel" oninput="setCustomValidity('')"
+                                oninvalid="setCustomValidity('请输入正确的电话哦,应当为11位')" pattern="[0-9]{11}" id="Telephone"
+                                autocomplete="tel">
+                            <div class="showInformation">请输入你正确的电话号码哦</div>
                         </div>
                         <div class="label">
                             <label for="">方向:填写前端或者后台</label>
-                            <input type="text" name="way" pattern="前端|后台" id="Choose" autocomplete=off>
+                            <input type="text" name="way" oninput="setCustomValidity('')" id="Choose"
+                                oninvalid="setCustomValidity('请输入前端或者后台哦')" pattern="前端|后台" autocomplete=off>
                             <div class="showInformation">请填写你所需的方向哦</div>
                         </div>
 
                     </div>
                 </div>
-                <input type="text" style="display: none;" name="user" value="student">
                 <div>
-                    <div id="showApplyButton" class=" actionButton">
+                    <div id="showApplyButton">
                         <p>未报名?</p>
                     </div>
                     <div class="label">
@@ -145,11 +176,17 @@
 
             <form class="close">
                 <p>管理员请使用管理账号登录</p>
-                <input type="text" style="display: none;" name="user" value="admin">
                 <div class="label">
                     <label for="">学号</label>
-                    <input type="text" name="adminID" required pattern="^[0-9]{8}$" autocomplete="username">
-                    <div class="showInformation">请输入你正确的学号哦</div>
+                    <input type="text" name="id" oninput="setCustomValidity('')"
+                        oninvalid="setCustomValidity('学号应是八位哦')" required pattern="^[0-9]{8}$" autocomplete="username">
+                    <div class="showInformation">请输入管理员学号</div>
+                </div>
+                <div class="label">
+                    <label for="">密码</label>
+                    <input type="password" name="password" oninput="setCustomValidity('')"
+                        oninvalid="setCustomValidity('正确的密码の必须')" required pattern="\w{7,20}" autocomplete="username">
+                    <div class="showInformation">请输入管理员密码</div>
                 </div>
                 <div class="label">
                     <label for=""></label>

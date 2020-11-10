@@ -49,7 +49,7 @@ var response = /** @class */ (function () {
     return response;
 }());
 var signForm = document.forms[0];
-var url = "http://localhost:3000/";
+var url = "/";
 signForm.addEventListener("submit", function (defaultEvent) {
     defaultEvent.preventDefault();
     sendInformation(packInformation(signForm), url + "Sign", function (response) {

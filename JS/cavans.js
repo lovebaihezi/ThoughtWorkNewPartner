@@ -181,7 +181,7 @@
         if (!ctx.running) return;
 
         ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = 'rgb(72, 72, 72)';
+        ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.globalCompositeOperation = 'lighter';
         ctx.strokeStyle = 'hsla(' + Math.round(hue.update()) + ',90%,50%,0.25)';

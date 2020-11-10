@@ -4,15 +4,15 @@ var password = document.getElementById("password");
 var adminPassword = document.getElementById("adminPassword");
 var form = document.forms[0];
 var submitButton = document.getElementById("submitButton");
-inputList.forEach(function(item) {
-    item.addEventListener("click", function() {
+inputList.forEach(function (item) {
+    item.addEventListener("click", function () {
         item.classList.add("inputNotEmpty");
     });
-    item.addEventListener("input", function() {
+    item.addEventListener("input", function () {
         item.classList.add("inputNotEmpty");
     })
 });
-password.addEventListener("dblclick", function() {
+password.addEventListener("dblclick", function () {
     if (password.type == "password") {
         password.setAttribute("type", "text");
     } else {

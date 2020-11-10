@@ -1,17 +1,17 @@
-/* .nav{
-    min-height: 5rem;
-    width: 100%;
-    background-color: #333333;
-} */
-h1{
+h3 {
+    margin-top: 11rem;
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 4.3rem;
+    color: #000;
 }
-.image{
+
+.image {
     min-height: 48rem;
     position: relative;
 }
-.image img{
+
+.image img {
     width: 30rem;
     height: 45rem;
     position: absolute;
@@ -19,89 +19,112 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.page{
+
+.page {
     min-height: 40rem;
 }
-#block_1{
+
+#block_1 {
     margin-bottom: 6rem;
+    height: 60%;
 }
-.card{
+
+.card {
     min-height: 16rem;
 }
-.page h4{
+
+.page h4 {
     font-size: 2.2rem;
 }
-.page p{
+
+.page p {
     font-size: 1.9rem;
     line-height: 1.7;
+    text-indent:2em; 
 }
-#block_2{
-    /* margin-bottom: 5rem; */
+
+#block_2 {
     width: 100%;
     padding: 6rem 0 4rem;
     background-color: #333333;
     position: relative;
     color: white;
+    height: 50%;
 }
-#block_2 h4{
+
+#block_2 h4 {
     font-size: 2.2rem;
     position: absolute;
     top: 1rem;
     left: 5%;
 }
-.img{
+
+.img {
     width: 100%;
     min-height: 10rem;
     position: relative;
-
 }
-.img img{
+
+.img img {
     width: 4rem;
     height: 4rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
-#all_card p{
+
+#all_card p {
+    display: block;
     text-align: center;
     font-size: 1.9rem;
+    color: white;
 }
-@media screen and (min-width: 768px) { 
-    .image img{
-        width: 22.5rem;
-        height: 33.75rem;
-        top: 46%;    
+
+@media screen and (min-width: 768px) {
+    .image img {
+        min-width: 22.5rem;
+        min-height: 33.75rem;
+        top: 60%;
+        left: 39%
     }
-    h1{
+    h1 {
+        margin-bottom: 7rem;
+    }
+    h3 {
         margin-bottom: 4rem;
+        font-size: 5rem;
     }
-    #block_1{
-        margin-bottom: 4rem;
-    }
-    .image{
+    .image {
         min-height: 40rem;
     }
-    .page{
+    .page {
         min-height: 40rem;
     }
- }
-
-@media screen and (min-width: 992px) { 
-    .image img{
-        left: 58%;
+    #block_1 {
+        margin-bottom: 9rem;
+    
     }
- }
+}
 
-@media screen and (min-width: 1200px) { 
-    .image img{
-        left: 50%;
+@media screen and (min-width: 992px) {
+    .image img {
+        left: 36%;
     }
-    #block_2 h4{
+    #block_1 {
+        margin-bottom: 13rem;
+    
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .image img {
+        left: 30%;
+    }
+    #block_2 h4 {
         font-size: 2.2rem;
         position: absolute;
         top: 1rem;
         left: 15%;
     }
- }
+}

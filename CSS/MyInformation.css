@@ -1,7 +1,7 @@
 #Information {
     width: 100%;
-    height: 100%;
-    min-height: 840px;
+    min-width:320px;
+    height: 93vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,9 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    width: 65%;
+    width: 65%; 
+    min-width:320px;
     height: 80%;
-    /* width:65vw;
-    height:32.5vw; */
     box-shadow: 0px 2px 15px black;
 }
 
@@ -39,18 +38,20 @@
     width: 51%;
     height: 100%;
     background-color: #5d5d5d;
+    padding-bottom:10px;
+    box-sizing:border-box;
 }
 
 #InformationName {
-    width: 50%;
-    height: 15%;
+    width: 80%;
+    height: 17%;
     margin: 0 auto;
     text-align: center;
     color: white;
     font-size: 38px;
     font-weight: 500;
-    margin-top: 5%;
-    margin-bottom: 3%;
+    margin-top: 8%;
+    margin-bottom: 5%;
 }
 
 #InformationName::before {
@@ -68,16 +69,20 @@
     content: '';
     position: absolute;
     height: 1px;
-    width: 50px;
+    width: 60px;
     background-color: #c0c0c0;
     margin-top: 52px;
     margin-left: -45px;
     border-radius: 150px;
 }
-
+#middle{
+    width:80%;
+    height:15%;
+    margin:0 auto;
+}
 #InformationScroll {
-    width: 80%;
-    height: 4%;
+    width: 100%;
+    height: 15px;
     margin: 0 auto;
     background-color: white;
     border: 1px solid transparent;
@@ -87,7 +92,6 @@
 #scrollBox {
     width: 0;
     height: 100%;
-    /* background-image:linear-gradient(to bottom, rgba(238, 172, 172),  #f61947); */
     background-color: #f61947;
     position: relative;
     overflow: hidden;
@@ -102,10 +106,10 @@
     bottom: 0;
     right: 0;
     background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
-    background: linear-gradient(to right, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent 100%);
     z-index: 2;
     background-size: 100px;
-    animation: move 1s linear infinite;
+    animation: move2 1s linear infinite;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-top-left-radius: 20px;
@@ -113,9 +117,9 @@
     overflow: hidden;
 }
 
-@keyframes move {
+@keyframes move2 {
     0% {
-        background-position: 0 0;
+        background-position: 0px 0px;
     }
     100% {
         background-position: 50px 0px;
@@ -129,9 +133,10 @@
 }
 
 #Ul {
-    width: 80%;
+    width: 100%;
     height: 5%;
     margin: 0 auto;
+    padding:0;
     list-style-type: none;
 }
 
@@ -164,6 +169,7 @@
     margin: 0 auto;
     margin-top: 10px;
     list-style-type: none;
+    padding:0;
 }
 
 .InformationBox {
@@ -199,7 +205,7 @@
     border-style: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width:800px) {
     #InformationLeft {
         display: none;
     }
@@ -216,9 +222,6 @@
     #InformationName::after {
         margin-top: 42px;
     }
-    #InformationScroll {
-        width: 70%;
-    }
     #Ul {
         height: 11%;
     }
@@ -231,269 +234,128 @@
         left: 5%;
     }
     #InformationUl {
-        width: 85%;
+        width: 80%;
     }
     .InformationName {
         width: 43%;
+        font-size: 15px;
     }
     .InformationValue {
         width: 57%;
+        height: 15px;
         padding-left: 8px;
+        font-size: 15px;
+    }
+    #InformationName::after {
+        margin-top: 46px;
     }
 }
-
-@media screen and (min-width: 250px) and (max-width:599px) {
-    #InformationScroll {
-        margin-top: 3%;
-    }
-    #InformationUl {
-        width: 85%;
-    }
-    #InformationName {
-        font-size: 30px;
-    }
-    #Ul li {
-        font-size: 13px;
-    }
-    #Ul li:nth-child(2) {
-        left: 22%;
-    }
-    #Ul li:nth-child(3) {
-        left: 38%;
-    }
-    #Ul li:nth-child(4) {
-        left: 52%;
-    }
+@media screen and (max-width:329px){
     .InformationName {
-        width: 45%;
-        font-size: 14px;
+        width: 52%;
     }
     .InformationValue {
-        width: 55%;
+        width: 48%;
         padding-left: 8px;
     }
-}
+} 
 
-@media screen and (min-width: 330px) and (max-width:339px) {
-    #Ul li:nth-child(1) {
-        left: 6%;
-    }
-    #Ul li:nth-child(2) {
-        left: 23%;
-    }
-    #Ul li:nth-child(3) {
-        left: 40%;
-    }
-    #Ul li:nth-child(4) {
-        left: 55%;
-    }
+@media screen and (min-width: 320px) and (max-width:960px) {
     .InformationName {
-        width: 40%;
         font-size: 14px;
     }
     .InformationValue {
         width: 62%;
         padding-left: 8px;
     }
-}
-
-@media screen and (min-width: 340px) and (max-width:430px) {
-    #Ul li:nth-child(2) {
-        left: 24%;
-    }
-    #Ul li:nth-child(3) {
-        left: 42%;
-    }
-    #Ul li:nth-child(4) {
-        left: 58%;
-    }
-    .InformationName {
-        width: 38%;
-    }
-    .InformationValue {
-        width: 64%;
-    }
-}
-
-@media screen and (min-width: 431px) and (max-width:469px) {
     #Ul li:nth-child(1) {
-        left: 5%;
-    }
-    #Ul li:nth-child(2) {
-        left: 25%;
-    }
-    #Ul li:nth-child(3) {
-        left: 44%;
-    }
-    #Ul li:nth-child(4) {
-        left: 60%;
-    }
-    .InformationName {
-        width: 34%;
-        font-size: 14px;
-    }
-    .InformationValue {
-        width: 60%;
-        padding-left: 8px;
-    }
-}
-
-@media screen and (min-width: 470px) and (max-width: 600px) {
-    #InformationName {
-        width: 80%;
-        font-size: 32px;
-        height: 8%;
-        margin-top: 10%;
-        margin-bottom: 6%;
-    }
-    #InformationScroll {
-        margin-bottom: 3%;
-    }
-    #Ul li:nth-child(2) {
-        left: 25%;
-    }
-    #Ul li:nth-child(3) {
-        left: 44%;
-    }
-    #Ul li:nth-child(4) {
-        left: 66%;
-    }
-    .InformationName {
-        width: 30%;
-        font-size: 14px;
-    }
-    .InformationValue {
-        width: 60%;
-        padding-left: 8px;
-    }
-}
-
-@media screen and (min-width: 601px) and (max-width: 799px) {
-    #InformationName {
-        width: 80%;
-        font-size: 26px;
-        height: 12%;
-        margin-bottom: 15px;
-        margin-top: 5%;
-    }
-    #InformationName::after {
-        margin-top: 36px;
-    }
-    #InformationScroll {
-        width: 70%;
-    }
-    #Ul {
-        height: 10%;
-    }
-    #Ul li {
-        font-size: 12px;
-        vertical-align: top;
-        /* width:15px; */
-        width: auto;
-    }
-    #Ul li:nth-child(1) {
-        left: 5%;
-    }
-    #Ul li:nth-child(2) {
-        left: 22%;
-    }
-    #Ul li:nth-child(3) {
-        left: 38%;
-    }
-    #Ul li:nth-child(4) {
-        left: 52%;
-    }
-    #InformationUl {
-        margin-top: 0px;
-        width: 75%;
-    }
-    .InformationName {
-        width: 40%;
-        font-size: 12px;
-    }
-    .InformationValue {
-        width: 60%;
-        /* height: 15px; */
-        padding-left: 8px;
-        font-size: 12px;
-    }
-}
-
-
-/* @media screen and (min-width: 600px) and (max-width: 639px) {
-    #Ul li:nth-child(1){
-        left:6%;
-    }
-    #Ul li:nth-child(2){
-        left:28%;
-    }
-    #Ul li:nth-child(3){
-        left:48%;
-    }
-    #Ul li:nth-child(4){
-        left:70%;
-    }
-} */
-
-@media screen and (min-width: 600px) and (max-width: 700px) {
-    #Ul li:nth-child(1) {
-        left: 6%;
-    }
-    #Ul li:nth-child(2) {
-        left: 20%;
-    }
-    #Ul li:nth-child(3) {
-        left: 40%;
-    }
-    #Ul li:nth-child(4) {
-        left: 58%;
-    }
-}
-
-@media screen and (width: 600px) {
-    #Ul li:nth-child(1) {
-        left: 6%;
+        left: 2%;
     }
     #Ul li:nth-child(2) {
         left: 28%;
     }
     #Ul li:nth-child(3) {
-        left: 48%;
+        left: 54%;
     }
     #Ul li:nth-child(4) {
-        left: 70%;
+        left: 85%;
     }
 }
-
-@media screen and (min-width: 700px) and (max-width: 799px) {
-    #Ul li:nth-child(1) {
-        left: 6%;
-    }
+@media screen and (min-width: 320px) and (max-width:680px) {
     #Ul li:nth-child(2) {
-        left: 14%;
+        left: 28%;
     }
     #Ul li:nth-child(3) {
-        left: 25%;
+        left: 52%;
     }
     #Ul li:nth-child(4) {
-        left: 36%;
+        left: 80%;
     }
 }
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 320px) and (max-width:580px) {
+    #Ul li:nth-child(1) {
+        left: 1%;
+    }
+    #Ul li:nth-child(4) {
+        left: 77%;
+    }
+}
+@media screen and (min-width: 300px) and (max-width:470px) {
+    #Ul li:nth-child(2) {
+        left: 26%;
+    }
+    #Ul li:nth-child(3) {
+        left: 50%;
+    }
+    #Ul li:nth-child(4) {
+        left: 76%;
+    }
+}
+@media screen and (min-width: 300px) and (max-width:415px) {
+    #Ul li:nth-child(4) {
+        left: 74%;
+    }
+}
+@media screen and (min-width: 320px) and (max-width:380px) {
+    #Ul li:nth-child(2) {
+        left: 26%;
+    }
+    #Ul li:nth-child(3) {
+        left: 50%;
+    }
+    #Ul li:nth-child(4) {
+        left: 76%;
+    }
+}
+@media screen and (min-width: 360px) and (max-width:680px) {
+    #InformationContent{
+        height:60%;
+    }
+}
+@media screen and (min-width: 850px) {
     #InformationContent {
         width: 65vw;
         height: 32.5vw;
     }
 }
-
+@media screen and (min-width: 600px) and (max-width:800px) {
+    
+    .InformationName {
+        font-size: 18px;
+    }
+    .InformationValue {
+        font-size: 18px;
+    }
+}
 @media screen and (min-width: 800px) and (max-width: 1023px) {
+    #InformationUl{
+        margin-top:20px;
+    }
     #InformationName {
         width: 80%;
         font-size: 30px;
-        height: 13%;
-        margin-bottom: 10px;
-        /* margin-top:40px; */
+        height: 12%;
+        margin-bottom: 20px;
     }
     #InformationName::after {
         margin-top: 40px;
@@ -510,100 +372,77 @@
     }
     .InformationValue {
         width: 58%;
-        height: 16px;
+        height: 15px;
         padding-left: 8px;
         font-size: 13px;
     }
 }
-
-@media screen and (min-width: 800px) and (max-width: 900px) {
+@media screen and (min-width: 801px) and (max-width:960px){
     #Ul li:nth-child(1) {
-        left: 2%;
+        left: 0%;
     }
     #Ul li:nth-child(2) {
-        left: 10%;
+        left: 12%;
     }
     #Ul li:nth-child(3) {
-        left: 25%;
+        left: 26%;
+    }
+    #Ul li:nth-child(4) {
+        left: 36%;
+    }
+} 
+@media screen and (min-width: 871px) and (max-width:960px){
+    #Ul li:nth-child(2) {
+        left: 12%;
+    }
+    #Ul li:nth-child(3) {
+        left: 28%;
     }
     #Ul li:nth-child(4) {
         left: 40%;
     }
-    .InformationValue {
-        width: 65%;
-        /* height: 25px; */
-        padding-left: 8px;
-        font-size: 13px;
+} 
+@media screen and (min-width: 961px) and (max-width:1023px){
+    #Ul li:nth-child(2) {
+        left: 12%;
     }
-}
-
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    #Ul li:nth-child(1) {
-        left: 2%;
+    #Ul li:nth-child(3) {
+        left: 30%;
     }
+    #Ul li:nth-child(4) {
+        left: 44%;
+    }
+} 
+@media screen and (min-width: 1024px) and (max-width:1099px){
     #Ul li:nth-child(2) {
         left: 14%;
     }
     #Ul li:nth-child(3) {
-        left: 32%;
+        left: 28%;
     }
     #Ul li:nth-child(4) {
-        left: 46%;
-    }
-    .InformationName {
-        width: 35%;
-    }
-    .InformationValue {
-        width: 65%;
-        height: 20px;
+        left: 40%;
     }
 }
-
-@media screen and (min-width: 1024px) and (max-width:1119px) {
-    #Ul li:nth-child(1) {
-        left: 2%;
-    }
+@media screen and (min-width: 1100px) and (max-width:1280px){
     #Ul li:nth-child(2) {
-        left: 16%;
+        left: 15%;
     }
     #Ul li:nth-child(3) {
-        left: 32%;
+        left: 31%;
     }
     #Ul li:nth-child(4) {
         left: 46%;
     }
 }
-
-@media screen and (min-width: 1120px) and (max-width:1299px) {
-    #Ul li:nth-child(1) {
-        left: 2%;
-    }
+@media screen and (min-width: 1280px) {
     #Ul li:nth-child(2) {
-        left: 18%;
-    }
-    #Ul li:nth-child(3) {
-        left: 34%;
-    }
-    #Ul li:nth-child(4) {
-        left: 52%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-    #Ul li:nth-child(1) {
-        left: 1%;
-    }
-    #Ul li:nth-child(2) {
-        left: 18%;
+        left: 19%;
     }
     #Ul li:nth-child(3) {
         left: 38%;
     }
     #Ul li:nth-child(4) {
-        left: 58%;
-    }
-    .InformationValue {
-        width: 65%;
-        min-height: 25px;
+        left: 52%;
     }
 }

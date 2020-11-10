@@ -49,7 +49,7 @@ var sendInformation = function (json, place, thenAction) {
     // console.log(json)
     var newAjax = new XMLHttpRequest();
     newAjax.open("post", place, true);
-    // newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
+    newAjax.setRequestHeader("content-type", "application/json; charset=UTF-8");
     newAjax.addEventListener("readystatechange", function () {
         if (newAjax.readyState == 4 && newAjax.status == 200) {
             document.getElementById("waiting").style.display = "none";
@@ -68,10 +68,8 @@ var waitingResponse = function () {
 var showStatus = function (status, next) {
     if (next === void 0) { next = function () { }; }
     document.getElementById(status).style.display = "flex";
-    document.getElementById(status).onclick = function () {
-        document.getElementById(status).style.display = "none";
-        next();
-    };
+    document.getElementById(status).style.display = "none";
+    next();
 };
 var response = /** @class */ (function () {
     function response() {
@@ -93,7 +91,7 @@ var information = /** @class */ (function (_super) {
 }(Object));
 var data;
 var interview = document.forms[0];
-var url = "http://localhost:3000/";
+var url = "/";
 interview.addEventListener("submit", function (defaultEvent) {
     defaultEvent.preventDefault();
     sendInformation(packInformation(interview), url + "interview", function (response) {

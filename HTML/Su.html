@@ -61,17 +61,18 @@
     <div class="API" id="error">
         <div>出现了预期之外的错误呢,请检查下网络状况,或者询问运维哦</div>
     </div>
-    <div id="headTable" class="table">
-        <div id="backButton">
-            <a href="./index.html">
-                <div class="actionButton">
-                    <svg t="1603178516026" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="828" width="40" height="40">
-                        <path
-                            d="M677.391515 873.916768c-7.86101 0-15.618586-2.999596-21.617778-8.895354L324.473535 533.721212c-11.998384-11.894949-11.998384-31.340606 0-43.235555L655.670303 159.288889c5.999192-5.999192 13.756768-8.895354 21.617778-8.895354 7.757576 0 15.618586 2.999596 21.617778 8.895354 11.894949 11.894949 11.894949 31.237172 0 43.235555L389.223434 512.103434 698.905859 821.785859c11.894949 11.998384 11.894949 31.340606 0 43.235555-5.895758 5.895758-13.756768 8.895354-21.514344 8.895354z m0 0"
-                            p-id="829" fill="#f61947"></path>
-                    </svg>
-                </div>
-            </a>
+    <div class="table" id="exceptIndex" style="height:80px;">
+        <div id="headTable">
+            <div id="backButton" class="ContentMiddle">
+                <a href="./index.html" class="ContentMiddle">
+                    <div class="actionButton">
+                        <div id="fix">
+                            <img src="../ResourceFile/tw-logo.svg" alt="" srcset="">
+                            <i>西安邮电大学联合创新实验室</i>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -83,7 +84,7 @@
 
             <label for="SearchNumber">
                 <p>学号查找:</p>
-                <input type="text" name="Number" id="searchByNumber" required pattern="[0-9]{8}">
+                <input type="text" name="id" id="searchByNumber" required pattern="[0-9]{8}">
             </label>
 
             <label for="Post">
